@@ -47,9 +47,9 @@ const categories = [
     icon: Video, 
     description: 'Audio and video files, computer-generated imagery, etc.',
     images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'data visualization' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: '3d model' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'simulation' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/VFTS_352.tif', alt: 'VFTS 352, a binary star system.', hint: 'data visualization' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Views_of_a_simulated_primordial_galaxy%2C_density_map.png', alt: 'Simulated primordial galaxy density map.', hint: '3d model' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png', alt: 'Lunar Mini-Magnetosphere.', hint: 'simulation' },
     ]
   },
   { 
@@ -213,3 +213,5 @@ export default function CompetitionPage() {
     </div>
   );
 }
+
+    
