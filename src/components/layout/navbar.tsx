@@ -21,10 +21,14 @@ import Image from 'next/image';
 const mainNavLinks = [
   { name: 'About', href: '/about' },
   { name: 'Competition', href: '/competition' },
-  { name: 'Organizers', href: '/organizers' },
   { name: 'Resources', href: '/resources' },
   { name: 'Sponsors', href: '/sponsors' },
 ];
+
+const organizerLinks = [
+    { name: 'Meet the Team', href: '/organizers' },
+    { name: 'Call for Team', href: '/organizers/call' },
+]
 
 const moreDropdownLinks = [
     { name: 'Jury', href: '/jury'},
@@ -86,6 +90,18 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+             <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                  Organizers <ChevronDown className="h-4 w-4 ml-1" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {organizerLinks.map(link => (
+                    <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
@@ -131,7 +147,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {[...mainNavLinks, ...moreDropdownLinks].map((link) => (
+            {[...mainNavLinks].map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -141,6 +157,32 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+             <div className="border-t border-border pt-2 mt-2">
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Organizers</p>
+                 {organizerLinks.map(link => (
+                    <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    >
+                     {link.name}
+                    </Link>
+                 ))}
+            </div>
+             <div className="border-t border-border pt-2 mt-2">
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">More</p>
+                 {moreDropdownLinks.map(link => (
+                    <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    >
+                     {link.name}
+                    </Link>
+                 ))}
+            </div>
             <div className="border-t border-border pt-2 mt-2">
                  <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Learning</p>
                  {learningLinks.map(link => (

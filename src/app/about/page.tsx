@@ -22,15 +22,15 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <Badge variant="secondary" className="mb-2">Our Mission</Badge>
+            <Badge variant="secondary" className="mb-2">Our History</Badge>
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
-              Democratizing Scientific Imagery
+              From National Roots to Global Reach
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Wiki Science Competition is an international science photography competition that invites everyone to contribute to the visual representation of science. Our goal is to make scientific knowledge more accessible and engaging for all by creating a rich, freely-licensed repository of high-quality images.
+              This competition originally started as a national competition and it was first organized in Estonia. In 2015, the contest was expanded to all of Europe and resulted in almost 10,000 freely licensed images attracting over 2,200 contesters. The 2017 edition was the first international one and saw an upload of more than 12,000 files.
             </p>
             <p className="text-lg text-muted-foreground">
-              By participating, you help illustrate thousands of Wikipedia articles, making complex topics easier to understand for millions of readers worldwide.
+              Now, in 2025, India is proud to host its own national edition, joining a global movement to celebrate and share the visual wonders of science.
             </p>
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">

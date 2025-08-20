@@ -170,32 +170,41 @@ export default function CompetitionPage() {
             <div className="grid md:grid-cols-3 gap-16">
                 <div className="md:col-span-2">
                     <section id="rules">
-                        <h2 className="text-3xl font-headline font-bold text-primary mb-6">Rules & Guidelines</h2>
+                        <h2 className="text-3xl font-headline font-bold text-primary mb-6">How to Participate</h2>
                         <div className="space-y-4 text-muted-foreground">
-                            <p>Participation is simple, but please read the rules carefully before submitting your images.</p>
-                            <ul className="space-y-3 pt-4">
-                                <li className="flex items-start">
-                                    <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                    <span>All submissions must be your own work and uploaded by you.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                    <span>Photos must be uploaded under a free license (CC BY-SA 4.0) to Wikimedia Commons.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                    <span>Submissions must include a clear, concise, and accurate scientific description in English.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                    <span>High-resolution images are strongly encouraged for better evaluation and use.</span>
-                                </li>
-                            </ul>
-                            <div className="pt-4">
-                               <Button asChild>
-                                   <Link href="/resources">View Full Rules <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                               </Button>
-                           </div>
+                            <div className="prose prose-lg text-muted-foreground max-w-none">
+                                <p className="lead">
+                                    If you don't have one, you can create a global account that will give you a specific username on all Wikimedia platforms (including Wikimedia Commons) when you log in. As a newly registered user you need to wait at least four days before uploading a video file, while images can be uploaded right after the registration.
+                                </p>
+                                <Button asChild className="my-4">
+                                    <a href="https://commons.wikimedia.org/w/index.php?title=Special:CreateAccount" target="_blank" rel="noopener noreferrer">
+                                        Create your account here!
+                                    </a>
+                                </Button>
+                                <h3 className="text-2xl font-headline font-bold text-primary mt-8 mb-4">Participation Rules</h3>
+                                <ul className="space-y-3 pt-4">
+                                    <li className="flex items-start">
+                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <span>Submissions must be your own work, uploaded from your own registered Wikimedia account. For multiple authors, all names must be provided.</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <span>Images must be under a free license (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <span>All submissions require a clear and accurate scientific description in English. Other languages are welcome too.</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <span>Upload the highest resolution possible (at least 2 megapixels).</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <span>Images must not contain watermarks, logos, or added text/graphics (except for scales).</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
                 </div>

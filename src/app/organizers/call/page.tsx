@@ -1,40 +1,39 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ExternalLink } from 'lucide-react';
-import Link from 'next/link';
 
-export default function CampusAmbassadorsPage() {
+export default function CallForTeamPage() {
   return (
     <div className="bg-background text-foreground">
       <div className="bg-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Call for Campus Ambassadors</h1>
+          <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Call for Organizers</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Join us as a local outreach coordinator to help promote the Wiki Science Competition 2025 in your institution, community, or network.
+             We’re excited to share that India will be organizing its own local edition of this global campaign that promotes science through freely licensed images, videos, and other media on Wikimedia Commons.
           </p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
-            <h2 className="text-3xl font-headline font-bold text-primary mb-4">Who are we looking for?</h2>
+            <h2 className="text-3xl font-headline font-bold text-primary mb-4">Join the Organizing Team</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Campus Ambassadors play a key role in spreading awareness, guiding participants, and optionally organizing awareness sessions or workshops. Whether you’re a Wikimedian, science student, designer, teacher, or simply enthusiastic about open science—we’d love to have you on board!
+              To support smooth coordination, outreach, and planning, we’re expanding our organizing team. If you’re interested in contributing to this important initiative, we would love to hear from you.
             </p>
             
-            <h3 className="text-2xl font-headline font-bold text-primary mb-4">Responsibilities</h3>
+            <h3 className="text-2xl font-headline font-bold text-primary mb-4">What We're Looking For</h3>
             <ul className="space-y-3 text-muted-foreground mb-8">
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Promote the campaign in your institution or community.</span>
+                <span>Passionate individuals with an interest in science, photography, or open knowledge.</span>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Share participation guidelines with potential contributors.</span>
+                <span>Skills in event planning, outreach, social media management, or content creation.</span>
               </li>
               <li className="flex items-start">
                 <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Optionally, organize awareness activities like workshops or photowalks (we can provide support!).</span>
+                <span>A collaborative spirit and a desire to make a significant impact.</span>
               </li>
             </ul>
           </div>
@@ -45,12 +44,12 @@ export default function CampusAmbassadorsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Ready to make an impact? Fill out the form to become a Campus Ambassador.
+                  Help us shape the first Wiki Science Competition in India.
                 </p>
-                <p className="font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
-                <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl2n2J7oAL8zLzV9Q2bX8cK3jW5N1m2pZ8vG3rA9fT9w/viewform" target="_blank" rel="noopener noreferrer">
-                    Open Application Form <ExternalLink className="ml-2 h-4 w-4" />
+                <p className="font-bold text-destructive mb-6">Applications Closed: 15th July 2025</p>
+                <Button asChild className="w-full" disabled>
+                  <a>
+                    Applications Closed
                   </a>
                 </Button>
               </CardContent>
