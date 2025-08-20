@@ -110,9 +110,9 @@ export default function InfoSections() {
                 <h3 className="text-2xl font-headline font-bold">Ready to Participate?</h3>
                 <p className="mt-4 mb-6">The stage is set. Your lens is the key. Show us the world through your scientific eyes.</p>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
-                    <Link href="/competition">
+                    <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
                         Submit Your Work
-                    </Link>
+                    </a>
                 </Button>
             </motion.div>
         </div>

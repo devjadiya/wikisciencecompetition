@@ -49,7 +49,7 @@ export default function CampusAmbassadorsPage() {
                 </p>
                 <p className="font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl2n2J7oAL8zLzV9Q2bX8cK3jW5N1m2pZ8vG3rA9fT9w/viewform" target="_blank" rel="noopener noreferrer">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform" target="_blank" rel="noopener noreferrer">
                     Open Application Form <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

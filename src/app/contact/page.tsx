@@ -76,7 +76,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
                             <Mail className="h-6 w-6 text-accent" />
-                            <span className="text-muted-foreground">contact@wikiscience.in</span>
+                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">wikisciencecompetition@gmail.com</a>
                         </div>
                         <div className="flex items-center gap-4">
                             <Phone className="h-6 w-6 text-accent" />

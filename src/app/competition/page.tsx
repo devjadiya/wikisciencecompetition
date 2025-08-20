@@ -226,7 +226,7 @@ export default function CompetitionPage() {
                                 ))}
                             </ul>
                             <Button asChild className="w-full mt-8 bg-accent hover:bg-accent/90">
-                                <Link href="/competition#participate">Submit Now</Link>
+                                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Submit Now</a>
                             </Button>
                         </CardContent>
                     </Card>
@@ -261,9 +261,9 @@ export default function CompetitionPage() {
                     <h3 className="text-3xl font-headline font-bold">Ready to Participate?</h3>
                     <p className="mt-4 mb-8 max-w-xl mx-auto">The stage is set. Your lens is the key. Show us the world through your scientific eyes.</p>
                     <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
-                        <Link href="https://commons.wikimedia.org/wiki/Campaign:wsc-in" target="_blank" rel="noopener noreferrer">
+                        <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
                             Submit Your Work
-                        </Link>
+                        </a>
                     </Button>
                 </div>
             </section>

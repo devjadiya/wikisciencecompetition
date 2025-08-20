@@ -54,7 +54,7 @@ export default function AffiliatesPage() {
                 </p>
                 <p className="font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-D9-M4y3B_9hZJjR0d7g8sYkF2fT6eW5pR0tN3mJ4bA/viewform" target="_blank" rel="noopener noreferrer">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWfJxaAfUZUu3gyTLyemU-MN6whkQtHLV4rghsLFOaIvZ0TA/viewform" target="_blank" rel="noopener noreferrer">
                     Open Partnership Form <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>

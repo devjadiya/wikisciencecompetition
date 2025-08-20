@@ -127,7 +127,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-1">
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
-              <Link href="/competition#participate">Participate</Link>
+              <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Participate</a>
             </Button>
             <LanguageSwitcher />
             <div className="flex md:hidden">
@@ -200,7 +200,7 @@ export default function Navbar() {
             </div>
             <div className="p-2 border-t border-border mt-2 pt-3">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <Link href="/competition#participate">Participate</Link>
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Participate</a>
               </Button>
             </div>
           </div>
