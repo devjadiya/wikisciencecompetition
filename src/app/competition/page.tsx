@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { Calendar, CheckSquare, Microscope, Users, Video, Layers, PawPrint, Star, FlaskConical, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import CategoryShowcase from '@/components/competition/category-showcase';
+import ImageGalleryModal from '@/components/competition/image-gallery-modal';
 
 const peopleInScienceImages = [
   { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
@@ -123,7 +127,34 @@ const timeline = [
     { date: 'February 2026', event: 'National Winners Announced' },
 ];
 
+export type ImageType = { src: string; alt: string; hint: string };
+
 export default function CompetitionPage() {
+  const [selectedImage, setSelectedImage] = useState<{ images: ImageType[]; index: number } | null>(null);
+
+  const handleImageClick = (images: ImageType[], index: number) => {
+    setSelectedImage({ images, index });
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
+  const handleNextImage = () => {
+    if (selectedImage) {
+      const nextIndex = (selectedImage.index + 1) % selectedImage.images.length;
+      setSelectedImage({ ...selectedImage, index: nextIndex });
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (selectedImage) {
+      const prevIndex = (selectedImage.index - 1 + selectedImage.images.length) % selectedImage.images.length;
+      setSelectedImage({ ...selectedImage, index: prevIndex });
+    }
+  };
+
+
   return (
     <div className="bg-background text-foreground">
        <div className="bg-primary/5 py-20">
@@ -210,6 +241,7 @@ export default function CompetitionPage() {
                             name={category.name}
                             description={category.description}
                             images={category.images}
+                            onImageClick={(index) => handleImageClick(category.images || [], index)}
                         />
                     ))}
                 </div>
@@ -232,6 +264,15 @@ export default function CompetitionPage() {
                 {/* Add supporter logos here later */}
             </section>
        </div>
+       {selectedImage && (
+        <ImageGalleryModal
+          images={selectedImage.images}
+          selectedIndex={selectedImage.index}
+          onClose={handleCloseModal}
+          onNext={handleNextImage}
+          onPrev={handlePrevImage}
+        />
+      )}
     </div>
   );
 }

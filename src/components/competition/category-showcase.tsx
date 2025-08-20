@@ -7,9 +7,10 @@ interface CategoryShowcaseProps {
     description: string;
     icon: LucideIcon;
     images?: { src: string; alt: string; hint: string }[];
+    onImageClick: (index: number) => void;
 }
 
-export default function CategoryShowcase({ name, description, icon: Icon, images }: CategoryShowcaseProps) {
+export default function CategoryShowcase({ name, description, icon: Icon, images, onImageClick }: CategoryShowcaseProps) {
   return (
     <div className="py-8 border-b border-border last:border-b-0">
         <div className="flex items-center gap-4 mb-4">
@@ -25,7 +26,11 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
         {images && images.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 {images.map((image, index) => (
-                    <Card key={index} className="overflow-hidden group transition-shadow hover:shadow-xl">
+                    <Card 
+                        key={index} 
+                        className="overflow-hidden group transition-shadow hover:shadow-xl cursor-pointer"
+                        onClick={() => onImageClick(index)}
+                    >
                         <CardContent className="p-0">
                             <div className="relative aspect-square">
                                 <Image 
