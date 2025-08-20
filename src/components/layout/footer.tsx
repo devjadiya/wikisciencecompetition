@@ -21,8 +21,8 @@ const supportLinks = [
 const socialLinks = [
   { name: 'Instagram', icon: Instagram, href: '#' },
   { name: 'Telegram', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-1.39.2-1.61l15.35-5.85c.73-.28 1.4.17 1.18.91l-2.06 9.85c-.22 1.03-.87 1.28-1.75.8l-4.75-3.51l-2.32 2.2c-.25.24-.47.45-.96.45z"/></svg>, href: '#' },
-  { name: 'Meta Wiki', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248s248-111 248-248S393 8 256 8zm-89.2 129.5h49.4l11.5 35.8h2.3l27.1-35.8h29.5l-33 43.1l36.1 52.8h-31l-19-35.8l-2.3 2.3v33.5h-28.7zm134.4 0l42.9 95.9h-28.1l-10.3-25.1h-31.6l-9.7 25.1h-29.3zm-13.4 52.8h25.1l-12-30.9l-13.1 30.9zm101.4-52.8h28.7v95.9h-28.7z"/></svg>, href: '#' },
-  { name: 'Commons', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm-1-12H9v8h2v-8zm4 0h-2v8h2v-8z"/></svg>, href: '#' },
+  { name: 'Meta Wiki', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248s248-111 248-248S393 8 256 8zm-89.2 129.5h49.4l11.5 35.8h2.3l27.1-35.8h29.5l-33 43.1l36.1 52.8h-31l-19-35.8l-2.3 2.3v33.5h-28.7zm134.4 0l42.9 95.9h-28.1l-10.3-25.1h-31.6l-9.7 25.1h-29.3zm-13.4 52.8h25.1l-12-30.9l-13.1 30.9zm101.4-52.8h28.7v95.9h-28.7z"/></svg>, href: 'https://meta.wikimedia.org/wiki/Wiki_Science_Competition_2025_in_India' },
+  { name: 'Commons', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm-1-12H9v8h2v-8zm4 0h-2v8h2v-8z"/></svg>, href: 'https://commons.wikimedia.org/wiki/Category:Images_from_Wiki_Science_Competition_2025_in_India' },
 ];
 
 export default function Footer() {
@@ -44,7 +44,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               {socialLinks.map((item) => (
-                <a key={item.name} href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
+                <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -80,10 +80,10 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Legal</h3>
                 <ul role="list" className="mt-4 space-y-4">
                 <li>
-                    <a href="#" className="text-base text-muted-foreground hover:text-primary transition-colors">Privacy</a>
+                    <Link href="/about" className="text-base text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
                 </li>
                 <li>
-                    <a href="#" className="text-base text-muted-foreground hover:text-primary transition-colors">Terms</a>
+                    <Link href="/about" className="text-base text-muted-foreground hover:text-primary transition-colors">Terms</Link>
                 </li>
                 </ul>
             </div>

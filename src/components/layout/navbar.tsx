@@ -32,10 +32,10 @@ const moreDropdownLinks = [
 ]
 
 const learningLinks = [
-  { name: 'How to create a Wiki account', href: '#' },
-  { name: 'How to use the Upload Wizard', href: '#' },
-  { name: 'Understanding CC Licenses', href: '#' },
-  { name: 'How to add categories', href: '#' },
+  { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
+  { name: 'How to use the Upload Wizard', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
+  { name: 'Understanding CC Licenses', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
+  { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
 ];
 
 export default function Navbar() {
@@ -101,7 +101,7 @@ export default function Navbar() {
                     <DropdownMenuPortal>
                         <DropdownMenuSubContent>
                              {learningLinks.map(link => (
-                                <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                                <DropdownMenuItem key={link.name} asChild><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></DropdownMenuItem>
                             ))}
                         </DropdownMenuSubContent>
                     </DropdownMenuPortal>
@@ -111,7 +111,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-1">
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
-              <Link href="/competition">Participate</Link>
+              <Link href="/competition#participate">Participate</Link>
             </Button>
             <LanguageSwitcher />
             <div className="flex md:hidden">
@@ -144,19 +144,21 @@ export default function Navbar() {
             <div className="border-t border-border pt-2 mt-2">
                  <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Learning</p>
                  {learningLinks.map(link => (
-                    <Link
+                    <a
                         key={link.name}
                         href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setIsOpen(false)}
                         className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
                     >
                      {link.name}
-                    </Link>
+                    </a>
                  ))}
             </div>
             <div className="p-2 border-t border-border mt-2 pt-3">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <Link href="/competition">Participate</Link>
+                <Link href="/competition#participate">Participate</Link>
               </Button>
             </div>
           </div>
