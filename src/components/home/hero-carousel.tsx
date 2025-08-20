@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -100,8 +101,8 @@ export default function HeroCarousel() {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 },
+            x: { type: "spring", stiffness: 200, damping: 30 },
+            opacity: { duration: 1 }
           }}
           className="absolute w-full h-full"
         >
