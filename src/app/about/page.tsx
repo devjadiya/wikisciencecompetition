@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { Users, Globe, Target, Lightbulb, PenToolSquare, Handshake } from 'lucide-react';
+import { Globe, Lightbulb, PenSquare, Handshake } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <div className="p-8 bg-card rounded-lg shadow-md">
                     <div className="p-4 bg-primary/10 rounded-full inline-block mb-4">
-                        <PenToolSquare className="h-8 w-8 text-primary" />
+                        <PenSquare className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="text-xl font-headline font-semibold mb-2">Encourage Contribution</h3>
                     <p className="text-muted-foreground">Encourage students, researchers, and enthusiasts across India to contribute valuable scientific media.</p>
