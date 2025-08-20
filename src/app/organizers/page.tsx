@@ -6,7 +6,7 @@ const organizers = [
   {
     name: 'Jane Doe',
     role: 'Lead Organizer',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Polaarteadlane.jpg',
     hint: 'organizer portrait',
     bio: 'Jane is a passionate science communicator and a long-time Wikimedian, dedicated to bridging the gap between science and the public.',
     social: {
@@ -17,7 +17,7 @@ const organizers = [
   {
     name: 'John Smith',
     role: 'Technical Lead',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/%CE%91%CE%BD%CE%B1%CF%83%CE%BA%CE%B1%CF%86%CE%AD%CF%82_%CE%9C%CE%B5%CF%84%CF%81%CF%8C_%CE%A0%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%AC_%282%29.jpg',
     hint: 'team member photo',
     bio: 'With a background in software engineering, John ensures the technical aspects of the competition run smoothly.',
      social: {
@@ -28,7 +28,7 @@ const organizers = [
    {
     name: 'Priya Patel',
     role: 'Outreach Coordinator',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG',
     hint: 'professional headshot',
     bio: 'Priya leads our outreach efforts, connecting with institutions and communities across India to promote the competition.',
      social: {

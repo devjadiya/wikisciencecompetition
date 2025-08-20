@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="bg-background">
       <div className="relative h-96">
         <Image 
-          src="https://placehold.co/1600x600.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Test_Bench_at_the_Fraunhofer_LBF_for_active_vibration_control.jpg"
           alt="Team of scientists collaborating"
           data-ai-hint="collaboration team"
           fill
@@ -35,9 +35,9 @@ export default function AboutPage() {
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
              <Image 
-              src="https://placehold.co/600x600.png"
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Emerging_cicada.jpg"
               alt="Close-up of a camera lens"
-              data-ai-hint="camera lens"
+              data-ai-hint="macro photography"
               fill
               className="object-cover"
             />

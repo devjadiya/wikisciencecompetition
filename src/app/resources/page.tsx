@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { Download, BookOpen } from 'lucide-react';
 
 const pastWinners = [
-  { year: 2023, image: {src: 'https://placehold.co/600x400.png', hint: 'physics experiment'}, category: 'Physics', winner: 'Anjali Sharma' },
-  { year: 2023, image: {src: 'https://placehold.co/600x400.png', hint: 'biology cell'}, category: 'Biology', winner: 'Rohan Mehta' },
-  { year: 2022, image: {src: 'https://placehold.co/600x400.png', hint: 'chemistry reaction'}, category: 'Chemistry', winner: 'Priya Desai' },
-  { year: 2022, image: {src: 'https://placehold.co/600x400.png', hint: 'astronomy nebula'}, category: 'Astronomy', winner: 'Vikram Singh' },
+  { year: 2023, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', hint: 'lunar eclipse'}, category: 'Astronomy', winner: 'Anjali Sharma' },
+  { year: 2023, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/HEK_293.jpg', hint: 'cell biology'}, category: 'Biology', winner: 'Rohan Mehta' },
+  { year: 2022, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Decomposition_of_EMImBF4_ionic_liquid.jpg', hint: 'chemistry reaction'}, category: 'Chemistry', winner: 'Priya Desai' },
+  { year: 2022, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Carina_Nebula_in_Narrowband.jpg', hint: 'astronomy nebula'}, category: 'Astronomy', winner: 'Vikram Singh' },
 ];
 
 const learningResources = [
