@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, X, ExternalLink } from 'lucide-react';
 import type { ImageType } from '@/app/competition/page';
 
@@ -30,6 +30,8 @@ export default function ImageGalleryModal({ images, selectedIndex, onClose, onNe
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl w-full p-2 sm:p-4 bg-background/80 backdrop-blur-md border-border text-foreground">
+        <DialogTitle className="sr-only">Image Gallery</DialogTitle>
+        <DialogDescription className="sr-only">{image.alt}</DialogDescription>
         <div className="relative aspect-video w-full">
           <Image
             src={image.src}
