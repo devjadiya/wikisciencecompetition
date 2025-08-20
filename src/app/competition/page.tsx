@@ -74,9 +74,12 @@ const categories = [
     icon: PawPrint, 
     description: 'Organisms in their natural habitat, including macro photography.',
     images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'wildlife animal' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'macro insect' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'rare flower' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/7/78/%D0%A1%D0%B0%D0%BC%D0%BA%D0%B0_%D0%BF%D0%B5%D1%81%D1%86%D0%B0_%D1%81%D0%BE_%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%BC.jpg', alt: 'A female sand wasp with a satellite transmitter.', hint: 'insect macro' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/%C3%84raj%C3%A4%C3%A4nud_v%C3%A4lit%C3%B6%C3%B6d.JPG', alt: 'Fieldwork left behind.', hint: 'fieldwork equipment' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Emerging_cicada.jpg', alt: 'An emerging cicada.', hint: 'cicada emerging' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Ice_planet_and_antarctic_jellyfish_%28cropped%29.jpg', alt: 'Ice planet and antarctic jellyfish.', hint: 'jellyfish underwater' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Dorcus_parallelipipedus_female.jpg', alt: 'A female lesser stag beetle.', hint: 'stag beetle' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Inkubatsioonikambrid_nitrogenaasi_aktiivsuse_m%C3%B5%C3%B5tmiseks.jpg', alt: 'Incubation chambers for measuring nitrogenase activity.', hint: 'science equipment' },
     ]
   },
   { 
@@ -225,3 +228,4 @@ export default function CompetitionPage() {
     
 
     
+
