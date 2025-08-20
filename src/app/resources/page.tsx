@@ -1,37 +1,43 @@
+
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Download, BookOpen } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
-const pastWinners = [
-  { year: 2023, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', hint: 'lunar eclipse'}, category: 'Astronomy', winner: 'Anjali Sharma' },
-  { year: 2023, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/HEK_293.jpg', hint: 'cell biology'}, category: 'Biology', winner: 'Rohan Mehta' },
-  { year: 2022, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Decomposition_of_EMImBF4_ionic_liquid.jpg', hint: 'chemistry reaction'}, category: 'Chemistry', winner: 'Priya Desai' },
-  { year: 2022, image: {src: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Carina_Nebula_in_Narrowband.jpg', hint: 'astronomy nebula'}, category: 'Astronomy', winner: 'Vikram Singh' },
-];
-
-const learningResources = [
-    { title: 'Guide to Science Photography', description: 'Learn the basics of capturing stunning scientific images.', link: '#' },
-    { title: 'Understanding Creative Commons', description: 'A quick guide to licensing your work for the competition.', link: '#' },
-    { title: 'Image Upload Tutorial', description: 'Step-by-step video on how to submit your photos.', link: '#' },
+const pastWinnerImages = [
+  { image: {src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', hint: 'lunar eclipse'} },
+  { image: {src: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/HEK_293.jpg', hint: 'cell biology'} },
+  { image: {src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Decomposition_of_EMImBF4_ionic_liquid.jpg', hint: 'chemistry reaction'} },
+  { image: {src: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Carina_Nebula_in_Narrowband.jpg', hint: 'astronomy nebula'} },
 ];
 
 export default function ResourcesPage() {
+  const { t } = useLanguage();
+  const pastWinners = t.resources.pastWinners.winners.map((winner, index) => ({
+      ...winner,
+      ...pastWinnerImages[index]
+  }));
+  const learningResources = t.resources.learningMaterials.resources;
+
+
   return (
     <div className="bg-background text-foreground">
         <div className="bg-primary/5 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Resources</h1>
+                <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">{t.resources.title}</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Get inspired by past winners and access helpful materials to prepare your submission.
+                    {t.resources.subtitle}
                 </p>
             </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <section id="past-winners">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">Gallery of Past Winners</h2>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">{t.resources.pastWinners.title}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {pastWinners.map((winner, index) => (
                         <Card key={index} className="overflow-hidden group">
@@ -41,7 +47,7 @@ export default function ResourcesPage() {
                                 </div>
                                 <div className="p-4">
                                     <p className="font-bold text-lg text-foreground">{winner.category}</p>
-                                    <p className="text-sm text-muted-foreground">{winner.year} Winner: {winner.winner}</p>
+                                    <p className="text-sm text-muted-foreground">{t.resources.pastWinners.winnerLabel} {winner.year}: {winner.winner}</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -50,7 +56,7 @@ export default function ResourcesPage() {
             </section>
             
             <section id="learning-materials" className="mt-24">
-                 <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">Learning Materials</h2>
+                 <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">{t.resources.learningMaterials.title}</h2>
                  <div className="grid md:grid-cols-3 gap-8">
                      {learningResources.map(resource => (
                          <Card key={resource.title}>
@@ -60,7 +66,7 @@ export default function ResourcesPage() {
                                 <p className="text-muted-foreground mb-4">{resource.description}</p>
                                 <Button asChild variant="link" className="p-0">
                                     <Link href={resource.link}>
-                                        Learn More <Download className="ml-2 h-4 w-4" />
+                                        {t.resources.learningMaterials.cta} <Download className="ml-2 h-4 w-4" />
                                     </Link>
                                 </Button>
                              </CardContent>

@@ -1,33 +1,23 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
-const slides = [
+const slideImages = [
   {
-    id: 1,
-    title: 'Explore Microscopic Worlds',
-    description: 'From cellular structures to crystal formations, showcase the unseen beauty.',
     image: { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D1%8F%D1%8F_%D0%BC%D1%83%D1%85%D0%B0.png', hint: 'microscope' },
   },
   {
-    id: 2,
-    title: 'Capture Celestial Wonders',
-    description: 'The cosmos is your canvas. Photograph galaxies, nebulae, and planetary events.',
     image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Carina_Nebula_in_Narrowband.jpg', hint: 'galaxy' },
   },
   {
-    id: 3,
-    title: 'Visualize Complex Data',
-    description: 'Transform raw data into compelling scientific visualizations and infographics.',
     image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png', hint: 'data visualization' },
   },
   {
-    id: 4,
-    title: 'Document Human Ingenuity',
-    description: 'Capture scientists at work, innovative lab equipment, and moments of discovery.',
     image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Test_Bench_at_the_Fraunhofer_LBF_for_active_vibration_control.jpg', hint: 'laboratory' },
   },
 ];
@@ -50,7 +40,13 @@ const variants = {
 };
 
 export default function AutoscrollCarousel() {
+  const { t } = useLanguage();
   const [[page, direction], setPage] = useState([0, 0]);
+
+  const slides = t.home.autoscroll.slides.map((slide, index) => ({
+      ...slide,
+      ...slideImages[index]
+  }));
 
   const paginate = (newDirection: number) => {
     setPage([(page + newDirection + slides.length) % slides.length, newDirection]);
@@ -61,7 +57,7 @@ export default function AutoscrollCarousel() {
       paginate(1);
     }, 5000);
     return () => clearInterval(interval);
-  }, [page]);
+  }, [page, slides.length]);
 
   const slideIndex = page;
 

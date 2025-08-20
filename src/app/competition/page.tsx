@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -9,6 +10,7 @@ import { Calendar, CheckSquare, Microscope, Users, Video, Layers, PawPrint, Star
 import Link from 'next/link';
 import CategoryShowcase from '@/components/competition/category-showcase';
 import ImageGalleryModal from '@/components/competition/image-gallery-modal';
+import { useLanguage } from '@/context/language-context';
 
 const peopleInScienceImages = [
   { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
@@ -75,62 +77,56 @@ const generalCategoryImages = [
     { src: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Sulfide_disaster_in_Levikha_Village.jpg', alt: 'Sulfide disaster in Levikha Village', hint: 'environmental science' },
 ];
 
-const categories = [
-  { 
-    name: 'People in Science', 
-    icon: Users, 
-    description: 'Scientists in their natural habitat.',
-    images: peopleInScienceImages
-  },
-  { 
-    name: 'Microscopy Images', 
-    icon: Microscope, 
-    description: 'Optical, electron, and scanning probe microscopy images.',
-    images: microscopyImages
-  },
-  { 
-    name: 'Non-photographic Media', 
-    icon: Video, 
-    description: 'Audio and video files, computer-generated imagery, etc.',
-    images: nonPhotographicImages,
-  },
-  { 
-    name: 'Image Sets', 
-    icon: Layers, 
-    description: 'Thematically linked images (up to 10) that can be viewed as one set.',
-    images: imageSetsImages,
-  },
-  { 
-    name: 'Wildlife & Nature', 
-    icon: PawPrint, 
-    description: 'Organisms in their natural habitat, including macro photography.',
-    images: wildlifeAndNatureImages,
-  },
-  { 
-    name: 'Astronomy', 
-    icon: Star, 
-    description: 'Images of stars, celestial events, and the equipment used to capture them.',
-    images: astronomyImages,
-  },
-  { 
-    name: 'General Category', 
-    icon: FlaskConical, 
-    description: 'Everything else, from archaeology to vulcanology.',
-    images: generalCategoryImages
-  },
-];
-
-const timeline = [
-    { date: 'November 1, 2025', event: 'Submissions Open' },
-    { date: 'December 15, 2025', event: 'Submissions Close' },
-    { date: 'January 2026', event: 'Jury Deliberation' },
-    { date: 'February 2026', event: 'National Winners Announced' },
-];
-
 export type ImageType = { src: string; alt: string; hint: string };
 
 export default function CompetitionPage() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<{ images: ImageType[]; index: number } | null>(null);
+
+  const categories = [
+    { 
+      name: t.competition.categories.people.name, 
+      icon: Users, 
+      description: t.competition.categories.people.description,
+      images: peopleInScienceImages
+    },
+    { 
+      name: t.competition.categories.microscopy.name, 
+      icon: Microscope, 
+      description: t.competition.categories.microscopy.description,
+      images: microscopyImages
+    },
+    { 
+      name: t.competition.categories.nonPhotographic.name, 
+      icon: Video, 
+      description: t.competition.categories.nonPhotographic.description,
+      images: nonPhotographicImages,
+    },
+    { 
+      name: t.competition.categories.imageSets.name, 
+      icon: Layers, 
+      description: t.competition.categories.imageSets.description,
+      images: imageSetsImages,
+    },
+    { 
+      name: t.competition.categories.wildlife.name, 
+      icon: PawPrint, 
+      description: t.competition.categories.wildlife.description,
+      images: wildlifeAndNatureImages,
+    },
+    { 
+      name: t.competition.categories.astronomy.name, 
+      icon: Star, 
+      description: t.competition.categories.astronomy.description,
+      images: astronomyImages,
+    },
+    { 
+      name: t.competition.categories.general.name, 
+      icon: FlaskConical, 
+      description: t.competition.categories.general.description,
+      images: generalCategoryImages
+    },
+  ];
 
   const handleImageClick = (images: ImageType[], index: number) => {
     setSelectedImage({ images, index });
@@ -159,9 +155,9 @@ export default function CompetitionPage() {
     <div className="bg-background text-foreground">
        <div className="bg-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Competition Details</h1>
+            <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">{t.competition.title}</h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Everything you need to know to participate and win.
+                {t.competition.subtitle}
             </p>
         </div>
        </div>
@@ -170,39 +166,25 @@ export default function CompetitionPage() {
             <div className="grid md:grid-cols-3 gap-16">
                 <div className="md:col-span-2">
                     <section id="rules">
-                        <h2 className="text-3xl font-headline font-bold text-primary mb-6">How to Participate</h2>
+                        <h2 className="text-3xl font-headline font-bold text-primary mb-6">{t.competition.howToParticipate.title}</h2>
                         <div className="space-y-4 text-muted-foreground">
                             <div className="prose prose-lg text-muted-foreground max-w-none">
                                 <p className="lead">
-                                    If you don't have one, you can create a global account that will give you a specific username on all Wikimedia platforms (including Wikimedia Commons) when you log in. As a newly registered user you need to wait at least four days before uploading a video file, while images can be uploaded right after the registration.
+                                    {t.competition.howToParticipate.p1}
                                 </p>
                                 <Button asChild className="my-4">
                                     <a href="https://commons.wikimedia.org/w/index.php?title=Special:CreateAccount" target="_blank" rel="noopener noreferrer">
-                                        Create your account here!
+                                        {t.competition.howToParticipate.createAccountLink}
                                     </a>
                                 </Button>
-                                <h3 className="text-2xl font-headline font-bold text-primary mt-8 mb-4">Participation Rules</h3>
+                                <h3 className="text-2xl font-headline font-bold text-primary mt-8 mb-4">{t.competition.howToParticipate.rulesTitle}</h3>
                                 <ul className="space-y-3 pt-4">
-                                    <li className="flex items-start">
+                                    {t.competition.howToParticipate.rules.map((rule, index) => (
+                                     <li key={index} className="flex items-start">
                                         <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>Submissions must be your own work, uploaded from your own registered Wikimedia account. For multiple authors, all names must be provided.</span>
+                                        <span>{rule}</span>
                                     </li>
-                                    <li className="flex items-start">
-                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>Images must be under a free license (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>All submissions require a clear and accurate scientific description in English. Other languages are welcome too.</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>Upload the highest resolution possible (at least 2 megapixels).</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>Images must not contain watermarks, logos, or added text/graphics (except for scales).</span>
-                                    </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -213,12 +195,12 @@ export default function CompetitionPage() {
                     <Card className="sticky top-24 bg-primary/5 shadow-lg">
                         <CardHeader>
                             <CardTitle className="font-headline text-2xl text-primary flex items-center gap-2">
-                               <Calendar className="h-6 w-6"/> Key Dates
+                               <Calendar className="h-6 w-6"/> {t.competition.keyDates.title}
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <ul className="space-y-4">
-                                {timeline.map(item => (
+                                {t.competition.keyDates.timeline.map(item => (
                                 <li key={item.event} className="flex flex-col">
                                     <span className="font-bold text-foreground">{item.event}</span>
                                     <span className="text-sm text-muted-foreground">{item.date}</span>
@@ -226,7 +208,7 @@ export default function CompetitionPage() {
                                 ))}
                             </ul>
                             <Button asChild className="w-full mt-8 bg-accent hover:bg-accent/90">
-                                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Submit Now</a>
+                                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">{t.competition.submitNow}</a>
                             </Button>
                         </CardContent>
                     </Card>
@@ -237,9 +219,9 @@ export default function CompetitionPage() {
 
             <section id="categories">
                 <div className="text-center mb-16">
-                     <h2 className="text-4xl font-headline font-bold text-primary">Image Categories</h2>
+                     <h2 className="text-4xl font-headline font-bold text-primary">{t.competition.imageCategories.title}</h2>
                      <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                        You can participate in the following seven categories. Choose the one that best fits your work. See examples below to get inspired.
+                        {t.competition.imageCategories.subtitle}
                     </p>
                 </div>
                 <div className="space-y-20">
@@ -258,18 +240,18 @@ export default function CompetitionPage() {
 
             <section id="participate" className="mt-24 text-center">
                 <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-12">
-                    <h3 className="text-3xl font-headline font-bold">Ready to Participate?</h3>
-                    <p className="mt-4 mb-8 max-w-xl mx-auto">The stage is set. Your lens is the key. Show us the world through your scientific eyes.</p>
+                    <h3 className="text-3xl font-headline font-bold">{t.competition.readyToParticipate.title}</h3>
+                    <p className="mt-4 mb-8 max-w-xl mx-auto">{t.competition.readyToParticipate.subtitle}</p>
                     <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
                         <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
-                            Submit Your Work
+                            {t.competition.readyToParticipate.cta}
                         </a>
                     </Button>
                 </div>
             </section>
             
             <section id="supported-by" className="mt-24 text-center">
-                <h4 className="text-2xl font-headline text-muted-foreground">Supported by:</h4>
+                <h4 className="text-2xl font-headline text-muted-foreground">{t.competition.supportedBy}</h4>
                 {/* Add supporter logos here later */}
             </section>
        </div>
