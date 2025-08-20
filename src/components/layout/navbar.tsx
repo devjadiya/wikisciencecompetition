@@ -68,14 +68,14 @@ export default function Navbar() {
       className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
                 <Image 
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
-                    alt="Wiki Science Competition India Logo"
-                    width={150}
-                    height={35}
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg"
+                    alt="Wiki Science Competition India 2025 Logo"
+                    width={180}
+                    height={45}
                     className="transition-transform group-hover:scale-105"
                 />
             </Link>
