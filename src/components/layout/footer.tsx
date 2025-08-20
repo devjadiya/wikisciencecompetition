@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Microscope, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'About', href: '/about' },
@@ -31,7 +32,12 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <Microscope className="h-8 w-8 text-primary" />
+              <Image 
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
+                    alt="Wiki Science Competition India Logo"
+                    width={40}
+                    height={40}
+                />
               <span className="text-xl font-headline font-bold text-foreground">
                 WikiScience India 2025
               </span>

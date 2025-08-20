@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X, Microscope, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import LanguageSwitcher from './language-switcher';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -60,7 +60,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
-              <Microscope className="h-8 w-8 text-primary transition-transform group-hover:rotate-12" />
+                <Image 
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
+                    alt="Wiki Science Competition India Logo"
+                    width={40}
+                    height={40}
+                    className="transition-transform group-hover:scale-105"
+                />
               <span className="text-xl font-headline font-bold text-foreground">WikiScience India</span>
             </Link>
           </div>
