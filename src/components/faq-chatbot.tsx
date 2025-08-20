@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -6,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Bot, User, Send, Loader2, MessageSquare } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Bot, User, Send, Loader2, MessageSquare, Sparkles } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -15,6 +16,13 @@ interface Message {
   role: 'user' | 'bot';
   text: string;
 }
+
+const exampleQuestions = [
+    { for: 'Student', question: 'How can I participate as a student?' },
+    { for: 'Sponsor', question: 'What are the benefits of sponsoring this campaign?'},
+    { for: 'Photographer', question: 'What are the image submission rules?'},
+    { for: 'General', question: 'When will the winners be announced?'},
+]
 
 export default function FaqChatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -31,17 +39,15 @@ export default function FaqChatbot() {
     }
   }, [messages]);
   
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = { role: 'user', text: input };
+  const processQuestion = async (question: string) => {
+    if (isLoading) return;
+    
+    const userMessage: Message = { role: 'user', text: question };
     setMessages((prev) => [...prev, userMessage]);
-    setInput('');
     setIsLoading(true);
 
     try {
-      const chatbotInput: FaqChatbotInput = { question: input };
+      const chatbotInput: FaqChatbotInput = { question };
       const result = await faqChatbot(chatbotInput);
       const botMessage: Message = { role: 'bot', text: result.answer };
       setMessages((prev) => [...prev, botMessage]);
@@ -54,6 +60,17 @@ export default function FaqChatbot() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    processQuestion(input);
+    setInput('');
+  };
+
+  const handleExampleClick = (question: string) => {
+      processQuestion(question);
   };
 
   return (
@@ -71,6 +88,28 @@ export default function FaqChatbot() {
         </SheetHeader>
         <div className="flex-1 flex flex-col">
           <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
+            <AnimatePresence>
+            {messages.length === 0 && (
+                 <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="space-y-4 text-center"
+                 >
+                    <div className="p-4 bg-primary/10 rounded-full inline-block">
+                        <Sparkles className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="font-headline text-lg">Ask me anything!</h3>
+                    <p className="text-sm text-muted-foreground">Here are some examples to get you started:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+                        {exampleQuestions.map((ex) => (
+                            <button key={ex.question} onClick={() => handleExampleClick(ex.question)} className="p-3 bg-muted hover:bg-muted/80 rounded-lg text-sm transition-colors text-muted-foreground">
+                                {ex.question}
+                            </button>
+                        ))}
+                    </div>
+                </motion.div>
+            )}
+            </AnimatePresence>
             <div className="space-y-4">
               <AnimatePresence>
                 {messages.map((message, index) => (
@@ -108,7 +147,7 @@ export default function FaqChatbot() {
                     )}
                   </motion.div>
                 ))}
-                {isLoading && (
+                {isLoading && messages.length > 0 && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
