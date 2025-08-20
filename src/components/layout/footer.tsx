@@ -1,21 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-
-const navLinks = [
-  { name: 'About', href: '/about' },
-  { name: 'Competition', href: '/competition' },
-  { name: 'Jury', href: '/jury' },
-  { name: 'Organizers', href: '/organizers' },
-  { name: 'Sponsors', href: '/sponsors' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Contact', href: '/contact' },
-];
-
-const supportLinks = [
-    { name: 'Sponsorship', href: '/support-us#sponsorship'},
-    { name: 'Gifts/Swag', href: '/support-us#gifts'},
-    { name: 'Outreach', href: '/support-us#outreach'},
-]
+import { useLanguage } from '@/context/language-context';
 
 const socialLinks = [
   { name: 'Instagram', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg', href: 'https://www.instagram.com/wiki_science_competition/' },
@@ -25,6 +12,11 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+    const { t } = useLanguage();
+
+    const navLinks = t.footerNavLinks;
+    const supportLinks = t.footerSupportLinks;
+
   return (
     <footer className="bg-primary/5 border-t border-primary/10">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -39,7 +31,7 @@ export default function Footer() {
                 />
             </Link>
             <p className="text-muted-foreground text-base">
-              Capturing the beauty of science through photography.
+              {t.footerSubtitle}
             </p>
             <div className="flex space-x-4 items-center">
               {socialLinks.map((item) => (
@@ -59,7 +51,7 @@ export default function Footer() {
           <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Navigation</h3>
+                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerNavHeader}</h3>
                     <ul role="list" className="mt-4 space-y-4">
                         {navLinks.map((item) => (
                         <li key={item.name}>
@@ -71,7 +63,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="mt-12 md:mt-0">
-                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Support Us</h3>
+                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerSupportHeader}</h3>
                     <ul role="list" className="mt-4 space-y-4">
                       {supportLinks.map((item) => (
                         <li key={item.name}>
@@ -85,11 +77,11 @@ export default function Footer() {
             </div>
              <div className="md:grid md:grid-cols-1 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Contact</h3>
+                  <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
                    <ul role="list" className="mt-4 space-y-4">
                         <li>
                             <a href="mailto:wikisciencecompetition@gmail.com" className="text-base text-muted-foreground hover:text-primary transition-colors">
-                                General Inquiries
+                                {t.footerContactLink}
                             </a>
                         </li>
                    </ul>
@@ -99,10 +91,10 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-primary/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-center">
           <p className="text-base text-muted-foreground">
-            &copy; {new Date().getFullYear()} Wiki Science Competition India. All rights reserved.
+            &copy; {new Date().getFullYear()} {t.footerCopyright}
           </p>
           <p className="text-base text-muted-foreground mt-4 sm:mt-0">
-            Content is available under CC BY-SA 4.0 unless otherwise noted.
+            {t.footerLicense}
           </p>
         </div>
       </div>

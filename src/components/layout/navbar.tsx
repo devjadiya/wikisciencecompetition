@@ -17,35 +17,18 @@ import {
 } from '@/components/ui/dropdown-menu';
 import LanguageSwitcher from './language-switcher';
 import Image from 'next/image';
-
-const mainNavLinks = [
-  { name: 'About', href: '/about' },
-  { name: 'Competition', href: '/competition' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Sponsors', href: '/sponsors' },
-];
-
-const organizerLinks = [
-    { name: 'Meet the Team', href: '/organizers' },
-    { name: 'Call for Team', href: '/organizers/call' },
-]
-
-const moreDropdownLinks = [
-    { name: 'Jury', href: '/jury'},
-    { name: 'Support Us', href: '/support-us'},
-]
-
-const learningLinks = [
-  { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
-  { name: 'How to use the Upload Wizard', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
-  { name: 'Understanding CC Licenses', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
-  { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
-];
+import { useLanguage } from '@/context/language-context';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
+  const { t } = useLanguage();
+
+  const mainNavLinks = t.mainNavLinks;
+  const organizerLinks = t.organizerLinks;
+  const moreDropdownLinks = t.moreDropdownLinks;
+  const learningLinks = t.learningLinks;
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
@@ -93,7 +76,7 @@ export default function Navbar() {
              <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  Organizers <ChevronDown className="h-4 w-4 ml-1" />
+                  {t.organizersDropdown} <ChevronDown className="h-4 w-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -105,7 +88,7 @@ export default function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  More <ChevronDown className="h-4 w-4 ml-1" />
+                  {t.moreDropdown} <ChevronDown className="h-4 w-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -113,7 +96,7 @@ export default function Navbar() {
                     <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
                 ))}
                 <DropdownMenuSub>
-                    <DropdownMenuSubTrigger>Learning</DropdownMenuSubTrigger>
+                    <DropdownMenuSubTrigger>{t.learningDropdown}</DropdownMenuSubTrigger>
                     <DropdownMenuPortal>
                         <DropdownMenuSubContent>
                              {learningLinks.map(link => (
@@ -127,7 +110,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-1">
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
-              <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Participate</a>
+              <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">{t.participateButton}</a>
             </Button>
             <LanguageSwitcher />
             <div className="flex md:hidden">
@@ -158,7 +141,7 @@ export default function Navbar() {
               </Link>
             ))}
              <div className="border-t border-border pt-2 mt-2">
-                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Organizers</p>
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">{t.organizersDropdown}</p>
                  {organizerLinks.map(link => (
                     <Link
                         key={link.name}
@@ -171,7 +154,7 @@ export default function Navbar() {
                  ))}
             </div>
              <div className="border-t border-border pt-2 mt-2">
-                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">More</p>
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">{t.moreDropdown}</p>
                  {moreDropdownLinks.map(link => (
                     <Link
                         key={link.name}
@@ -184,7 +167,7 @@ export default function Navbar() {
                  ))}
             </div>
             <div className="border-t border-border pt-2 mt-2">
-                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Learning</p>
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">{t.learningDropdown}</p>
                  {learningLinks.map(link => (
                     <a
                         key={link.name}
@@ -200,7 +183,7 @@ export default function Navbar() {
             </div>
             <div className="p-2 border-t border-border mt-2 pt-3">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">Participate</a>
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">{t.participateButton}</a>
               </Button>
             </div>
           </div>
