@@ -74,13 +74,13 @@ export default function Navbar() {
                 <Image 
                     src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
                     alt="Wiki Science Competition India Logo"
-                    width={180}
-                    height={45}
+                    width={160}
+                    height={40}
                     className="transition-transform group-hover:scale-105"
                 />
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1 ml-6">
             {mainNavLinks.map((link) => (
               <Link
                 key={link.name}
