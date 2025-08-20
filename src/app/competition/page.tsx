@@ -2,24 +2,96 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Calendar, CheckSquare, Microscope, Users, Image as ImageIcon, Video, Star, PawPrint, Layers, FlaskConical, ArrowRight } from 'lucide-react';
+import { Calendar, CheckSquare, Microscope, Users, Video, Layers, PawPrint, Star, FlaskConical, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import CategoryShowcase from '@/components/competition/category-showcase';
+
+const peopleInScienceImages = [
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Suvi_ponor-2.jpg', alt: 'Exploring a cave.', hint: 'cave exploration' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Exploration_of_the_trench_of_cremation_burial_site_in_Chlodik.jpg', alt: 'Archaeological excavation.', hint: 'archaeology dig' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Test_Bench_at_the_Fraunhofer_LBF_for_active_vibration_control.jpg', alt: 'Test Bench at the Fraunhofer LBF.', hint: 'engineering lab' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Lepitopteroloog.JPG', alt: 'A lepidopterologist at work.', hint: 'scientist nature' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Polaarteadlane.jpg', alt: 'A polar researcher.', hint: 'polar researcher' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/%CE%91%CE%BD%CE%B1%CF%83%CE%BA%CE%B1%CF%86%CE%AD%CF%82_%CE%9C%CE%B5%CF%84%CF%81%CF%8C_%CE%A0%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%AC_%282%29.jpg', alt: 'Excavations at the Piraeus metro station.', hint: 'archaeology excavation' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/5/54/Engin_Umut_Akkaya_-_Reaction_mechanism.JPG', alt: 'A scientist explaining a reaction mechanism.', hint: 'chemistry explanation' },
+];
+
 
 const categories = [
-  { name: 'People in Science', icon: Users, description: 'Scientists in their natural habitat.' },
-  { name: 'Microscopy Images', icon: Microscope, description: 'Optical, electron, and scanning probe microscopy images.' },
-  { name: 'Non-photographic Media', icon: Video, description: 'Audio and video files, computer-generated imagery, etc.' },
-  { name: 'Image Sets', icon: Layers, description: 'Thematically linked images (up to 10) that can be viewed as one set.' },
-  { name: 'Wildlife & Nature', icon: PawPrint, description: 'Organisms in their natural habitat, including macro photography.' },
-  { name: 'Astronomy', icon: Star, description: 'Images of stars, celestial events, and the equipment used to capture them.' },
-  { name: 'General Category', icon: FlaskConical, description: 'Everything else, from archaeology to vulcanology.' },
+  { 
+    name: 'People in Science', 
+    icon: Users, 
+    description: 'Scientists in their natural habitat.',
+    images: peopleInScienceImages
+  },
+  { 
+    name: 'Microscopy Images', 
+    icon: Microscope, 
+    description: 'Optical, electron, and scanning probe microscopy images.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'microscopy' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'cell structure' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'crystal formation' },
+    ]
+  },
+  { 
+    name: 'Non-photographic Media', 
+    icon: Video, 
+    description: 'Audio and video files, computer-generated imagery, etc.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'data visualization' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: '3d model' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'simulation' },
+    ]
+  },
+  { 
+    name: 'Image Sets', 
+    icon: Layers, 
+    description: 'Thematically linked images (up to 10) that can be viewed as one set.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'photo series' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'growth sequence' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'different angles' },
+    ]
+  },
+  { 
+    name: 'Wildlife & Nature', 
+    icon: PawPrint, 
+    description: 'Organisms in their natural habitat, including macro photography.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'wildlife animal' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'macro insect' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'rare flower' },
+    ]
+  },
+  { 
+    name: 'Astronomy', 
+    icon: Star, 
+    description: 'Images of stars, celestial events, and the equipment used to capture them.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'galaxy nebula' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'solar eclipse' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'telescope night' },
+    ]
+  },
+  { 
+    name: 'General Category', 
+    icon: FlaskConical, 
+    description: 'Everything else, from archaeology to vulcanology.',
+    images: [
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'geology' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'physics experiment' },
+        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'archaeological find' },
+    ]
+  },
 ];
 
 const timeline = [
-    { date: 'November 1, 2024', event: 'Submissions Open' },
-    { date: 'December 15, 2024', event: 'Submissions Close' },
-    { date: 'January 2025', event: 'Jury Deliberation' },
-    { date: 'February 2025', event: 'National Winners Announced' },
+    { date: 'November 1, 2025', event: 'Submissions Open' },
+    { date: 'December 15, 2025', event: 'Submissions Close' },
+    { date: 'January 2026', event: 'Jury Deliberation' },
+    { date: 'February 2026', event: 'National Winners Announced' },
 ];
 
 export default function CompetitionPage() {
@@ -61,7 +133,7 @@ export default function CompetitionPage() {
                             </ul>
                             <div className="pt-4">
                                <Button asChild>
-                                   <Link href="#">View Full Rules <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                                   <Link href="/resources">View Full Rules <ArrowRight className="ml-2 h-4 w-4" /></Link>
                                </Button>
                            </div>
                         </div>
@@ -95,38 +167,40 @@ export default function CompetitionPage() {
             <Separator className="my-20" />
 
             <section id="categories">
-                <div className="text-center mb-12">
+                <div className="text-center mb-16">
                      <h2 className="text-4xl font-headline font-bold text-primary">Image Categories</h2>
                      <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                        You can participate in the following seven categories. Choose the one that best fits your work.
+                        You can participate in the following seven categories. Choose the one that best fits your work. See examples below to get inspired.
                     </p>
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="space-y-20">
                     {categories.map(category => (
-                        <Card key={category.name} className="bg-card flex flex-col group hover:shadow-xl transition-shadow">
-                            <CardHeader>
-                                <div className="flex items-center gap-4">
-                                    <div className="p-3 bg-primary/10 rounded-full">
-                                        <category.icon className="h-8 w-8 text-primary" />
-                                    </div>
-                                </div>
-                                <CardTitle className="font-headline text-2xl pt-2">{category.name}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <p className="text-muted-foreground">{category.description}</p>
-                            </CardContent>
-                        </Card>
+                        <CategoryShowcase 
+                            key={category.name}
+                            icon={category.icon}
+                            name={category.name}
+                            description={category.description}
+                            images={category.images}
+                        />
                     ))}
-                    <div className="bg-primary text-primary-foreground rounded-lg shadow-lg flex flex-col justify-center items-center text-center p-8 sm:col-span-2 lg:col-span-1">
-                        <h3 className="text-2xl font-headline font-bold">Ready to Participate?</h3>
-                        <p className="mt-4 mb-6">The stage is set. Your lens is the key. Show us the world through your scientific eyes.</p>
-                        <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
-                            <Link href="#">
-                                Submit Your Work
-                            </Link>
-                        </Button>
-                    </div>
                 </div>
+            </section>
+
+            <section id="participate" className="mt-24 text-center">
+                <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-12">
+                    <h3 className="text-3xl font-headline font-bold">Ready to Participate?</h3>
+                    <p className="mt-4 mb-8 max-w-xl mx-auto">The stage is set. Your lens is the key. Show us the world through your scientific eyes.</p>
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
+                        <Link href="#">
+                            Submit Your Work
+                        </Link>
+                    </Button>
+                </div>
+            </section>
+            
+            <section id="supported-by" className="mt-24 text-center">
+                <h4 className="text-2xl font-headline text-muted-foreground">Supported by:</h4>
+                {/* Add supporter logos here later */}
             </section>
        </div>
     </div>
