@@ -17,6 +17,17 @@ const peopleInScienceImages = [
   { src: 'https://upload.wikimedia.org/wikipedia/commons/5/54/Engin_Umut_Akkaya_-_Reaction_mechanism.JPG', alt: 'A scientist explaining a reaction mechanism.', hint: 'chemistry explanation' },
 ];
 
+const microscopyImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Tradescantia_tolmukakarvad_ja_%C3%B5ietolm.JPG', alt: 'Stamen hairs and pollen of Tradescantia.', hint: 'pollen microscopy' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Tykadlo.jpg', alt: 'An antenna of a beetle under a microscope.', hint: 'insect microscopy' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/1.Magukbafordul%C3%B3_ikerszelv%C3%A9nyesek_72dpi.jpg', alt: 'Microscopic view of an organism.', hint: 'microorganism' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Decomposition_of_EMImBF4_ionic_liquid.jpg', alt: 'Decomposition of EMImBF4 ionic liquid.', hint: 'ionic liquid' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/%D0%94%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D1%8F%D1%8F_%D0%BC%D1%83%D1%85%D0%B0.png', alt: 'A housefly under a microscope.', hint: 'housefly macro' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/HEK_293.jpg', alt: 'HEK 293 cells.', hint: 'HEK cells' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Cross_section_of_Larix.jpg', alt: 'Cross section of a Larix.', hint: 'wood cross-section' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/The_Rotifer_Notholca_sp.jpg', alt: 'The Rotifer Notholca sp.', hint: 'rotifer' },
+];
+
 
 const categories = [
   { 
@@ -29,11 +40,7 @@ const categories = [
     name: 'Microscopy Images', 
     icon: Microscope, 
     description: 'Optical, electron, and scanning probe microscopy images.',
-    images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'microscopy' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'cell structure' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'crystal formation' },
-    ]
+    images: microscopyImages
   },
   { 
     name: 'Non-photographic Media', 
