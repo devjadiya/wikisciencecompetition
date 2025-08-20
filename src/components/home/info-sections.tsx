@@ -11,35 +11,35 @@ const sections = [
     icon: Info,
     title: 'About The Competition',
     description: 'An annual international science photography competition, bringing together science enthusiasts to share their vision of the world of research.',
-    image: { src: 'https://placehold.co/500x500.png', hint: 'science abstract' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' },
     link: '/about'
   },
   {
     icon: Target,
     title: 'How to Participate',
     description: 'Participation is free and open to everyone. Submit your best science-related images across various categories during the submission period.',
-    image: { src: 'https://placehold.co/500x500.png', hint: 'camera photography' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Kuffner-Sternwarte_Wien_2015_Refraktor_11.jpg', hint: 'camera photography' },
     link: '/competition'
   },
   {
     icon: Award,
     title: 'Prizes & Recognition',
     description: 'Winners receive national recognition, certificates, and prizes. The best images also advance to the international final.',
-    image: { src: 'https://placehold.co/500x500.png', hint: 'trophy award' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg', hint: 'trophy award' },
     link: '/competition'
   },
   {
     icon: Users,
     title: 'Jury & Criteria',
     description: 'Our expert jury of scientists and photographers will judge entries based on scientific value, originality, and aesthetic quality.',
-    image: { src: 'https://placehold.co/500x500.png', hint: 'judges meeting' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', hint: 'judges meeting' },
     link: '/competition'
   },
   {
     icon: History,
     title: 'Past Winners',
     description: 'Explore a gallery of previous years\' winning photographs and get inspired by the incredible talent showcased.',
-    image: { src: 'https://placehold.co/500x500.png', hint: 'photo gallery' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Sulfide_disaster_in_Levikha_Village.jpg', hint: 'photo gallery' },
     link: '/resources'
   }
 ];

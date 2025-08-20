@@ -37,7 +37,7 @@ export default function JurySection() {
                         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <Image 
-                            src="https://placehold.co/600x400.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Polaarteadlane.jpg"
                             alt="A panel of judges reviewing photos"
                             data-ai-hint="judges panel"
                             fill
