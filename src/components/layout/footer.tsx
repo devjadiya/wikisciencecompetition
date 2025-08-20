@@ -4,9 +4,17 @@ import { Microscope, Twitter, Instagram, Facebook } from 'lucide-react';
 const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Competition', href: '/competition' },
+  { name: 'Jury', href: '/jury' },
+  { name: 'Sponsors', href: '/sponsors' },
   { name: 'Resources', href: '/resources' },
   { name: 'Contact', href: '/contact' },
 ];
+
+const supportLinks = [
+    { name: 'Sponsorship', href: '/support-us#sponsorship'},
+    { name: 'Gifts/Swag', href: '/support-us#gifts'},
+    { name: 'Outreach', href: '/support-us#outreach'},
+]
 
 const socialLinks = [
   { name: 'Twitter', icon: Twitter, href: '#' },
@@ -38,12 +46,23 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-8 xl:mt-0 xl:col-span-2">
+            <div>
                 <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Navigation</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navLinks.map((item) => (
+                    {navLinks.map((item) => (
+                    <li key={item.name}>
+                        <Link href={item.href} className="text-base text-muted-foreground hover:text-primary transition-colors">
+                        {item.name}
+                        </Link>
+                    </li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Support Us</h3>
+                <ul role="list" className="mt-4 space-y-4">
+                  {supportLinks.map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-base text-muted-foreground hover:text-primary transition-colors">
                         {item.name}
@@ -51,18 +70,17 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
+            </div>
+            <div className="mt-12 md:mt-0">
                 <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">Legal</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  <li>
+                <li>
                     <a href="#" className="text-base text-muted-foreground hover:text-primary transition-colors">Privacy</a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <a href="#" className="text-base text-muted-foreground hover:text-primary transition-colors">Terms</a>
-                  </li>
+                </li>
                 </ul>
-              </div>
             </div>
           </div>
         </div>

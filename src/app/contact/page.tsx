@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from './actions';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -44,18 +45,28 @@ export default function ContactPage() {
 
   return (
     <div className="bg-background text-foreground">
-        <div className="bg-primary/5 py-20">
+        <motion.div 
+            className="bg-primary/5 py-20"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Contact Us</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                     Have questions or feedback? We&apos;d love to hear from you.
                 </p>
             </div>
-        </div>
+        </motion.div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid md:grid-cols-2 gap-16">
-                <div className="space-y-8">
+                <motion.div 
+                    className="space-y-8"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                >
                     <div>
                         <h2 className="text-2xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
                         <p className="text-muted-foreground">
@@ -76,8 +87,12 @@ export default function ContactPage() {
                             <span className="text-muted-foreground">Bangalore, India</span>
                         </div>
                     </div>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 0.4 }}
+                >
                     <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <FormField
@@ -137,7 +152,7 @@ export default function ContactPage() {
                         </Button>
                     </form>
                     </Form>
-                </div>
+                </motion.div>
             </div>
         </div>
     </div>
