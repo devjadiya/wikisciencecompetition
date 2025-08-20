@@ -55,12 +55,7 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
                          <Card key={index} className="overflow-hidden group transition-shadow hover:shadow-xl">
                             <CardContent className="p-0">
                                 <div className="relative aspect-video bg-black">
-                                    <video
-                                        src={video.src}
-                                        controls
-                                        className="w-full h-full"
-                                        aria-label={video.title}
-                                    />
+                                    <p className="text-white p-4">Video support is temporarily disabled.</p>
                                 </div>
                                  <div className="p-3">
                                     <p className="font-semibold text-sm truncate">{video.title}</p>
@@ -74,5 +69,3 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
     </div>
   );
 }
-
-    
