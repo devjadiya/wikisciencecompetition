@@ -60,9 +60,13 @@ const categories = [
     icon: Layers, 
     description: 'Thematically linked images (up to 10) that can be viewed as one set.',
     images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'photo series' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'growth sequence' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'different angles' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Zygaena_8_wings.jpg', alt: 'Zygaena 8 wings', hint: 'insect wings' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', alt: 'Total lunar eclipse', hint: 'lunar eclipse' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Tungsten_tip.jpg', alt: 'Tungsten tip', hint: 'tungsten microscopy' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Liquid_carbon_dioxide_jets_01.png', alt: 'Liquid carbon dioxide jets', hint: 'liquid co2' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/1/16/ISS_R%C3%B5uge_Suurj%C3%A4rve_kohal.jpg', alt: 'ISS over Rouge Suurjärv', hint: 'iss view' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Lennuliiklust_uurimas.jpg', alt: 'Studying air traffic', hint: 'air traffic' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Iridiumi_satelliidi_s%C3%A4hvatus.jpg', alt: 'Iridium satellite flare', hint: 'satellite flare' },
     ]
   },
   { 
