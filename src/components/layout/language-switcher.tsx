@@ -30,16 +30,17 @@ export default function LanguageSwitcher() {
   const handleSelect = (language: typeof languages[0]) => {
     setSelectedLanguage(language);
     // NOTE: Full internationalization requires a library like next-intl.
-    // This is a placeholder for the UI.
+    // This now visually updates the selected language in the button.
     console.log(`Language changed to ${language.name}`);
   };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" className="gap-1">
           <Globe className="h-5 w-5" />
-          <span className="sr-only">Change language</span>
+          <span className="text-xs font-bold uppercase">{selectedLanguage.code}</span>
+          <span className="sr-only">Change language, current is {selectedLanguage.name}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
