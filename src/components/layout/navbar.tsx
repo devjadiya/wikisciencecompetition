@@ -10,19 +10,26 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuPortal
 } from '@/components/ui/dropdown-menu';
 import LanguageSwitcher from './language-switcher';
 import Image from 'next/image';
 
-const navLinks = [
-  { name: 'Home', href: '/' },
+const mainNavLinks = [
   { name: 'About', href: '/about' },
   { name: 'Competition', href: '/competition' },
-  { name: 'Jury', href: '/jury' },
   { name: 'Organizers', href: '/organizers' },
-  { name: 'Sponsors', href: '/sponsors' },
   { name: 'Resources', href: '/resources' },
+  { name: 'Sponsors', href: '/sponsors' },
 ];
+
+const moreDropdownLinks = [
+    { name: 'Jury', href: '/jury'},
+    { name: 'Support Us', href: '/support-us'},
+]
 
 const learningLinks = [
   { name: 'How to create a Wiki account', href: '#' },
@@ -57,20 +64,20 @@ export default function Navbar() {
       className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
                 <Image 
                     src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
                     alt="Wiki Science Competition India Logo"
-                    width={180}
-                    height={40}
+                    width={150}
+                    height={35}
                     className="transition-transform group-hover:scale-105"
                 />
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
+            {mainNavLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -82,28 +89,30 @@ export default function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  Learning <ChevronDown className="h-4 w-4 ml-1" />
+                  More <ChevronDown className="h-4 w-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                {learningLinks.map(link => (
-                   <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                {moreDropdownLinks.map(link => (
+                    <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
                 ))}
+                <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>Learning</DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                        <DropdownMenuSubContent>
+                             {learningLinks.map(link => (
+                                <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                            ))}
+                        </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                </DropdownMenuSub>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link
-                href="/support-us"
-                className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Support Us
-            </Link>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="hidden md:block">
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <Link href="/competition">Participate</Link>
-              </Button>
-            </div>
+          <div className="flex items-center gap-1">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
+              <Link href="/competition">Participate</Link>
+            </Button>
             <LanguageSwitcher />
             <div className="flex md:hidden">
               <Button
@@ -122,7 +131,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
+            {[...mainNavLinks, ...moreDropdownLinks].map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -132,26 +141,20 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                 <Button variant="ghost" className="w-full justify-start text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors">
-                  Learning <ChevronDown className="h-4 w-4 ml-1" />
-                </Button>
-              </DropdownMenuTrigger>
-               <DropdownMenuContent>
-                {learningLinks.map(link => (
-                   <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link
-                href="/support-us"
-                 onClick={() => setIsOpen(false)}
-                className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                Support Us
-            </Link>
-            <div className="p-2">
+            <div className="border-t border-border pt-2 mt-2">
+                 <p className="px-3 py-2 text-sm font-semibold text-muted-foreground">Learning</p>
+                 {learningLinks.map(link => (
+                    <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    >
+                     {link.name}
+                    </Link>
+                 ))}
+            </div>
+            <div className="p-2 border-t border-border mt-2 pt-3">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
                 <Link href="/competition">Participate</Link>
               </Button>
