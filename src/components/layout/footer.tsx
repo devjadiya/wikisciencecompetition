@@ -35,12 +35,9 @@ export default function Footer() {
               <Image 
                     src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
                     alt="Wiki Science Competition India Logo"
-                    width={40}
+                    width={180}
                     height={40}
                 />
-              <span className="text-xl font-headline font-bold text-foreground">
-                WikiScience India 2025
-              </span>
             </Link>
             <p className="text-muted-foreground text-base">
               Capturing the beauty of science through photography.
