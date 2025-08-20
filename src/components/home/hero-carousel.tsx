@@ -8,18 +8,43 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    image: { src: 'https://placehold.co/1920x1080.png', hint: 'science photography winner' },
-    alt: 'Previous winner photo 1',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg' },
+    alt: 'Foldscope - A revolutionary Microscope by Arpan Basu Chowdhury',
   },
   {
     id: 2,
-    image: { src: 'https://placehold.co/1920x1080.png', hint: 'award-winning science image' },
-    alt: 'Previous winner photo 2',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Yellow_orange-tip_male_Ixias_pyrene.jpg' },
+    alt: 'Yellow orange-tip male Ixias pyrene',
   },
   {
     id: 3,
-    image: { src: 'https://placehold.co/1920x1080.png', hint: 'best scientific photograph' },
-    alt: 'Previous winner photo 3',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Yellow_orange-tip_female_Ixias_pyrene.jpg' },
+    alt: 'Yellow orange-tip female Ixias pyrene',
+  },
+  {
+    id: 4,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/A_Coot%27s_Scoot.jpg' },
+    alt: 'A Coot\'s Scoot',
+  },
+  {
+    id: 5,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Sarus_Crane_Duet.jpg' },
+    alt: 'Sarus Crane Duet',
+  },
+  {
+    id: 6,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Greater_Crimson_Glider_%28Urothemis_signata%29.jpg' },
+    alt: 'Greater Crimson Glider (Urothemis signata)',
+  },
+  {
+    id: 7,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Indian_Gharial.jpg' },
+    alt: 'Indian Gharial',
+  },
+  {
+    id: 8,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg' },
+    alt: 'PSLV C47 Cartosat-3 lifting off from Second Launch Pad',
   },
 ];
 
@@ -74,7 +99,6 @@ export default function HeroCarousel() {
         >
           <Image
             src={slides[slideIndex].image.src}
-            data-ai-hint={slides[slideIndex].image.hint}
             alt={slides[slideIndex].alt}
             fill
             className="object-cover"
