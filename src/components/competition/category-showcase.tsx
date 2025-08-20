@@ -7,10 +7,9 @@ interface CategoryShowcaseProps {
     description: string;
     icon: LucideIcon;
     images?: { src: string; alt: string; hint: string }[];
-    videos?: { src: string; title: string }[];
 }
 
-export default function CategoryShowcase({ name, description, icon: Icon, images, videos }: CategoryShowcaseProps) {
+export default function CategoryShowcase({ name, description, icon: Icon, images }: CategoryShowcaseProps) {
   return (
     <div className="py-8 border-b border-border last:border-b-0">
         <div className="flex items-center gap-4 mb-4">
@@ -24,47 +23,24 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
         </div>
         
         {images && images.length > 0 && (
-            <>
-                <h4 className="font-headline text-xl text-primary mt-6 mb-4">Images</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {images.map((image, index) => (
-                        <Card key={index} className="overflow-hidden group transition-shadow hover:shadow-xl">
-                            <CardContent className="p-0">
-                                <div className="relative aspect-square">
-                                    <Image 
-                                        src={image.src} 
-                                        data-ai-hint={image.hint} 
-                                        alt={image.alt} 
-                                        fill 
-                                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 25vw"
-                                    />
-                                </div>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </>
-        )}
-
-        {videos && videos.length > 0 && (
-            <>
-                <h4 className="font-headline text-xl text-primary mt-6 mb-4">Videos</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {videos.map((video, index) => (
-                         <Card key={index} className="overflow-hidden group transition-shadow hover:shadow-xl">
-                            <CardContent className="p-0">
-                                <div className="relative aspect-video bg-black">
-                                    <p className="text-white p-4">Video support is temporarily disabled.</p>
-                                </div>
-                                 <div className="p-3">
-                                    <p className="font-semibold text-sm truncate">{video.title}</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                {images.map((image, index) => (
+                    <Card key={index} className="overflow-hidden group transition-shadow hover:shadow-xl">
+                        <CardContent className="p-0">
+                            <div className="relative aspect-square">
+                                <Image 
+                                    src={image.src} 
+                                    data-ai-hint={image.hint} 
+                                    alt={image.alt} 
+                                    fill 
+                                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 25vw"
+                                />
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
         )}
     </div>
   );

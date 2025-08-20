@@ -28,6 +28,40 @@ const microscopyImages = [
     { src: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/The_Rotifer_Notholca_sp.jpg', alt: 'The Rotifer Notholca sp.', hint: 'rotifer' },
 ];
 
+const nonPhotographicImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/VFTS_352.tif', alt: 'VFTS 352, a binary star system.', hint: 'data visualization' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Views_of_a_simulated_primordial_galaxy%2C_density_map.png', alt: 'Simulated primordial galaxy density map.', hint: '3d model' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png', alt: 'Lunar Mini-Magnetosphere.', hint: 'simulation' },
+];
+
+const imageSetsImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Zygaena_8_wings.jpg', alt: 'Zygaena 8 wings', hint: 'insect wings' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', alt: 'Total lunar eclipse', hint: 'lunar eclipse' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Tungsten_tip.jpg', alt: 'Tungsten tip', hint: 'tungsten microscopy' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Liquid_carbon_dioxide_jets_01.png', alt: 'Liquid carbon dioxide jets', hint: 'liquid co2' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/1/16/ISS_R%C3%B5uge_Suurj%C3%A4rve_kohal.jpg', alt: 'ISS over Rouge Suurjärv', hint: 'iss view' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Lennuliiklust_uurimas.jpg', alt: 'Studying air traffic', hint: 'air traffic' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Iridiumi_satelliidi_s%C3%A4hvatus.jpg', alt: 'Iridium satellite flare', hint: 'satellite flare' },
+];
+
+const wildlifeAndNatureImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/7/78/%D0%A1%D0%B0%D0%BC%D0%BA%D0%B0_%D0%BF%D0%B5%D1%81%D1%86%D0%B0_%D1%81%D0%BE_%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%BC.jpg', alt: 'A female sand wasp with a satellite transmitter.', hint: 'insect macro' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/%C3%84raj%C3%A4%C3%A4nud_v%C3%A4lit%C3%B6%C3%B6d.JPG', alt: 'Fieldwork left behind.', hint: 'fieldwork equipment' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Emerging_cicada.jpg', alt: 'An emerging cicada.', hint: 'cicada emerging' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Ice_planet_and_antarctic_jellyfish_%28cropped%29.jpg', alt: 'Ice planet and antarctic jellyfish.', hint: 'jellyfish underwater' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Dorcus_parallelipipedus_female.jpg', alt: 'A female lesser stag beetle.', hint: 'stag beetle' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Inkubatsioonikambrid_nitrogenaasi_aktiivsuse_m%C3%B5%C3%B5tmiseks.jpg', alt: 'Incubation chambers for measuring nitrogenase activity.', hint: 'science equipment' },
+];
+
+const astronomyImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Total_Solar_Eclipse_8-21-17.jpg', alt: 'Total Solar Eclipse', hint: 'solar eclipse' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Roberta_colallillo_13_auger_coihueco.jpg', alt: 'Scientist with auger', hint: 'scientist equipment' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Kuffner-Sternwarte_Wien_2015_Refraktor_11.jpg', alt: 'Kuffner Observatory Refractor', hint: 'observatory telescope' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/The_Carina_Nebula_in_Narrowband.jpg', alt: 'The Carina Nebula', hint: 'carina nebula' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/5/59/A_Busy_Universe.jpg', alt: 'A Busy Universe', hint: 'galaxy cluster' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/2/25/PLO_7156.jpg', alt: 'Pises Lasteaed-Observatoorium', hint: 'observatory night' },
+];
+
 const categories = [
   { 
     name: 'People in Science', 
@@ -45,48 +79,25 @@ const categories = [
     name: 'Non-photographic Media', 
     icon: Video, 
     description: 'Audio and video files, computer-generated imagery, etc.',
-    images: [
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/VFTS_352.tif', alt: 'VFTS 352, a binary star system.', hint: 'data visualization' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Views_of_a_simulated_primordial_galaxy%2C_density_map.png', alt: 'Simulated primordial galaxy density map.', hint: '3d model' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png', alt: 'Lunar Mini-Magnetosphere.', hint: 'simulation' },
-    ]
+    images: nonPhotographicImages,
   },
   { 
     name: 'Image Sets', 
     icon: Layers, 
     description: 'Thematically linked images (up to 10) that can be viewed as one set.',
-    images: [
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Zygaena_8_wings.jpg', alt: 'Zygaena 8 wings', hint: 'insect wings' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Total_lunar_eclipse.png', alt: 'Total lunar eclipse', hint: 'lunar eclipse' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Tungsten_tip.jpg', alt: 'Tungsten tip', hint: 'tungsten microscopy' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Liquid_carbon_dioxide_jets_01.png', alt: 'Liquid carbon dioxide jets', hint: 'liquid co2' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/1/16/ISS_R%C3%B5uge_Suurj%C3%A4rve_kohal.jpg', alt: 'ISS over Rouge Suurjärv', hint: 'iss view' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Lennuliiklust_uurimas.jpg', alt: 'Studying air traffic', hint: 'air traffic' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Iridiumi_satelliidi_s%C3%A4hvatus.jpg', alt: 'Iridium satellite flare', hint: 'satellite flare' },
-    ]
+    images: imageSetsImages,
   },
   { 
     name: 'Wildlife & Nature', 
     icon: PawPrint, 
     description: 'Organisms in their natural habitat, including macro photography.',
-    images: [
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/7/78/%D0%A1%D0%B0%D0%BC%D0%BA%D0%B0_%D0%BF%D0%B5%D1%81%D1%86%D0%B0_%D1%81%D0%BE_%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D1%8B%D0%BC_%D0%BF%D1%80%D0%B5%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%BC.jpg', alt: 'A female sand wasp with a satellite transmitter.', hint: 'insect macro' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/%C3%84raj%C3%A4%C3%A4nud_v%C3%A4lit%C3%B6%C3%B6d.JPG', alt: 'Fieldwork left behind.', hint: 'fieldwork equipment' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Emerging_cicada.jpg', alt: 'An emerging cicada.', hint: 'cicada emerging' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Ice_planet_and_antarctic_jellyfish_%28cropped%29.jpg', alt: 'Ice planet and antarctic jellyfish.', hint: 'jellyfish underwater' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Dorcus_parallelipipedus_female.jpg', alt: 'A female lesser stag beetle.', hint: 'stag beetle' },
-        { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Inkubatsioonikambrid_nitrogenaasi_aktiivsuse_m%C3%B5%C3%B5tmiseks.jpg', alt: 'Incubation chambers for measuring nitrogenase activity.', hint: 'science equipment' },
-    ]
+    images: wildlifeAndNatureImages,
   },
   { 
     name: 'Astronomy', 
     icon: Star, 
     description: 'Images of stars, celestial events, and the equipment used to capture them.',
-    images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'galaxy nebula' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'solar eclipse' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'telescope night' },
-    ]
+    images: astronomyImages,
   },
   { 
     name: 'General Category', 
@@ -194,7 +205,6 @@ export default function CompetitionPage() {
                             name={category.name}
                             description={category.description}
                             images={category.images}
-                            videos={category.videos}
                         />
                     ))}
                 </div>
