@@ -62,6 +62,15 @@ const astronomyImages = [
     { src: 'https://upload.wikimedia.org/wikipedia/commons/2/25/PLO_7156.jpg', alt: 'Pises Lasteaed-Observatoorium', hint: 'observatory night' },
 ];
 
+const generalCategoryImages = [
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Fluorescence_in_calcite.jpg', alt: 'Fluorescence in calcite', hint: 'mineral fluorescence' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Freezed_XRD.jpg', alt: 'Frozen sample in an X-ray diffractometer', hint: 'x-ray diffraction' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', alt: 'Water under 11 Hz vibration', hint: 'cymatics water' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Pulsed_Laser_Deposition_in_Action.jpg', alt: 'Pulsed Laser Deposition in Action', hint: 'laser deposition' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/3/36/%CE%91%CE%BD%CE%B1%CF%83%CE%BA%CE%B1%CF%86%CE%AD%CF%82_%CE%9C%CE%B5%CF%84%CF%81%CF%8C_%CE%A0%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%AC_%288%29.jpg', alt: 'Excavations at the Piraeus metro station', hint: 'archaeology greece' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Sulfide_disaster_in_Levikha_Village.jpg', alt: 'Sulfide disaster in Levikha Village', hint: 'environmental science' },
+];
+
 const categories = [
   { 
     name: 'People in Science', 
@@ -103,11 +112,7 @@ const categories = [
     name: 'General Category', 
     icon: FlaskConical, 
     description: 'Everything else, from archaeology to vulcanology.',
-    images: [
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'geology' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'physics experiment' },
-        { src: 'https://placehold.co/600x400.png', alt: 'Placeholder', hint: 'archaeological find' },
-    ]
+    images: generalCategoryImages
   },
 ];
 
