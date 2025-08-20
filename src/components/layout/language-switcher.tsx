@@ -12,15 +12,15 @@ import { useState } from 'react';
 
 const languages = [
     { code: 'en', name: 'English' },
-    { code: 'mr', name: 'Marathi' },
     { code: 'hi', name: 'Hindi' },
+    { code: 'mr', name: 'Marathi' },
     { code: 'bn', name: 'Bengali' },
     { code: 'gu', name: 'Gujarati' },
     { code: 'ta', name: 'Tamil' },
     { code: 'te', name: 'Telugu' },
     { code: 'kn', name: 'Kannada' },
     { code: 'ml', name: 'Malayalam' },
-    { code: 'pa', name: 'Punjabi' },
+    { code: 'pa', 'name': 'Punjabi' },
     { code: 'or', name: 'Odia' },
 ];
 
@@ -29,7 +29,8 @@ export default function LanguageSwitcher() {
 
   const handleSelect = (language: typeof languages[0]) => {
     setSelectedLanguage(language);
-    // Add logic to change language globally
+    // NOTE: Full internationalization requires a library like next-intl.
+    // This is a placeholder for the UI.
     console.log(`Language changed to ${language.name}`);
   };
 

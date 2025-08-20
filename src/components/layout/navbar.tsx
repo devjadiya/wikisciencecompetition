@@ -19,8 +19,16 @@ const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Competition', href: '/competition' },
   { name: 'Jury', href: '/jury' },
+  { name: 'Organizers', href: '/organizers' },
   { name: 'Sponsors', href: '/sponsors' },
   { name: 'Resources', href: '/resources' },
+];
+
+const learningLinks = [
+  { name: 'How to create a Wiki account', href: '#' },
+  { name: 'How to use the Upload Wizard', href: '#' },
+  { name: 'Understanding CC Licenses', href: '#' },
+  { name: 'How to add categories', href: '#' },
 ];
 
 export default function Navbar() {
@@ -66,18 +74,24 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-             <DropdownMenu>
+            <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  Support Us <ChevronDown className="h-4 w-4 ml-1" />
+                  Learning <ChevronDown className="h-4 w-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem asChild><Link href="/support-us#sponsorship">Sponsorship</Link></DropdownMenuItem>
-                <DropdownMenuItem asChild><Link href="/support-us#gifts">Gifts/Swag</Link></DropdownMenuItem>
-                <DropdownMenuItem asChild><Link href="/support-us#outreach">Outreach</Link></DropdownMenuItem>
+                {learningLinks.map(link => (
+                   <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link
+                href="/support-us"
+                className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Support Us
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             <div className="hidden md:block">
@@ -116,15 +130,22 @@ export default function Navbar() {
              <DropdownMenu>
               <DropdownMenuTrigger asChild>
                  <Button variant="ghost" className="w-full justify-start text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors">
-                  Support Us <ChevronDown className="h-4 w-4 ml-1" />
+                  Learning <ChevronDown className="h-4 w-4 ml-1" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem asChild><Link href="/support-us#sponsorship">Sponsorship</Link></DropdownMenuItem>
-                <DropdownMenuItem asChild><Link href="/support-us#gifts">Gifts/Swag</Link></DropdownMenuItem>
-                <DropdownMenuItem asChild><Link href="/support-us#outreach">Outreach</Link></DropdownMenuItem>
+               <DropdownMenuContent>
+                {learningLinks.map(link => (
+                   <DropdownMenuItem key={link.name} asChild><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link
+                href="/support-us"
+                 onClick={() => setIsOpen(false)}
+                className="text-foreground hover:bg-accent hover:text-accent-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              >
+                Support Us
+            </Link>
             <div className="p-2">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
                 <Link href="/competition">Participate</Link>
