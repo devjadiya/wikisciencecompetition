@@ -24,6 +24,26 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    allowedRevalidateHeaderKeys: ['x-genkit-api-key'],
+  },
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.webm$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/_next/static/videos/',
+          outputPath: 'static/videos/',
+          name: '[name].[hash].[ext]',
+        },
+      },
+    });
+
+    return config;
+  },
 };
 
 export default nextConfig;
+
+    

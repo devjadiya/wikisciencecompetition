@@ -28,7 +28,6 @@ const microscopyImages = [
     { src: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/The_Rotifer_Notholca_sp.jpg', alt: 'The Rotifer Notholca sp.', hint: 'rotifer' },
 ];
 
-
 const categories = [
   { 
     name: 'People in Science', 
@@ -50,6 +49,10 @@ const categories = [
         { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/VFTS_352.tif', alt: 'VFTS 352, a binary star system.', hint: 'data visualization' },
         { src: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Views_of_a_simulated_primordial_galaxy%2C_density_map.png', alt: 'Simulated primordial galaxy density map.', hint: '3d model' },
         { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png', alt: 'Lunar Mini-Magnetosphere.', hint: 'simulation' },
+    ],
+    videos: [
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Movement_of_organelles_in_Tradescantia_stamen_hair_cells.webm', title: 'Movement of organelles in Tradescantia stamen hair cells' },
+        { src: 'https://upload.wikimedia.org/wikipedia/commons/9/97/YBCO_video.webm', title: 'Superconductivity of YBCO' },
     ]
   },
   { 
@@ -188,6 +191,7 @@ export default function CompetitionPage() {
                             name={category.name}
                             description={category.description}
                             images={category.images}
+                            videos={category.videos}
                         />
                     ))}
                 </div>
@@ -213,5 +217,7 @@ export default function CompetitionPage() {
     </div>
   );
 }
+
+    
 
     
