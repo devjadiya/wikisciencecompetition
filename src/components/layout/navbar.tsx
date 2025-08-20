@@ -72,8 +72,8 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
                 <Image 
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg"
-                    alt="Wiki Science Competition India 2025 Logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
+                    alt="Wiki Science Competition India Logo"
                     width={180}
                     height={45}
                     className="transition-transform group-hover:scale-105"
