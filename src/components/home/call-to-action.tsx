@@ -1,9 +1,11 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Users, Building } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 const cardVariants = {
   offscreen: {
@@ -22,13 +24,16 @@ const cardVariants = {
 };
 
 export default function CallToAction() {
+  const { t } = useLanguage();
+  const cta = t.home.cta;
+
   return (
     <section className="bg-background py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary">Get Involved</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary">{cta.title}</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Be a part of India's first national Wiki Science Competition. We're looking for passionate individuals and organizations to join us.
+                {cta.subtitle}
             </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -42,13 +47,13 @@ export default function CallToAction() {
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
                     <Users className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-2xl font-headline font-bold mb-3">Call for Campus Ambassadors</h3>
+                <h3 className="text-2xl font-headline font-bold mb-3">{cta.campus.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow">
-                   Promote the campaign in your institution, share guidelines, and help organize awareness activities.
+                   {cta.campus.description}
                 </p>
-                <p className="text-sm font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
+                <p className="text-sm font-bold text-destructive mb-6">{cta.campus.deadline}</p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                    <Link href="/campus-ambassadors">Apply Now</Link>
+                    <Link href="/campus-ambassadors">{cta.campus.cta}</Link>
                 </Button>
             </motion.div>
              <motion.div
@@ -61,13 +66,13 @@ export default function CallToAction() {
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
                     <Building className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-2xl font-headline font-bold mb-3">Call for Wikimedia Affiliates</h3>
+                <h3 className="text-2xl font-headline font-bold mb-3">{cta.affiliates.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow">
-                    Partner with us to promote the campaign, organize local outreach, and help bring impactful scientific contributions from your region.
+                    {cta.affiliates.description}
                 </p>
-                <p className="text-sm font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
+                <p className="text-sm font-bold text-destructive mb-6">{cta.affiliates.deadline}</p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                    <Link href="/affiliates">Partner With Us</Link>
+                    <Link href="/affiliates">{cta.affiliates.cta}</Link>
                 </Button>
             </motion.div>
         </div>
