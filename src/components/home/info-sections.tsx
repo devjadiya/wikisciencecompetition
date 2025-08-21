@@ -42,11 +42,11 @@ export default function InfoSections() {
   }));
 
   return (
-    <div className="py-24 bg-background">
+    <div className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary">{t.home.info.title}</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{t.home.info.title}</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             {t.home.info.subtitle}
           </p>
         </div>
@@ -72,8 +72,8 @@ export default function InfoSections() {
                   </div>
                   <h3 className="text-xl font-headline font-bold text-foreground">{section.title}</h3>
                 </div>
-                <p className="text-muted-foreground flex-grow mb-6">{section.description}</p>
-                <Button asChild variant="ghost" className="self-start group">
+                <p className="text-muted-foreground flex-grow mb-6 text-sm">{section.description}</p>
+                <Button asChild variant="ghost" className="self-start group -ml-4">
                     <Link href={section.link}>
                         {t.home.info.cta}
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

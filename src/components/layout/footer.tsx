@@ -21,8 +21,8 @@ export default function Footer() {
   return (
     <footer className="bg-primary/5 border-t border-primary/10">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-8">
             <Link href="/" className="flex items-center gap-2">
               <Image 
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg"
@@ -31,7 +31,7 @@ export default function Footer() {
                     height={50}
                 />
             </Link>
-            <p className="text-muted-foreground text-base">
+            <p className="text-muted-foreground text-sm">
               {t.footerSubtitle}
             </p>
             <div className="flex space-x-4 items-center">
@@ -41,53 +41,45 @@ export default function Footer() {
                    <Image 
                         src={item.icon}
                         alt={`${item.name} Logo`}
-                        width={item.name === 'Meta Wiki' || item.name === 'Commons' ? 32 : 28}
-                        height={item.name === 'Meta Wiki' || item.name === 'Commons' ? 32 : 28}
+                        width={item.name === 'Meta Wiki' || item.name === 'Commons' ? 28 : 24}
+                        height={item.name === 'Meta Wiki' || item.name === 'Commons' ? 28 : 24}
                         className="object-contain"
                    />
                 </a>
               ))}
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerNavHeader}</h3>
-                    <ul role="list" className="mt-4 space-y-4">
-                        {navLinks.map((item) => (
-                        <li key={item.name}>
-                            <Link href={item.href} className="text-base text-muted-foreground hover:text-primary transition-colors">
-                            {item.name}
-                            </Link>
-                        </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="mt-12 md:mt-0">
-                    <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerSupportHeader}</h3>
-                    <ul role="list" className="mt-4 space-y-4">
-                      {supportLinks.map((item) => (
-                        <li key={item.name}>
-                          <Link href={item.href} className="text-base text-muted-foreground hover:text-primary transition-colors">
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                </div>
+          <div className="grid grid-cols-2 gap-8 lg:col-span-2">
+            <div>
+                <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerNavHeader}</h3>
+                <ul role="list" className="mt-4 space-y-3">
+                    {navLinks.map((item) => (
+                    <li key={item.name}>
+                        <Link href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        {item.name}
+                        </Link>
+                    </li>
+                    ))}
+                </ul>
             </div>
-             <div className="md:grid md:grid-cols-1 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
-                   <ul role="list" className="mt-4 space-y-4">
-                        <li>
-                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-base font-bold text-accent hover:text-accent/80 transition-colors">
-                                wikisciencecompetition@gmail.com
-                            </a>
-                        </li>
-                   </ul>
-                </div>
-             </div>
+            <div>
+                <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerSupportHeader}</h3>
+                <ul role="list" className="mt-4 space-y-3">
+                  {supportLinks.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                  <li className="pt-4">
+                     <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
+                     <a href="mailto:wikisciencecompetition@gmail.com" className="text-base font-bold text-accent hover:text-accent/80 transition-colors break-words">
+                        wikisciencecompetition@gmail.com
+                    </a>
+                  </li>
+                </ul>
+            </div>
           </div>
         </div>
         <div className="mt-12 border-t border-primary/10 pt-8">
@@ -97,18 +89,18 @@ export default function Footer() {
                     <Image 
                         src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
                         alt="Wiki Club SATI Logo"
-                        width={40}
-                        height={40}
+                        width={32}
+                        height={32}
                     />
-                    <span>Wiki Club SATI</span>
+                    <span className="text-sm">Wiki Club SATI</span>
                 </a>
             </div>
         </div>
         <div className="mt-8 border-t border-primary/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-center">
-          <p className="text-base text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} {t.footerCopyright}
           </p>
-          <p className="text-base text-muted-foreground mt-4 sm:mt-0">
+          <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
             {t.footerLicense}
           </p>
         </div>
@@ -116,5 +108,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-  

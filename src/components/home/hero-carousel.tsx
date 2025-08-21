@@ -91,7 +91,7 @@ export default function HeroCarousel() {
   const slideIndex = page;
 
   return (
-    <section className="relative h-[60vh] md:h-[90vh] min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
+    <section className="relative h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -101,7 +101,7 @@ export default function HeroCarousel() {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 200, damping: 30, duration: 1.2 },
+            x: { type: 'spring', stiffness: 200, damping: 30, duration: 1.2 },
             opacity: { duration: 1.2 }
           }}
           className="absolute w-full h-full"
@@ -112,6 +112,7 @@ export default function HeroCarousel() {
             fill
             className="object-cover"
             priority={slideIndex === 0}
+            sizes="100vw"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/10 to-transparent" />
            <div className="absolute bottom-4 right-4 p-2 bg-black/50 text-white rounded-md text-xs text-right">
@@ -120,20 +121,20 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-10 z-20">
+      <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-10 z-20">
         <button
           onClick={() => paginate(-1)}
           className="bg-background/50 hover:bg-background transition-colors p-2 rounded-full shadow-md"
         >
-          <ChevronLeft className="h-6 w-6 text-foreground" />
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
         </button>
       </div>
-      <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-10 z-20">
+      <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-10 z-20">
         <button
           onClick={() => paginate(1)}
           className="bg-background/50 hover:bg-background transition-colors p-2 rounded-full shadow-md"
         >
-          <ChevronRight className="h-6 w-6 text-foreground" />
+          <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
         </button>
       </div>
        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
@@ -141,7 +142,7 @@ export default function HeroCarousel() {
           <div
             key={i}
             onClick={() => setPage([i, i > slideIndex ? 1 : -1])}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full cursor-pointer transition-colors ${
               i === slideIndex ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'
             }`}
           />

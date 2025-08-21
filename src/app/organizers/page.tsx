@@ -95,19 +95,19 @@ export default function OrganizersPage() {
 
   return (
     <div className="bg-background">
-      <div className="bg-primary/5 py-20">
+      <div className="bg-primary/5 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">{t.organizers.title}</h1>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">{t.organizers.title}</h1>
+            <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground">
                 {t.organizers.subtitle}
             </p>
         </div>
        </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.lead_organizers}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             {leadOrganizers.map((organizer) => (
               <motion.div
                 key={organizer.name}
@@ -118,7 +118,7 @@ export default function OrganizersPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
-                  <div className="relative h-80 w-full">
+                  <div className="relative h-64 sm:h-80 w-full">
                     <Image
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
@@ -127,18 +127,18 @@ export default function OrganizersPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6 flex-grow flex flex-col text-center items-center">
-                    <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
-                    <p className="text-accent font-semibold mb-4">{organizer.role}</p>
+                  <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
+                    <h3 className="text-xl md:text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
+                    <p className="text-accent font-semibold mb-4 text-sm md:text-base">{organizer.role}</p>
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>
@@ -150,7 +150,7 @@ export default function OrganizersPage() {
 
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.advisors}</h2>
-          <div className="grid grid-cols-1 gap-8 md:gap-12 max-w-sm mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-sm mx-auto">
             {advisors.map((organizer) => (
                <motion.div
                 key={organizer.name}
@@ -161,7 +161,7 @@ export default function OrganizersPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
-                  <div className="relative h-80 w-full">
+                  <div className="relative h-64 sm:h-80 w-full">
                     <Image
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
@@ -170,18 +170,18 @@ export default function OrganizersPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6 flex-grow flex flex-col text-center items-center">
-                    <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
-                    <p className="text-accent font-semibold mb-4">{organizer.role}</p>
+                  <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
+                    <h3 className="text-xl md:text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
+                    <p className="text-accent font-semibold mb-4 text-sm md:text-base">{organizer.role}</p>
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>
@@ -193,7 +193,7 @@ export default function OrganizersPage() {
 
         <div>
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.core_organizing_team}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {coreTeam.map((organizer) => (
                <motion.div
                 key={organizer.name}
@@ -204,7 +204,7 @@ export default function OrganizersPage() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
-                  <div className="relative h-80 w-full">
+                  <div className="relative h-64 sm:h-80 w-full">
                     <Image
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
@@ -213,18 +213,18 @@ export default function OrganizersPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-6 flex-grow flex flex-col text-center items-center">
-                    <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
-                    <p className="text-accent font-semibold mb-4">{organizer.role}</p>
+                  <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
+                    <h3 className="text-lg md:text-xl font-headline font-bold text-primary">{organizer.name}</h3>
+                    <p className="text-accent font-semibold mb-4 text-sm">{organizer.role}</p>
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>

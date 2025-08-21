@@ -1,3 +1,4 @@
+
 import HeroCarousel from '@/components/home/hero-carousel';
 import AutoscrollCarousel from '@/components/home/autoscroll-carousel';
 import InfoSections from '@/components/home/info-sections';
@@ -9,10 +10,9 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroCarousel />
-      <AutoscrollCarousel />
-      <CallToAction />
       <InfoSections />
       <PrizesSection />
+      <CallToAction />
       <JurySection />
     </div>
   );

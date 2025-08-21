@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -46,21 +47,21 @@ export default function ContactPage() {
   return (
     <div className="bg-background text-foreground">
         <motion.div 
-            className="bg-primary/5 py-20"
+            className="bg-primary/5 py-16 md:py-20"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Contact Us</h1>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">Contact Us</h1>
+                <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
                     Have questions or feedback? We&apos;d love to hear from you.
                 </p>
             </div>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid md:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
                 <motion.div 
                     className="space-y-8"
                     initial={{ opacity: 0, x: -50 }}
@@ -68,22 +69,22 @@ export default function ContactPage() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <div>
-                        <h2 className="text-2xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
-                        <p className="text-muted-foreground">
+                        <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
+                        <p className="text-muted-foreground text-sm md:text-base">
                             Fill out the form and our team will get back to you within 24 hours.
                         </p>
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-sm md:text-base">
                         <div className="flex items-center gap-4">
-                            <Mail className="h-6 w-6 text-accent" />
+                            <Mail className="h-5 w-5 text-accent" />
                             <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">wikisciencecompetition@gmail.com</a>
                         </div>
                         <div className="flex items-center gap-4">
-                            <Phone className="h-6 w-6 text-accent" />
+                            <Phone className="h-5 w-5 text-accent" />
                             <span className="text-muted-foreground">+91 123 456 7890</span>
                         </div>
                         <div className="flex items-center gap-4">
-                            <MapPin className="h-6 w-6 text-accent" />
+                            <MapPin className="h-5 w-5 text-accent" />
                             <span className="text-muted-foreground">Bangalore, India</span>
                         </div>
                     </div>

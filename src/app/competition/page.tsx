@@ -153,22 +153,22 @@ export default function CompetitionPage() {
 
   return (
     <div className="bg-background text-foreground">
-       <div className="bg-primary/5 py-20">
+       <div className="bg-primary/5 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">{t.competition.title}</h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">{t.competition.title}</h1>
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
                 {t.competition.subtitle}
             </p>
         </div>
        </div>
 
-       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid md:grid-cols-3 gap-16">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div className="grid md:grid-cols-3 gap-12 md:gap-16">
                 <div className="md:col-span-2">
                     <section id="rules">
                         <h2 className="text-3xl font-headline font-bold text-primary mb-6">{t.competition.howToParticipate.title}</h2>
                         <div className="space-y-4 text-muted-foreground">
-                            <div className="prose prose-lg text-muted-foreground max-w-none">
+                            <div className="prose prose-base md:prose-lg text-muted-foreground max-w-none">
                                 <p className="lead">
                                     {t.competition.howToParticipate.p1}
                                 </p>
@@ -181,7 +181,7 @@ export default function CompetitionPage() {
                                 <ul className="space-y-3 pt-4">
                                     {t.competition.howToParticipate.rules.map((rule, index) => (
                                      <li key={index} className="flex items-start">
-                                        <CheckSquare className="h-6 w-6 text-accent mr-4 mt-1 flex-shrink-0" />
+                                        <CheckSquare className="h-5 w-5 md:h-6 md:w-6 text-accent mr-4 mt-1 flex-shrink-0" />
                                         <span>{rule}</span>
                                     </li>
                                     ))}
@@ -194,7 +194,7 @@ export default function CompetitionPage() {
                 <aside className="row-start-1 md:row-auto">
                     <Card className="sticky top-24 bg-primary/5 shadow-lg">
                         <CardHeader>
-                            <CardTitle className="font-headline text-2xl text-primary flex items-center gap-2">
+                            <CardTitle className="font-headline text-xl md:text-2xl text-primary flex items-center gap-2">
                                <Calendar className="h-6 w-6"/> {t.competition.keyDates.title}
                             </CardTitle>
                         </CardHeader>
@@ -202,7 +202,7 @@ export default function CompetitionPage() {
                             <ul className="space-y-4">
                                 {t.competition.keyDates.timeline.map(item => (
                                 <li key={item.event} className="flex flex-col">
-                                    <span className="font-bold text-foreground">{item.event}</span>
+                                    <span className="font-bold text-foreground text-sm md:text-base">{item.event}</span>
                                     <span className="text-sm text-muted-foreground">{item.date}</span>
                                 </li>
                                 ))}
@@ -215,16 +215,16 @@ export default function CompetitionPage() {
                 </aside>
             </div>
 
-            <Separator className="my-20" />
+            <Separator className="my-16 md:my-20" />
 
             <section id="categories">
-                <div className="text-center mb-16">
-                     <h2 className="text-4xl font-headline font-bold text-primary">{t.competition.imageCategories.title}</h2>
-                     <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                <div className="text-center mb-12 md:mb-16">
+                     <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">{t.competition.imageCategories.title}</h2>
+                     <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
                         {t.competition.imageCategories.subtitle}
                     </p>
                 </div>
-                <div className="space-y-20">
+                <div className="space-y-16 md:space-y-20">
                     {categories.map(category => (
                         <CategoryShowcase 
                             key={category.name}
@@ -238,11 +238,11 @@ export default function CompetitionPage() {
                 </div>
             </section>
 
-            <section id="participate" className="mt-24 text-center">
-                <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-12">
-                    <h3 className="text-3xl font-headline font-bold">{t.competition.readyToParticipate.title}</h3>
-                    <p className="mt-4 mb-8 max-w-xl mx-auto">{t.competition.readyToParticipate.subtitle}</p>
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
+            <section id="participate" className="mt-16 md:mt-24 text-center">
+                <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-8 md:p-12">
+                    <h3 className="text-2xl md:text-3xl font-headline font-bold">{t.competition.readyToParticipate.title}</h3>
+                    <p className="mt-4 mb-8 max-w-xl mx-auto text-sm md:text-base">{t.competition.readyToParticipate.subtitle}</p>
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 shadow-xl transition-transform hover:scale-105">
                         <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
                             {t.competition.readyToParticipate.cta}
                         </a>
@@ -250,8 +250,8 @@ export default function CompetitionPage() {
                 </div>
             </section>
             
-            <section id="supported-by" className="mt-24 text-center">
-                <h4 className="text-2xl font-headline text-muted-foreground">{t.competition.supportedBy}</h4>
+            <section id="supported-by" className="mt-16 md:mt-24 text-center">
+                <h4 className="text-xl md:text-2xl font-headline text-muted-foreground">{t.competition.supportedBy}</h4>
                 {/* Add supporter logos here later */}
             </section>
        </div>
