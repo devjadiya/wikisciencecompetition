@@ -143,9 +143,9 @@ const messageTemplates: Record<string, string[]> = {
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Invalid email address.'),
-  subject: z.string({ required_error: 'Please select a subject.' }),
+  subject: z.string({ required_error: 'Please select a subject.' }).min(1, 'Please select a subject.'),
   otherSubject: z.string().optional(),
-  message: z.string({ required_error: 'Please select a message.' }),
+  message: z.string({ required_error: 'Please select a message.' }).min(1, 'Please select a message.'),
   otherMessage: z.string().optional(),
 }).refine(data => {
     if (data.subject === 'Other...' && !data.otherSubject?.trim()) {
@@ -169,27 +169,28 @@ const formSchema = z.object({
 export default function ContactPage() {
   const { toast } = useToast();
   const [selectedSubject, setSelectedSubject] = useState('');
-  const [selectedMessage, setSelectedMessage] = useState('');
   
-  const showOtherSubject = selectedSubject === 'Other...';
-  const showOtherMessage = selectedMessage === 'Other...';
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: '', email: '', subject: '', otherSubject: '', message: '', otherMessage: '' },
   });
 
+  const watchSubject = form.watch('subject');
+  const watchMessage = form.watch('message');
+
+  const showOtherSubject = watchSubject === 'Other...';
+  const showOtherMessage = watchMessage === 'Other...';
+
   const handleSubjectChange = (value: string) => {
       setSelectedSubject(value);
       form.setValue('subject', value);
-      setSelectedMessage('');
       form.setValue('message', ''); 
       form.setValue('otherSubject', '');
       form.setValue('otherMessage', '');
+      form.clearErrors('message');
   }
   
   const handleMessageChange = (value: string) => {
-      setSelectedMessage(value);
       form.setValue('message', value);
       form.setValue('otherMessage', '');
   }
@@ -210,7 +211,6 @@ export default function ContactPage() {
       });
       form.reset();
       setSelectedSubject('');
-      setSelectedMessage('');
     } else {
       toast({
         title: 'Error',
@@ -335,10 +335,10 @@ export default function ContactPage() {
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Message</FormLabel>
-                              <Select onValueChange={handleMessageChange} value={field.value} disabled={!selectedSubject}>
+                              <Select onValueChange={handleMessageChange} value={field.value} disabled={!watchSubject}>
                                 <FormControl>
                                   <SelectTrigger>
-                                    <SelectValue placeholder={selectedSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
+                                    <SelectValue placeholder={watchSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
