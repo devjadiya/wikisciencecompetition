@@ -21,6 +21,7 @@ export const translations = {
     moreDropdownLinks: [
         { name: 'Jury', href: '/jury'},
         { name: 'Support Us', href: '/support-us'},
+        { name: 'Contact', href: '/contact' },
     ],
     learningLinks: [
       { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
@@ -51,7 +52,6 @@ export const translations = {
     footerNavHeader: 'Navigation',
     footerSupportHeader: 'Support Us',
     footerContactHeader: 'Contact',
-    footerContactLink: 'General Inquiries',
     footerCopyright: 'Wiki Science Competition India. All rights reserved.',
     footerLicense: 'Content is available under CC BY-SA 4.0 unless otherwise noted.',
     footerDeveloperCredit: 'Designed and Developed by',
@@ -75,7 +75,7 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'Campus Ambassadors',
+        title: 'Meet Our Ambassadors',
         subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
         institutes: [
             {
@@ -90,11 +90,7 @@ export const translations = {
                     }
                 ]
             }
-        ],
-        cta: {
-            text: 'Become a Campus Ambassador',
-            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
-        }
+        ]
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -126,10 +122,30 @@ export const translations = {
             'Share participation guidelines with potential contributors.',
             'Optionally, organize awareness activities like workshops or photowalks (we can provide support!).',
         ],
-        sidebarTitle: 'Apply Now',
-        sidebarDescription: 'Ready to make an impact? Fill out the form to become a Campus Ambassador.',
-        deadline: 'Deadline: 31st August 2025',
-        cta: 'Open Application Form'
+        sidebar: {
+            title: 'Apply Now',
+            description: 'Ready to make an impact? Fill out the form to become a Campus Ambassador.',
+            deadline: 'Deadline: 31st August 2025',
+            cta: 'Open Application Form'
+        },
+        institutes: [
+            {
+                name: 'Samrat Ashok Technological Institute',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
+                website: 'https://www.satiengg.in/',
+                ambassadors: [
+                    {
+                        name: 'Anushka Patel',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                    }
+                ]
+            }
+        ],
+        cta: {
+            text: 'Become a Campus Ambassador',
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
+        }
     },
     competition: {
         title: 'Competition Details',
@@ -404,6 +420,7 @@ export const translations = {
     moreDropdownLinks: [
         { name: 'जूरी', href: '/jury'},
         { name: 'समर्थन करें', href: '/support-us'},
+        { name: 'संपर्क', href: '/contact' },
     ],
     learningLinks: [
       { name: 'विकि खाता कैसे बनाएं', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
@@ -434,7 +451,6 @@ export const translations = {
     footerNavHeader: 'नेविगेशन',
     footerSupportHeader: 'हमारा समर्थन करें',
     footerContactHeader: 'संपर्क',
-    footerContactLink: 'सामान्य पूछताछ',
     footerCopyright: 'विकी विज्ञान प्रतियोगिता भारत। सर्वाधिकार सुरक्षित।',
     footerLicense: 'सामग्री CC BY-SA 4.0 के तहत उपलब्ध है जब तक कि अन्यथा उल्लेख न किया गया हो।',
     footerDeveloperCredit: 'द्वारा डिजाइन और विकसित',
@@ -458,7 +474,7 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'कैंपस एंबेसडर',
+        title: 'हमारे राजदूतों से मिलें',
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
         institutes: [
             {
@@ -473,11 +489,7 @@ export const translations = {
                     }
                 ]
             }
-        ],
-        cta: {
-            text: 'कैंपस एंबेसडर बनें',
-            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
-        }
+        ]
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -509,10 +521,30 @@ export const translations = {
             'संभावित योगदानकर्ताओं के साथ भागीदारी दिशानिर्देश साझा करें।',
             'वैकल्पिक रूप से, कार्यशालाओं या फोटोवॉक जैसी जागरूकता गतिविधियाँ आयोजित करें (हम सहायता प्रदान कर सकते हैं!)।',
         ],
-        sidebarTitle: 'अभी आवेदन करें',
-        sidebarDescription: 'प्रभाव डालने के लिए तैयार हैं? कैंपस एंबेसडर बनने के लिए फॉर्म भरें।',
-        deadline: 'अंतिम तिथि: 31 अगस्त 2025',
-        cta: 'आवेदन पत्र खोलें'
+        sidebar: {
+            title: 'अभी आवेदन करें',
+            description: 'प्रभाव डालने के लिए तैयार हैं? कैंपस एंबेसडर बनने के लिए फॉर्म भरें।',
+            deadline: 'अंतिम तिथि: 31 अगस्त 2025',
+            cta: 'आवेदन पत्र खोलें'
+        },
+        institutes: [
+            {
+                name: 'सम्राट अशोक प्रौद्योगिकी संस्थान',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
+                website: 'https://www.satiengg.in/',
+                ambassadors: [
+                    {
+                        name: 'अनुष्का पटेल',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                    }
+                ]
+            }
+        ],
+        cta: {
+            text: 'कैंपस एंबेसडर बनें',
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
+        }
     },
      competition: {
         title: 'प्रतियोगिता विवरण',
