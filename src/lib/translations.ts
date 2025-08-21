@@ -179,24 +179,23 @@ export const translations = {
     organizers: {
         title: 'Meet the Organizers',
         subtitle: 'The dedicated team working behind the scenes to make the first Wiki Science Competition India a grand success.',
+        lead_organizers: 'Lead Organizers',
+        advisors: 'Advisors',
         team: [
             {
-                name: 'Jane Doe',
+                name: 'Dev Jadiya',
                 role: 'Lead Organizer',
-                bio: 'Jane is a passionate science communicator and a long-time Wikimedian, dedicated to bridging the gap between science and the public.',
-                social: { email: 'mailto:jane.doe@example.com', linkedin: '#'}
+                social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya'}
             },
             {
-                name: 'John Smith',
-                role: 'Technical Lead',
-                bio: 'With a background in software engineering, John ensures the technical aspects of the competition run smoothly.',
-                social: { email: 'mailto:john.smith@example.com', linkedin: '#'}
+                name: 'Gauri Gupta',
+                role: 'Lead Organizer',
+                social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa'}
             },
             {
-                name: 'Priya Patel',
-                role: 'Outreach Coordinator',
-                bio: 'Priya leads our outreach efforts, connecting with institutions and communities across India to promote the competition.',
-                social: { email: 'mailto:priya.patel@example.com', linkedin: '#'}
+                name: 'Suyash Dwivedi',
+                role: 'Advisor',
+                social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
             },
         ]
     },
@@ -497,24 +496,23 @@ export const translations = {
     organizers: {
         title: 'आयोजकों से मिलें',
         subtitle: 'पहली विकी विज्ञान प्रतियोगिता भारत को एक बड़ी सफलता बनाने के लिए पर्दे के पीछे काम करने वाली समर्पित टीम।',
+        lead_organizers: 'प्रमुख आयोजक',
+        advisors: 'सलाहकार',
         team: [
             {
-                name: 'जेन डो',
+                name: 'देव जड़िया',
                 role: 'प्रमुख आयोजक',
-                bio: 'जेन एक भावुक विज्ञान संचारक और एक लंबे समय से विकिमीडियन हैं, जो विज्ञान और जनता के बीच की खाई को पाटने के लिए समर्पित हैं।',
-                social: { email: 'mailto:jane.doe@example.com', linkedin: '#' }
+                social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya'}
             },
             {
-                name: 'जॉन स्मिथ',
-                role: 'तकनीकी प्रमुख',
-                bio: 'सॉफ्टवेयर इंजीनियरिंग में पृष्ठभूमि के साथ, जॉन यह सुनिश्चित करते हैं कि प्रतियोगिता के तकनीकी पहलू सुचारू रूप से चलें।',
-                social: { email: 'mailto:john.smith@example.com', linkedin: '#' }
+                name: 'गौरी गुप्ता',
+                role: 'प्रमुख आयोजक',
+                social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa'}
             },
             {
-                name: 'प्रिया पटेल',
-                role: 'आउटरीच समन्वयक',
-                bio: 'प्रिया हमारे आउटरीच प्रयासों का नेतृत्व करती हैं, प्रतियोगिता को बढ़ावा देने के लिए पूरे भारत में संस्थानों और समुदायों से जुड़ती हैं।',
-                social: { email: 'mailto:priya.patel@example.com', linkedin: '#' }
+                name: 'सुयश द्विवेदी',
+                role: 'सलाहकार',
+                social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
             },
         ]
     },
