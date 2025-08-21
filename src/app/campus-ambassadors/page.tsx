@@ -66,19 +66,19 @@ export default function CampusAmbassadorsPage() {
                     />
                   </div>
                   <div className="p-6 flex-grow flex flex-col text-center items-center">
-                    <h3 className="text-2xl font-headline font-bold text-primary">{ambassador.name}</h3>
-                     <div className="flex items-center gap-2 mt-2 mb-4">
-                        <Image src={institute.logo} alt={`${institute.name} logo`} width={24} height={24} className="rounded-sm" />
-                        <a href={institute.website} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:underline">
-                            {institute.name}
-                        </a>
-                    </div>
-                    <div className="flex space-x-4 mt-auto">
+                    <h3 className="text-2xl font-headline font-bold text-primary mb-4">{ambassador.name}</h3>
+                    <div className="flex space-x-4 mb-4">
                       {ambassador.meta && (
                         <a href={ambassador.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
                             <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
                         </a>
                       )}
+                    </div>
+                     <div className="flex items-center gap-2 mt-auto">
+                        <Image src={institute.logo} alt={`${institute.name} logo`} width={24} height={24} className="rounded-sm" />
+                        <a href={institute.website} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:underline">
+                            {institute.name}
+                        </a>
                     </div>
                   </div>
                 </motion.div>
