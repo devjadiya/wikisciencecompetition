@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'upload.wikimedia.org',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'blush-fashionable-swift-557.mypinata.cloud',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Users, Building } from 'lucide-react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 
 const cardVariants = {
@@ -44,8 +44,13 @@ export default function CallToAction() {
                 viewport={{ once: true, amount: 0.5 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center"
             >
-                <div className="p-3 md:p-4 bg-primary/10 rounded-full mb-4">
-                    <Users className="h-8 w-8 md:h-10 md:w-10 text-primary" />
+                <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
+                    <Image 
+                        src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafkreidznbr4t62rwxk56qd57k5c6tdlvp76r3wlz7432hcyi5m2ovaecm"
+                        alt="Call for Campus Ambassadors"
+                        fill
+                        className="object-cover rounded-full"
+                    />
                 </div>
                 <h3 className="text-xl md:text-2xl font-headline font-bold mb-3">{cta.campus.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
@@ -63,8 +68,13 @@ export default function CallToAction() {
                 viewport={{ once: true, amount: 0.5 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center"
             >
-                <div className="p-3 md:p-4 bg-primary/10 rounded-full mb-4">
-                    <Building className="h-8 w-8 md:h-10 md:w-10 text-primary" />
+                <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
+                     <Image 
+                        src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafkreigoa5xiqi7efuksfbqrdqw7bmacwhbhakvl4t7intssswgvkfodd4"
+                        alt="Call for Wikimedia Affiliates"
+                        fill
+                        className="object-cover rounded-full"
+                    />
                 </div>
                 <h3 className="text-xl md:text-2xl font-headline font-bold mb-3">{cta.affiliates.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow text-sm md:text-base">
