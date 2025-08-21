@@ -1,12 +1,21 @@
 'use server';
 
 import { z } from 'zod';
+import nodemailer from 'nodemailer';
 
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  subject: z.string(),
-  message: z.string(),
+  name: z.string().min(2, 'Name must be at least 2 characters.'),
+  email: z.string().email('Invalid email address.'),
+  subject: z.string().min(5, 'Subject must be at least 5 characters.'),
+  message: z.string().min(10, 'Message must be at least 10 characters.'),
+});
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_SERVER_USER,
+        pass: process.env.EMAIL_SERVER_PASSWORD,
+    },
 });
 
 export async function handleContactForm(values: z.infer<typeof formSchema>) {
@@ -16,13 +25,27 @@ export async function handleContactForm(values: z.infer<typeof formSchema>) {
     return { success: false, message: 'Invalid form data.' };
   }
 
-  // In a real application, you would integrate an email service here.
-  // For this example, we'll just log the data to the console.
-  console.log('Contact form submitted:');
-  console.log(parsed.data);
+  const { name, email, subject, message } = parsed.data;
 
-  // Simulate a network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  const mailOptions = {
+    from: process.env.EMAIL_SERVER_USER,
+    to: process.env.EMAIL_TO,
+    subject: `New Query from Wiki Science Website: ${subject}`,
+    html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+    `,
+  };
 
-  return { success: true };
+  try {
+    await transporter.sendMail(mailOptions);
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to send email:', error);
+    return { success: false, message: 'Failed to send message. Please try again later.' };
+  }
 }
