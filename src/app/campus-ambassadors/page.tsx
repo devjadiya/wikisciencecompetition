@@ -45,30 +45,9 @@ export default function CampusAmbassadorsPage() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {institutes.map((institute, index) => (
-          <div key={index} className="mb-16">
-            <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center text-center gap-4 mb-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <a href={institute.website} target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={institute.logo}
-                  alt={`${institute.name} logo`}
-                  width={80}
-                  height={80}
-                  className="rounded-md object-contain"
-                />
-              </a>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
-                {institute.name}
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
-              {institute.ambassadors.map((ambassador, a_index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+            {institutes.map((institute) => (
+                institute.ambassadors.map((ambassador, a_index) => (
                 <motion.div
                   key={a_index}
                   variants={cardVariants}
@@ -88,7 +67,13 @@ export default function CampusAmbassadorsPage() {
                   </div>
                   <div className="p-6 flex-grow flex flex-col text-center items-center">
                     <h3 className="text-2xl font-headline font-bold text-primary">{ambassador.name}</h3>
-                    <div className="flex space-x-4 mt-4">
+                     <div className="flex items-center gap-2 mt-2 mb-4">
+                        <Image src={institute.logo} alt={`${institute.name} logo`} width={24} height={24} className="rounded-sm" />
+                        <a href={institute.website} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:underline">
+                            {institute.name}
+                        </a>
+                    </div>
+                    <div className="flex space-x-4 mt-auto">
                       {ambassador.meta && (
                         <a href={ambassador.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
                             <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
@@ -97,10 +82,9 @@ export default function CampusAmbassadorsPage() {
                     </div>
                   </div>
                 </motion.div>
-              ))}
-            </div>
-          </div>
-        ))}
+                ))
+            ))}
+        </div>
         
         <div className="mt-16 text-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">

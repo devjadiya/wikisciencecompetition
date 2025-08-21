@@ -12,7 +12,6 @@ export const translations = {
       { name: 'Competition', href: '/competition' },
       { name: 'Resources', href: '/resources' },
       { name: 'Sponsors', href: '/sponsors' },
-      { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
     ],
     organizerLinks: [
         { name: 'Meet the Team', href: '/organizers' },
@@ -21,6 +20,7 @@ export const translations = {
     moreDropdownLinks: [
         { name: 'Jury', href: '/jury'},
         { name: 'Support Us', href: '/support-us'},
+        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
     ],
     learningLinks: [
       { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
@@ -394,7 +394,6 @@ export const translations = {
       { name: 'प्रतियोगिता', href: '/competition' },
       { name: 'संसाधन', href: '/resources' },
       { name: 'प्रायोजक', href: '/sponsors' },
-      { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
     ],
     organizerLinks: [
         { name: 'टीम से मिलें', href: '/organizers' },
@@ -403,6 +402,7 @@ export const translations = {
     moreDropdownLinks: [
         { name: 'जूरी', href: '/jury'},
         { name: 'समर्थन करें', href: '/support-us'},
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
     ],
     learningLinks: [
       { name: 'विकि खाता कैसे बनाएं', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
