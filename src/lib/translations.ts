@@ -54,6 +54,7 @@ export const translations = {
     footerContactLink: 'General Inquiries',
     footerCopyright: 'Wiki Science Competition India. All rights reserved.',
     footerLicense: 'Content is available under CC BY-SA 4.0 unless otherwise noted.',
+    footerDeveloperCredit: 'Designed and Developed by',
     about: {
         title: 'About WikiScience India 2025',
         badge: 'Introduction for Indian Context',
@@ -436,6 +437,7 @@ export const translations = {
     footerContactLink: 'सामान्य पूछताछ',
     footerCopyright: 'विकी विज्ञान प्रतियोगिता भारत। सर्वाधिकार सुरक्षित।',
     footerLicense: 'सामग्री CC BY-SA 4.0 के तहत उपलब्ध है जब तक कि अन्यथा उल्लेख न किया गया हो।',
+    footerDeveloperCredit: 'द्वारा डिजाइन और विकसित',
      about: {
         title: 'विकीसाइंस इंडिया 2025 के बारे में',
         badge: 'भारतीय संदर्भ के लिए परिचय',

@@ -74,7 +74,7 @@ export default function Footer() {
                   ))}
                   <li className="pt-4">
                      <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
-                     <a href="mailto:wikisciencecompetition@gmail.com" className="text-base font-bold text-accent hover:text-accent/80 transition-colors break-words">
+                     <a href="mailto:wikisciencecompetition@gmail.com" className="text-sm font-bold text-accent hover:text-accent/80 transition-colors break-all">
                         wikisciencecompetition@gmail.com
                     </a>
                   </li>
@@ -96,11 +96,14 @@ export default function Footer() {
                 </a>
             </div>
         </div>
-        <div className="mt-8 border-t border-primary/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-center">
+        <div className="mt-8 border-t border-primary/10 pt-8 flex flex-col-reverse sm:flex-row justify-between items-center text-center gap-4">
+          <p className="text-xs text-muted-foreground">
+            {t.footerDeveloperCredit} <a href="https://www.linkedin.com/in/devjadiya/" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">Dev Jadiya</a>
+          </p>
           <p className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} {t.footerCopyright}
           </p>
-          <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
+          <p className="text-xs text-muted-foreground">
             {t.footerLicense}
           </p>
         </div>
