@@ -78,38 +78,42 @@ export default function Navbar() {
               </Link>
             ))}
              <DropdownMenu open={organizersOpen} onOpenChange={setOrganizersOpen}>
-              <DropdownMenuTrigger asChild>
-                <Button onMouseEnter={() => setOrganizersOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  {t.organizersDropdown} <ChevronDown className="h-4 w-4 ml-1" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent onMouseLeave={() => setOrganizersOpen(false)} className="w-56 p-2">
-                {organizerLinks.map(link => (
-                    <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
+                <div onMouseLeave={() => setOrganizersOpen(false)}>
+                    <DropdownMenuTrigger asChild>
+                        <Button onMouseEnter={() => setOrganizersOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        {t.organizersDropdown} <ChevronDown className="h-4 w-4 ml-1" />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent onMouseLeave={() => setOrganizersOpen(false)} className="w-56 p-2">
+                        {organizerLinks.map(link => (
+                            <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                </div>
             </DropdownMenu>
             <DropdownMenu open={moreOpen} onOpenChange={setMoreOpen}>
-              <DropdownMenuTrigger asChild>
-                <Button onMouseEnter={() => setMoreOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                  {t.moreDropdown} <ChevronDown className="h-4 w-4 ml-1" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent onMouseLeave={() => setMoreOpen(false)} className="w-56 p-2">
-                {moreDropdownLinks.map(link => (
-                    <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
-                ))}
-                <DropdownMenuSub>
-                    <DropdownMenuSubTrigger className="p-3 text-base">{t.learningDropdown}</DropdownMenuSubTrigger>
-                    <DropdownMenuPortal>
-                        <DropdownMenuSubContent className="p-2">
-                             {learningLinks.map(link => (
-                                <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></DropdownMenuItem>
-                            ))}
-                        </DropdownMenuSubContent>
-                    </DropdownMenuPortal>
-                </DropdownMenuSub>
-              </DropdownMenuContent>
+                <div onMouseLeave={() => setMoreOpen(false)}>
+                    <DropdownMenuTrigger asChild>
+                        <Button onMouseEnter={() => setMoreOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        {t.moreDropdown} <ChevronDown className="h-4 w-4 ml-1" />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent onMouseLeave={() => setMoreOpen(false)} className="w-56 p-2">
+                        {moreDropdownLinks.map(link => (
+                            <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
+                        ))}
+                        <DropdownMenuSub>
+                            <DropdownMenuSubTrigger className="p-3 text-base">{t.learningDropdown}</DropdownMenuSubTrigger>
+                            <DropdownMenuPortal>
+                                <DropdownMenuSubContent className="p-2">
+                                    {learningLinks.map(link => (
+                                        <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><a href={link.href} target="_blank" rel="noopener noreferrer">{link.name}</a></DropdownMenuItem>
+                                    ))}
+                                </DropdownMenuSubContent>
+                            </DropdownMenuPortal>
+                        </DropdownMenuSub>
+                    </DropdownMenuContent>
+                </div>
             </DropdownMenu>
           </div>
           <div className="flex items-center gap-1">
