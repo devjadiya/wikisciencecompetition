@@ -31,7 +31,7 @@ const organizerImages: { [key: string]: { image: string, hint: string } } = {
     hint: 'professional headshot',
   },
   'Uday Dongre': {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Uday_dongre_photo_01.jpg/1024px-Uday_dongre_photo_01.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Uday_dongre_photo_01.jpg',
     hint: 'organizer portrait',
   },
   'Pankaj Yadav': {
