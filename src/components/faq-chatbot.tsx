@@ -79,10 +79,11 @@ export default function FaqChatbot() {
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className="fixed bottom-6 right-6 z-40"
         >
-        <Button className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-accent hover:bg-accent/90 shadow-2xl z-40 transition-transform hover:scale-110">
-          <Sparkles className="h-8 w-8 text-accent-foreground" />
-        </Button>
+          <Button className="h-16 w-16 rounded-full bg-accent hover:bg-accent/90 shadow-2xl">
+            <Sparkles className="h-8 w-8 text-accent-foreground" />
+          </Button>
         </motion.div>
       </SheetTrigger>
       <SheetContent className="flex flex-col p-0 w-full sm:max-w-md bg-background/80 backdrop-blur-lg">
