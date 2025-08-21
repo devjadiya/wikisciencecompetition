@@ -5,7 +5,7 @@ This is the official website for the **Wiki Science Competition 2025 - India**, 
 
 ## Live Site
 
-**[wikiscience.in](https://wikiscience.in)**
+**[wikiscience.in](https://wikisciencecompetition.vercel.app/)**
 
 ---
 
