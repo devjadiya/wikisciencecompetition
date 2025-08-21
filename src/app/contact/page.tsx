@@ -71,21 +71,13 @@ export default function ContactPage() {
                     <div>
                         <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
                         <p className="text-muted-foreground text-sm md:text-base">
-                            Fill out the form and our team will get back to you within 24 hours.
+                            Fill out the form and our team will get back to you within a few hours. We're here to help!
                         </p>
                     </div>
                     <div className="space-y-4 text-sm md:text-base">
                         <div className="flex items-center gap-4">
                             <Mail className="h-5 w-5 text-accent" />
                             <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">wikisciencecompetition@gmail.com</a>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <Phone className="h-5 w-5 text-accent" />
-                            <span className="text-muted-foreground">+91 123 456 7890</span>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <MapPin className="h-5 w-5 text-accent" />
-                            <span className="text-muted-foreground">Bangalore, India</span>
                         </div>
                     </div>
                 </motion.div>
