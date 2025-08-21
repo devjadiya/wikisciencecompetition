@@ -6,19 +6,19 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from './actions';
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Invalid email address.'),
   subject: z.string({ required_error: 'Please select a subject.' }),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
+  message: z.string({ required_error: 'Please select a message.' }),
 });
 
 const subjects = [
@@ -44,22 +44,104 @@ const subjects = [
     'Other',
 ];
 
-const messageTemplate = `Hi Team,
+const messageTemplates: Record<string, string[]> = {
+    'General Inquiry about the Competition': [
+        'Could you please provide more details about the competition?',
+        'I have a general question about the event timeline.',
+        'Who is eligible to participate in this competition?',
+    ],
+    'Question about Participation Rules': [
+        'Can I submit a photo that has been previously published?',
+        'What are the licensing requirements for submissions?',
+        'Are there any restrictions on photo editing or manipulation?',
+    ],
+    'Image Submission Guidelines': [
+        'What is the minimum/maximum resolution for image submissions?',
+        'What file formats are accepted for images?',
+        'How do I add categories and descriptions to my submission?',
+    ],
+    'Video/Audio Submission Guidelines': [
+        'What are the accepted formats and duration for video submissions?',
+        'Are there specific guidelines for audio quality?',
+    ],
+    'Image Category Clarification': [
+        'I am unsure which category my image fits into. Can you help?',
+        'What is the difference between "Wildlife & Nature" and "General Category"?',
+    ],
+    'Technical Issue with Uploading': [
+        'I am facing an error while using the Upload Wizard.',
+        'My submission is not appearing after upload. What should I do?',
+    ],
+    'Sponsorship Opportunities': [
+        'I am interested in sponsoring the event. Could you share the sponsorship deck?',
+        'What benefits do sponsors receive?',
+    ],
+    'Becoming a Partner/Affiliate': [
+        'Our organization would like to partner with you. What are the next steps?',
+        'What is expected of a partner organization?',
+    ],
+    'Campus Ambassador Program Inquiry': [
+        'What are the responsibilities of a Campus Ambassador?',
+        'I have applied for the Campus Ambassador program. When can I expect a response?',
+    ],
+    'Jury & Judging Process': [
+        'How will the images be judged?',
+        'When will the jury members be announced?',
+    ],
+    'Prizes and Awards Information': [
+        'What are the prizes for the national winners?',
+        'Will there be prizes for each category?',
+    ],
+    'Media or Press Inquiry': [
+        'I would like to feature the competition in our publication.',
+        'Could you provide a press kit or contact for media inquiries?',
+    ],
+    'Licensing and Copyright Question': [
+        'I have a question about the Creative Commons licenses.',
+        'Who retains the copyright of the submitted images?',
+    ],
+    'Website Feedback or Bug Report': [
+        'I found a bug on the website I would like to report.',
+        'I have some feedback to improve the website user experience.',
+    ],
+    'Request for a Workshop/Session': [
+        'Our institution would like to request a workshop on science photography.',
+        'Are you available to conduct an online session about the competition?',
+    ],
+    'Volunteering or Joining the Team': [
+        'I am interested in volunteering for the organizing team.',
+        'Are there any open positions in the core team?',
+    ],
+    'Question about Past Competitions': [
+        'Where can I view the winners from previous international competitions?',
+    ],
+    'Data Privacy Concern': [
+        'How is my personal data handled by the competition?',
+    ],
+    'How to use Wikimedia Commons': [
+        'I am new to Wikimedia Commons and need some guidance.',
+        'Where can I find tutorials on using Wikimedia Commons?',
+    ],
+    'Other': [
+        'I have a question that is not listed in the subjects. Please let me know the best way to ask.'
+    ]
+};
 
-I have a question about [topic].
-
-[Your message here]
-
-Thanks,
-[Your Name]
-`;
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const [selectedSubject, setSelectedSubject] = useState('');
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: '', email: '', message: '' },
+    defaultValues: { name: '', email: '', subject: '', message: '' },
   });
+
+  const handleSubjectChange = (value: string) => {
+      setSelectedSubject(value);
+      form.setValue('subject', value);
+      form.setValue('message', ''); // Reset message when subject changes
+  }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const result = await handleContactForm(values);
@@ -69,6 +151,7 @@ export default function ContactPage() {
         description: 'Thank you for contacting us. We will get back to you shortly.',
       });
       form.reset();
+      setSelectedSubject('');
     } else {
       toast({
         title: 'Error',
@@ -154,7 +237,7 @@ export default function ContactPage() {
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Subject</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <Select onValueChange={handleSubjectChange} value={field.value}>
                                 <FormControl>
                                   <SelectTrigger>
                                     <SelectValue placeholder="Select a subject for your query" />
@@ -173,17 +256,32 @@ export default function ContactPage() {
                           )}
                         />
                         <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder={messageTemplate} {...field} rows={6} />
-                            </FormControl>
-                            <FormMessage />
+                              <FormLabel>Message</FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value} disabled={!selectedSubject}>
+                                <FormControl>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder={selectedSubject ? "Select a message" : "Please select a subject first"} />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  {selectedSubject && messageTemplates[selectedSubject] ? (
+                                    messageTemplates[selectedSubject].map((msg) => (
+                                      <SelectItem key={msg} value={msg}>
+                                        {msg}
+                                      </SelectItem>
+                                    ))
+                                  ) : (
+                                    <SelectItem value="-" disabled>No messages available</SelectItem>
+                                  )}
+                                </SelectContent>
+                              </Select>
+                              <FormMessage />
                             </FormItem>
-                        )}
+                          )}
                         />
                         <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={form.formState.isSubmitting}>
                             {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
@@ -196,3 +294,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
