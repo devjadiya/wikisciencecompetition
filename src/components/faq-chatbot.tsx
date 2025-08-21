@@ -18,10 +18,10 @@ interface Message {
 }
 
 const exampleQuestions = [
-    { for: 'Student', question: 'How can I participate as a student?' },
-    { for: 'Sponsor', question: 'What are the benefits of sponsoring this campaign?'},
-    { for: 'Photographer', question: 'What are the image submission rules?'},
-    { for: 'General', question: 'When will the winners be announced?'},
+    { for: 'General', question: 'What is this competition about?' },
+    { for: 'Participant', question: 'How do I submit a photo?'},
+    { for: 'Rules', question: 'What kind of photos can I enter?'},
+    { for: 'Prizes', question: 'How do I win a prize?'},
 ]
 
 export default function FaqChatbot() {
@@ -44,6 +44,7 @@ export default function FaqChatbot() {
     
     const userMessage: Message = { role: 'user', text: question };
     setMessages((prev) => [...prev, userMessage]);
+    setInput('');
     setIsLoading(true);
 
     try {
@@ -66,7 +67,6 @@ export default function FaqChatbot() {
     e.preventDefault();
     if (!input.trim()) return;
     processQuestion(input);
-    setInput('');
   };
 
   const handleExampleClick = (question: string) => {
@@ -76,49 +76,69 @@ export default function FaqChatbot() {
   return (
     <Sheet>
       <SheetTrigger asChild>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
         <Button className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-accent hover:bg-accent/90 shadow-2xl z-40 transition-transform hover:scale-110">
-          <MessageSquare className="h-8 w-8 text-accent-foreground" />
+          <Sparkles className="h-8 w-8 text-accent-foreground" />
         </Button>
+        </motion.div>
       </SheetTrigger>
-      <SheetContent className="flex flex-col p-0">
-        <SheetHeader className="p-6 border-b">
-          <SheetTitle className="flex items-center gap-2 font-headline">
-            <Bot className="h-6 w-6 text-primary" /> FAQ Chatbot
+      <SheetContent className="flex flex-col p-0 w-full sm:max-w-md bg-background/80 backdrop-blur-lg">
+        <SheetHeader className="p-4 border-b border-border/50">
+          <SheetTitle className="flex items-center gap-3 font-headline text-lg">
+            <Avatar className="h-9 w-9 border-2 border-primary/50">
+                <AvatarFallback className="bg-primary text-primary-foreground">
+                    <Bot className="h-5 w-5" />
+                </AvatarFallback>
+            </Avatar> 
+            <div>
+              <p>FAQ Chatbot</p>
+              <p className="text-xs font-normal text-muted-foreground">Your guide to the Wiki Science Competition</p>
+            </div>
           </SheetTitle>
         </SheetHeader>
         <div className="flex-1 flex flex-col">
-          <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
+          <ScrollArea className="flex-1" ref={scrollAreaRef}>
+            <div className="p-4 space-y-6">
             <AnimatePresence>
             {messages.length === 0 && (
                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="space-y-4 text-center"
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                    className="space-y-6 text-center pt-8"
                  >
                     <div className="p-4 bg-primary/10 rounded-full inline-block">
-                        <Sparkles className="h-8 w-8 text-primary" />
+                        <Sparkles className="h-10 w-10 text-primary" />
                     </div>
-                    <h3 className="font-headline text-lg">Ask me anything!</h3>
+                    <h3 className="font-headline text-xl">Ask me anything!</h3>
                     <p className="text-sm text-muted-foreground">Here are some examples to get you started:</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
                         {exampleQuestions.map((ex) => (
-                            <button key={ex.question} onClick={() => handleExampleClick(ex.question)} className="p-3 bg-muted hover:bg-muted/80 rounded-lg text-sm transition-colors text-muted-foreground">
+                            <motion.button 
+                              key={ex.question} 
+                              onClick={() => handleExampleClick(ex.question)} 
+                              className="p-3 bg-muted hover:bg-muted/80 rounded-lg text-sm transition-colors text-muted-foreground"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
                                 {ex.question}
-                            </button>
+                            </motion.button>
                         ))}
                     </div>
                 </motion.div>
             )}
             </AnimatePresence>
-            <div className="space-y-4">
               <AnimatePresence>
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.4, ease: 'easeOut' }}
                     className={cn('flex items-start gap-3', message.role === 'user' ? 'justify-end' : '')}
                   >
                     {message.role === 'bot' && (
@@ -130,13 +150,13 @@ export default function FaqChatbot() {
                     )}
                     <div
                       className={cn(
-                        'rounded-lg px-4 py-2 max-w-[80%] text-sm',
+                        'rounded-xl px-4 py-3 max-w-[85%] text-sm shadow-md border',
                         message.role === 'user'
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted text-muted-foreground'
+                          ? 'bg-primary text-primary-foreground border-primary/50'
+                          : 'bg-card text-card-foreground border-border/50'
                       )}
                     >
-                      {message.text}
+                      <p className="whitespace-pre-wrap">{message.text}</p>
                     </div>
                      {message.role === 'user' && (
                       <Avatar className="h-8 w-8">
@@ -149,8 +169,8 @@ export default function FaqChatbot() {
                 ))}
                 {isLoading && messages.length > 0 && (
                   <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
                     className="flex items-start gap-3"
                   >
                     <Avatar className="h-8 w-8">
@@ -158,7 +178,7 @@ export default function FaqChatbot() {
                           <Bot className="h-5 w-5" />
                         </AvatarFallback>
                     </Avatar>
-                    <div className="bg-muted text-muted-foreground rounded-lg px-4 py-3 text-sm flex items-center">
+                    <div className="bg-muted text-muted-foreground rounded-lg px-4 py-3 text-sm flex items-center shadow-md border border-border/50">
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         Thinking...
                     </div>
@@ -167,20 +187,20 @@ export default function FaqChatbot() {
               </AnimatePresence>
             </div>
           </ScrollArea>
-          <div className="p-4 border-t">
+          <div className="p-4 border-t border-border/50">
             <form onSubmit={handleSubmit} className="flex gap-2">
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask a question..."
                 disabled={isLoading}
-                className="flex-1"
+                className="flex-1 h-11"
               />
-              <Button type="submit" disabled={isLoading || !input.trim()} size="icon">
+              <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="h-11 w-11">
                 {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin" />
                 ) : (
-                  <Send className="h-4 w-4" />
+                  <Send className="h-5 w-5" />
                 )}
               </Button>
             </form>
