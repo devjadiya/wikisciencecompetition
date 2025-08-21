@@ -91,7 +91,7 @@ export default function HeroCarousel() {
   const slideIndex = page;
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] w-full flex items-center justify-center text-white overflow-hidden">
+    <section className="relative h-[60vh] md:h-[90vh] min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -101,8 +101,8 @@ export default function HeroCarousel() {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 200, damping: 30 },
-            opacity: { duration: 1 }
+            x: { type: "spring", stiffness: 200, damping: 30, duration: 1.2 },
+            opacity: { duration: 1.2 }
           }}
           className="absolute w-full h-full"
         >

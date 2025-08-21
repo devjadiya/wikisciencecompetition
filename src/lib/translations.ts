@@ -15,12 +15,12 @@ export const translations = {
     ],
     organizerLinks: [
         { name: 'Meet the Team', href: '/organizers' },
+        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
         { name: 'Call for Team', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
         { name: 'Jury', href: '/jury'},
         { name: 'Support Us', href: '/support-us'},
-        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
     ],
     learningLinks: [
       { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
@@ -397,12 +397,12 @@ export const translations = {
     ],
     organizerLinks: [
         { name: 'टीम से मिलें', href: '/organizers' },
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
         { name: 'टीम के लिए कॉल', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
         { name: 'जूरी', href: '/jury'},
         { name: 'समर्थन करें', href: '/support-us'},
-        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
     ],
     learningLinks: [
       { name: 'विकि खाता कैसे बनाएं', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },

@@ -81,8 +81,8 @@ export default function Footer() {
                   <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
                    <ul role="list" className="mt-4 space-y-4">
                         <li>
-                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-base text-muted-foreground hover:text-primary transition-colors">
-                                {t.footerContactLink}
+                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-base font-bold text-accent hover:text-accent/80 transition-colors">
+                                wikisciencecompetition@gmail.com
                             </a>
                         </li>
                    </ul>
