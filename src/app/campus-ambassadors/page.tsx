@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const cardVariants = {
   offscreen: {
@@ -25,7 +26,7 @@ const cardVariants = {
 
 export default function CampusAmbassadorsPage() {
   const { t } = useLanguage();
-  const { title, subtitle, institutes } = t.campusAmbassadors;
+  const { title, subtitle, institutes, cta } = t.campusAmbassadors;
 
   return (
     <div className="bg-background text-foreground">
@@ -66,7 +67,7 @@ export default function CampusAmbassadorsPage() {
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
               {institute.ambassadors.map((ambassador, a_index) => (
                 <motion.div
                   key={a_index}
@@ -103,7 +104,7 @@ export default function CampusAmbassadorsPage() {
         
         <div className="mt-16 text-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
-                <a href="/campus-ambassadors" target="_blank" rel="noopener noreferrer">Become a Campus Ambassador</a>
+                <a href={cta.href} target="_blank" rel="noopener noreferrer">{cta.text}</a>
             </Button>
         </div>
 
@@ -111,5 +112,3 @@ export default function CampusAmbassadorsPage() {
     </div>
   );
 }
-
-  

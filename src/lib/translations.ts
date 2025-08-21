@@ -12,13 +12,13 @@ export const translations = {
       { name: 'Competition', href: '/competition' },
       { name: 'Resources', href: '/resources' },
       { name: 'Sponsors', href: '/sponsors' },
+      { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
     ],
     organizerLinks: [
         { name: 'Meet the Team', href: '/organizers' },
         { name: 'Call for Team', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
-        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
         { name: 'Jury', href: '/jury'},
         { name: 'Support Us', href: '/support-us'},
     ],
@@ -89,7 +89,11 @@ export const translations = {
                     }
                 ]
             }
-        ]
+        ],
+        cta: {
+            text: 'Become a Campus Ambassador',
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
+        }
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -390,13 +394,13 @@ export const translations = {
       { name: 'प्रतियोगिता', href: '/competition' },
       { name: 'संसाधन', href: '/resources' },
       { name: 'प्रायोजक', href: '/sponsors' },
+      { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
     ],
     organizerLinks: [
         { name: 'टीम से मिलें', href: '/organizers' },
         { name: 'टीम के लिए कॉल', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
-        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
         { name: 'जूरी', href: '/jury'},
         { name: 'समर्थन करें', href: '/support-us'},
     ],
@@ -467,7 +471,11 @@ export const translations = {
                     }
                 ]
             }
-        ]
+        ],
+        cta: {
+            text: 'कैंपस एंबेसडर बनें',
+            href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
+        }
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -765,5 +773,3 @@ export const translations = {
 };
 
 export type Translations = typeof translations;
-
-  
