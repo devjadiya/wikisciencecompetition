@@ -1,6 +1,5 @@
 
 import HeroCarousel from '@/components/home/hero-carousel';
-import AutoscrollCarousel from '@/components/home/autoscroll-carousel';
 import InfoSections from '@/components/home/info-sections';
 import PrizesSection from '@/components/home/prizes-section';
 import JurySection from '@/components/home/jury-section';
