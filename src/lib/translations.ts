@@ -181,6 +181,7 @@ export const translations = {
         subtitle: 'The dedicated team working behind the scenes to make the first Wiki Science Competition India a grand success.',
         lead_organizers: 'Lead Organizers',
         advisors: 'Advisors',
+        core_organizing_team: 'Core Organizing Team',
         team: [
             {
                 name: 'Dev Jadiya',
@@ -197,6 +198,46 @@ export const translations = {
                 role: 'Advisor',
                 social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
             },
+            {
+                name: 'Sai Kiran',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
+            },
+            {
+                name: 'Chinmayee Mishra',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
+            },
+            {
+                name: 'Athul R T',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
+            },
+            {
+                name: 'Uday Dongre',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Shoot_stufz' }
+            },
+            {
+                name: 'Pankaj Yadav',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:The_open_draft' }
+            },
+            {
+                name: 'Ashmita Bathre',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:AshmitaBathre204' }
+            },
+            {
+                name: 'Aanchal Patel',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Archies2804' }
+            },
+            {
+                name: 'Riddhi Sharma',
+                role: 'Core Organizing Team',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Herdaisymione' }
+            }
         ]
     },
     organizersCall: {
@@ -498,6 +539,7 @@ export const translations = {
         subtitle: 'पहली विकी विज्ञान प्रतियोगिता भारत को एक बड़ी सफलता बनाने के लिए पर्दे के पीछे काम करने वाली समर्पित टीम।',
         lead_organizers: 'प्रमुख आयोजक',
         advisors: 'सलाहकार',
+        core_organizing_team: 'कोर आयोजन टीम',
         team: [
             {
                 name: 'देव जड़िया',
@@ -514,6 +556,46 @@ export const translations = {
                 role: 'सलाहकार',
                 social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
             },
+            {
+                name: 'साई किरण',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
+            },
+            {
+                name: 'चिन्मयी मिश्रा',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
+            },
+            {
+                name: 'अतुल आर टी',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
+            },
+            {
+                name: 'उदय डोंगरे',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Shoot_stufz' }
+            },
+            {
+                name: 'पंकज यादव',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:The_open_draft' }
+            },
+            {
+                name: 'अस्मिता बाथरे',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:AshmitaBathre204' }
+            },
+            {
+                name: 'आंचल पटेल',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Archies2804' }
+            },
+            {
+                name: 'रिद्धि शर्मा',
+                role: 'कोर आयोजन टीम',
+                social: { meta: 'https://meta.wikimedia.org/wiki/User:Herdaisymione' }
+            }
         ]
     },
     organizersCall: {

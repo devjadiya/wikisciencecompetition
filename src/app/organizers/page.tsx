@@ -18,6 +18,38 @@ const organizerImages: { [key: string]: { image: string, hint: string } } = {
      image: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Suyash_Dwivedi_at_Wikimania_2025%2C_Day_2_12.jpg',
     hint: 'professional headshot',
   },
+  'Sai Kiran': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Sai_Kiran_Sharing_His_Experience_In_Feedback_Session_-_Wikiconference_India_2023_-_Hyderabad_2023-04-30_9229.jpg/1024px-Sai_Kiran_Sharing_His_Experience_In_Feedback_Session_-_Wikiconference_India_2023_-_Hyderabad_2023-04-30_9229.jpg',
+    hint: 'organizer portrait',
+  },
+  'Chinmayee Mishra': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Chinmayee_Mishra_at_Wikimania_2023.jpg/960px-Chinmayee_Mishra_at_Wikimania_2023.jpg',
+    hint: 'team member photo',
+  },
+  'Athul R T': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Athul_at_TTT_2024.jpg/1024px-Athul_at_TTT_2024.jpg',
+    hint: 'professional headshot',
+  },
+  'Uday Dongre': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Uday_dongre_photo_01.jpg/1024px-Uday_dongre_photo_01.jpg',
+    hint: 'organizer portrait',
+  },
+  'Pankaj Yadav': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Pankaj_Yadav_%28Wiki_Club_SATI_Board_Member%29.jpg/1024px-Pankaj_Yadav_%28Wiki_Club_SATI_Board_Member%29.jpg',
+    hint: 'team member photo',
+  },
+  'Ashmita Bathre': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Ashmita_Bathre_%28Wiki_Club_SATI_Board_Member%29.jpg',
+    hint: 'professional headshot',
+  },
+  'Aanchal Patel': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Aanchal_Patel.jpg/960px-Aanchal_Patel.jpg',
+    hint: 'organizer portrait',
+  },
+  'Riddhi Sharma': {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Riddhi_at_Chanderi_01.jpg',
+    hint: 'team member photo',
+  },
 };
 
 const cardVariants = {
@@ -53,6 +85,13 @@ export default function OrganizersPage() {
       ...organizer,
       ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
   }));
+
+  const coreTeam = t.organizers.team
+    .filter(o => o.role === 'Core Organizing Team')
+    .map((organizer) => ({
+        ...organizer,
+        ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
+    }));
 
   return (
     <div className="bg-background">
@@ -92,12 +131,16 @@ export default function OrganizersPage() {
                     <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
                     <p className="text-accent font-semibold mb-4">{organizer.role}</p>
                     <div className="flex space-x-4 mt-auto">
-                      <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                        <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
-                      </a>
-                      <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                        <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
-                      </a>
+                      {organizer.social.linkedin && (
+                        <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                        </a>
+                      )}
+                      {organizer.social.meta && (
+                        <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                        </a>
+                      )}
                     </div>
                   </div>
               </motion.div>
@@ -105,7 +148,7 @@ export default function OrganizersPage() {
           </div>
         </div>
 
-        <div>
+        <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.advisors}</h2>
           <div className="grid grid-cols-1 gap-8 md:gap-12 max-w-sm mx-auto">
             {advisors.map((organizer) => (
@@ -131,18 +174,66 @@ export default function OrganizersPage() {
                     <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
                     <p className="text-accent font-semibold mb-4">{organizer.role}</p>
                     <div className="flex space-x-4 mt-auto">
-                      <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                        <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
-                      </a>
-                      <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                        <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
-                      </a>
+                      {organizer.social.linkedin && (
+                        <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                        </a>
+                      )}
+                      {organizer.social.meta && (
+                        <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                        </a>
+                      )}
                     </div>
                   </div>
               </motion.div>
             ))}
           </div>
         </div>
+
+        <div>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.core_organizing_team}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            {coreTeam.map((organizer) => (
+               <motion.div
+                key={organizer.name}
+                variants={cardVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+              >
+                  <div className="relative h-80 w-full">
+                    <Image
+                      src={organizer.image}
+                      alt={`Portrait of ${organizer.name}`}
+                      data-ai-hint={organizer.hint}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col text-center items-center">
+                    <h3 className="text-2xl font-headline font-bold text-primary">{organizer.name}</h3>
+                    <p className="text-accent font-semibold mb-4">{organizer.role}</p>
+                    <div className="flex space-x-4 mt-auto">
+                      {organizer.social.linkedin && (
+                        <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={32} height={32} />
+                        </a>
+                      )}
+                      {organizer.social.meta && (
+                        <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );
