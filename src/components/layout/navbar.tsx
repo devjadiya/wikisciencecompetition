@@ -78,13 +78,13 @@ export default function Navbar() {
               </Link>
             ))}
              <DropdownMenu open={organizersOpen} onOpenChange={setOrganizersOpen}>
-                <div onMouseLeave={() => setOrganizersOpen(false)}>
+                <div onMouseEnter={() => setOrganizersOpen(true)} onMouseLeave={() => setOrganizersOpen(false)}>
                     <DropdownMenuTrigger asChild>
-                        <Button onMouseEnter={() => setOrganizersOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
                         {t.organizersDropdown} <ChevronDown className="h-4 w-4 ml-1" />
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent onMouseLeave={() => setOrganizersOpen(false)} className="w-56 p-2">
+                    <DropdownMenuContent className="w-56 p-2">
                         {organizerLinks.map(link => (
                             <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
                         ))}
@@ -92,13 +92,13 @@ export default function Navbar() {
                 </div>
             </DropdownMenu>
             <DropdownMenu open={moreOpen} onOpenChange={setMoreOpen}>
-                <div onMouseLeave={() => setMoreOpen(false)}>
+                <div onMouseEnter={() => setMoreOpen(true)} onMouseLeave={() => setMoreOpen(false)}>
                     <DropdownMenuTrigger asChild>
-                        <Button onMouseEnter={() => setMoreOpen(true)} variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        <Button variant="ghost" className="text-foreground hover:bg-accent hover:text-accent-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
                         {t.moreDropdown} <ChevronDown className="h-4 w-4 ml-1" />
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent onMouseLeave={() => setMoreOpen(false)} className="w-56 p-2">
+                    <DropdownMenuContent className="w-56 p-2">
                         {moreDropdownLinks.map(link => (
                             <DropdownMenuItem key={link.name} asChild className="p-3 text-base"><Link href={link.href}>{link.name}</Link></DropdownMenuItem>
                         ))}
