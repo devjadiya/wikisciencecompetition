@@ -22,14 +22,18 @@ export async function handleContactForm(values: z.infer<typeof formSchema>) {
   const parsed = formSchema.safeParse(values);
 
   if (!parsed.success) {
-    return { success: false, message: 'Invalid form data.' };
+    // This part of the code could be improved to give more specific errors
+    // but for now, a generic message is fine.
+    const errorMessage = parsed.error.issues.map(issue => issue.message).join(', ');
+    return { success: false, message: `Invalid form data: ${errorMessage}` };
   }
 
   const { name, email, subject, message } = parsed.data;
 
   const mailOptions = {
-    from: process.env.EMAIL_SERVER_USER,
+    from: `"${name}" <${process.env.EMAIL_SERVER_USER}>`,
     to: process.env.EMAIL_TO,
+    replyTo: email,
     subject: `New Query from Wiki Science Website: ${subject}`,
     html: `
         <h2>New Contact Form Submission</h2>
@@ -37,7 +41,7 @@ export async function handleContactForm(values: z.infer<typeof formSchema>) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
     `,
   };
 
