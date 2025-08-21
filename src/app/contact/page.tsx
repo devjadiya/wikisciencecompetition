@@ -8,23 +8,57 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from './actions';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Invalid email address.'),
-  subject: z.string().min(5, 'Subject must be at least 5 characters.'),
+  subject: z.string({ required_error: 'Please select a subject.' }),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
 });
+
+const subjects = [
+    'General Inquiry about the Competition',
+    'Question about Participation Rules',
+    'Image Submission Guidelines',
+    'Video/Audio Submission Guidelines',
+    'Image Category Clarification',
+    'Technical Issue with Uploading',
+    'Sponsorship Opportunities',
+    'Becoming a Partner/Affiliate',
+    'Campus Ambassador Program Inquiry',
+    'Jury & Judging Process',
+    'Prizes and Awards Information',
+    'Media or Press Inquiry',
+    'Licensing and Copyright Question',
+    'Website Feedback or Bug Report',
+    'Request for a Workshop/Session',
+    'Volunteering or Joining the Team',
+    'Question about Past Competitions',
+    'Data Privacy Concern',
+    'How to use Wikimedia Commons',
+    'Other',
+];
+
+const messageTemplate = `Hi Team,
+
+I have a question about [topic].
+
+[Your message here]
+
+Thanks,
+[Your Name]
+`;
 
 export default function ContactPage() {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: '', email: '', subject: '', message: '' },
+    defaultValues: { name: '', email: '', message: '' },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -71,7 +105,7 @@ export default function ContactPage() {
                     <div>
                         <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
                         <p className="text-muted-foreground text-sm md:text-base">
-                            Fill out the form and our team will get back to you within a few hours. We're here to help!
+                           Fill out the form and our team will get back to you within a few hours. We&apos;re here to help!
                         </p>
                     </div>
                     <div className="space-y-4 text-sm md:text-base">
@@ -115,17 +149,28 @@ export default function ContactPage() {
                         )}
                         />
                         <FormField
-                        control={form.control}
-                        name="subject"
-                        render={({ field }) => (
+                          control={form.control}
+                          name="subject"
+                          render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Subject</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Inquiry about..." {...field} />
-                            </FormControl>
-                            <FormMessage />
+                              <FormLabel>Subject</FormLabel>
+                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder="Select a subject for your query" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  {subjects.map((subject) => (
+                                    <SelectItem key={subject} value={subject}>
+                                      {subject}
+                                    </SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
+                              <FormMessage />
                             </FormItem>
-                        )}
+                          )}
                         />
                         <FormField
                         control={form.control}
@@ -134,7 +179,7 @@ export default function ContactPage() {
                             <FormItem>
                             <FormLabel>Message</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="Your detailed message..." {...field} rows={6} />
+                                <Textarea placeholder={messageTemplate} {...field} rows={6} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
