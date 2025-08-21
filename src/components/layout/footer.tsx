@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import { useLanguage } from '@/context/language-context';
 const socialLinks = [
   { name: 'Instagram', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg', href: 'https://www.instagram.com/wiki_science_competition/' },
   { name: 'Telegram', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Telegram_2019_simple_logo.svg', href: 'https://t.me/wikisciencecompetition' },
-  { name: 'Meta Wiki', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Wikimedia_Meta-Wiki_logo_Spanish_vertical_in_colour.svg', href: 'https://meta.wikimedia.org/wiki/Wiki_Science_Competition_2025_in_India' },
+  { name: 'Meta Wiki', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg', href: 'https://meta.wikimedia.org/wiki/Wiki_Science_Competition_2025_in_India' },
   { name: 'Commons', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Wikimedia_Commons_logo_Spanish_vertical_in_colour.svg', href: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India' },
 ];
 
@@ -89,7 +90,21 @@ export default function Footer() {
              </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-primary/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-center">
+        <div className="mt-12 border-t border-primary/10 pt-8">
+            <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline text-center">Supported By</h3>
+            <div className="mt-4 flex justify-center items-center">
+                 <a href="https://meta.wikimedia.org/wiki/Wiki_Club_SATI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <Image 
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
+                        alt="Wiki Club SATI Logo"
+                        width={40}
+                        height={40}
+                    />
+                    <span>Wiki Club SATI</span>
+                </a>
+            </div>
+        </div>
+        <div className="mt-8 border-t border-primary/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-center">
           <p className="text-base text-muted-foreground">
             &copy; {new Date().getFullYear()} {t.footerCopyright}
           </p>

@@ -69,8 +69,29 @@ export default function AboutPage() {
                 ))}
             </div>
         </div>
+
+        <div className="mt-24 bg-primary/5 p-12 rounded-lg">
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+                <div className="md:col-span-2">
+                    <h2 className="text-3xl font-headline font-bold text-primary mb-4">Supporting Organisation</h2>
+                    <div className="text-muted-foreground space-y-4">
+                       <p>Wiki Club SATI (Vidisha, Madhya Pradesh) is acknowledged as the supporting organisation for the first national edition of the Wiki Science Competition 2025 in India. The club has been at the forefront of engaging students and young professionals in the Wikimedia movement, contributing to open knowledge, technical innovation, and community-led initiatives.</p>
+                       <p>Several members of the Core Organizing Team are associated with Wiki Club SATI, and their continued involvement reflects the club’s commitment to advancing free knowledge and scientific engagement. While the support is non-financial, the organisational capacity, experience, and community networks of Wiki Club SATI play an essential role in enabling this campaign at the national level.</p>
+                    </div>
+                </div>
+                <div className="relative h-48 w-48 mx-auto">
+                    <Image
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
+                        alt="Wiki Club SATI Logo"
+                        data-ai-hint="organization logo"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+            </div>
+        </div>
+
       </div>
     </div>
   );
 }
-
