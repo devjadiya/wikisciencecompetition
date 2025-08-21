@@ -10,8 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { handleContactForm } from './actions';
-import { Mail } from 'lucide-react';
+import { handleContactForm } from '@/app/contact/actions';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -166,8 +165,7 @@ const formSchema = z.object({
     path: ['otherMessage'],
 });
 
-
-export default function ContactPage() {
+export default function ContactForm() {
   const { toast } = useToast();
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -224,165 +222,148 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-background text-foreground">
-        <motion.div 
-            className="bg-primary/5 py-16 md:py-20"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-        >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">Contact Us</h1>
-                <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-                    Have questions or feedback? We&apos;d love to hear from you. We promise a quick reply!
-                </p>
-            </div>
-        </motion.div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-                <motion.div 
-                    className="space-y-8"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                >
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
-                        <p className="text-muted-foreground text-sm md:text-base">
-                           Fill out the form and our team will get back to you within a few hours. We&apos;re here to help!
-                        </p>
-                    </div>
-                    <div className="space-y-4 text-sm md:text-base">
-                        <div className="flex items-center gap-4">
-                            <Mail className="h-5 w-5 text-accent" />
-                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">wikisciencecompetition@gmail.com</a>
-                        </div>
-                    </div>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, delay: 0.4 }}
-                >
-                    <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>Full Name</FormLabel>
-                            <FormControl>
-                                <Input placeholder="Your Name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                        />
-                        <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                            <FormLabel>Email Address</FormLabel>
-                            <FormControl>
-                                <Input placeholder="your.email@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                            </FormItem>
-                        )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="subject"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Subject</FormLabel>
-                              <Select onValueChange={handleSubjectChange} value={field.value}>
-                                <FormControl>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder="Select a subject for your query" />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  {subjects.map((subject) => (
-                                    <SelectItem key={subject} value={subject}>
-                                      {subject}
-                                    </SelectItem>
-                                  ))}
-                                </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        {showOtherSubject && (
-                            <FormField
-                                control={form.control}
-                                name="otherSubject"
-                                render={({ field }) => (
-                                    <FormItem>
-                                    <FormLabel>Please specify your subject</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Your custom subject" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        )}
-                        <FormField
-                          control={form.control}
-                          name="message"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Message</FormLabel>
-                              <Select onValueChange={handleMessageChange} value={field.value} disabled={!watchSubject}>
-                                <FormControl>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder={watchSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  {watchSubject && messageTemplates[watchSubject] ? (
-                                    messageTemplates[watchSubject].map((msg) => (
-                                      <SelectItem key={msg} value={msg}>
-                                        {msg}
-                                      </SelectItem>
-                                    ))
-                                  ) : (
-                                    <SelectItem value="-" disabled>No messages available</SelectItem>
-                                  )}
-                                </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        {showOtherMessage && (
-                            <FormField
-                                control={form.control}
-                                name="otherMessage"
-                                render={({ field }) => (
-                                    <FormItem>
-                                    <FormLabel>Please specify your message</FormLabel>
-                                    <FormControl>
-                                        <Textarea placeholder="Your custom message" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        )}
-                        <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={form.formState.isSubmitting}>
-                            {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
-                        </Button>
-                    </form>
-                    </Form>
-                </motion.div>
-            </div>
+    <section className="bg-primary/5 py-16 md:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">Get in Touch</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
+                Have questions or feedback? We&apos;d love to hear from you. We promise a quick reply!
+            </p>
         </div>
-    </div>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="bg-card p-6 md:p-8 rounded-lg shadow-lg"
+        >
+            <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Full Name</FormLabel>
+                    <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                        <Input placeholder="your.email@example.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <div className="md:col-span-2">
+                    <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <Select onValueChange={handleSubjectChange} value={field.value}>
+                            <FormControl>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select a subject for your query" />
+                            </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                            {subjects.map((subject) => (
+                                <SelectItem key={subject} value={subject}>
+                                {subject}
+                                </SelectItem>
+                            ))}
+                            </SelectContent>
+                        </Select>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                </div>
+                {showOtherSubject && (
+                    <div className="md:col-span-2">
+                        <FormField
+                            control={form.control}
+                            name="otherSubject"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>Please specify your subject</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Your custom subject" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                )}
+                <div className="md:col-span-2">
+                    <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <Select onValueChange={handleMessageChange} value={field.value} disabled={!watchSubject}>
+                            <FormControl>
+                            <SelectTrigger>
+                                <SelectValue placeholder={watchSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
+                            </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                            {watchSubject && messageTemplates[watchSubject] ? (
+                                messageTemplates[watchSubject].map((msg) => (
+                                <SelectItem key={msg} value={msg}>
+                                    {msg}
+                                </SelectItem>
+                                ))
+                            ) : (
+                                <SelectItem value="-" disabled>No messages available</SelectItem>
+                            )}
+                            </SelectContent>
+                        </Select>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                </div>
+                {showOtherMessage && (
+                     <div className="md:col-span-2">
+                        <FormField
+                            control={form.control}
+                            name="otherMessage"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>Please specify your message</FormLabel>
+                                <FormControl>
+                                    <Textarea placeholder="Your custom message" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                )}
+                <div className="md:col-span-2">
+                    <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={form.formState.isSubmitting}>
+                        {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+                    </Button>
+                </div>
+            </form>
+            </Form>
+        </motion.div>
+      </div>
+    </section>
   );
 }

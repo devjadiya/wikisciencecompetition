@@ -6,6 +6,7 @@ const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
 const JurySection = dynamic(() => import('@/components/home/jury-section'));
 const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
+const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <InfoSections />
       <PrizesSection />
       <CallToAction />
+      <ContactForm />
       <JurySection />
     </div>
   );
