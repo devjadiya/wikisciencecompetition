@@ -1,63 +1,115 @@
-import { Button } from '@/components/ui/button';
+
+'use client';
+
+import { useLanguage } from '@/context/language-context';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, ExternalLink } from 'lucide-react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+
+const cardVariants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 export default function CampusAmbassadorsPage() {
+  const { t } = useLanguage();
+  const { title, subtitle, institutes } = t.campusAmbassadors;
+
   return (
     <div className="bg-background text-foreground">
-      <div className="bg-primary/5 py-20">
+      <motion.div
+        className="bg-primary/5 py-20"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">Call for Campus Ambassadors</h1>
+          <h1 className="text-5xl md:text-6xl font-headline font-bold text-primary">{title}</h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Join us as a local outreach coordinator to help promote the Wiki Science Competition 2025 in your institution, community, or network.
+            {subtitle}
           </p>
         </div>
-      </div>
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="md:col-span-2">
-            <h2 className="text-3xl font-headline font-bold text-primary mb-4">Who are we looking for?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Campus Ambassadors play a key role in spreading awareness, guiding participants, and optionally organizing awareness sessions or workshops. Whether you’re a Wikimedian, science student, designer, teacher, or simply enthusiastic about open science—we’d love to have you on board!
-            </p>
-            
-            <h3 className="text-2xl font-headline font-bold text-primary mb-4">Responsibilities</h3>
-            <ul className="space-y-3 text-muted-foreground mb-8">
-              <li className="flex items-start">
-                <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Promote the campaign in your institution or community.</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Share participation guidelines with potential contributors.</span>
-              </li>
-              <li className="flex items-start">
-                <Check className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-                <span>Optionally, organize awareness activities like workshops or photowalks (we can provide support!).</span>
-              </li>
-            </ul>
+        {institutes.map((institute, index) => (
+          <div key={index} className="mb-16">
+            <motion.div
+              className="flex flex-col sm:flex-row items-center justify-center text-center gap-4 mb-12"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <a href={institute.website} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={institute.logo}
+                  alt={`${institute.name} logo`}
+                  width={80}
+                  height={80}
+                  className="rounded-md object-contain"
+                />
+              </a>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
+                {institute.name}
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+              {institute.ambassadors.map((ambassador, a_index) => (
+                <motion.div
+                  key={a_index}
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                >
+                  <div className="relative h-80 w-full">
+                    <Image
+                      src={ambassador.image}
+                      alt={`Portrait of ${ambassador.name}`}
+                      data-ai-hint="ambassador portrait"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex-grow flex flex-col text-center items-center">
+                    <h3 className="text-2xl font-headline font-bold text-primary">{ambassador.name}</h3>
+                    <div className="flex space-x-4 mt-4">
+                      {ambassador.meta && (
+                        <a href={ambassador.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={32} height={32} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <aside>
-            <Card className="sticky top-24 bg-primary/5 shadow-lg">
-              <CardHeader>
-                <CardTitle className="font-headline text-2xl text-primary">Apply Now</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Ready to make an impact? Fill out the form to become a Campus Ambassador.
-                </p>
-                <p className="font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
-                <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform" target="_blank" rel="noopener noreferrer">
-                    Open Application Form <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </aside>
+        ))}
+        
+        <div className="mt-16 text-center">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-10 py-7 shadow-xl transition-transform hover:scale-105">
+                <a href="/campus-ambassadors" target="_blank" rel="noopener noreferrer">Become a Campus Ambassador</a>
+            </Button>
         </div>
+
       </div>
     </div>
   );
 }
+
+  

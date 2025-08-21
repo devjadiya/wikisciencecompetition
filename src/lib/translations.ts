@@ -18,6 +18,7 @@ export const translations = {
         { name: 'Call for Team', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
+        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
         { name: 'Jury', href: '/jury'},
         { name: 'Support Us', href: '/support-us'},
     ],
@@ -38,6 +39,7 @@ export const translations = {
         { name: 'Organizers', href: '/organizers' },
         { name: 'Sponsors', href: '/sponsors' },
         { name: 'Resources', href: '/resources' },
+        { name: 'Campus Ambassadors', href: '/campus-ambassadors'},
         { name: 'Contact', href: '/contact' },
     ],
     footerSupportLinks: [
@@ -70,6 +72,24 @@ export const translations = {
                 { icon: 'Handshake', title: 'Strengthen Collaboration', description: 'Strengthen collaboration between Wikimedia communities, universities, research institutes, and organizations.' }
             ]
         }
+    },
+    campusAmbassadors: {
+        title: 'Campus Ambassadors',
+        subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
+        institutes: [
+            {
+                name: 'Samrat Ashok Technological Institute',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
+                website: 'https://www.satiengg.in/',
+                ambassadors: [
+                    {
+                        name: 'Anushka Patel',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                    }
+                ]
+            }
+        ]
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -376,6 +396,7 @@ export const translations = {
         { name: 'टीम के लिए कॉल', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
         { name: 'जूरी', href: '/jury'},
         { name: 'समर्थन करें', href: '/support-us'},
     ],
@@ -396,6 +417,7 @@ export const translations = {
         { name: 'आयोजक', href: '/organizers' },
         { name: 'प्रायोजक', href: '/sponsors' },
         { name: 'संसाधन', href: '/resources' },
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
         { name: 'संपर्क', href: '/contact' },
     ],
     footerSupportLinks: [
@@ -428,6 +450,24 @@ export const translations = {
                 { icon: 'Handshake', title: 'सहयोग को मजबूत करें', description: 'विकिमीडिया समुदायों, विश्वविद्यालयों, अनुसंधान संस्थानों और संगठनों के बीच सहयोग को मजबूत करें।' }
             ]
         }
+    },
+    campusAmbassadors: {
+        title: 'कैंपस एंबेसडर',
+        subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
+        institutes: [
+            {
+                name: 'सम्राट अशोक प्रौद्योगिकी संस्थान',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
+                website: 'https://www.satiengg.in/',
+                ambassadors: [
+                    {
+                        name: 'अनुष्का पटेल',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                    }
+                ]
+            }
+        ]
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -725,3 +765,5 @@ export const translations = {
 };
 
 export type Translations = typeof translations;
+
+  
