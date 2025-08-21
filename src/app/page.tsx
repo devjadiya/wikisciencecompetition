@@ -1,9 +1,11 @@
 
-import HeroCarousel from '@/components/home/hero-carousel';
-import InfoSections from '@/components/home/info-sections';
-import PrizesSection from '@/components/home/prizes-section';
-import JurySection from '@/components/home/jury-section';
-import CallToAction from '@/components/home/call-to-action';
+import dynamic from 'next/dynamic';
+
+const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
+const InfoSections = dynamic(() => import('@/components/home/info-sections'));
+const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
+const JurySection = dynamic(() => import('@/components/home/jury-section'));
+const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
 
 export default function Home() {
   return (

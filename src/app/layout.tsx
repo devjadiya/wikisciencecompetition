@@ -9,8 +9,46 @@ import FaqChatbot from '@/components/faq-chatbot';
 import { LanguageProvider } from '@/context/language-context';
 
 export const metadata: Metadata = {
-  title: 'WikiScience India 2025',
-  description: 'National Science Competition in India',
+  title: 'Wiki Science Competition 2025 - India',
+  description: 'The national science photography competition in India. Participate in Wiki Science Competition (WSC) India, submit your images, and win exciting prizes. Categories include microscopy, astronomy, wildlife, and more.',
+  keywords: 'wiki science india, wiki science competition, wsc india, science competition india, photography science competition india, science photography, wikimedia commons, open science, national science competition',
+  authors: [{ name: 'Wiki Science Competition India Team' }],
+  openGraph: {
+    title: 'Wiki Science Competition 2025 - India',
+    description: 'India\'s national science photography competition. Join WSC India to celebrate science and contribute to free knowledge.',
+    url: 'https://wikiscience.in',
+    siteName: 'Wiki Science Competition India',
+    images: [
+      {
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Wiki Science Competition India 2025 Logo',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wiki Science Competition 2025 - India',
+    description: 'Calling all science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
+    images: ['https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://wikiscience.in',
+  },
 };
 
 export default function RootLayout({
