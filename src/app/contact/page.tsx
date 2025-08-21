@@ -137,6 +137,7 @@ const messageTemplates: Record<string, string[]> = {
     ],
     'Other...': [
         'I have a question that is not listed. Please specify below.',
+        'Other...'
     ]
 };
 
@@ -168,7 +169,6 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   const { toast } = useToast();
-  const [selectedSubject, setSelectedSubject] = useState('');
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -182,12 +182,16 @@ export default function ContactPage() {
   const showOtherMessage = watchMessage === 'Other...';
 
   const handleSubjectChange = (value: string) => {
-      setSelectedSubject(value);
       form.setValue('subject', value);
-      form.setValue('message', ''); 
       form.setValue('otherSubject', '');
       form.setValue('otherMessage', '');
       form.clearErrors('message');
+      
+      if (value === 'Other...') {
+        form.setValue('message', 'Other...');
+      } else {
+        form.setValue('message', '');
+      }
   }
   
   const handleMessageChange = (value: string) => {
@@ -210,7 +214,6 @@ export default function ContactPage() {
         description: 'Thank you for contacting us. We will get back to you shortly.',
       });
       form.reset();
-      setSelectedSubject('');
     } else {
       toast({
         title: 'Error',
@@ -342,8 +345,8 @@ export default function ContactPage() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {selectedSubject && messageTemplates[selectedSubject] ? (
-                                    messageTemplates[selectedSubject].map((msg) => (
+                                  {watchSubject && messageTemplates[watchSubject] ? (
+                                    messageTemplates[watchSubject].map((msg) => (
                                       <SelectItem key={msg} value={msg}>
                                         {msg}
                                       </SelectItem>
@@ -383,3 +386,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
