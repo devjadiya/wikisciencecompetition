@@ -130,14 +130,14 @@ export const translations = {
         },
         institutes: [
             {
-                name: 'Samrat Ashok Technological Institute',
-                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
+                name: '',
+                logo: '',
                 website: 'https://www.satiengg.in/',
                 ambassadors: [
                     {
-                        name: 'Anushka Patel',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
-                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                        name: 'Santosh notagar',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+                        meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
                     }
                 ]
             }
