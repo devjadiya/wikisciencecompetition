@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wiki Science Competition 2025 - India',
     description: 'India\'s national science photography competition. Join WSC India to celebrate science and contribute to free knowledge.',
-    url: 'https://wikiscience.in',
+    url: 'https://wikisciencecompetition.vercel.app/',
     siteName: 'Wiki Science Competition India',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://wikiscience.in',
+    canonical: 'https://wikisciencecompetition.vercel.app/',
   },
 };
 
