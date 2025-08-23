@@ -3,6 +3,22 @@
 export const languages = [
     { code: 'en', name: 'English' },
     { code: 'hi', name: 'हिन्दी' },
+    { code: 'bn', name: 'বাংলা' }, // Bengali
+    { code: 'te', name: 'తెలుగు' }, // Telugu
+    { code: 'mr', name: 'मराठी' }, // Marathi
+    { code: 'ta', name: 'தமிழ்' }, // Tamil
+    { code: 'ur', name: 'اردو' }, // Urdu
+    { code: 'gu', name: 'ગુજરાતી' }, // Gujarati
+    { code: 'kn', name: 'ಕನ್ನಡ' }, // Kannada
+    { code: 'or', name: 'ଓଡ଼ିଆ' }, // Odia
+    { code: 'pa', name: 'ਪੰਜਾਬੀ' }, // Punjabi
+    { code: 'ml', name: 'മലയാളം' }, // Malayalam
+    { code: 'as', name: 'অসমীয়া' }, // Assamese
+    { code: 'es', name: 'Español' }, // Spanish
+    { code: 'fr', name: 'Français' }, // French
+    { code: 'et', name: 'Eesti' }, // Estonian
+    { code: 'de', name: 'Deutsch' }, // German
+    { code: 'pt', name: 'Português' }, // Portuguese
 ] as const;
 
 export const translations = {
@@ -80,60 +96,51 @@ export const translations = {
         ambassadors: [
           {
             name: 'Anushka Patel',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
             description: 'Wiki Club SATI',
             boardLink: {
-              url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-              name: 'Wiki Club SATI',
+                name: 'Wiki Club SATI',
+                url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
             },
           },
           {
             name: 'Neechalkaran',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
             description: 'Wikipedian & Computational Linguist from Tamilnadu',
           },
           {
             name: 'Santhosh Notagar',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-            description:
-              'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
+            description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
             wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
           },
           {
             name: 'Samiya Ahmed',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
             description: 'Deoband Community',
             boardLink: {
-              url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
-              name: 'Deoband Community',
+                name: 'Deoband Community',
+                url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
             },
           },
           {
             name: 'Satheesh M',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-            description:
-              'Presently doing IT and surveillance projects in Kanniyakumari district',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
           },
           {
             name: 'Kaartic Sivaraam',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
             description: 'Tamil Wikipedian, Software Engineer',
           },
           {
             name: 'Osama',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             description: 'Wikipedian',
           },
         ]
@@ -517,60 +524,51 @@ export const translations = {
         ambassadors: [
           {
             name: 'Anushka Patel',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
             description: 'Wiki Club SATI',
             boardLink: {
-              url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-              name: 'Wiki Club SATI',
+                name: 'Wiki Club SATI',
+                url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
             },
           },
           {
             name: 'Neechalkaran',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
             description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
           },
           {
             name: 'Santhosh Notagar',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-            description:
-              'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+            description: 'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
             wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
           },
           {
             name: 'Samiya Ahmed',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
             description: 'देवबंद समुदाय',
             boardLink: {
-              url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
-              name: 'देवबंद समुदाय',
+                name: 'देवबंद समुदाय',
+                url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
             },
           },
           {
             name: 'Satheesh M',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-            description:
-              'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाएं कर रहे हैं',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाएं कर रहे हैं',
           },
           {
             name: 'Kaartic Sivaraam',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
             description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
           },
           {
             name: 'Osama',
-            image:
-              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             description: 'विकिपीडियन',
           },
         ]

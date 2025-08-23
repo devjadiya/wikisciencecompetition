@@ -11,10 +11,12 @@ import { Globe } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 import { languages } from '@/lib/translations';
 
+type LanguageCode = typeof languages[number]['code'];
+
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
-  const handleSelect = (languageCode: 'en' | 'hi') => {
+  const handleSelect = (languageCode: LanguageCode) => {
     setLanguage(languageCode);
   };
 
