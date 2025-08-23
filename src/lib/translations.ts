@@ -7366,7 +7366,7 @@ export const translations = {
             }
         }
     },
-    or: {
+      or: {
         "mainNavLinks": [
             { "name": "ବିବରଣୀ", "href": "/about" },
             { "name": "ପ୍ରତିଯୋଗିତା", "href": "/competition" },
@@ -7389,7 +7389,7 @@ export const translations = {
             { "name": "CC ଲାଇସେନ୍ସ ବୁଝିବା", "href": "https://commons.wikimedia.org/wiki/Commons:Licensing" },
             { "name": "ବର୍ଗ (Categories) କିପରି ଯୋଡିବେ", "href": "https://commons.wikimedia.org/wiki/Help:Categories" }
         ],
-        "organizersDropdown": "ଆୟୋଜକମାନେ",
+         "organizersDropdown": "ଆୟୋଜକମାନେ",
         "moreDropdown": "ଅଧିକ",
         "learningDropdown": "ଶିକ୍ଷା",
         "participateButton": "ଅଂଶଗ୍ରହଣ କରନ୍ତୁ",
@@ -7415,7 +7415,7 @@ export const translations = {
         "footerCopyright": "Wiki Science Competition India. ସମସ୍ତ ସ୍ବତ୍ୱ ଅଧିକାର ସଂରକ୍ଷିତ।",
         "footerLicense": "ବିଷୟବସ୍ତୁ CC BY-SA 4.0 ଅନୁଯାୟୀ ଉପଲବ୍ଧ ଅଛି, ଯଦିଓ ଅନ୍ୟଥା ଉଲ୍ଲେଖିତ ନାହିଁ।",
         "footerDeveloperCredit": "ଡିଜାଇନ୍ ଏବଂ ଡିଭେଲପ କରାଯାଇଛି",
-        "about": {
+          "about": {
             "title": "WikiScience India 2025 ବିଷୟରେ",
             "badge": "ଭାରତୀୟ ପ୍ରସଙ୍ଗରେ ପରିଚୟ",
             "heading": "Wiki Science Competition 2025 – ଭାରତ",
@@ -7427,26 +7427,10 @@ export const translations = {
                 "title": "ଆମ ଲକ୍ଷ୍ୟଗୁଡ଼ିକ",
                 "subtitle": "ଏହି ଅଭିଯାନ ମାଧ୍ୟମରେ, ଆମେ ଏହାକୁ ଉଦ୍ଦେଶ୍ୟ କରୁଛୁ:",
                 "items": [
-                    {
-                        "icon": "PenSquare",
-                        "title": "ଅବଦାନକୁ ଉତ୍ସାହିତ କରିବା",
-                        "description": "ଭାରତର ଛାତ୍ରଛାତ୍ରୀ, ଗବେଷକ ଓ ଉତ୍ସାହୀମାନେ ମୂଲ୍ୟବାନ ବୈଜ୍ଞାନିକ ମିଡିଆ ଅବଦାନ ଦେଇବା ପାଇଁ ଉତ୍ସାହିତ କରିବା।"
-                    },
-                    {
-                        "icon": "Lightbulb",
-                        "title": "ଜ୍ଞାନ ପ୍ରଚାର କରିବା",
-                        "description": "ମୁକ୍ତ ବିଜ୍ଞାନ ଓ ମୁକ୍ତ ଜ୍ଞାନର ଗୁରୁତ୍ୱ ବିଷୟରେ ଜନସାଧାରଣଙ୍କ ମଧ୍ୟରେ ସଚେତନତା ବୃଦ୍ଧି କରିବା।"
-                    },
-                    {
-                        "icon": "Globe",
-                        "title": "ବୈଜ୍ଞାନିକ ଐତିହ୍ୟକୁ ପାଳନ କରିବା",
-                        "description": "ଭାରତର ସମୃଦ୍ଧ ବୈଜ୍ଞାନିକ ଐତିହ୍ୟ ଓ ଚାଲୁଥିବା ନବୀନତାକୁ ଉଲ୍ଲେଖ କରି ପାଳନ କରିବା।"
-                    },
-                    {
-                        "icon": "Handshake",
-                        "title": "ସହଯୋଗ ଶକ୍ତିକୁ ବୃଦ୍ଧି କରିବା",
-                        "description": "Wikimedia ସମୁଦାୟ, ବିଶ୍ୱବିଦ୍ୟାଳୟ, ଗବେଷଣା ସଂସ୍ଥା ଓ ସଂଗଠନମାନେ ସହିତ ସହଯୋଗକୁ ଶକ୍ତିଶାଳୀ କରିବା।"
-                    }
+                    { "icon": "PenSquare","title": "ଅବଦାନକୁ ଉତ୍ସାହିତ କରିବା", "description": "ଭାରତର ଛାତ୍ରଛାତ୍ରୀ, ଗବେଷକ ଓ ଉତ୍ସାହୀମାନେ ମୂଲ୍ୟବାନ ବୈଜ୍ଞାନିକ ମିଡିଆ ଅବଦାନ ଦେଇବା ପାଇଁ ଉତ୍ସାହିତ କରିବା।" },
+                    { "icon": "Lightbulb", "title": "ଜ୍ଞାନ ପ୍ରଚାର କରିବା", "description": "ମୁକ୍ତ ବିଜ୍ଞାନ ଓ ମୁକ୍ତ ଜ୍ଞାନର ଗୁରୁତ୍ୱ ବିଷୟରେ ଜନସାଧାରଣଙ୍କ ମଧ୍ୟରେ ସଚେତନତା ବୃଦ୍ଧି କରିବା।" },
+                    { "icon": "Globe", "title": "ବୈଜ୍ଞାନିକ ଐତିହ୍ୟକୁ ପାଳନ କରିବା", "description": "ଭାରତର ସମୃଦ୍ଧ ବୈଜ୍ଞାନିକ ଐତିହ୍ୟ ଓ ଚାଲୁଥିବା ନବୀନତାକୁ ଉଲ୍ଲେଖ କରି ପାଳନ କରିବା।" },
+                    {"icon": "Handshake", "title": "ସହଯୋଗ ଶକ୍ତିକୁ ବୃଦ୍ଧି କରିବା", "description": "Wikimedia ସମୁଦାୟ, ବିଶ୍ୱବିଦ୍ୟାଳୟ, ଗବେଷଣା ସଂସ୍ଥା ଓ ସଂଗଠନମାନେ ସହିତ ସହଯୋଗକୁ ଶକ୍ତିଶାଳୀ କରିବା।" }
                 ]
             },
             "supportingOrg": {
@@ -7455,7 +7439,7 @@ export const translations = {
                 "p2": "ମୂଳ ଆୟୋଜନ ଟିମର ଅନେକ ସଦସ୍ୟ Wiki Club SATI ସହିତ ସଂପୃକ୍ତ ଅଛନ୍ତି, ଏବଂ ତାଙ୍କର ଲଗାତାର ସହଯୋଗ ଏହି କ୍ଲବର ମୁକ୍ତ ଜ୍ଞାନ ଓ ବୈଜ୍ଞାନିକ ଚର୍ଚ୍ଚା ପ୍ରତି ଦୃଢ଼ ପ୍ରତିବଦ୍ଧତାକୁ ପ୍ରତିବିମ୍ବିତ କରେ। ଯଦିଓ ଏହି ସହଯୋଗ ଆର୍ଥିକ ନୁହେଁ, କ୍ଲବର ସଂଗଠନାତ୍ମକ ଦକ୍ଷତା, ଅଭିଜ୍ଞତା ଓ ସମୁଦାୟ ନେଟୱାର୍କ ଏହି ଅଭିଯାନକୁ ଜାତୀୟ ମଞ୍ଚରେ ସଫଳ କରିବାରେ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଭୂମିକା ନିଅଉଛି।"
             }
         },
-        "campusAmbassadors": {
+          "campusAmbassadors": {
             "title": "କ୍ୟାମ୍ପସ ଅ୍ୟାମ୍ବାସାଡରମାନେ",
             "subtitle": "ନିଜ ନିଜ ସମୁଦାୟରେ Wiki Science Competition ର ପ୍ରଚାର ଓ ସଂଚାଳନ କରୁଥିବା ଉତ୍ସାହୀ ନେତାମାନଙ୍କ ସହିତ ପରିଚୟ ହେବା।",
             "ambassadors": [
@@ -7552,7 +7536,7 @@ export const translations = {
                 "href": "https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform"
             }
         },
-        "competition": {
+         "competition": {
             "title": "ପ୍ରତିଯୋଗିତା ବିବରଣୀ",
             "subtitle": "ଅଂଶଗ୍ରହଣ କରିବା ଓ ଜିତିବା ପାଇଁ ଆବଶ୍ୟକ ସମସ୍ତ ତଥ୍ୟ।",
             "howToParticipate": {
@@ -7594,14 +7578,8 @@ export const translations = {
                 "nonPhotographic": { "name": "ଅଫୋଟୋଗ୍ରାଫିକ୍ ମାଧ୍ୟମ", "description": "ଅଡିଓ ଏବଂ ଭିଡିଓ ଫାଇଲ୍, କମ୍ପ୍ୟୁଟର ନିର୍ମିତ ଛବିଗୁଡ଼ିକ ଇତ୍ୟାଦି।" },
                 "imageSets": { "name": "ଛବି ସେଟ୍‌", "description": "ବିଷୟନିର୍ଦ୍ଧିଷ୍ଟ ଛବିଗୁଡ଼ିକ (ସର୍ବାଧିକ 10ଟି) ଯାହାକୁ ଗୋଟିଏ ସେଟ୍‌ ବାପରି ଦେଖାଯାଇପାରିବ।" },
                 "wildlife": { "name": "ବନ୍ୟଜନ୍ତୁ ଏବଂ ପ୍ରକୃତି", "description": "ସ୍ବାଭାବିକ ପରିବେଶରେ ଜୀବଜନ୍ତୁମାନେ, ମାକ୍ରୋ ଫଟୋଗ୍ରାଫି ସମେତ।" },
-                "astronomy": {
-                    "name": "ଖଗୋଳ ବିଜ୍ଞାନ",
-                    "description": "ତାରା, ଖଗୋଳୀୟ ଘଟଣା ଏବଂ ସେଗୁଡ଼ିକୁ ଧରିବା ପାଇଁ ବ୍ୟବହୃତ ଉପକରଣର ଛବି।"
-                },
-                "general": {
-                    "name": "ସାଧାରଣ ବର୍ଗ",
-                    "description": "ଅନ୍ୟ ସମସ୍ତ, ଦେଖିବାକୁ ଆର୍କିଓଲୋଜି ରୁ ଭୁକମ୍ପ ବିଜ୍ଞାନ ପର୍ଯ୍ୟନ୍ତ।"
-                }
+                "astronomy": { "name": "ଖଗୋଳ ବିଜ୍ଞାନ", "description": "ତାରା, ଖଗୋଳୀୟ ଘଟଣା ଏବଂ ସେଗୁଡ଼ିକୁ ଧରିବା ପାଇଁ ବ୍ୟବହୃତ ଉପକରଣର ଛବି।" },
+                "general": { "name": "ସାଧାରଣ ବର୍ଗ", "description": "ଅନ୍ୟ ସମସ୍ତ, ଦେଖିବାକୁ ଆର୍କିଓଲୋଜି ରୁ ଭୁକମ୍ପ ବିଜ୍ଞାନ ପର୍ଯ୍ୟନ୍ତ।" }
             },
             "readyToParticipate": {
                 "title": "ଅଂଶଗ୍ରହଣ ପାଇଁ ପ୍ରସ୍ତୁତ?",
@@ -7649,106 +7627,81 @@ export const translations = {
                     "name": "ଦେବ ଜାଦିୟା",
                     "role": "ମୁଖ୍ୟ ଆୟୋଜକ",
                     "roleKey": "lead_organizer",
-                    "social": {
-                        "linkedin": "https://www.linkedin.com/in/devjadiya/",
-                        "meta": "https://meta.wikimedia.org/wiki/User:Dev_Jadiya"
-                    }
+                    "social": { "linkedin": "https://www.linkedin.com/in/devjadiya/", "meta": "https://meta.wikimedia.org/wiki/User:Dev_Jadiya" }
                 },
                 {
                     "id": "gauri_gupta",
                     "name": "ଗୌରୀ ଗୁପ୍ତା",
                     "role": "ମୁଖ୍ୟ ଆୟୋଜକ",
                     "roleKey": "lead_organizer",
-                    "social": {
-                        "linkedin": "#",
-                        "meta": "https://meta.wikimedia.org/wiki/User:Gauri_Guptaa"
-                    }
+                    "social": { "linkedin": "#", "meta": "https://meta.wikimedia.org/wiki/User:Gauri_Guptaa" }
                 },
                 {
                     "id": "suyash_dwivedi",
                     "name": "ସୁୟାଶ ଦ୍ୱିବେଦୀ",
                     "role": "ପରାମର୍ଶଦାତା",
                     "roleKey": "advisor",
-                    "social": {
-                        "linkedin": "https://www.linkedin.com/in/suyash-dwivedi-b47bab58/",
-                        "meta": "https://meta.wikimedia.org/wiki/User:Suyash.dwivedi"
-                    }
+                    "social": { "linkedin": "https://www.linkedin.com/in/suyash-dwivedi-b47bab58/", "meta": "https://meta.wikimedia.org/wiki/User:Suyash.dwivedi" }
                 },
                 {
                     "id": "sai_kiran",
                     "name": "ସାଇ କିରଣ",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Nskjnv"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Nskjnv" }
                 },
                 {
                     "id": "chinmayee_mishra",
                     "name": "ଚିନ୍ମୟୀ ମିଶ୍ର",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
                 },
                 {
                     "id": "athul_rt",
                     "name": "ଅଥୁଲ ଆର ଟି",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Athulvis"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
                     "name": "ଉଦୟ ଡୋଙ୍ଗ୍ରେ",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Shoot_stufz"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Shoot_stufz" }
                 },
                 {
                     "id": "pankaj_yadav",
                     "name": "ପଙ୍କଜ ଯାଦବ",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:The_open_draft"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:The_open_draft" }
                 },
                 {
                     "id": "ashmita_bathre",
                     "name": "ଅଶ୍ମିତା ବାଥ୍ରେ",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:AshmitaBathre204"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:AshmitaBathre204" }
                 },
                 {
                     "id": "aanchal_patel",
                     "name": "ଆଞ୍ଚଳ ପଟେଲ",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Archies2804"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Archies2804" }
                 },
                 {
                     "id": "riddhi_sharma",
                     "name": "ଋଦ୍ଧି ଶର୍ମା",
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
-                    "social": {
-                        "meta": "https://meta.wikimedia.org/wiki/User:Herdaisymione"
-                    }
+                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Herdaisymione" }
                 }
             ]
         },
-        "organizersCall": {
+         "organizersCall": {
             "title": "ଆୟୋଜକ ପାଇଁ ଆହ୍ୱାନ",
             "subtitle": "ଆମକୁ ଖୁସି ହେଉଛି ଯେ ଭାରତ ଏହି ବିଶ୍ୱ ଅଭିଯାନର ଏକ ସ୍ଥାନୀୟ ସଂସ୍କରଣ ଆୟୋଜନ କରିବାକୁ ଯାଉଛି, ଯାହା Wikimedia Commons ରେ ମୁକ୍ତ ଲାଇସେନ୍ସ ଥିବା ଛବି, ଭିଡିଓ ଓ ଅନ୍ୟ ମାଧ୍ୟମ ଦ୍ୱାରା ବିଜ୍ଞାନକୁ ପ୍ରଚାର କରେ।",
             "joinHeading": "ଆୟୋଜନ ଦଳରେ ଯୋଗ ଦିଅନ୍ତୁ",
@@ -7771,47 +7724,20 @@ export const translations = {
                 "title": "ପୂର୍ବତନ ବିଜେତାମାନଙ୍କ ଗ୍ୟାଲେରୀ",
                 "winnerLabel": "ବିଜେତା",
                 "winners": [
-                    {
-                        "year": 2023,
-                        "category": "ଖଗୋଳ ବିଜ୍ଞାନ",
-                        "winner": "ଅଞ୍ଜଳି ଶର୍ମା"
-                    },
-                    {
-                        "year": 2023,
-                        "category": "ଜୀବ ବିଜ୍ଞାନ",
-                        "winner": "ରୋହନ୍ ମେହେତା"
-                    },
-                    {
-                        "year": 2022,
-                        "category": "ରସାୟନ ବିଜ୍ଞାନ",
-                        "winner": "ପ୍ରିୟା ଦେସାଇ"
-                    },
-                    {
-                        "year": 2022,
-                        "category": "ଖଗୋଳ ବିଜ୍ଞାନ",
-                        "winner": "ବିକ୍ରମ ସିଂହ"
-                    }
-                ]
+                    { "year": 2023, "category": "ଖଗୋଳ ବିଜ୍ଞାନ", "winner": "ଅଞ୍ଜଳି ଶର୍ମା" },
+                    { "year": 2023, "category": "ଜୀବ ବିଜ୍ଞାନ", "winner": "ରୋହନ୍ ମେହେତା" },
+                    { "year": 2022, "category": "ରସାୟନ ବିଜ୍ଞାନ", "winner": "ପ୍ରିୟା ଦେସାଇ" },
+                    { "year": 2022, "category": "ଖଗୋଳ ବିଜ୍ଞାନ", "winner": "ବିକ୍ରମ ସିଂହ" }
+                ] 
+            }
             },
             "learningMaterials": {
                 "title": "ଶିକ୍ଷା ଉପାଦାନ",
                 "cta": "ଅଧିକ ଜାଣନ୍ତୁ",
                 "resources": [
-                    {
-                        "title": "ବିଜ୍ଞାନ ଫଟୋଗ୍ରାଫିର ମାର୍ଗଦର୍ଶିକା",
-                        "description": "ଆକର୍ଷଣୀୟ ବିଜ୍ଞାନ ସଂପର୍କିତ ଛବି ଧରିବାର ମୌଳିକ ଜ୍ଞାନ ଶିଖନ୍ତୁ।",
-                        "link": "#"
-                    },
-                    {
-                        "title": "କ୍ରିଏଟିଭ୍ କମନ୍ସ କୁ ବୁଝିବା",
-                        "description": "ପ୍ରତିଯୋଗିତା ପାଇଁ ଆପଣଙ୍କର କାମକୁ କିପରି ଲାଇସେନ୍ସ କରିବେ ସେଥିରେ ସଂକ୍ଷିପ୍ତ ମାର୍ଗଦର୍ଶନ।",
-                        "link": "#"
-                    },
-                    {
-                        "title": "ଛବି ଅପଲୋଡ୍ କରିବାର ଟ୍ୟୁଟୋରିଆଲ୍",
-                        "description": "ଆପଣଙ୍କର ଫୋଟୋ ଦାଖଲ କରିବା ପାଇଁ ପଦକ୍ଷେପ ପଦକ୍ଷେପ ଭିଡିଓ।",
-                        "link": "#"
-                    }
+                    { "title": "ବିଜ୍ଞାନ ଫଟୋଗ୍ରାଫିର ମାର୍ଗଦର୍ଶିକା", "description": "ଆକର୍ଷଣୀୟ ବିଜ୍ଞାନ ସଂପର୍କିତ ଛବି ଧରିବାର ମୌଳିକ ଜ୍ଞାନ ଶିଖନ୍ତୁ।", "link": "#" },
+                    { "title": "କ୍ରିଏଟିଭ୍ କମନ୍ସ କୁ ବୁଝିବା", "description": "ପ୍ରତିଯୋଗିତା ପାଇଁ ଆପଣଙ୍କର କାମକୁ କିପରି ଲାଇସେନ୍ସ କରିବେ ସେଥିରେ ସଂକ୍ଷିପ୍ତ ମାର୍ଗଦର୍ଶନ।", "link": "#" },
+                    { "title": "ଛବି ଅପଲୋଡ୍ କରିବାର ଟ୍ୟୁଟୋରିଆଲ୍", "description": "ଆପଣଙ୍କର ଫୋଟୋ ଦାଖଲ କରିବା ପାଇଁ ପଦକ୍ଷେପ ପଦକ୍ଷେପ ଭିଡିଓ।", "link": "#" }
                 ]
             },
             "support": {
@@ -7841,7 +7767,7 @@ export const translations = {
                     }
                 ]
             },
-            "home": {
+             "home": {
                 "autoscroll": {
                     "slides": [
                         {
@@ -7952,7 +7878,6 @@ export const translations = {
                 }
             }
         }
-    },
 };
 
 export type Translations = typeof translations;
