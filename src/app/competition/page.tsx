@@ -182,7 +182,21 @@ export default function CompetitionPage() {
                                     {t.competition.howToParticipate.rules.map((rule, index) => (
                                      <li key={index} className="flex items-start">
                                         <CheckSquare className="h-5 w-5 md:h-6 md:w-6 text-accent mr-4 mt-1 flex-shrink-0" />
-                                        <span>{rule}</span>
+                                        {typeof rule === 'string' ? (
+                                            <span>{rule}</span>
+                                        ) : (
+                                            <span>
+                                                {rule.text}
+                                                <a 
+                                                    href={rule.link.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="font-semibold text-accent hover:underline ml-1"
+                                                >
+                                                    {rule.link.label}
+                                                </a>.
+                                            </span>
+                                        )}
                                     </li>
                                     ))}
                                 </ul>

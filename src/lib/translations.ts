@@ -78,76 +78,65 @@ export const translations = {
         title: 'Campus Ambassadors',
         subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
         ambassadors: [
-      {
-        name: 'Anushka Patel',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-        description: 'Wiki Club SATI',
-        boardLink: {
-          url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-          name: 'Wiki Club SATI',
-        },
-      },
-      {
-        name: 'Neechalkaran',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
-        description: 'Wikipedian & Computational Linguist from Tamilnadu',
-      },
-      {
-        name: 'Santhosh Notagar',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-        description:
-          'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
-        wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
-      },
-      {
-        name: 'Samiya Ahmed',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
-        description: 'Deoband Community',
-        boardLink: {
-          url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
-          name: 'Deoband Community',
-        },
-      },
-      {
-        name: 'Satheesh M',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        description:
-          'Presently doing IT and surveillance projects in Kanniyakumari district',
-      },
-      {
-        name: 'Kaartic Sivaraam',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
-        description: 'Tamil Wikipedian, Software Engineer',
-      },
-      {
-        name: 'Osama',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        description: 'Wikipedian',
-      },
-    ].sort((a, b) => {
-        const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-        const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-        
-        if (a.image.includes('Wikipedian_Profile_Picture.png') && !b.image.includes('Wikipedian_Profile_Picture.png')) {
-            return 1;
-        }
-        if (!a.image.includes('Wikipedian_Profile_Picture.png') && b.image.includes('Wikipedian_Profile_Picture.png')) {
-            return -1;
-        }
-        return 0;
-    }),
+          {
+            name: 'Anushka Patel',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+            description: 'Wiki Club SATI',
+            boardLink: {
+              url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+              name: 'Wiki Club SATI',
+            },
+          },
+          {
+            name: 'Neechalkaran',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
+            description: 'Wikipedian & Computational Linguist from Tamilnadu',
+          },
+          {
+            name: 'Santhosh Notagar',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+            description:
+              'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
+            wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
+          },
+          {
+            name: 'Samiya Ahmed',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
+            description: 'Deoband Community',
+            boardLink: {
+              url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+              name: 'Deoband Community',
+            },
+          },
+          {
+            name: 'Satheesh M',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description:
+              'Presently doing IT and surveillance projects in Kanniyakumari district',
+          },
+          {
+            name: 'Kaartic Sivaraam',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
+            description: 'Tamil Wikipedian, Software Engineer',
+          },
+          {
+            name: 'Osama',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description: 'Wikipedian',
+          },
+        ]
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -202,7 +191,13 @@ export const translations = {
                 'Submissions must be your own work, uploaded from your own registered Wikimedia account. For multiple authors, all names must be provided.',
                 'Images must be under a free license (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).',
                 'All submissions require a clear and accurate scientific description in English. Other languages are welcome too.',
-                'Upload the highest resolution possible (at least 2 megapixels). You can check the megapixel count here: https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594',
+                {
+                    text: 'Upload the highest resolution possible (at least 2 megapixels). You can check the megapixel count ',
+                    link: {
+                        url: 'https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594',
+                        label: 'here'
+                    }
+                },
                 'Images must not contain watermarks, logos, or added text/graphics (except for scales).',
             ]
         },
@@ -520,76 +515,65 @@ export const translations = {
         title: 'कैंपस एंबेसडर',
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
         ambassadors: [
-      {
-        name: 'Anushka Patel',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-        description: 'Wiki Club SATI',
-        boardLink: {
-          url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-          name: 'Wiki Club SATI',
-        },
-      },
-      {
-        name: 'Neechalkaran',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
-        description: 'Wikipedian & Computational Linguist from Tamilnadu',
-      },
-      {
-        name: 'Santhosh Notagar',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
-        meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-        description:
-          'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
-        wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
-      },
-      {
-        name: 'Samiya Ahmed',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
-        description: 'Deoband Community',
-        boardLink: {
-          url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
-          name: 'Deoband Community',
-        },
-      },
-      {
-        name: 'Satheesh M',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        description:
-          'Presently doing IT and surveillance projects in Kanniyakumari district',
-      },
-      {
-        name: 'Kaartic Sivaraam',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
-        description: 'Tamil Wikipedian, Software Engineer',
-      },
-      {
-        name: 'Osama',
-        image:
-          'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-        description: 'Wikipedian',
-      },
-    ].sort((a, b) => {
-        const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-        const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-        
-        if (a.image.includes('Wikipedian_Profile_Picture.png') && !b.image.includes('Wikipedian_Profile_Picture.png')) {
-            return 1;
-        }
-        if (!a.image.includes('Wikipedian_Profile_Picture.png') && b.image.includes('Wikipedian_Profile_Picture.png')) {
-            return -1;
-        }
-        return 0;
-    }),
+          {
+            name: 'Anushka Patel',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+            description: 'Wiki Club SATI',
+            boardLink: {
+              url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+              name: 'Wiki Club SATI',
+            },
+          },
+          {
+            name: 'Neechalkaran',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
+            description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
+          },
+          {
+            name: 'Santhosh Notagar',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+            meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+            description:
+              'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+            wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
+          },
+          {
+            name: 'Samiya Ahmed',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
+            description: 'देवबंद समुदाय',
+            boardLink: {
+              url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+              name: 'देवबंद समुदाय',
+            },
+          },
+          {
+            name: 'Satheesh M',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description:
+              'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाएं कर रहे हैं',
+          },
+          {
+            name: 'Kaartic Sivaraam',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
+            description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
+          },
+          {
+            name: 'Osama',
+            image:
+              'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            description: 'विकिपीडियन',
+          },
+        ]
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -644,7 +628,13 @@ export const translations = {
                 'प्रस्तुतियाँ आपका अपना काम होनी चाहिए, जो आपके अपने पंजीकृत विकिमीडिया खाते से अपलोड की गई हों। एक से अधिक लेखकों के मामले में, सभी नाम प्रदान किए जाने चाहिए।',
                 'छवियां एक मुफ्त लाइसेंस (CC BY-SA 4.0, CC BY 4.0, CC0 1.0) के तहत होनी चाहिए।',
                 'सभी प्रस्तुतियों के लिए अंग्रेजी में एक स्पष्ट और सटीक वैज्ञानिक विवरण की आवश्यकता होती है। अन्य भाषाओं में विवरण का भी स्वागत है।',
-                'संभव उच्चतम रिज़ॉल्यूशन (कम से कम 2 मेगापिक्सेल) अपलोड करें। आप यहाँ मेगापिक्सेल गणना की जाँच कर सकते हैं: https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594',
+                 {
+                    text: 'संभव उच्चतम रिज़ॉल्यूशन (कम से कम 2 मेगापिक्सेल) अपलोड करें। आप मेगापिक्सेल गणना की जाँच ',
+                    link: {
+                        url: 'https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594',
+                        label: 'यहाँ'
+                    }
+                },
                 'छवियों में वॉटरमार्क, लोगो, या अतिरिक्त पाठ/ग्राफिक्स (पैमानों को छोड़कर) नहीं होने चाहिए।',
             ]
         },
