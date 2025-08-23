@@ -75,26 +75,16 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'Institute Ambassadors',
+        title: 'Campus Ambassadors',
         subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
-        communityContributorsTitle: 'Community Contributors',
-        institutes: [
+        ambassadors: [
             {
-                name: 'Samrat Ashok Technological Institute',
-                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
-                website: 'https://www.satiengg.in/',
-                ambassadors: [
-                    {
-                        name: 'Anushka Patel',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
-                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                        description: 'Board Member',
-                        boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-                    }
-                ]
-            }
-        ],
-        communityContributors: [
+                name: 'Anushka Patel',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                description: 'Board Member',
+                boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+            },
             {
                 name: 'Neechalkaran',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
@@ -501,26 +491,16 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'संस्थान के राजदूत',
+        title: 'कैंपस एंबेसडर',
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
-        communityContributorsTitle: 'सामुदायिक योगदानकर्ता',
-        institutes: [
-            {
-                name: 'सम्राट अशोक प्रौद्योगिकी संस्थान',
-                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
-                website: 'https://www.satiengg.in/',
-                ambassadors: [
-                    {
-                        name: 'अनुष्का पटेल',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
-                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                        description: 'बोर्ड सदस्य',
-                        boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
-                    }
-                ]
-            }
-        ],
-        communityContributors: [
+        ambassadors: [
+             {
+                name: 'अनुष्का पटेल',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                description: 'बोर्ड सदस्य',
+                boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+            },
             {
                 name: 'नीचलकरन',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',

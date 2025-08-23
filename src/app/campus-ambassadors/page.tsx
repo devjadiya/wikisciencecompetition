@@ -6,8 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Check, ExternalLink, LinkIcon, School } from 'lucide-react';
-import Link from 'next/link';
+import { Check, ExternalLink, Link as LinkIcon } from 'lucide-react';
 
 const cardVariants = {
   offscreen: {
@@ -28,8 +27,7 @@ const cardVariants = {
 export default function CampusAmbassadorsPage() {
   const { t } = useLanguage();
   const { title, subtitle, whoHeading, whoDescription, responsibilitiesHeading, responsibilities, sidebar, cta } = t.campus;
-  const institutes = t.campusAmbassadors.institutes;
-  const communityContributors = t.campusAmbassadors.communityContributors;
+  const ambassadors = t.campusAmbassadors.ambassadors;
 
 
   return (
@@ -89,58 +87,8 @@ export default function CampusAmbassadorsPage() {
         <div className="mt-16 md:mt-24">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.campusAmbassadors.title}</h2>
             
-            {institutes.map((institute) => (
-                <div key={institute.name} className="mb-12">
-                    <div className="flex items-center gap-4 justify-center mb-6">
-                        <Image src={institute.logo} alt={`${institute.name} logo`} width={32} height={32} className="rounded-sm" />
-                        <a href={institute.website} target="_blank" rel="noopener noreferrer" className="text-xl font-headline text-muted-foreground hover:underline">
-                            {institute.name}
-                        </a>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-                        {institute.ambassadors.map((ambassador, a_index) => (
-                        <motion.div
-                        key={a_index}
-                        variants={cardVariants}
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.3 }}
-                        className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
-                        >
-                            <div className="relative h-64 sm:h-80 w-full">
-                                <Image
-                                src={ambassador.image}
-                                alt={`Portrait of ${ambassador.name}`}
-                                data-ai-hint="ambassador portrait"
-                                fill
-                                className="object-cover"
-                                />
-                            </div>
-                            <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
-                                <h3 className="text-xl md:text-2xl font-headline font-bold text-primary mb-1">{ambassador.name}</h3>
-                                <p className="text-xs text-muted-foreground mb-3">{ambassador.description}</p>
-                                <div className="flex space-x-4 mb-4">
-                                {ambassador.meta && (
-                                    <a href={ambassador.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                                        <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
-                                    </a>
-                                )}
-                                {ambassador.boardLink && (
-                                    <a href={ambassador.boardLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity flex items-center gap-1 text-sm">
-                                      <School className="h-4 w-4" /> Board Member
-                                    </a>
-                                )}
-                                </div>
-                            </div>
-                        </motion.div>
-                        ))}
-                    </div>
-                </div>
-            ))}
-
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12 mt-20">{t.campusAmbassadors.communityContributorsTitle}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-                {communityContributors.map((ambassador, a_index) => (
+                {ambassadors.map((ambassador, a_index) => (
                     <motion.div
                     key={a_index}
                     variants={cardVariants}
