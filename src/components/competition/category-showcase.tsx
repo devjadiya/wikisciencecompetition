@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import type { LucideIcon } from 'lucide-react';
+import { gtagEvent } from '@/lib/gtm';
 
 interface CategoryShowcaseProps {
     name: string;
@@ -12,6 +13,16 @@ interface CategoryShowcaseProps {
 }
 
 export default function CategoryShowcase({ name, description, icon: Icon, images, onImageClick }: CategoryShowcaseProps) {
+  
+  const handleImageClick = (index: number) => {
+    gtagEvent({
+      action: 'click_image',
+      category: 'Competition',
+      label: `Category: ${name} - Image ${index + 1}`
+    });
+    onImageClick(index);
+  }
+
   return (
     <div className="py-8 border-b border-border last:border-b-0">
         <div className="md:flex items-center gap-4 mb-4">
@@ -33,7 +44,7 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
                     <Card 
                         key={index} 
                         className="overflow-hidden group transition-shadow hover:shadow-xl cursor-pointer"
-                        onClick={() => onImageClick(index)}
+                        onClick={() => handleImageClick(index)}
                     >
                         <CardContent className="p-0">
                             <div className="relative aspect-square">
@@ -54,3 +65,5 @@ export default function CategoryShowcase({ name, description, icon: Icon, images
     </div>
   );
 }
+
+    

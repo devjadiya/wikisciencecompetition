@@ -15,6 +15,7 @@ import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useLanguage } from '@/context/language-context';
+import { gtagEvent } from '@/lib/gtm';
 
 const subjects = [
     'General Inquiry about the Competition',
@@ -211,6 +212,11 @@ export default function ContactPage() {
     
     const result = await handleContactForm(finalValues);
     if (result.success) {
+      gtagEvent({
+        action: 'submit_form',
+        category: 'Contact',
+        label: finalValues.subject,
+      });
       toast({
         title: t.contact.toast.successTitle,
         description: t.contact.toast.successDescription,
@@ -258,7 +264,7 @@ export default function ContactPage() {
                     <div className="space-y-4 text-sm md:text-base">
                         <div className="flex items-center gap-4">
                             <Mail className="h-5 w-5 text-accent" />
-                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">wikisciencecompetition@gmail.com</a>
+                            <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">{t.contact.emailAddress}</a>
                         </div>
                     </div>
                 </motion.div>
@@ -388,3 +394,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    

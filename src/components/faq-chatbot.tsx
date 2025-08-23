@@ -11,6 +11,7 @@ import { Bot, User, Send, Loader2, Sparkles } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { gtagEvent } from '@/lib/gtm';
 
 interface Message {
   role: 'user' | 'bot';
@@ -29,6 +30,7 @@ export default function FaqChatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -41,6 +43,8 @@ export default function FaqChatbot() {
   
   const processQuestion = async (question: string) => {
     if (isLoading) return;
+    
+    gtagEvent({ action: 'submit_question', category: 'FAQ Chatbot', label: question });
     
     const userMessage: Message = { role: 'user', text: question };
     setMessages((prev) => [...prev, userMessage]);
@@ -70,11 +74,19 @@ export default function FaqChatbot() {
   };
 
   const handleExampleClick = (question: string) => {
+      gtagEvent({ action: 'click_example_question', category: 'FAQ Chatbot', label: question });
       processQuestion(question);
   };
 
+  const handleOpenChange = (open: boolean) => {
+    if (open && !isOpen) {
+        gtagEvent({ action: 'open_modal', category: 'FAQ Chatbot', label: 'FAQ Chatbot Opened' });
+    }
+    setIsOpen(open);
+  }
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={handleOpenChange}>
       <SheetTrigger asChild>
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -211,3 +223,5 @@ export default function FaqChatbot() {
     </Sheet>
   );
 }
+
+    

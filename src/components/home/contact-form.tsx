@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from '@/app/contact/actions';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { gtagEvent } from '@/lib/gtm';
 
 const subjects = [
     'General Inquiry about the Competition',
@@ -207,6 +208,11 @@ export default function ContactForm() {
     
     const result = await handleContactForm(finalValues);
     if (result.success) {
+      gtagEvent({
+        action: 'submit_form',
+        category: 'Homepage Contact',
+        label: finalValues.subject,
+      });
       toast({
         title: 'Message Sent!',
         description: 'Thank you for contacting us. We will get back to you shortly.',
@@ -367,3 +373,5 @@ export default function ContactForm() {
     </section>
   );
 }
+
+    
