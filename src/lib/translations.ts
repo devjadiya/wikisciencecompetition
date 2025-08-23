@@ -78,7 +78,7 @@ export const translations = {
         title: 'Campus Ambassadors',
         subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
         ambassadors: [
-            {
+             {
                 name: 'Anushka Patel',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
@@ -100,25 +100,25 @@ export const translations = {
             },
             {
                 name: 'Samiya Ahmed',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
                 description: 'Deoband Community',
                 boardLink: { url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia', name: 'Board Member' },
             },
             {
                 name: 'Satheesh M',
-                image: 'https://placehold.co/400x400.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
             },
             {
                 name: 'Kaartic Sivaraam',
-                image: 'https://placehold.co/400x400.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
                 description: 'Tamil Wikipedian, Software Engineer',
             },
             {
                 name: 'Osama',
-                image: 'https://placehold.co/400x400.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 description: 'Wikipedian',
             },
         ]
@@ -495,47 +495,47 @@ export const translations = {
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
         ambassadors: [
             {
-                name: 'अनुष्का पटेल',
+                name: 'Anushka Patel',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                description: 'विकी क्लब सती',
-                boardLink: { url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members', name: 'बोर्ड सदस्य' }
+                description: 'Wiki Club SATI',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members', name: 'Board Member' }
             },
             {
-                name: 'नीचलकरन',
+                name: 'Neechalkaran',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
-                description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
+                description: 'Wikipedian & Computational Linguist from Tamilnadu',
             },
             {
-                name: 'संतोष नोटगर',
+                name: 'Santhosh Notagar',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-                description: 'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+                description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
                 wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
-                name: 'सामिया अहमद',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
+                name: 'Samiya Ahmed',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
-                description: 'देवबंद समुदाय',
-                boardLink: { url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia', name: 'बोर्ड सदस्य' },
+                description: 'Deoband Community',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia', name: 'Board Member' },
             },
             {
-                name: 'सतीश एम',
-                image: 'https://placehold.co/400x400.png',
-                description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाओं पर काम कर रहे हैं',
+                name: 'Satheesh M',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
             },
             {
-                name: 'कार्तिक शिवराम',
-                image: 'https://placehold.co/400x400.png',
+                name: 'Kaartic Sivaraam',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
-                description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
+                description: 'Tamil Wikipedian, Software Engineer',
             },
             {
-                name: 'ओसामा',
-                image: 'https://placehold.co/400x400.png',
-                description: 'विकिपीडियन',
+                name: 'Osama',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'Wikipedian',
             },
         ]
     },
