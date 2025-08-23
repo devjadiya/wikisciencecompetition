@@ -92,6 +92,13 @@ export const translations = {
                 description: 'Wikipedian & Computational Linguist from Tamilnadu',
             },
             {
+                name: 'Santhosh Notagar',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+                description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
+                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
+            },
+            {
                 name: 'Satheesh M',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
@@ -108,13 +115,6 @@ export const translations = {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
                 description: 'Tamil Wikipedian, Software Engineer',
-            },
-            {
-                name: 'Santhosh Notagar',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
-                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-                description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
-                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
                 name: 'Osama',
@@ -494,7 +494,7 @@ export const translations = {
         title: 'कैंपस एंबेसडर',
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
         ambassadors: [
-             {
+            {
                 name: 'अनुष्का पटेल',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
@@ -506,6 +506,13 @@ export const translations = {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
                 description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
+            },
+            {
+                name: 'संतोष नोटगर',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+                description: 'HOD और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
                 name: 'सतीश एम',
@@ -524,13 +531,6 @@ export const translations = {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
                 description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
-            },
-            {
-                name: 'संतोष नोटगर',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
-                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-                description: 'HOD और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
-                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
                 name: 'ओसामा',
