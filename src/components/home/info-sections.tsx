@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
+import { gtagEvent } from '@/lib/gtm';
 
 const sectionImages = [
   { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' } },
@@ -74,7 +75,7 @@ export default function InfoSections() {
                 </div>
                 <p className="text-muted-foreground flex-grow mb-6 text-sm">{section.description}</p>
                 <Button asChild variant="ghost" className="self-start group -ml-4">
-                    <Link href={section.link}>
+                    <Link href={section.link} onClick={() => gtagEvent({ action: 'click_card', category: 'Homepage Info', label: section.title })}>
                         {t.home.info.cta}
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -92,7 +93,7 @@ export default function InfoSections() {
                 <h3 className="text-2xl font-headline font-bold">{t.home.info.finalCard.title}</h3>
                 <p className="mt-4 mb-6">{t.home.info.finalCard.subtitle}</p>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
-                    <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                    <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer" onClick={() => gtagEvent({ action: 'click_cta', category: 'Homepage Info', label: 'Submit Your Work' })}>
                         {t.home.info.finalCard.cta}
                     </a>
                 </Button>
@@ -102,3 +103,5 @@ export default function InfoSections() {
     </div>
   );
 }
+
+    
