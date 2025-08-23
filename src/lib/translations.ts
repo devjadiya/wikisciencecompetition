@@ -7728,8 +7728,7 @@ export const translations = {
                     { "year": 2023, "category": "ଜୀବ ବିଜ୍ଞାନ", "winner": "ରୋହନ୍ ମେହେତା" },
                     { "year": 2022, "category": "ରସାୟନ ବିଜ୍ଞାନ", "winner": "ପ୍ରିୟା ଦେସାଇ" },
                     { "year": 2022, "category": "ଖଗୋଳ ବିଜ୍ଞାନ", "winner": "ବିକ୍ରମ ସିଂହ" }
-                ] 
-            }
+                ]
             },
             "learningMaterials": {
                 "title": "ଶିକ୍ଷା ଉପାଦାନ",
