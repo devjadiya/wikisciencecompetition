@@ -73,21 +73,21 @@ export default function OrganizersPage() {
   const { t } = useLanguage();
 
   const leadOrganizers = t.organizers.team
-    .filter(o => o.role === 'Lead Organizer')
+    .filter(o => o.roleKey === 'lead_organizer')
     .map((organizer) => ({
       ...organizer,
       ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
   }));
 
   const advisors = t.organizers.team
-    .filter(o => o.role === 'Advisor')
+    .filter(o => o.roleKey === 'advisor')
     .map((organizer) => ({
       ...organizer,
       ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
   }));
 
   const coreTeam = t.organizers.team
-    .filter(o => o.role === 'Core Organizing Team')
+    .filter(o => o.roleKey === 'core_team')
     .map((organizer) => ({
         ...organizer,
         ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
