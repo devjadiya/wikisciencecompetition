@@ -82,8 +82,8 @@ export const translations = {
                 name: 'Anushka Patel',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                description: 'Board Member',
-                boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+                description: 'Wiki Club SATI',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members', name: 'Board Member' }
             },
             {
                 name: 'Neechalkaran',
@@ -103,7 +103,7 @@ export const translations = {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
                 description: 'Deoband Community',
-                boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia', name: 'Board Member' },
             },
             {
                 name: 'Satheesh M',
@@ -121,13 +121,7 @@ export const translations = {
                 image: 'https://placehold.co/400x400.png',
                 description: 'Wikipedian',
             },
-        ].sort((a, b) => {
-            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-            if (aHasRealImage && !bHasRealImage) return -1;
-            if (!aHasRealImage && bHasRealImage) return 1;
-            return 0;
-        })
+        ]
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -504,8 +498,8 @@ export const translations = {
                 name: 'अनुष्का पटेल',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                description: 'बोर्ड सदस्य',
-                boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
+                description: 'विकी क्लब सती',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members', name: 'बोर्ड सदस्य' }
             },
             {
                 name: 'नीचलकरन',
@@ -517,7 +511,7 @@ export const translations = {
                 name: 'संतोष नोटगर',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-                description: 'HOD और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+                description: 'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
                 wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
@@ -525,7 +519,7 @@ export const translations = {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
                 description: 'देवबंद समुदाय',
-                boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+                boardLink: { url: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia', name: 'बोर्ड सदस्य' },
             },
             {
                 name: 'सतीश एम',
@@ -543,13 +537,7 @@ export const translations = {
                 image: 'https://placehold.co/400x400.png',
                 description: 'विकिपीडियन',
             },
-        ].sort((a, b) => {
-            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-            if (aHasRealImage && !bHasRealImage) return -1;
-            if (!aHasRealImage && bHasRealImage) return 1;
-            return 0;
-        })
+        ]
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',

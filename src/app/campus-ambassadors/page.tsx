@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Check, ExternalLink, Link as LinkIcon } from 'lucide-react';
+import { useMemo } from 'react';
 
 const cardVariants = {
   offscreen: {
@@ -27,7 +28,16 @@ const cardVariants = {
 export default function CampusAmbassadorsPage() {
   const { t } = useLanguage();
   const { title, subtitle, whoHeading, whoDescription, responsibilitiesHeading, responsibilities, sidebar, cta } = t.campus;
-  const ambassadors = t.campusAmbassadors.ambassadors;
+
+  const sortedAmbassadors = useMemo(() => {
+    return [...t.campusAmbassadors.ambassadors].sort((a, b) => {
+        const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
+        const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
+        if (aHasRealImage && !bHasRealImage) return -1;
+        if (!aHasRealImage && bHasRealImage) return 1;
+        return 0;
+    });
+  }, [t.campusAmbassadors.ambassadors]);
 
   return (
     <div className="bg-background text-foreground">
@@ -87,7 +97,7 @@ export default function CampusAmbassadorsPage() {
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.campusAmbassadors.title}</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-                {ambassadors.map((ambassador, a_index) => (
+                {sortedAmbassadors.map((ambassador, a_index) => (
                     <motion.div
                     key={a_index}
                     variants={cardVariants}
@@ -115,14 +125,14 @@ export default function CampusAmbassadorsPage() {
                                     <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                                 </a>
                             )}
+                             {ambassador.boardLink && (
+                                <a href={ambassador.boardLink.url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity flex items-center gap-1 text-sm">
+                                   <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki Board" width={28} height={28} /> {ambassador.boardLink.name}
+                                </a>
+                            )}
                             {ambassador.wikipedia && (
                                 <a href={ambassador.wikipedia} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
                                     <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wikipedia-logo-v2-en.svg" alt="Wikipedia" width={28} height={28} />
-                                </a>
-                            )}
-                            {ambassador.boardLink && (
-                                <a href={ambassador.boardLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity flex items-center gap-1 text-sm">
-                                   <LinkIcon className="h-4 w-4" /> Board Member
                                 </a>
                             )}
                         </div>
