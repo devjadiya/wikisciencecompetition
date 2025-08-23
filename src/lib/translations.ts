@@ -146,6 +146,7 @@ export const translations = {
           {
             name: 'Osama',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'Wikipedian',
           },
         ].sort((a, b) => {
@@ -251,18 +252,21 @@ export const translations = {
     },
     contact: {
         title: 'Contact Us',
-        subtitle: 'Have questions or feedback? We\'d love to hear from you.',
+        subtitle: 'Have questions or feedback? We\'d love to hear from you. We promise a quick reply!',
         getInTouch: 'Get in Touch',
-        p1: 'Fill out the form and our team will get back to you within 24 hours.',
+        p1: 'Fill out the form and our team will get back to you within a few hours. We\'re here to help!',
         form: {
             name: 'Full Name',
             namePlaceholder: 'Your Name',
             email: 'Email Address',
             emailPlaceholder: 'your.email@example.com',
             subject: 'Subject',
-            subjectPlaceholder: 'Inquiry about...',
+            subjectPlaceholder: 'Select a subject for your query',
+            otherSubjectPlaceholder: 'Please specify your subject',
             message: 'Message',
-            messagePlaceholder: 'Your detailed message...',
+            messagePlaceholder: 'Select a pre-written message or \'Other...\'',
+            otherMessagePlaceholder: 'Please specify your message',
+            selectSubjectFirst: 'Please select a subject first',
             submit: 'Send Message',
             submitting: 'Sending...',
         },
@@ -585,6 +589,7 @@ export const translations = {
           {
             name: 'ओसामा',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'विकिपीडियन',
           },
         ].sort((a, b) => {
@@ -690,18 +695,21 @@ export const translations = {
     },
     contact: {
         title: 'हमसे संपर्क करें',
-        subtitle: 'प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा।',
+        subtitle: 'प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!',
         getInTouch: 'संपर्क में रहें',
-        p1: 'फॉर्म भरें और हमारी टीम 24 घंटे के भीतर आपसे संपर्क करेगी।',
+        p1: 'फॉर्म भरें और हमारी टीम कुछ घंटों के भीतर आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!',
         form: {
             name: 'पूरा नाम',
             namePlaceholder: 'आपका नाम',
             email: 'ईमेल पता',
             emailPlaceholder: 'your.email@example.com',
             subject: 'विषय',
-            subjectPlaceholder: 'के बारे में पूछताछ...',
+            subjectPlaceholder: 'अपनी क्वेरी के लिए एक विषय चुनें',
+            otherSubjectPlaceholder: 'कृपया अपना विषय निर्दिष्ट करें',
             message: 'संदेश',
-            messagePlaceholder: 'आपका विस्तृत संदेश...',
+            messagePlaceholder: 'एक पूर्व-लिखित संदेश चुनें या \'अन्य...\'',
+            otherMessagePlaceholder: 'कृपया अपना संदेश निर्दिष्ट करें',
+            selectSubjectFirst: 'कृपया पहले एक विषय चुनें',
             submit: 'संदेश भेजें',
             submitting: 'भेज रहा है...',
         },
@@ -1024,6 +1032,7 @@ export const translations = {
           {
             name: 'ওসামা',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+            meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'উইকিপিডিয়ান',
           },
         ].sort((a, b) => {
@@ -1129,18 +1138,21 @@ export const translations = {
     },
     contact: {
         title: 'যোগাযোগ করুন',
-        subtitle: 'প্রশ্ন বা প্রতিক্রিয়া আছে? আমরা আপনার কাছ থেকে শুনতে চাই।',
+        subtitle: 'প্রশ্ন বা প্রতিক্রিয়া আছে? আমরা আপনার কাছ থেকে শুনতে চাই। আমরা দ্রুত উত্তরের প্রতিশ্রুতি দিচ্ছি!',
         getInTouch: 'যোগাযোগ করুন',
-        p1: 'ফর্মটি পূরণ করুন এবং আমাদের দল ২৪ ঘন্টার মধ্যে আপনার সাথে যোগাযোগ করবে।',
+        p1: 'ফর্মটি পূরণ করুন এবং আমাদের দল কয়েক ঘন্টার মধ্যে আপনার সাথে যোগাযোগ করবে। আমরা সাহায্য করতে এখানে আছি!',
         form: {
             name: 'পুরো নাম',
             namePlaceholder: 'আপনার নাম',
             email: 'ইমেল ঠিকানা',
             emailPlaceholder: 'your.email@example.com',
             subject: 'বিষয়',
-            subjectPlaceholder: 'সম্পর্কে জিজ্ঞাসা...',
+            subjectPlaceholder: 'আপনার প্রশ্নের জন্য একটি বিষয় নির্বাচন করুন',
+            otherSubjectPlaceholder: 'অনুগ্রহ করে আপনার বিষয় উল্লেখ করুন',
             message: 'বার্তা',
-            messagePlaceholder: 'আপনার বিস্তারিত বার্তা...',
+            messagePlaceholder: 'একটি পূর্ব-লিখিত বার্তা নির্বাচন করুন বা \'অন্যান্য...\'',
+            otherMessagePlaceholder: 'অনুগ্রহ করে আপনার বার্তা উল্লেখ করুন',
+            selectSubjectFirst: 'অনুগ্রহ করে প্রথমে একটি বিষয় নির্বাচন করুন',
             submit: 'বার্তা পাঠান',
             submitting: 'পাঠানো হচ্ছে...',
         },
@@ -1342,5 +1354,3 @@ export const translations = {
 };
 
 export type Translations = typeof translations;
-
-

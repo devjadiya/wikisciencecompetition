@@ -14,6 +14,7 @@ import { handleContactForm } from './actions';
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLanguage } from '@/context/language-context';
 
 const subjects = [
     'General Inquiry about the Competition',
@@ -169,6 +170,7 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -210,14 +212,14 @@ export default function ContactPage() {
     const result = await handleContactForm(finalValues);
     if (result.success) {
       toast({
-        title: 'Message Sent!',
-        description: 'Thank you for contacting us. We will get back to you shortly.',
+        title: t.contact.toast.successTitle,
+        description: t.contact.toast.successDescription,
       });
       form.reset();
     } else {
       toast({
-        title: 'Error',
-        description: result.message || 'Something went wrong. Please try again.',
+        title: t.contact.toast.errorTitle,
+        description: result.message || t.contact.toast.errorDescription,
         variant: 'destructive',
       });
     }
@@ -232,9 +234,9 @@ export default function ContactPage() {
             transition={{ duration: 0.7 }}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">Contact Us</h1>
+                <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">{t.contact.title}</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-                    Have questions or feedback? We&apos;d love to hear from you. We promise a quick reply!
+                    {t.contact.subtitle}
                 </p>
             </div>
         </motion.div>
@@ -248,9 +250,9 @@ export default function ContactPage() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <div>
-                        <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">Get in Touch</h2>
+                        <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">{t.contact.getInTouch}</h2>
                         <p className="text-muted-foreground text-sm md:text-base">
-                           Fill out the form and our team will get back to you within a few hours. We&apos;re here to help!
+                           {t.contact.p1}
                         </p>
                     </div>
                     <div className="space-y-4 text-sm md:text-base">
@@ -272,9 +274,9 @@ export default function ContactPage() {
                         name="name"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Full Name</FormLabel>
+                            <FormLabel>{t.contact.form.name}</FormLabel>
                             <FormControl>
-                                <Input placeholder="Your Name" {...field} />
+                                <Input placeholder={t.contact.form.namePlaceholder} {...field} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -285,9 +287,9 @@ export default function ContactPage() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Email Address</FormLabel>
+                            <FormLabel>{t.contact.form.email}</FormLabel>
                             <FormControl>
-                                <Input placeholder="your.email@example.com" {...field} />
+                                <Input placeholder={t.contact.form.emailPlaceholder} {...field} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
@@ -298,11 +300,11 @@ export default function ContactPage() {
                           name="subject"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Subject</FormLabel>
+                              <FormLabel>{t.contact.form.subject}</FormLabel>
                               <Select onValueChange={handleSubjectChange} value={field.value}>
                                 <FormControl>
                                   <SelectTrigger>
-                                    <SelectValue placeholder="Select a subject for your query" />
+                                    <SelectValue placeholder={t.contact.form.subjectPlaceholder} />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -323,9 +325,9 @@ export default function ContactPage() {
                                 name="otherSubject"
                                 render={({ field }) => (
                                     <FormItem>
-                                    <FormLabel>Please specify your subject</FormLabel>
+                                    <FormLabel>{t.contact.form.otherSubjectPlaceholder}</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Your custom subject" {...field} />
+                                        <Input placeholder={t.contact.form.otherSubjectPlaceholder} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
@@ -337,11 +339,11 @@ export default function ContactPage() {
                           name="message"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Message</FormLabel>
+                              <FormLabel>{t.contact.form.message}</FormLabel>
                               <Select onValueChange={handleMessageChange} value={field.value} disabled={!watchSubject}>
                                 <FormControl>
                                   <SelectTrigger>
-                                    <SelectValue placeholder={watchSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
+                                    <SelectValue placeholder={watchSubject ? t.contact.form.messagePlaceholder : t.contact.form.selectSubjectFirst} />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -366,9 +368,9 @@ export default function ContactPage() {
                                 name="otherMessage"
                                 render={({ field }) => (
                                     <FormItem>
-                                    <FormLabel>Please specify your message</FormLabel>
+                                    <FormLabel>{t.contact.form.otherMessagePlaceholder}</FormLabel>
                                     <FormControl>
-                                        <Textarea placeholder="Your custom message" {...field} />
+                                        <Textarea placeholder={t.contact.form.otherMessagePlaceholder} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
@@ -376,7 +378,7 @@ export default function ContactPage() {
                             />
                         )}
                         <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={form.formState.isSubmitting}>
-                            {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+                            {form.formState.isSubmitting ? t.contact.form.submitting : t.contact.form.submit}
                         </Button>
                     </form>
                     </Form>
