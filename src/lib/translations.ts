@@ -117,7 +117,7 @@ export const translations = {
             description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
             wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
           },
-          {
+           {
             name: 'Samiya Ahmed',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
@@ -143,7 +143,13 @@ export const translations = {
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             description: 'Wikipedian',
           },
-        ]
+        ].sort((a, b) => {
+            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
+            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
+            if (aHasRealImage && !bHasRealImage) return -1;
+            if (!aHasRealImage && bHasRealImage) return 1;
+            return 0;
+        })
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -194,7 +200,7 @@ export const translations = {
             p1: 'If you don\'t have one, you can create a global account that will give you a specific username on all Wikimedia platforms (including Wikimedia Commons) when you log in. As a newly registered user you need to wait at least four days before uploading a video file, while images can be uploaded right after the registration.',
             createAccountLink: 'Create your account here!',
             rulesTitle: 'Participation Rules',
-            rules: [
+             rules: [
                 'Submissions must be your own work, uploaded from your own registered Wikimedia account. For multiple authors, all names must be provided.',
                 'Images must be under a free license (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).',
                 'All submissions require a clear and accurate scientific description in English. Other languages are welcome too.',
@@ -468,10 +474,10 @@ export const translations = {
         { name: 'संपर्क', href: '/contact' },
     ],
     learningLinks: [
-      { name: 'विकि खाता कैसे बनाएं', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
-      { name: 'अपलोड विज़ार्ड का उपयोग कैसे करें', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
-      { name: 'सीसी लाइसेंस को समझना', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
-      { name: 'श्रेणियां कैसे जोड़ें', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
+      { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
+      { name: 'How to use the Upload Wizard', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
+      { name: 'Understanding CC Licenses', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
+      { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
     ],
     organizersDropdown: 'आयोजक',
     moreDropdown: 'अधिक',
@@ -501,19 +507,19 @@ export const translations = {
     footerDeveloperCredit: 'द्वारा डिजाइन और विकसित',
      about: {
         title: 'विकीसाइंस इंडिया 2025 के बारे में',
-        badge: 'भारतीय संदर्भ के लिए परिचय',
-        heading: 'विकी विज्ञान प्रतियोगिता 2025 - भारत',
-        p1: 'पहली बार, भारत विकी विज्ञान प्रतियोगिता (WSC) का एक राष्ट्रीय संस्करण आयोजित कर रहा है - जो दुनिया की सबसे बड़ी पहलों में से एक है जो विज्ञान, फोटोग्राफी, और मुफ्त ज्ञान को एक साथ लाती है।',
-        p2: '2011 में एस्टोनिया में शुरू हुई और बाद में पूरे यूरोप और दुनिया भर में विस्तारित हुई, इस प्रतियोगिता ने हजारों वैज्ञानिकों, शोधकर्ताओं, और उत्साही लोगों को विज्ञान के आश्चर्य को कैद करने वाली छवियों को साझा करने के लिए प्रेरित किया है। सूक्ष्म कोशिकाओं से लेकर ब्रह्मांडीय आकाशगंगाओं तक, ये स्वतंत्र रूप से लाइसेंस प्राप्त योगदान विकिमीडिया कॉमन्स को समृद्ध करते हैं और विश्व स्तर पर खुली शिक्षा का समर्थन करते हैं।',
-        p3: 'भारत ने गर्व से पिछले अंतरराष्ट्रीय संस्करणों में योगदान दिया है - भारतीय फोटोग्राफरों और वैज्ञानिकों को मान्यता और पुरस्कार प्राप्त हुए हैं। हालांकि, यह पहली बार है जब भारत अपनी स्थानीय प्रतियोगिता की मेजबानी कर रहा है, जो हमारे देश की वैज्ञानिक भावना और रचनात्मकता को प्रदर्शित करने के लिए समर्पित है।',
-        p4: 'विकी विज्ञान प्रतियोगिता 2025 - भारत एक प्रतियोगिता से ज्यादा है। यह शक्तिशाली छवियों, कहानियों, और रचनात्मकता के माध्यम से भारतीय विज्ञान को दुनिया के सामने प्रस्तुत करने का एक सामूहिक प्रयास है।',
+        badge: 'भारतीय संदर्भ का परिचय',
+        heading: 'विकी विज्ञान प्रतियोगिता 2025 – भारत',
+        p1: 'पहली बार, भारत विकी विज्ञान प्रतियोगिता (WSC) का राष्ट्रीय संस्करण आयोजित कर रहा है — यह दुनिया की सबसे बड़ी पहलों में से एक है जो विज्ञान, फोटोग्राफी और मुफ्त ज्ञान को एक साथ लाती है।',
+        p2: '2011 में एस्टोनिया में शुरू हुई और बाद में पूरे यूरोप और दुनिया भर में विस्तारित हुई, इस प्रतियोगिता ने हजारों वैज्ञानिकों, शोधकर्ताओं और उत्साही लोगों को विज्ञान के आश्चर्य को दर्शाने वाली छवियां साझा करने के लिए प्रेरित किया है। सूक्ष्म कोशिकाओं से लेकर ब्रह्मांडीय आकाशगंगाओं तक, ये स्वतंत्र रूप से लाइसेंस प्राप्त योगदान विकिमीडिया कॉमन्स को समृद्ध करते हैं और विश्व स्तर पर खुली शिक्षा का समर्थन करते हैं।',
+        p3: 'भारत ने पिछले अंतर्राष्ट्रीय संस्करणों में गर्व से योगदान दिया है — भारतीय फोटोग्राफरों और वैज्ञानिकों को मान्यता और पुरस्कार प्राप्त हुए हैं। हालाँकि, यह पहली बार है जब भारत अपनी स्थानीय प्रतियोगिता की मेजबानी कर रहा है, जो हमारे देश की वैज्ञानिक भावना और रचनात्मकता को प्रदर्शित करने के लिए समर्पित है।',
+        p4: 'विकी विज्ञान प्रतियोगिता 2025 – भारत एक प्रतियोगिता से बढ़कर है। यह शक्तिशाली छवियों, कहानियों और रचनात्मकता के माध्यम से भारतीय विज्ञान को दुनिया के सामने प्रस्तुत करने का एक सामूहिक प्रयास है।',
         aims: {
             title: 'हमारे उद्देश्य',
-            subtitle: 'इस अभियान के माध्यम से, हमारा लक्ष्य है:',
+            subtitle: 'इस अभियान के माध्यम से, हमारा उद्देश्य है:',
             items: [
-                { icon: 'PenSquare', title: 'योगदान को प्रोत्साहित करें', description: 'पूरे भारत में छात्रों, शोधकर्ताओं और उत्साही लोगों को মূল্যবান वैज्ञानिक मीडिया का योगदान करने के लिए प्रोत्साहित करें।' },
-                { icon: 'Lightbulb', title: 'जागरूकता पैदा करें', description: 'खुले विज्ञान और मुफ्त ज्ञान के महत्व के बारे में जागरूकता पैदा करें।' },
-                { icon: 'Globe', title: 'विरासत का जश्न मनाएं', description: 'भारत की समृद्ध वैज्ञानिक विरासत और चल रहे नवाचारों का जश्न मनाएं।' },
+                { icon: 'PenSquare', title: 'योगदान को प्रोत्साहित करें', description: 'पूरे भारत में छात्रों, शोधकर्ताओं और उत्साही लोगों को बहुमूल्य वैज्ञानिक मीडिया का योगदान करने के लिए प्रोत्साहित करें।' },
+                { icon: 'Lightbulb', title: 'जागरूकता बढ़ाएँ', description: 'खुले विज्ञान और मुफ्त ज्ञान के महत्व के बारे में जागरूकता बढ़ाएँ।' },
+                { icon: 'Globe', title: 'विरासत का जश्न मनाएँ', description: 'भारत की समृद्ध वैज्ञानिक विरासत और चल रहे नवाचारों का जश्न मनाएँ।' },
                 { icon: 'Handshake', title: 'सहयोग को मजबूत करें', description: 'विकिमीडिया समुदायों, विश्वविद्यालयों, अनुसंधान संस्थानों और संगठनों के बीच सहयोग को मजबूत करें।' }
             ]
         }
@@ -523,30 +529,30 @@ export const translations = {
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
         ambassadors: [
           {
-            name: 'Anushka Patel',
+            name: 'अनुष्का पटेल',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-            description: 'Wiki Club SATI',
+            description: 'विकी क्लब SATI',
             boardLink: {
-                name: 'Wiki Club SATI',
+                name: 'विकी क्लब SATI',
                 url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
             },
           },
           {
-            name: 'Neechalkaran',
+            name: 'नीचलकरण',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
             description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
           },
           {
-            name: 'Santhosh Notagar',
+            name: 'संतोष नोटगर',
             image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
             meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
             description: 'विभागाध्यक्ष और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
             wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
           },
-          {
-            name: 'Samiya Ahmed',
+           {
+            name: 'सामिया अहमद',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
             description: 'देवबंद समुदाय',
@@ -556,22 +562,28 @@ export const translations = {
             },
           },
           {
-            name: 'Satheesh M',
+            name: 'सतीश एम',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-            description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाएं कर रहे हैं',
+            description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाओं पर काम कर रहे हैं',
           },
           {
-            name: 'Kaartic Sivaraam',
+            name: 'कार्तिक शिवराम',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
             description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
           },
           {
-            name: 'Osama',
+            name: 'ओसामा',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             description: 'विकिपीडियन',
           },
-        ]
+        ].sort((a, b) => {
+            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
+            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
+            if (aHasRealImage && !bHasRealImage) return -1;
+            if (!aHasRealImage && bHasRealImage) return 1;
+            return 0;
+        })
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -626,7 +638,7 @@ export const translations = {
                 'प्रस्तुतियाँ आपका अपना काम होनी चाहिए, जो आपके अपने पंजीकृत विकिमीडिया खाते से अपलोड की गई हों। एक से अधिक लेखकों के मामले में, सभी नाम प्रदान किए जाने चाहिए।',
                 'छवियां एक मुफ्त लाइसेंस (CC BY-SA 4.0, CC BY 4.0, CC0 1.0) के तहत होनी चाहिए।',
                 'सभी प्रस्तुतियों के लिए अंग्रेजी में एक स्पष्ट और सटीक वैज्ञानिक विवरण की आवश्यकता होती है। अन्य भाषाओं में विवरण का भी स्वागत है।',
-                 {
+                {
                     text: 'संभव उच्चतम रिज़ॉल्यूशन (कम से कम 2 मेगापिक्सेल) अपलोड करें। आप मेगापिक्सेल गणना की जाँच ',
                     link: {
                         url: 'https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594',
@@ -823,7 +835,7 @@ export const translations = {
      home: {
         autoscroll: {
             slides: [
-                { id: 1, title: 'सूक्ष्म दुनिया का अन्वेषण करें', description: 'सेलुलर संरचनाओं से लेकर क्रिस्टल संरचनाओं तक, अनदेखी सुंदरता का प्रदर्शन करें।' },
+                { id: 1, title: 'सूक्ष्म दुनिया का अन्वेषण करें', description: 'कोशिकीय संरचनाओं से लेकर क्रिस्टल संरचनाओं तक, अनदेखी सुंदरता का प्रदर्शन करें।' },
                 { id: 2, title: 'खगोलीय चमत्कारों को कैद करें', description: 'ब्रह्मांड आपका कैनवास है। आकाशगंगाओं, नीहारिकाओं और ग्रहों की घटनाओं की तस्वीर लें।' },
                 { id: 3, title: 'जटिल डेटा की कल्पना करें', description: 'कच्चे डेटा को सम्मोहक वैज्ञानिक विज़ुअलाइज़ेशन और इन्फOGRAPHICS में बदलें।' },
                 { id: 4, title: 'मानव सरलता का दस्तावेजीकरण करें', description: 'काम पर वैज्ञानिकों, नवीन प्रयोगशाला उपकरणों और खोज के क्षणों को कैद करें।' },
