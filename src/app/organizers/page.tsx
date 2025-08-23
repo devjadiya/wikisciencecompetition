@@ -6,47 +6,47 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/language-context';
 
 const organizerImages: { [key: string]: { image: string, hint: string } } = {
-  'Dev Jadiya': {
+  'dev_jadiya': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Dev_Jadiya_WTS_2024.png/1060px-Dev_Jadiya_WTS_2024.png',
     hint: 'organizer portrait',
   },
-  'Gauri Gupta': {
+  'gauri_gupta': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gauri_Gupta.jpg',
     hint: 'team member photo',
   },
-  'Suyash Dwivedi': {
+  'suyash_dwivedi': {
      image: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Suyash_Dwivedi_at_Wikimania_2025%2C_Day_2_12.jpg',
     hint: 'professional headshot',
   },
-  'Sai Kiran': {
+  'sai_kiran': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Sai_Kiran_Sharing_His_Experience_In_Feedback_Session_-_Wikiconference_India_2023_-_Hyderabad_2023-04-30_9229.jpg/1024px-Sai_Kiran_Sharing_His_Experience_In_Feedback_Session_-_Wikiconference_India_2023_-_Hyderabad_2023-04-30_9229.jpg',
     hint: 'organizer portrait',
   },
-  'Chinmayee Mishra': {
+  'chinmayee_mishra': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Chinmayee_Mishra_at_Wikimania_2023.jpg/960px-Chinmayee_Mishra_at_Wikimania_2023.jpg',
     hint: 'team member photo',
   },
-  'Athul R T': {
+  'athul_rt': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Athul_at_TTT_2024.jpg/1024px-Athul_at_TTT_2024.jpg',
     hint: 'professional headshot',
   },
-  'Uday Dongre': {
+  'uday_dongre': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Uday_dongre_photo_01.jpg',
     hint: 'organizer portrait',
   },
-  'Pankaj Yadav': {
+  'pankaj_yadav': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Pankaj_Yadav_%28Wiki_Club_SATI_Board_Member%29.jpg/1024px-Pankaj_Yadav_%28Wiki_Club_SATI_Board_Member%29.jpg',
     hint: 'team member photo',
   },
-  'Ashmita Bathre': {
+  'ashmita_bathre': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Ashmita_Bathre_%28Wiki_Club_SATI_Board_Member%29.jpg',
     hint: 'professional headshot',
   },
-  'Aanchal Patel': {
+  'aanchal_patel': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Aanchal_Patel.jpg/960px-Aanchal_Patel.jpg',
     hint: 'organizer portrait',
   },
-  'Riddhi Sharma': {
+  'riddhi_sharma': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Riddhi_at_Chanderi_01.jpg',
     hint: 'team member photo',
   },
@@ -76,21 +76,21 @@ export default function OrganizersPage() {
     .filter(o => o.roleKey === 'lead_organizer')
     .map((organizer) => ({
       ...organizer,
-      ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
+      ...(organizerImages[organizer.id] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
   }));
 
   const advisors = t.organizers.team
     .filter(o => o.roleKey === 'advisor')
     .map((organizer) => ({
       ...organizer,
-      ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
+      ...(organizerImages[organizer.id] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
   }));
 
   const coreTeam = t.organizers.team
     .filter(o => o.roleKey === 'core_team')
     .map((organizer) => ({
         ...organizer,
-        ...(organizerImages[organizer.name] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
+        ...(organizerImages[organizer.id] || { image: 'https://placehold.co/400x400.png', hint: 'placeholder image' })
     }));
 
   return (
@@ -110,7 +110,7 @@ export default function OrganizersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             {leadOrganizers.map((organizer) => (
               <motion.div
-                key={organizer.name}
+                key={organizer.id}
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
@@ -153,7 +153,7 @@ export default function OrganizersPage() {
           <div className="grid grid-cols-1 gap-8 max-w-sm mx-auto">
             {advisors.map((organizer) => (
                <motion.div
-                key={organizer.name}
+                key={organizer.id}
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
@@ -196,7 +196,7 @@ export default function OrganizersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {coreTeam.map((organizer) => (
                <motion.div
-                key={organizer.name}
+                key={organizer.id}
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
@@ -238,5 +238,3 @@ export default function OrganizersPage() {
     </div>
   );
 }
-
-    

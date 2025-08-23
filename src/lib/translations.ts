@@ -149,13 +149,7 @@ export const translations = {
             meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'Wikipedian',
           },
-        ].sort((a, b) => {
-            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-            if (aHasRealImage && !bHasRealImage) return -1;
-            if (!aHasRealImage && bHasRealImage) return 1;
-            return 0;
-        })
+        ]
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -285,66 +279,77 @@ export const translations = {
         core_organizing_team: 'Core Organizing Team',
         team: [
             {
+                id: 'dev_jadiya',
                 name: 'Dev Jadiya',
                 role: 'Lead Organizer',
                 roleKey: 'lead_organizer',
                 social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya'}
             },
             {
+                id: 'gauri_gupta',
                 name: 'Gauri Gupta',
                 role: 'Lead Organizer',
                 roleKey: 'lead_organizer',
                 social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa'}
             },
             {
+                id: 'suyash_dwivedi',
                 name: 'Suyash Dwivedi',
                 role: 'Advisor',
                 roleKey: 'advisor',
                 social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
             },
             {
+                id: 'sai_kiran',
                 name: 'Sai Kiran',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
             },
             {
+                id: 'chinmayee_mishra',
                 name: 'Chinmayee Mishra',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
             },
             {
+                id: 'athul_rt',
                 name: 'Athul R T',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
             },
             {
+                id: 'uday_dongre',
                 name: 'Uday Dongre',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Shoot_stufz' }
             },
             {
+                id: 'pankaj_yadav',
                 name: 'Pankaj Yadav',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:The_open_draft' }
             },
             {
+                id: 'ashmita_bathre',
                 name: 'Ashmita Bathre',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:AshmitaBathre204' }
             },
             {
+                id: 'aanchal_patel',
                 name: 'Aanchal Patel',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Archies2804' }
             },
             {
+                id: 'riddhi_sharma',
                 name: 'Riddhi Sharma',
                 role: 'Core Organizing Team',
                 roleKey: 'core_team',
@@ -603,13 +608,7 @@ export const translations = {
             meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'विकिपीडियन',
           },
-        ].sort((a, b) => {
-            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-            if (aHasRealImage && !bHasRealImage) return -1;
-            if (!aHasRealImage && bHasRealImage) return 1;
-            return 0;
-        })
+        ]
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
@@ -739,66 +738,77 @@ export const translations = {
         core_organizing_team: 'कोर आयोजन टीम',
         team: [
             {
+                id: 'dev_jadiya',
                 name: 'देव जड़िया',
                 role: 'प्रमुख आयोजक',
                 roleKey: 'lead_organizer',
                 social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya' }
             },
             {
+                id: 'gauri_gupta',
                 name: 'गौरी गुप्ता',
                 role: 'प्रमुख आयोजक',
                 roleKey: 'lead_organizer',
                 social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa' }
             },
             {
+                id: 'suyash_dwivedi',
                 name: 'सुयश द्विवेदी',
                 role: 'सलाहकार',
                 roleKey: 'advisor',
                 social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi' }
             },
             {
+                id: 'sai_kiran',
                 name: 'साई किरण',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
             },
             {
+                id: 'chinmayee_mishra',
                 name: 'चिन्मयी मिश्रा',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
             },
             {
+                id: 'athul_rt',
                 name: 'अतुल आर टी',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
             },
             {
+                id: 'uday_dongre',
                 name: 'उदय डोंगरे',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Shoot_stufz' }
             },
             {
+                id: 'pankaj_yadav',
                 name: 'पंकज यादव',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:The_open_draft' }
             },
             {
+                id: 'ashmita_bathre',
                 name: 'अस्मिता बाथरे',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:AshmitaBathre204' }
             },
             {
+                id: 'aanchal_patel',
                 name: 'आंचल पटेल',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Archies2804' }
             },
             {
+                id: 'riddhi_sharma',
                 name: 'रिद्धि शर्मा',
                 role: 'कोर आयोजन टीम',
                 roleKey: 'core_team',
@@ -1057,13 +1067,7 @@ export const translations = {
             meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
             description: 'উইকিপিডিয়ান',
           },
-        ].sort((a, b) => {
-            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-            if (aHasRealImage && !bHasRealImage) return -1;
-            if (!aHasRealImage && bHasRealImage) return 1;
-            return 0;
-        })
+        ]
     },
     affiliates: {
         title: 'উইকিমিডিয়া অ্যাফিলিয়েটদের জন্য আহ্বান',
@@ -1193,66 +1197,77 @@ export const translations = {
         core_organizing_team: 'কোর আয়োজক দল',
         team: [
             {
+                id: 'dev_jadiya',
                 name: 'দেব জাদিয়া',
                 role: 'প্রধান আয়োজক',
                 roleKey: 'lead_organizer',
                 social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya' }
             },
             {
+                id: 'gauri_gupta',
                 name: 'গৌরী গুপ্তা',
                 role: 'প্রধান আয়োজক',
                 roleKey: 'lead_organizer',
                 social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa' }
             },
             {
+                id: 'suyash_dwivedi',
                 name: 'সুয়শ দ্বিবেদী',
                 role: 'উপদেষ্টা',
                 roleKey: 'advisor',
                 social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi' }
             },
             {
+                id: 'sai_kiran',
                 name: 'সাই কিরণ',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
             },
             {
+                id: 'chinmayee_mishra',
                 name: 'চিন্ময়ী মিশ্র',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
             },
             {
+                id: 'athul_rt',
                 name: 'অতুল আর টি',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
             },
             {
+                id: 'uday_dongre',
                 name: 'উদয় ডংগ্রে',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Shoot_stufz' }
             },
             {
+                id: 'pankaj_yadav',
                 name: 'পঙ্কজ যাদব',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:The_open_draft' }
             },
             {
+                id: 'ashmita_bathre',
                 name: 'অস্মিতা বাথরে',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:AshmitaBathre204' }
             },
             {
+                id: 'aanchal_patel',
                 name: 'আঁচল প্যাটেল',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
                 social: { meta: 'https://meta.wikimedia.org/wiki/User:Archies2804' }
             },
             {
+                id: 'riddhi_sharma',
                 name: 'ঋদ্ধি শর্মা',
                 role: 'কোর আয়োজক দল',
                 roleKey: 'core_team',
