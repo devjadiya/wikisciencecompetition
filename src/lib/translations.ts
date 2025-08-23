@@ -121,7 +121,13 @@ export const translations = {
                 image: 'https://placehold.co/400x400.png',
                 description: 'Wikipedian',
             },
-        ]
+        ].sort((a, b) => {
+            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
+            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
+            if (aHasRealImage && !bHasRealImage) return -1;
+            if (!aHasRealImage && bHasRealImage) return 1;
+            return 0;
+        })
     },
     affiliates: {
         title: 'Call for Wikimedia Affiliates',
@@ -537,7 +543,13 @@ export const translations = {
                 image: 'https://placehold.co/400x400.png',
                 description: 'विकिपीडियन',
             },
-        ]
+        ].sort((a, b) => {
+            const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
+            const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
+            if (aHasRealImage && !bHasRealImage) return -1;
+            if (!aHasRealImage && bHasRealImage) return 1;
+            return 0;
+        })
     },
     affiliates: {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',

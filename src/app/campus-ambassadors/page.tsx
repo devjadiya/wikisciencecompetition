@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Check, ExternalLink, Link as LinkIcon } from 'lucide-react';
-import { useMemo } from 'react';
 
 const cardVariants = {
   offscreen: {
@@ -28,17 +27,7 @@ const cardVariants = {
 export default function CampusAmbassadorsPage() {
   const { t } = useLanguage();
   const { title, subtitle, whoHeading, whoDescription, responsibilitiesHeading, responsibilities, sidebar, cta } = t.campus;
-  
-  const ambassadors = useMemo(() => {
-    return [...t.campusAmbassadors.ambassadors].sort((a, b) => {
-        const aHasRealImage = a.image.startsWith('https://upload.wikimedia.org');
-        const bHasRealImage = b.image.startsWith('https://upload.wikimedia.org');
-        if (aHasRealImage && !bHasRealImage) return -1;
-        if (!aHasRealImage && bHasRealImage) return 1;
-        return 0;
-    });
-  }, [t.campusAmbassadors.ambassadors]);
-
+  const ambassadors = t.campusAmbassadors.ambassadors;
 
   return (
     <div className="bg-background text-foreground">
