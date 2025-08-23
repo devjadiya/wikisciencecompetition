@@ -88,6 +88,11 @@ export const translations = {
                 { icon: 'Globe', title: 'Celebrate Heritage', description: 'Celebrate India’s rich scientific heritage and ongoing innovations.' },
                 { icon: 'Handshake', title: 'Strengthen Collaboration', description: 'Strengthen collaboration between Wikimedia communities, universities, research institutes, and organizations.' }
             ]
+        },
+        supportingOrg: {
+            title: 'Supporting Organisation',
+            p1: 'Wiki Club SATI (Vidisha, Madhya Pradesh) is acknowledged as the supporting organisation for the first national edition of the Wiki Science Competition 2025 in India. The club has been at the forefront of engaging students and young professionals in the Wikimedia movement, contributing to open knowledge, technical innovation, and community-led initiatives.',
+            p2: 'Several members of the Core Organizing Team are associated with Wiki Club SATI, and their continued involvement reflects the club’s commitment to advancing free knowledge and scientific engagement. While the support is non-financial, the organisational capacity, experience, and community networks of Wiki Club SATI play an essential role in enabling this campaign at the national level.'
         }
     },
     campusAmbassadors: {
@@ -117,7 +122,7 @@ export const translations = {
             description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
             wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
           },
-           {
+          {
             name: 'Samiya Ahmed',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
             meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
@@ -458,26 +463,26 @@ export const translations = {
   },
   hi: {
     mainNavLinks: [
-      { name: 'परिचय', href: '/about' },
-      { name: 'प्रतियोगिता', href: '/competition' },
-      { name: 'संसाधन', href: '/resources' },
-      { name: 'प्रायोजक', href: '/sponsors' },
+        { name: 'परिचय', href: '/about' },
+        { name: 'प्रतियोगिता', href: '/competition' },
+        { name: 'संसाधन', href: '/resources' },
+        { name: 'प्रायोजक', href: '/sponsors' },
     ],
     organizerLinks: [
         { name: 'टीम से मिलें', href: '/organizers' },
-        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors' },
         { name: 'टीम के लिए कॉल', href: '/organizers/call' },
     ],
     moreDropdownLinks: [
-        { name: 'जूरी', href: '/jury'},
-        { name: 'समर्थन करें', href: '/support-us'},
+        { name: 'जूरी', href: '/jury' },
+        { name: 'समर्थन करें', href: '/support-us' },
         { name: 'संपर्क', href: '/contact' },
     ],
     learningLinks: [
-      { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
-      { name: 'How to use the Upload Wizard', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
-      { name: 'Understanding CC Licenses', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
-      { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
+        { name: 'विकी खाता कैसे बनाएं', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
+        { name: 'अपलोड विज़ार्ड का उपयोग कैसे करें', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
+        { name: 'सीसी लाइसेंस को समझना', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
+        { name: 'श्रेणियां कैसे जोड़ें', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
     ],
     organizersDropdown: 'आयोजक',
     moreDropdown: 'अधिक',
@@ -490,13 +495,13 @@ export const translations = {
         { name: 'आयोजक', href: '/organizers' },
         { name: 'प्रायोजक', href: '/sponsors' },
         { name: 'संसाधन', href: '/resources' },
-        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors'},
+        { name: 'कैंपस एंबेसडर', href: '/campus-ambassadors' },
         { name: 'संपर्क', href: '/contact' },
     ],
     footerSupportLinks: [
-        { name: 'प्रायोजन', href: '/support-us#sponsorship'},
-        { name: 'उपहार/स्वैग', href: '/support-us#gifts'},
-        { name: 'आउटरीच', href: '/support-us#outreach'},
+        { name: 'प्रायोजन', href: '/support-us#sponsorship' },
+        { name: 'उपहार/स्वैग', href: '/support-us#gifts' },
+        { name: 'आउटरीच', href: '/support-us#outreach' },
     ],
     footerSubtitle: 'फोटोग्राफी के माध्यम से विज्ञान की सुंदरता को कैद करना।',
     footerNavHeader: 'नेविगेशन',
@@ -505,7 +510,7 @@ export const translations = {
     footerCopyright: 'विकी विज्ञान प्रतियोगिता भारत। सर्वाधिकार सुरक्षित।',
     footerLicense: 'सामग्री CC BY-SA 4.0 के तहत उपलब्ध है जब तक कि अन्यथा उल्लेख न किया गया हो।',
     footerDeveloperCredit: 'द्वारा डिजाइन और विकसित',
-     about: {
+    about: {
         title: 'विकीसाइंस इंडिया 2025 के बारे में',
         badge: 'भारतीय संदर्भ का परिचय',
         heading: 'विकी विज्ञान प्रतियोगिता 2025 – भारत',
@@ -522,6 +527,11 @@ export const translations = {
                 { icon: 'Globe', title: 'विरासत का जश्न मनाएँ', description: 'भारत की समृद्ध वैज्ञानिक विरासत और चल रहे नवाचारों का जश्न मनाएँ।' },
                 { icon: 'Handshake', title: 'सहयोग को मजबूत करें', description: 'विकिमीडिया समुदायों, विश्वविद्यालयों, अनुसंधान संस्थानों और संगठनों के बीच सहयोग को मजबूत करें।' }
             ]
+        },
+        supportingOrg: {
+            title: 'सहायक संगठन',
+            p1: 'विकी क्लब एसएटीआई (विदिशा, मध्य प्रदेश) को भारत में विकी विज्ञान प्रतियोगिता 2025 के पहले राष्ट्रीय संस्करण के लिए सहायक संगठन के रूप में स्वीकार किया गया है। क्लब छात्रों और युवा पेशेवरों को विकिमीडिया आंदोलन में शामिल करने, खुले ज्ञान, तकनीकी नवाचार और समुदाय-आधारित पहलों में योगदान करने में सबसे आगे रहा है।',
+            p2: 'कोर आयोजन टीम के कई सदस्य विकी क्लब एसएटीआई से जुड़े हुए हैं, और उनकी निरंतर भागीदारी मुक्त ज्ञान और वैज्ञानिक जुड़ाव को आगे बढ़ाने के लिए क्लब की प्रतिबद्धता को दर्शाती है। जबकि समर्थन गैर-वित्तीय है, विकी क्लब एसएटीआई की संगठनात्मक क्षमता, अनुभव और सामुदायिक नेटवर्क राष्ट्रीय स्तर पर इस अभियान को सक्षम करने में एक आवश्यक भूमिका निभाते हैं।'
         }
     },
     campusAmbassadors: {
@@ -589,7 +599,7 @@ export const translations = {
         title: 'विकिमीडिया सहयोगियों के लिए कॉल',
         subtitle: 'हम भारत भर में विकिमीडिया सहयोगियों, उपयोगकर्ता समूहों और संगठनों को विकी विज्ञान प्रतियोगिता 2025 को बढ़ावा देने और समर्थन करने में हमारे साथ सहयोग करने के लिए आमंत्रित कर रहे हैं।',
         partnerHeading: 'हमारे साथ साझेदारी क्यों करें?',
-        partnerDescription: 'यह विज्ञान का जश्न मनाने और विकिमीडिया कॉमन्स को स्वतंत्र रूप से लाइसेंस प्राप्त मीडिया से समृद्ध करने का एक अनूठा अवसर है। एक भागीदार के रूप में, आपका समूह भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता को सफल बनाने में outreach, जागरूकता और सामुदायिक जुड़ाव में मदद करके एक महत्वपूर्ण भूमिका निभा सकता है।',
+        partnerDescription: 'यह विज्ञान का जश्न मनाने और विकिमीडिया कॉमन्स को स्वतंत्र रूप से लाइसेंस प्राप्त मीडिया से समृद्ध करने का एक अनूठा अवसर है। एक भागीदार के रूप में, आपका समूह भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता को सफल बनाने में आउटरीच, जागरूकता और सामुदायिक जुड़ाव में मदद करके एक महत्वपूर्ण भूमिका निभा सकता है।',
         collaborationHeading: 'आप कैसे सहयोग कर सकते हैं',
         collaborationPoints: [
             'अपने नेटवर्क पर ऑनलाइन और ऑफलाइन आउटरीच में संलग्न हों।',
@@ -626,7 +636,7 @@ export const translations = {
             href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
         }
     },
-     competition: {
+    competition: {
         title: 'प्रतियोगिता विवरण',
         subtitle: 'भाग लेने और जीतने के लिए आपको जो कुछ भी जानना चाहिए।',
         howToParticipate: {
@@ -712,17 +722,17 @@ export const translations = {
             {
                 name: 'देव जड़िया',
                 role: 'प्रमुख आयोजक',
-                social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya'}
+                social: { linkedin: 'https://www.linkedin.com/in/devjadiya/', meta: 'https://meta.wikimedia.org/wiki/User:Dev_Jadiya' }
             },
             {
                 name: 'गौरी गुप्ता',
                 role: 'प्रमुख आयोजक',
-                social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa'}
+                social: { linkedin: '#', meta: 'https://meta.wikimedia.org/wiki/User:Gauri_Guptaa' }
             },
             {
                 name: 'सुयश द्विवेदी',
                 role: 'सलाहकार',
-                social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi'}
+                social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi' }
             },
             {
                 name: 'साई किरण',
@@ -832,7 +842,7 @@ export const translations = {
             },
         ]
     },
-     home: {
+    home: {
         autoscroll: {
             slides: [
                 { id: 1, title: 'सूक्ष्म दुनिया का अन्वेषण करें', description: 'कोशिकीय संरचनाओं से लेकर क्रिस्टल संरचनाओं तक, अनदेखी सुंदरता का प्रदर्शन करें।' },
@@ -893,3 +903,4 @@ export const translations = {
 };
 
 export type Translations = typeof translations;
+
