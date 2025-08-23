@@ -99,26 +99,26 @@ export const translations = {
                 wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
-                name: 'Satheesh M',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-                description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
-            },
-            {
                 name: 'Samiya Ahmed',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
                 description: 'Deoband Community',
                 boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
             },
             {
+                name: 'Satheesh M',
+                image: 'https://placehold.co/400x400.png',
+                description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
+            },
+            {
                 name: 'Kaartic Sivaraam',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://placehold.co/400x400.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
                 description: 'Tamil Wikipedian, Software Engineer',
             },
             {
                 name: 'Osama',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://placehold.co/400x400.png',
                 description: 'Wikipedian',
             },
         ]
@@ -515,26 +515,26 @@ export const translations = {
                 wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
             },
             {
-                name: 'सतीश एम',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
-                description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाओं पर काम कर रहे हैं',
-            },
-            {
                 name: 'सामिया अहमद',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Samiya_Ahmed_at_WikiConference_India_2023.jpg/800px-Samiya_Ahmed_at_WikiConference_India_2023.jpg',
                 meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
                 description: 'देवबंद समुदाय',
                 boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
             },
             {
+                name: 'सतीश एम',
+                image: 'https://placehold.co/400x400.png',
+                description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाओं पर काम कर रहे हैं',
+            },
+            {
                 name: 'कार्तिक शिवराम',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://placehold.co/400x400.png',
                 meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
                 description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
             },
             {
                 name: 'ओसामा',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                image: 'https://placehold.co/400x400.png',
                 description: 'विकिपीडियन',
             },
         ]
