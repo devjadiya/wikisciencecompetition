@@ -75,8 +75,9 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'Meet Our Ambassadors',
+        title: 'Institute Ambassadors',
         subtitle: 'Meet the passionate leaders driving the Wiki Science Competition in their communities.',
+        communityContributorsTitle: 'Community Contributors',
         institutes: [
             {
                 name: 'Samrat Ashok Technological Institute',
@@ -85,11 +86,51 @@ export const translations = {
                 ambassadors: [
                     {
                         name: 'Anushka Patel',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                         meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                        description: 'Board Member',
+                        boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
                     }
                 ]
             }
+        ],
+        communityContributors: [
+            {
+                name: 'Neechalkaran',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
+                description: 'Wikipedian & Computational Linguist from Tamilnadu',
+            },
+            {
+                name: 'Satheesh M',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'Presently doing IT and surveillance projects in Kanniyakumari district',
+            },
+            {
+                name: 'Samiya Ahmed',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
+                description: 'Deoband Community',
+                boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+            },
+            {
+                name: 'Kaartic Sivaraam',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
+                description: 'Tamil Wikipedian, Software Engineer',
+            },
+            {
+                name: 'Santhosh Notagar',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+                description: 'HOD & Assistant Professor, Department of Computer Animation, St Aloysius',
+                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
+            },
+            {
+                name: 'Osama',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'Wikipedian',
+            },
         ]
     },
     affiliates: {
@@ -128,20 +169,6 @@ export const translations = {
             deadline: 'Deadline: 31st August 2025',
             cta: 'Open Application Form'
         },
-        institutes: [
-            {
-                name: '',
-                logo: '',
-                website: 'https://www.satiengg.in/',
-                ambassadors: [
-                    {
-                        name: 'Santosh notagar',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
-                        meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
-                    }
-                ]
-            }
-        ],
         cta: {
             text: 'Become a Campus Ambassador',
             href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
@@ -474,8 +501,9 @@ export const translations = {
         }
     },
     campusAmbassadors: {
-        title: 'हमारे राजदूतों से मिलें',
+        title: 'संस्थान के राजदूत',
         subtitle: 'अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।',
+        communityContributorsTitle: 'सामुदायिक योगदानकर्ता',
         institutes: [
             {
                 name: 'सम्राट अशोक प्रौद्योगिकी संस्थान',
@@ -484,11 +512,51 @@ export const translations = {
                 ambassadors: [
                     {
                         name: 'अनुष्का पटेल',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
+                        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                         meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
+                        description: 'बोर्ड सदस्य',
+                        boardLink: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
                     }
                 ]
             }
+        ],
+        communityContributors: [
+            {
+                name: 'नीचलकरन',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg/1024px-User_Neechalkaran_introducing_himself_to_other%27s_at_Day0_of_TTT2019.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Neechalkaran',
+                description: 'तमिलनाडु से विकिपीडियन और कम्प्यूटेशनल भाषाविद्',
+            },
+            {
+                name: 'सतीश एम',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'वर्तमान में कन्याकुमारी जिले में आईटी और निगरानी परियोजनाओं पर काम कर रहे हैं',
+            },
+            {
+                name: 'सामिया अहमद',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
+                description: 'देवबंद समुदाय',
+                boardLink: 'https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia',
+            },
+            {
+                name: 'कार्तिक शिवराम',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                meta: 'https://meta.wikimedia.org/wiki/User:Kaartic',
+                description: 'तमिल विकिपीडियन, सॉफ्टवेयर इंजीनियर',
+            },
+            {
+                name: 'संतोष नोटगर',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9b/Santhosh_Notagar_1.jpg',
+                meta: 'https://meta.wikimedia.org/wiki/User:Santhosh_Notagar99',
+                description: 'HOD और सहायक प्रोफेसर, कंप्यूटर एनीमेशन विभाग, सेंट अलॉयसियस',
+                wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru'
+            },
+            {
+                name: 'ओसामा',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
+                description: 'विकिपीडियन',
+            },
         ]
     },
     affiliates: {
@@ -527,20 +595,6 @@ export const translations = {
             deadline: 'अंतिम तिथि: 31 अगस्त 2025',
             cta: 'आवेदन पत्र खोलें'
         },
-        institutes: [
-            {
-                name: 'सम्राट अशोक प्रौद्योगिकी संस्थान',
-                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/SATI_Vidisha.jpg',
-                website: 'https://www.satiengg.in/',
-                ambassadors: [
-                    {
-                        name: 'अनुष्का पटेल',
-                        image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Anushka_patel_1_%28cropped%29.jpg',
-                        meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                    }
-                ]
-            }
-        ],
         cta: {
             text: 'कैंपस एंबेसडर बनें',
             href: 'https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform'
