@@ -10,9 +10,12 @@ import { LanguageProvider } from '@/context/language-context';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Wiki Science Competition 2025 - India',
-  description: 'The national science photography competition in India. Participate in Wiki Science Competition (WSC) India, submit your images, and win exciting prizes. Categories include microscopy, astronomy, wildlife, and more.',
-  keywords: 'wiki science india, wiki science competition, wsc india, science competition india, photography science competition india, science photography, wikimedia commons, open science, national science competition',
+  title: {
+    default: 'Wiki Science Competition 2025 - India',
+    template: '%s | Wiki Science Competition 2025 - India',
+  },
+  description: 'Participate in the Wiki Science Competition 2025 in India, the biggest science photography competition. Submit your images and win prizes. Categories include microscopy, astronomy, wildlife, and more. Join India\'s premier science and photography event for 2025.',
+  keywords: 'wiki science 2025, science 2025 india, science competition india, india science 2025, photography competition 2025, indian photography competition 2025, wiki science competition, wiki science india, wsc india, science photography, wikimedia commons, open science, national science competition',
   authors: [{ name: 'Wiki Science Competition India Team' }],
   openGraph: {
     title: 'Wiki Science Competition 2025 - India',

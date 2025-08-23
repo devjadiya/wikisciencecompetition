@@ -1,7 +1,24 @@
+
 {
-  "name": "nextn",
-  "version": "0.1.0",
+  "name": "wiki-science-competition-india",
+  "version": "1.0.0",
   "private": true,
+  "description": "Official website for the Wiki Science Competition 2025 in India. Participate in India's largest science photography competition and win prizes.",
+  "keywords": [
+    "wiki science 2025",
+    "science 2025 india",
+    "science competition india",
+    "india science 2025",
+    "photography competition 2025",
+    "indian photography competition 2025",
+    "wiki science competition",
+    "wiki science india",
+    "wsc india",
+    "science photography",
+    "wikimedia commons",
+    "open science",
+    "national science competition"
+  ],
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",

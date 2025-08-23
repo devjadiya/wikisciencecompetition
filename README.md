@@ -1,7 +1,7 @@
 
 # Wiki Science Competition 2025 - India Website
 
-This is the official website for the **Wiki Science Competition 2025 - India**, a national edition of one of the world’s largest initiatives bringing together science, photography, and free knowledge. This project was built to be a fast, accessible, and multilingual hub for participants, sponsors, and organizers.
+This is the official website for the **Wiki Science Competition 2025 - India**, a national edition of one of the world’s largest initiatives bringing together science, photography, and free knowledge. This project was built to be a fast, accessible, and multilingual hub for participants, sponsors, and organizers of India's premier science photography competition for 2025.
 
 ## Live Site
 
@@ -11,7 +11,7 @@ This is the official website for the **Wiki Science Competition 2025 - India**, 
 
 ## Core Features
 
-This website is a feature-rich platform designed to manage a national-level competition with a global audience.
+This website is a feature-rich platform designed to manage a national-level science and photography competition with a global audience.
 
 ### User Experience & Design
 - **Fully Responsive Design**: Mobile-first approach ensures a seamless experience across all devices, from phones to desktops.
@@ -21,14 +21,14 @@ This website is a feature-rich platform designed to manage a national-level comp
 - **Interactive Image Gallery**: The competition page includes a full-screen modal gallery for viewing high-resolution images with easy navigation.
 
 ### Content & Accessibility
-- **Multi-language Support**: Fully bilingual, supporting both **English** and **हिन्दी (Hindi)**. A custom React Context-based language switcher allows users to toggle languages instantly across the entire site.
+- **Multi-language Support**: Fully bilingual, supporting both **English** and **हिन्दी (Hindi)**, with a UI designed to accommodate many more languages. A custom React Context-based language switcher allows users to toggle languages instantly.
 - **Dynamic Content Pages**: The site includes dedicated, server-rendered pages for various sections:
   - **About**: Introduction to the competition's Indian context and aims.
-  - **Competition**: Detailed rules, key dates, and image category showcases.
+  - **Competition**: Detailed rules, key dates, and image category showcases for the 2025 event.
   - **Organizers**: Profiles of the team members.
   - **Campus Ambassadors**: Information and application for the ambassador program.
   - **Resources, Sponsors, Jury**: And more.
-- **SEO & Metadata**: Comprehensive metadata, Open Graph tags, and Twitter card implementation for optimal search engine visibility and social sharing.
+- **SEO & Metadata**: Comprehensive metadata, Open Graph tags, and Twitter card implementation for optimal search engine visibility and social sharing for keywords like "science competition india", "photography competition 2025", and "wiki science 2025".
 
 ### AI & Backend Functionality
 - **AI-Powered FAQ Chatbot**: An intelligent chatbot, built with **Genkit**, provides instant, context-aware answers to user questions based on a comprehensive knowledge base about the competition.
