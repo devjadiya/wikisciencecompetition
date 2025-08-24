@@ -19,10 +19,8 @@ export const gtagEvent = ({ action, category, label, value }: GTagEvent) => {
 
 export const pageview = (url: string) => {
   if (typeof window.gtag === 'function') {
-    window.gtag('config', 'GTM-N9KGHGR6', {
+    window.gtag('config', 'G-VBJS2HS9WM', {
         page_path: url,
     })
   }
 }
-
-    

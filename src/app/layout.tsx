@@ -67,13 +67,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <head>
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-VBJS2HS9WM`}
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-N9KGHGR6');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VBJS2HS9WM');
           `}
         </Script>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg" type="image/svg+xml" />
@@ -82,8 +85,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@300;400;500&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased bg-background text-foreground min-h-screen flex flex-col')}>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9KGHGR6"
-            height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
         <LanguageProvider>
           <Analytics />
           <Navbar />
@@ -96,5 +97,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
