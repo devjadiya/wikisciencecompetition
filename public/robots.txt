@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-Sitemap: https://wikisciencecompetition.vercel.app/
+Disallow:
+
+Sitemap: https://wikisciencecompetition.vercel.app/sitemap.xml
