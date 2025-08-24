@@ -8,6 +8,7 @@ import Footer from '@/components/layout/footer';
 import FaqChatbot from '@/components/faq-chatbot';
 import { LanguageProvider } from '@/context/language-context';
 import Script from 'next/script';
+import Analytics from '@/components/layout/analytics';
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Wiki Science Competition 2025 - India',
     description: 'India\'s national science photography competition. Join WSC India to celebrate science and contribute to free knowledge.',
-    url: 'https://wikiscience.in',
+    url: 'https://wikisciencecompetition.vercel.app/',
     siteName: 'Wiki Science Competition India',
     images: [
       {
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://wikiscience.in',
+    canonical: 'https://wikisciencecompetition.vercel.app/',
   },
 };
 
@@ -81,6 +82,7 @@ export default function RootLayout({
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9KGHGR6"
             height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe></noscript>
         <LanguageProvider>
+          <Analytics />
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
@@ -91,3 +93,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    

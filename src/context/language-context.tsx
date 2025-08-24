@@ -2,14 +2,14 @@
 'use client';
 
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { translations, Translations, languages } from '@/lib/translations';
+import { translations, languages, Translations } from '@/lib/translations';
 
 type LanguageCode = typeof languages[number]['code'];
 
 interface LanguageContextType {
   language: LanguageCode;
   setLanguage: (language: LanguageCode) => void;
-  t: Translations['en']; // Always return english translations for now
+  t: Translations['en']; 
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -17,12 +17,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<LanguageCode>('en');
 
-  const t = translations[language as keyof Translations] || translations.en;
+  const t = translations[language] || translations.en;
 
   const value = {
     language,
     setLanguage,
-    t: t,
+    t: t as Translations['en'],
   };
 
   return (
