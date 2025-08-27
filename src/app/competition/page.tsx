@@ -11,6 +11,7 @@ import Link from 'next/link';
 import CategoryShowcase from '@/components/competition/category-showcase';
 import ImageGalleryModal from '@/components/competition/image-gallery-modal';
 import { useLanguage } from '@/context/language-context';
+import { Vortex } from '@/components/ui/vortex';
 
 const peopleInScienceImages = [
   { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
@@ -251,6 +252,32 @@ export default function CompetitionPage() {
                     ))}
                 </div>
             </section>
+            
+            <div className="w-full mx-auto rounded-md h-[30rem] overflow-hidden my-16 md:my-24">
+              <Vortex
+                backgroundColor="black"
+                className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+              >
+                <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
+                  Capture the Unseen
+                </h2>
+                <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
+                  Unveil the beauty of science through your lens. Join a global community celebrating discovery.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+                     <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                        {t.competition.readyToParticipate.cta}
+                     </a>
+                  </Button>
+                  <Button asChild variant="ghost" className="text-white">
+                    <Link href="/resources">
+                      View Past Winners
+                    </Link>
+                  </Button>
+                </div>
+              </Vortex>
+            </div>
 
             <section id="participate" className="mt-16 md:mt-24 text-center">
                 <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-8 md:p-12">
