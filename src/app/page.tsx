@@ -10,14 +10,12 @@ const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
 const DraggableCardsSection = dynamic(() => import('@/components/home/autoscroll-carousel'));
 const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
-const WorldMapSection = dynamic(() => import('@/components/home/world-map-section'));
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroCarousel />
       <InfoSections />
-      <WorldMapSection />
       <DraggableCardsSection />
       <PrizesSection />
       <VortexCta />
