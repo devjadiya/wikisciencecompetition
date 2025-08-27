@@ -13,23 +13,23 @@ import { ThemeProvider } from '@/components/layout/theme-provider';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Wiki Science Competition 2025 - India',
-    template: '%s | Wiki Science Competition 2025 - India',
+    default: 'Official Wiki Science Competition 2025 - India',
+    template: '%s | WSC India 2025',
   },
-  description: 'Participate in the Wiki Science Competition 2025 in India, the biggest science photography competition. Submit your images and win prizes. Categories include microscopy, astronomy, wildlife, and more. Join India\'s premier science and photography event for 2025.',
-  keywords: 'wiki science 2025, science 2025 india, science competition india, india science 2025, photography competition 2025, indian photography competition 2025, wiki science competition, wiki science india, wsc india, science photography, wikimedia commons, open science, national science competition',
+  description: 'Official website for the Wiki Science Competition 2025 in India. Participate in India\'s biggest science photography competition, submit images in categories like microscopy and astronomy, and win prizes. Join the premier science and photography event for 2025.',
+  keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition',
   authors: [{ name: 'Wiki Science Competition India Team' }],
   openGraph: {
-    title: 'Wiki Science Competition 2025 - India',
-    description: 'India\'s national science photography competition. Join WSC India to celebrate science and contribute to free knowledge.',
-    url: 'https://wikisciencecompetition.vercel.app/',
-    siteName: 'Wiki Science Competition India',
+    title: 'Official Wiki Science Competition 2025 - India',
+    description: 'India\'s national science photography competition. Join WSC India to celebrate science, contribute to free knowledge, and win exciting prizes.',
+    url: 'https://www.wikisciencecompetition.in/',
+    siteName: 'Wiki Science Competition 2025 - India',
     images: [
       {
-        url: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg',
+        url: 'https://www.wikisciencecompetition.in/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Wiki Science Competition India 2025 Logo',
+        alt: 'Official Banner for Wiki Science Competition 2025 in India',
       },
     ],
     locale: 'en_IN',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wiki Science Competition 2025 - India',
-    description: 'Calling all science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
-    images: ['https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg'],
+    title: 'Official Wiki Science Competition 2025 in India',
+    description: 'Calling all students, researchers, and science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
+    images: ['https://www.wikisciencecompetition.in/twitter-image.png'],
   },
   robots: {
     index: true,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://wikisciencecompetition.vercel.app/',
+    canonical: 'https://www.wikisciencecompetition.in/',
   },
     icons: {
     icon: '/favicon.ico',

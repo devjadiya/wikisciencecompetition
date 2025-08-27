@@ -89,6 +89,7 @@ const prompt = ai.definePrompt({
   - **Contact for Support:** Use the contact page on the website. For sponsoring, if a user asks what they get in return, tell them they get 'prominent branding opportunities' and can 'get their brand in the hands of science enthusiasts'.
 
   **Contact Information:**
+  - Website: https://www.wikisciencecompetition.in/
   - Email: wikisciencecompetition@gmail.com
   - Telegram: https://t.me/wikisciencecompetition
   - Instagram: https://www.instagram.com/wiki_science_competition/
@@ -112,4 +113,3 @@ const faqChatbotFlow = ai.defineFlow(
     return output!;
   }
 );
-
