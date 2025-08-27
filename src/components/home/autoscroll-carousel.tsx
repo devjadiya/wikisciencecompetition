@@ -2,8 +2,7 @@
 "use client";
 import React from "react";
 import {
-  DraggableCardBody,
-  DraggableCardContainer,
+  DraggableCard,
 } from "@/components/ui/draggable-card";
  
 export function DraggableCardsSection() {
@@ -47,12 +46,12 @@ export function DraggableCardsSection() {
   ];
   return (
     <div className="hidden md:flex">
-      <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip bg-primary/5">
+      <DraggableCard.Container className="relative flex min-h-screen w-full items-center justify-center overflow-clip bg-primary/5">
         <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-muted-foreground md:text-4xl select-none">
           Explore Winning Categories
         </p>
         {items.map((item) => (
-          <DraggableCardBody key={item.title} className={item.className}>
+          <DraggableCard.Body key={item.title} className={item.className}>
             <img
               src={item.image}
               alt={item.title}
@@ -61,9 +60,9 @@ export function DraggableCardsSection() {
             <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
               {item.title}
             </h3>
-          </DraggableCardBody>
+          </DraggableCard.Body>
         ))}
-      </DraggableCardContainer>
+      </DraggableCard.Container>
     </div>
   );
 }
