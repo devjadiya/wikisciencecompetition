@@ -1,3 +1,4 @@
+
 "use client";
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
@@ -114,23 +115,24 @@ export const Highlight = ({
   return (
     <motion.span
       initial={{
-        backgroundSize: "0% 100%",
+        scaleX: 0,
       }}
       animate={{
-        backgroundSize: "100% 100%",
+        scaleX: 1,
       }}
       transition={{
-        duration: 2,
-        ease: "linear",
+        duration: 0.8,
+        ease: [0.4, 0.0, 0.2, 1],
         delay: 0.5,
       }}
       style={{
         backgroundRepeat: "no-repeat",
         backgroundPosition: "left center",
         display: "inline",
+        originX: 0.5,
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500`,
+        `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-2 pb-1 dark:from-indigo-500 dark:to-purple-500`,
         className,
       )}
     >
@@ -138,3 +140,4 @@ export const Highlight = ({
     </motion.span>
   );
 };
+
