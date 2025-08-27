@@ -21,7 +21,7 @@ interface VortexProps {
  
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const animationFrameId = useRef<number>();
   const particleCount = props.particleCount || 700;
   const particlePropCount = 9;
@@ -103,6 +103,13 @@ export const Vortex = (props: VortexProps) => {
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
     tick++;
  
+    if (canvas.width === 0 || canvas.height === 0) {
+      animationFrameId.current = window.requestAnimationFrame(() =>
+        draw(canvas, ctx),
+      );
+      return;
+    }
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
  
     ctx.fillStyle = backgroundColor;
@@ -194,13 +201,14 @@ export const Vortex = (props: VortexProps) => {
     canvas: HTMLCanvasElement,
     ctx?: CanvasRenderingContext2D,
   ) => {
-    const { innerWidth, innerHeight } = window;
- 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
- 
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
+    const container = containerRef.current;
+    if (container) {
+        const { offsetWidth, offsetHeight } = container;
+        canvas.width = offsetWidth;
+        canvas.height = offsetHeight;
+        center[0] = 0.5 * canvas.width;
+        center[1] = 0.5 * canvas.height;
+    }
   };
  
   const renderGlow = (
