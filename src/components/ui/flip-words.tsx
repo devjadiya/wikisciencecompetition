@@ -55,7 +55,7 @@ export const FlipWords = ({
           filter: "blur(8px)",
         }}
         className={cn(
-          "relative z-10 inline-block px-2 pb-1 bg-gradient-to-r from-indigo-300 to-purple-300 text-black dark:from-indigo-500 dark:to-purple-500 rounded-lg",
+          "z-10 inline-block text-left text-black dark:text-white text-2xl md:text-4xl font-bold px-2",
           className
         )}
         key={currentWord}
