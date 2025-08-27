@@ -32,7 +32,7 @@ export default function JurySection() {
                         className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-2xl"
                     >
                         <Image 
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Polaarteadlane.jpg"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/MJK47431_Commons_Photographers_User_Group_%28Wikimania_2017%29.jpg/2560px-MJK47431_Commons_Photographers_User_Group_%28Wikimania_2017%29.jpg"
                             alt="A panel of judges reviewing photos"
                             data-ai-hint="judges panel"
                             fill
