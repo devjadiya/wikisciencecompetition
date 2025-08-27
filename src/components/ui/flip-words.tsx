@@ -46,11 +46,24 @@ export const FlipWords = ({
           damping: 10,
         }}
         className={cn(
-          "z-10 inline-block text-left text-accent text-2xl md:text-4xl font-bold px-2",
+          "z-10 inline-block text-left text-accent",
           className
         )}
       >
-        {currentWord}
+        {currentWord.split("").map((letter, index) => (
+          <motion.span
+            key={currentWord + index}
+            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{
+              delay: index * 0.08,
+              duration: 0.4,
+            }}
+            className="inline-block"
+          >
+            {letter}
+          </motion.span>
+        ))}
       </motion.div>
     </AnimatePresence>
   );

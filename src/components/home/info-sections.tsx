@@ -32,8 +32,7 @@ export default function InfoSections() {
   return (
     <div className="py-16 md:py-24 bg-background">
       <HeroHighlight containerClassName="py-16 md:py-24">
-        <div className="flex flex-col items-center justify-center">
-            <motion.h1
+        <motion.div
             initial={{
                 opacity: 0,
                 y: 20,
@@ -46,15 +45,12 @@ export default function InfoSections() {
                 duration: 0.5,
                 ease: [0.4, 0.0, 0.2, 1],
             }}
-            className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+             className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
             >
-               Clicking Today, Creating Tomorrow
-            </motion.h1>
-
-             <div className="mt-4 bg-primary rounded-lg p-2 w-52 h-14 flex items-center justify-center">
-                 <FlipWords words={words} />
-            </div>
-        </div>
+               Clicking Today, Creating 
+               <FlipWords words={words} /> <br />
+               for Tomorrow
+        </motion.div>
       </HeroHighlight>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
