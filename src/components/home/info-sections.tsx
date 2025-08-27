@@ -46,7 +46,7 @@ export default function InfoSections() {
 
   return (
     <div className="py-16 md:py-24 bg-background">
-      <HeroHighlight containerClassName="h-auto py-16 md:py-24">
+      <HeroHighlight containerClassName="py-16 md:py-24">
         <motion.h1
           initial={{
             opacity: 0,
@@ -63,7 +63,9 @@ export default function InfoSections() {
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
           Showcasing the Unseen, Celebrating the
-          <FlipWords words={words} />
+          <Highlight className="text-black dark:text-white">
+             <FlipWords words={words} />
+          </Highlight>
         </motion.h1>
       </HeroHighlight>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
