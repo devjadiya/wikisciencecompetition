@@ -40,8 +40,8 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <div className="py-16 md:py-24 rounded-md flex flex-col antialiased bg-primary/5 items-center justify-center relative overflow-hidden">
-        <div className="text-center mb-12 md:mb-16">
+    <div className="py-20 md:py-32 rounded-md flex flex-col antialiased bg-primary/5 items-center justify-center relative overflow-hidden">
+        <div className="text-center mb-12 md:mb-16 px-4">
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">Voices of Our Community</h2>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
             Hear what researchers, photographers, and enthusiasts are saying about the Wiki Science Competition.
