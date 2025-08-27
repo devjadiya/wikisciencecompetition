@@ -40,7 +40,7 @@ export default function CallToAction() {
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
@@ -64,7 +64,7 @@ export default function CallToAction() {
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
