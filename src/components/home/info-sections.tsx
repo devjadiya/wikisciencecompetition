@@ -47,7 +47,7 @@ export default function InfoSections() {
             }}
              className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
             >
-               Clicking Today, Creating 
+               Clicking Today, Creating&nbsp;
                <FlipWords words={words} /> <br />
                for Tomorrow
         </motion.div>
@@ -88,7 +88,7 @@ export default function InfoSections() {
                 <p className="mt-4 mb-6">{t.home.info.finalCard.subtitle}</p>
 
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
-                    <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer" onClick={() => gtagEvent({ action: 'click_cta', category: 'Homepage Info', label: 'Submit Your Work' })}>
+                    <a href="https://www.wikisciencecompetition.in/" target="_blank" rel="noopener noreferrer" onClick={() => gtagEvent({ action: 'click_cta', category: 'Homepage Info', label: 'Submit Your Work' })}>
                         {t.home.info.finalCard.cta}
                     </a>
                 </Button>
