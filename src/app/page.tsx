@@ -9,6 +9,7 @@ const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
 const DraggableCardsSection = dynamic(() => import('@/components/home/autoscroll-carousel'));
+const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <InfoSections />
       <DraggableCardsSection />
       <PrizesSection />
+      <VortexCta />
       <CallToAction />
       <ContactForm />
       <TestimonialsSection />
