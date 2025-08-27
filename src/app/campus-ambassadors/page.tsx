@@ -4,25 +4,9 @@
 import { useLanguage } from '@/context/language-context';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Check, ExternalLink, Link as LinkIcon } from 'lucide-react';
+import { Check, ExternalLink } from 'lucide-react';
 import { useMemo } from 'react';
-
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeOut',
-    },
-  },
-};
 
 export default function CampusAmbassadorsPage() {
   const { t } = useLanguage();
@@ -40,11 +24,8 @@ export default function CampusAmbassadorsPage() {
 
   return (
     <div className="bg-background text-foreground">
-      <motion.div
+      <div
         className="bg-primary/5 py-16 md:py-20"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">{title}</h1>
@@ -52,7 +33,7 @@ export default function CampusAmbassadorsPage() {
             {subtitle}
           </p>
         </div>
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-3 gap-12">
@@ -97,13 +78,9 @@ export default function CampusAmbassadorsPage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
                 {sortedAmbassadors.map((ambassador, a_index) => (
-                    <motion.div
-                    key={a_index}
-                    variants={cardVariants}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                    <div
+                      key={a_index}
+                      className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
                     >
                     <div className="relative h-64 sm:h-80 w-full">
                         <Image
@@ -136,7 +113,7 @@ export default function CampusAmbassadorsPage() {
                             )}
                         </div>
                     </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </div>

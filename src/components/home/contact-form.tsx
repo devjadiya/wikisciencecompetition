@@ -11,7 +11,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from '@/app/contact/actions';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { gtagEvent } from '@/lib/gtm';
 
@@ -236,11 +235,7 @@ export default function ContactForm() {
                 Have questions or feedback? We&apos;d love to hear from you. We promise a quick reply!
             </p>
         </div>
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+        <div
             className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] rounded-xl shadow-lg p-6 md:p-8"
         >
             <Form {...form}>
@@ -368,7 +363,7 @@ export default function ContactForm() {
                 </div>
             </form>
             </Form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,26 +1,10 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
-
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeOut',
-    },
-  },
-};
 
 export default function CallToAction() {
   const { t } = useLanguage();
@@ -36,11 +20,7 @@ export default function CallToAction() {
             </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.div
-                variants={cardVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
+            <div
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
@@ -59,12 +39,8 @@ export default function CallToAction() {
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
                     <Link href="/campus-ambassadors">{cta.campus.cta}</Link>
                 </Button>
-            </motion.div>
-             <motion.div
-                variants={cardVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
+            </div>
+             <div
                 className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
@@ -83,7 +59,7 @@ export default function CallToAction() {
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
                     <Link href="/affiliates">{cta.affiliates.cta}</Link>
                 </Button>
-            </motion.div>
+            </div>
         </div>
       </div>
     </section>

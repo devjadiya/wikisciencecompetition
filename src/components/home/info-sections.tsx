@@ -1,7 +1,6 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
 import { Info, Target, Award, Users, History, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -10,6 +9,7 @@ import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 import { HeroHighlight } from '../ui/hero-highlight';
 import { FlipWords } from '../ui/flip-words';
+import { motion } from 'framer-motion';
 
 const sectionImages = [
   { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' } },
@@ -20,21 +20,6 @@ const sectionImages = [
 ];
 
 const icons = { Info, Target, Award, Users, History };
-
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeOut',
-    },
-  },
-};
 
 export default function InfoSections() {
   const { t } = useLanguage();
@@ -76,12 +61,8 @@ export default function InfoSections() {
           {sections.map((section, index) => {
             const Icon = icons[section.icon as keyof typeof icons];
             return (
-             <motion.div
+             <div
                 key={index}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={cardVariants}
                 className="bg-card rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
               >
               <div className="relative h-56 w-full">
@@ -102,23 +83,20 @@ export default function InfoSections() {
                     </Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           )})}
-            <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={cardVariants}
+            <div
                 className="md:col-span-2 lg:col-span-1 bg-primary text-primary-foreground rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-8 justify-center items-center text-center"
             >
                 <h3 className="text-2xl font-headline font-bold">{t.home.info.finalCard.title}</h3>
                 <p className="mt-4 mb-6">{t.home.info.finalCard.subtitle}</p>
+
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
                     <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer" onClick={() => gtagEvent({ action: 'click_cta', category: 'Homepage Info', label: 'Submit Your Work' })}>
                         {t.home.info.finalCard.cta}
                     </a>
                 </Button>
-            </motion.div>
+            </div>
         </div>
       </div>
     </div>

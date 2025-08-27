@@ -1,7 +1,6 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -16,12 +15,7 @@ export default function JurySection() {
         <section className="py-16 md:py-24 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.9, ease: 'easeOut' }}
-                    >
+                    <div>
                         <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-6">
                             {jury.title}
                         </h2>
@@ -33,13 +27,9 @@ export default function JurySection() {
                                 {jury.cta} <ArrowRight className="ml-2 h-5 w-5" />
                             </Link>
                         </Button>
-                    </motion.div>
-                     <motion.div
+                    </div>
+                     <div
                         className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-2xl"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                     >
                         <Image 
                             src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Polaarteadlane.jpg"
@@ -48,7 +38,7 @@ export default function JurySection() {
                             fill
                             className="object-cover"
                         />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

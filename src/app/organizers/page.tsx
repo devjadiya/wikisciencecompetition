@@ -2,7 +2,6 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/language-context';
 
 const organizerImages: { [key: string]: { image: string, hint: string } } = {
@@ -52,22 +51,6 @@ const organizerImages: { [key: string]: { image: string, hint: string } } = {
   },
 };
 
-const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: 'easeOut',
-    },
-  },
-};
-
-
 export default function OrganizersPage() {
   const { t } = useLanguage();
 
@@ -108,13 +91,8 @@ export default function OrganizersPage() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.lead_organizers}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             {leadOrganizers.map((organizer) => (
-              <motion.div
+              <div
                 key={organizer.id}
-                variants={cardVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
@@ -142,7 +120,7 @@ export default function OrganizersPage() {
                       )}
                     </div>
                   </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -151,13 +129,8 @@ export default function OrganizersPage() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.advisors}</h2>
           <div className="grid grid-cols-1 gap-8 max-w-sm mx-auto">
             {advisors.map((organizer) => (
-               <motion.div
+               <div
                 key={organizer.id}
-                variants={cardVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
@@ -185,7 +158,7 @@ export default function OrganizersPage() {
                       )}
                     </div>
                   </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -194,13 +167,8 @@ export default function OrganizersPage() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-12">{t.organizers.core_organizing_team}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {coreTeam.map((organizer) => (
-               <motion.div
+               <div
                 key={organizer.id}
-                variants={cardVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{ scale: 1.05 }}
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
@@ -228,7 +196,7 @@ export default function OrganizersPage() {
                       )}
                     </div>
                   </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
