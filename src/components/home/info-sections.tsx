@@ -44,7 +44,7 @@ export default function InfoSections() {
 
   return (
     <div className="py-16 md:py-24 bg-background">
-      <HeroHighlight>
+      <HeroHighlight containerClassName="h-auto py-16 md:py-24">
         <motion.h1
           initial={{
             opacity: 0,
