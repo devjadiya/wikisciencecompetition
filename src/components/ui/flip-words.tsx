@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -53,7 +54,6 @@ export const FlipWords = ({
           opacity: 0,
           y: -15,
           filter: "blur(4px)",
-          position: "absolute",
         }}
         className={cn(
           "z-10 inline-block relative text-left px-2",
