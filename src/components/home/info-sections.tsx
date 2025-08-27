@@ -51,7 +51,7 @@ export default function InfoSections() {
                Clicking Today, Creating Tomorrow
             </motion.h1>
 
-             <div className="mt-4 bg-gradient-to-r from-primary to-accent dark:from-primary dark:to-accent rounded-lg p-2 w-52 h-14 flex items-center justify-center">
+             <div className="mt-4 bg-primary rounded-lg p-2 w-52 h-14 flex items-center justify-center">
                  <FlipWords words={words} />
             </div>
         </div>
