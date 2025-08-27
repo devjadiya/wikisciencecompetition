@@ -3,7 +3,7 @@
   "name": "wiki-science-competition-india",
   "version": "1.0.0",
   "private": true,
-  "description": "Official website for the Wiki Science Competition 2025 in India. Participate in India's largest science photography competition and win prizes.",
+  "description": "Participate in the Wiki Science Competition 2025 in India, the biggest science photography competition. Submit your images and win prizes. Categories include microscopy, astronomy, wildlife, and more. Join India's premier science and photography event for 2025.",
   "keywords": [
     "wiki science 2025",
     "science 2025 india",
@@ -54,6 +54,7 @@
     "genkit": "^1.14.1",
     "lucide-react": "^0.475.0",
     "next": "15.3.3",
+    "next-themes": "^0.3.0",
     "nodemailer": "^6.9.14",
     "patch-package": "^8.0.0",
     "react": "^18.3.1",

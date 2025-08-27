@@ -20,6 +20,7 @@ import LanguageSwitcher from './language-switcher';
 import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
+import { ThemeToggle } from './theme-toggle';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,6 +139,7 @@ export default function Navbar() {
             </DropdownMenu>
           </div>
           <div className="flex items-center gap-1">
+             <ThemeToggle />
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
               <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer" onClick={() => handleNavClick('Participate CTA')}>{t.participateButton}</a>
             </Button>
@@ -221,5 +223,3 @@ export default function Navbar() {
     </motion.nav>
   );
 }
-
-    

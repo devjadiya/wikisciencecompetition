@@ -9,6 +9,7 @@ import FaqChatbot from '@/components/faq-chatbot';
 import { LanguageProvider } from '@/context/language-context';
 import Script from 'next/script';
 import Analytics from '@/components/layout/analytics';
+import { ThemeProvider } from '@/components/layout/theme-provider';
 
 export const metadata: Metadata = {
   title: {
@@ -85,14 +86,21 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@300;400;500&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased bg-background text-foreground min-h-screen flex flex-col')}>
-        <LanguageProvider>
-          <Analytics />
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <FaqChatbot />
-          <Toaster />
-        </LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <Analytics />
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <FaqChatbot />
+            <Toaster />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
