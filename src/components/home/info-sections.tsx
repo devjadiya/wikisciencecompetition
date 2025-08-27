@@ -43,7 +43,7 @@ export default function InfoSections() {
     ...section,
     ...sectionImages[index]
   }));
-  const words = ["photography", "science", "capture", "moments", "India"];
+  const words = ["Science", "Discovery", "Knowledge", "Innovation", "Future", "Research"];
 
   return (
     <div className="py-16 md:py-24 bg-background">
@@ -64,7 +64,7 @@ export default function InfoSections() {
             }}
             className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
             >
-                Showcasing the Unseen, Celebrating the
+               Clicking Today, Creating Tomorrow
             </motion.h1>
 
             <div className="mt-4 bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500 rounded-lg p-2 w-52 h-14 flex items-center justify-center">
