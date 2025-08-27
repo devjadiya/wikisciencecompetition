@@ -1,4 +1,3 @@
-
 "use client";
 import { cn } from "@/lib/utils";
 import React, { useRef, useState, useEffect } from "react";
@@ -34,27 +33,27 @@ export const DraggableCardBody = ({
   const velocityY = useVelocity(mouseY);
  
   const springConfig = {
-    stiffness: 150,
-    damping: 30,
-    mass: 1,
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
   };
  
   const rotateX = useSpring(
-    useTransform(mouseY, [-300, 300], [20, -20]),
+    useTransform(mouseY, [-300, 300], [25, -25]),
     springConfig
   );
   const rotateY = useSpring(
-    useTransform(mouseX, [-300, 300], [-20, 20]),
+    useTransform(mouseX, [-300, 300], [-25, 25]),
     springConfig
   );
  
   const opacity = useSpring(
-    useTransform(mouseX, [-400, 0, 400], [0.7, 1, 0.7]),
+    useTransform(mouseX, [-300, 0, 300], [0.8, 1, 0.8]),
     springConfig
   );
  
   const glareOpacity = useSpring(
-    useTransform(mouseX, [-300, 0, 300], [0.3, 0, 0.3]),
+    useTransform(mouseX, [-300, 0, 300], [0.2, 0, 0.2]),
     springConfig
   );
  
@@ -62,10 +61,10 @@ export const DraggableCardBody = ({
     const updateConstraints = () => {
       if (typeof window !== "undefined") {
         setConstraints({
-          top: -window.innerHeight / 2 + 100,
-          left: -window.innerWidth / 2 + 100,
-          right: window.innerWidth / 2 - 100,
-          bottom: window.innerHeight / 2 - 100,
+          top: -window.innerHeight / 2,
+          left: -window.innerWidth / 2,
+          right: window.innerWidth / 2,
+          bottom: window.innerHeight / 2,
         });
       }
     };
@@ -123,28 +122,28 @@ export const DraggableCardBody = ({
  
         const velocityMagnitude = Math.sqrt(
           currentVelocityX * currentVelocityX +
-            currentVelocityY * currentVelocityY,
+            currentVelocityY * currentVelocityY
         );
-        const bounce = Math.min(0.8, velocityMagnitude / 1200);
+        const bounce = Math.min(0.8, velocityMagnitude / 1000);
  
-        animate(info.point.x, info.point.x + currentVelocityX * 0.5, {
-          duration: 1,
-          ease: "easeOut",
+        animate(info.point.x, info.point.x + currentVelocityX * 0.3, {
+          duration: 0.8,
+          ease: [0.2, 0, 0, 1],
           bounce,
           type: "spring",
-          stiffness: 80,
-          damping: 20,
-          mass: 1,
+          stiffness: 50,
+          damping: 15,
+          mass: 0.8,
         });
  
-        animate(info.point.y, info.point.y + currentVelocityY * 0.5, {
-          duration: 1,
-          ease: "easeOut",
+        animate(info.point.y, info.point.y + currentVelocityY * 0.3, {
+          duration: 0.8,
+          ease: [0.2, 0, 0, 1],
           bounce,
           type: "spring",
-          stiffness: 80,
-          damping: 20,
-          mass: 1,
+          stiffness: 50,
+          damping: 15,
+          mass: 0.8,
         });
       }}
       style={{
@@ -154,7 +153,7 @@ export const DraggableCardBody = ({
         willChange: "transform",
       }}
       animate={controls}
-      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      whileHover={{ scale: 1.02 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
@@ -167,7 +166,7 @@ export const DraggableCardBody = ({
         style={{
           opacity: glareOpacity,
         }}
-        className="pointer-events-none absolute inset-0 bg-white select-none dark:bg-black/10"
+        className="pointer-events-none absolute inset-0 bg-white select-none"
       />
     </motion.div>
   );
