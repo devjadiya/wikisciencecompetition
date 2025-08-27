@@ -8,18 +8,17 @@ import { useLanguage } from '@/context/language-context';
 
 const cardVariants = {
   offscreen: {
-    y: 100,
-    opacity: 0
+    y: 50,
+    opacity: 0,
   },
   onscreen: {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
-      bounce: 0.2,
-      duration: 1
-    }
-  }
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
 };
 
 const icons = { Award, Camera, BookOpen };

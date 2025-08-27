@@ -61,9 +61,8 @@ const cardVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
-      bounce: 0.2,
       duration: 0.8,
+      ease: 'easeOut',
     },
   },
 };
