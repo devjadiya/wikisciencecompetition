@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
+import { HeroHighlight, Highlight } from '../ui/hero-highlight';
 
 const sectionImages = [
   { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' } },
@@ -44,13 +44,29 @@ export default function InfoSections() {
 
   return (
     <div className="py-16 md:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{t.home.info.title}</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-            {t.home.info.subtitle}
-          </p>
-        </div>
+      <HeroHighlight>
+        <motion.h1
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: [20, -5, 0],
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+          className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+        >
+          Showcasing the Unseen, Celebrating the{" "}
+          <Highlight className="text-black dark:text-white">
+            Unknown
+          </Highlight>
+        </motion.h1>
+      </HeroHighlight>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sections.map((section, index) => {
             const Icon = icons[section.icon as keyof typeof icons];
