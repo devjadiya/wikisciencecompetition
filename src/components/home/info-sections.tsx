@@ -12,11 +12,11 @@ import { FlipWords } from '../ui/flip-words';
 import { motion } from 'framer-motion';
 
 const sectionImages = [
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Kuffner-Sternwarte_Wien_2015_Refraktor_11.jpg', hint: 'camera photography' } },
+  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Winterswijk_%28NL%29%2C_Woold%2C_Boven_Slinge_--_2014_--_3170.jpg/1280px-Winterswijk_%28NL%29%2C_Woold%2C_Boven_Slinge_--_2014_--_3170.jpg', hint: 'science abstract' } },
+  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/RNC_04_protest_45.jpg/1280px-RNC_04_protest_45.jpg', hint: 'camera photography' } },
   { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg', hint: 'trophy award' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/%D0%9B%D0%B5%D0%BA%D1%82%D0%BE%D1%80.JPG', hint: 'judges meeting' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Sulfide_disaster_in_Levikha_Village.jpg', hint: 'photo gallery' } },
+  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimania_2024_-_Commons_Photographers_Users_Group_circle_shot.jpg', hint: 'judges meeting' } },
+  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Expedition_73_and_Ax-4_astronauts_pose_for_a_portrait_%28iss073e0511059%29.jpg/2560px-Expedition_73_and_Ax-4_astronauts_pose_for_a_portrait_%28iss073e0511059%29.jpg', hint: 'photo gallery' } },
 ];
 
 const icons = { Info, Target, Award, Users, History };
