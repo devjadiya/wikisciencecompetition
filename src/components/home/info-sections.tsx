@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 import { HeroHighlight, Highlight } from '../ui/hero-highlight';
+import { FlipWords } from '../ui/flip-words';
 
 const sectionImages = [
   { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg', hint: 'science abstract' } },
@@ -41,6 +42,7 @@ export default function InfoSections() {
     ...section,
     ...sectionImages[index]
   }));
+  const words = ["photography", "science", "capture", "moments", "India"];
 
   return (
     <div className="py-16 md:py-24 bg-background">
@@ -60,10 +62,8 @@ export default function InfoSections() {
           }}
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
-          Showcasing the Unseen, Celebrating the{" "}
-          <Highlight className="text-black dark:text-white">
-            Unknown
-          </Highlight>
+          Showcasing the Unseen, Celebrating the
+          <FlipWords words={words} />
         </motion.h1>
       </HeroHighlight>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
