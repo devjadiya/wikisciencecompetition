@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -7,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
-import { HeroHighlight, Highlight } from '../ui/hero-highlight';
+import { HeroHighlight } from '../ui/hero-highlight';
 import { FlipWords } from '../ui/flip-words';
 
 const sectionImages = [
@@ -62,8 +63,7 @@ export default function InfoSections() {
           }}
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
         >
-          Showcasing the Unseen, Celebrating the
-          <FlipWords words={words} />
+          Showcasing the Unseen, Celebrating the <FlipWords words={words} />
         </motion.h1>
       </HeroHighlight>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
