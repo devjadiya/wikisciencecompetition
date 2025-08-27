@@ -56,25 +56,27 @@ export const FlipWords = ({
           filter: "blur(4px)",
         }}
         className={cn(
-          "z-10 inline-block relative text-left px-2",
+          "z-10 inline-block relative text-left",
           className
         )}
         key={currentWord}
       >
-        {currentWord.split("").map((letter, index) => (
-          <motion.span
-            key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: index * 0.08,
-              duration: 0.4,
-            }}
-            className="inline-block"
-          >
-            {letter}
-          </motion.span>
-        ))}
+        <span className="relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-2 pb-1 dark:from-indigo-500 dark:to-purple-500 text-black dark:text-white">
+            {currentWord.split("").map((letter, index) => (
+            <motion.span
+                key={currentWord + index}
+                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                delay: index * 0.08,
+                duration: 0.4,
+                }}
+                className="inline-block"
+            >
+                {letter}
+            </motion.span>
+            ))}
+        </span>
       </motion.div>
     </AnimatePresence>
   );
