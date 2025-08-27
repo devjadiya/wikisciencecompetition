@@ -45,7 +45,7 @@ export default function AffiliatesPage() {
              <p className="text-muted-foreground text-sm md:text-base">This form is intended for recognized Wikimedia affiliates or community groups. Individuals and students should use the <Link href="/campus-ambassadors" className="text-accent hover:underline">Campus Ambassador form</Link>.</p>
           </div>
           <aside>
-            <Card className="sticky top-24 bg-primary/5 shadow-lg">
+            <Card className="sticky top-24 bg-primary/5 shadow-lg border dark:border-white/[0.1]">
               <CardHeader>
                 <CardTitle className="font-headline text-xl md:text-2xl text-primary">Partner With Us</CardTitle>
               </CardHeader>

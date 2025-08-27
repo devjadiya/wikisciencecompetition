@@ -61,7 +61,7 @@ export default function InfoSections() {
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
-                className="bg-card rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="bg-card rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
               >
               <div className="relative h-56 w-full">
                 <Image src={section.image.src} alt={section.title} data-ai-hint={section.image.hint} fill className="object-cover" />
@@ -103,5 +103,3 @@ export default function InfoSections() {
     </div>
   );
 }
-
-    

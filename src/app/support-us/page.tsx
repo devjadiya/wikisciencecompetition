@@ -32,7 +32,7 @@ export default function SupportUsPage() {
                 {t.support.options.map((option) => {
                     const Icon = icons[option.icon as keyof typeof icons];
                     return (
-                        <Card key={option.id} id={option.id} className="flex flex-col">
+                        <Card key={option.id} id={option.id} className="flex flex-col border dark:border-white/[0.1] hover:dark:border-white/[0.2]">
                             <CardHeader className="flex-row items-center gap-4 p-4 md:p-6">
                                 <Icon className="h-8 w-8 md:h-10 md:w-10 text-accent" />
                                 <CardTitle className="font-headline text-xl md:text-2xl">{option.title}</CardTitle>

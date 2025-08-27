@@ -53,7 +53,7 @@ export default function PrizesSection() {
                             initial="offscreen"
                             whileInView="onscreen"
                             viewport={{ once: true, amount: 0.3 }}
-                            className="bg-card p-6 md:p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                            className="bg-card p-6 md:p-8 rounded-xl shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
                         >
                             <div className="p-4 bg-accent/10 rounded-full mb-4">
                                 <Icon className="h-8 w-8 md:h-10 md:w-10 text-accent" />

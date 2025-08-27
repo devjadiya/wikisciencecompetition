@@ -42,7 +42,7 @@ export default function CallToAction() {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.5 }}
-                className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center"
+                className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
                     <Image 
@@ -66,7 +66,7 @@ export default function CallToAction() {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.5 }}
-                className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center"
+                className="bg-card p-6 md:p-8 rounded-lg shadow-lg flex flex-col items-center text-center border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
             >
                 <div className="relative h-16 w-16 md:h-20 md:w-20 mb-4">
                      <Image 

@@ -116,7 +116,7 @@ export default function OrganizersPage() {
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
                     <Image
@@ -159,7 +159,7 @@ export default function OrganizersPage() {
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
                     <Image
@@ -202,7 +202,7 @@ export default function OrganizersPage() {
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
                     <Image

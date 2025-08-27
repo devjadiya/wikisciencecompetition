@@ -40,7 +40,7 @@ export default function ResourcesPage() {
                 <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">{t.resources.pastWinners.title}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {pastWinners.map((winner, index) => (
-                        <Card key={index} className="overflow-hidden group">
+                        <Card key={index} className="overflow-hidden group border dark:border-white/[0.1] hover:dark:border-white/[0.2]">
                             <CardContent className="p-0">
                                 <div className="relative h-60">
                                     <Image src={winner.image.src} data-ai-hint={winner.image.hint} alt={`Winning photo from ${winner.year}`} fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
                  <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-8">{t.resources.learningMaterials.title}</h2>
                  <div className="grid md:grid-cols-3 gap-8">
                      {learningResources.map(resource => (
-                         <Card key={resource.title}>
+                         <Card key={resource.title} className="border dark:border-white/[0.1] hover:dark:border-white/[0.2]">
                              <CardContent className="p-6">
                                 <BookOpen className="h-8 w-8 text-accent mb-4" />
                                 <h3 className="font-headline text-lg md:text-xl font-bold mb-2">{resource.title}</h3>

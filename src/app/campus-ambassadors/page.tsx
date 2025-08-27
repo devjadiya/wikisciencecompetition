@@ -74,7 +74,7 @@ export default function CampusAmbassadorsPage() {
                 </ul>
             </div>
             <aside>
-                <Card className="sticky top-24 bg-primary/5 shadow-lg">
+                <Card className="sticky top-24 bg-primary/5 shadow-lg border dark:border-white/[0.1]">
                 <CardHeader>
                     <CardTitle className="font-headline text-xl md:text-2xl text-primary">{sidebar.title}</CardTitle>
                 </CardHeader>
@@ -104,7 +104,7 @@ export default function CampusAmbassadorsPage() {
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: true, amount: 0.3 }}
-                    className="bg-card/60 backdrop-blur-lg border border-primary/10 rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                    className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
                     >
                     <div className="relative h-64 sm:h-80 w-full">
                         <Image
