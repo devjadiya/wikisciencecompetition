@@ -1,3 +1,4 @@
+
 "use client";
 import { cn } from "@/lib/utils";
 import React, { useRef, useState, useEffect } from "react";
@@ -29,54 +30,48 @@ export const DraggableCardBody = ({
     bottom: 0,
   });
  
-  // physics biatch
   const velocityX = useVelocity(mouseX);
   const velocityY = useVelocity(mouseY);
  
   const springConfig = {
-    stiffness: 100,
-    damping: 20,
-    mass: 0.5,
+    stiffness: 150,
+    damping: 30,
+    mass: 1,
   };
  
   const rotateX = useSpring(
-    useTransform(mouseY, [-300, 300], [25, -25]),
-    springConfig,
+    useTransform(mouseY, [-300, 300], [20, -20]),
+    springConfig
   );
   const rotateY = useSpring(
-    useTransform(mouseX, [-300, 300], [-25, 25]),
-    springConfig,
+    useTransform(mouseX, [-300, 300], [-20, 20]),
+    springConfig
   );
  
   const opacity = useSpring(
-    useTransform(mouseX, [-300, 0, 300], [0.8, 1, 0.8]),
-    springConfig,
+    useTransform(mouseX, [-400, 0, 400], [0.7, 1, 0.7]),
+    springConfig
   );
  
   const glareOpacity = useSpring(
-    useTransform(mouseX, [-300, 0, 300], [0.2, 0, 0.2]),
-    springConfig,
+    useTransform(mouseX, [-300, 0, 300], [0.3, 0, 0.3]),
+    springConfig
   );
  
   useEffect(() => {
-    // Update constraints when component mounts or window resizes
     const updateConstraints = () => {
       if (typeof window !== "undefined") {
         setConstraints({
-          top: -window.innerHeight / 2,
-          left: -window.innerWidth / 2,
-          right: window.innerWidth / 2,
-          bottom: window.innerHeight / 2,
+          top: -window.innerHeight / 2 + 100,
+          left: -window.innerWidth / 2 + 100,
+          right: window.innerWidth / 2 - 100,
+          bottom: window.innerHeight / 2 - 100,
         });
       }
     };
  
     updateConstraints();
- 
-    // Add resize listener
     window.addEventListener("resize", updateConstraints);
- 
-    // Clean up
     return () => {
       window.removeEventListener("resize", updateConstraints);
     };
@@ -130,26 +125,26 @@ export const DraggableCardBody = ({
           currentVelocityX * currentVelocityX +
             currentVelocityY * currentVelocityY,
         );
-        const bounce = Math.min(0.8, velocityMagnitude / 1000);
+        const bounce = Math.min(0.8, velocityMagnitude / 1200);
  
-        animate(info.point.x, info.point.x + currentVelocityX * 0.3, {
-          duration: 0.8,
-          ease: [0.2, 0, 0, 1],
+        animate(info.point.x, info.point.x + currentVelocityX * 0.5, {
+          duration: 1,
+          ease: "easeOut",
           bounce,
           type: "spring",
-          stiffness: 50,
-          damping: 15,
-          mass: 0.8,
+          stiffness: 80,
+          damping: 20,
+          mass: 1,
         });
  
-        animate(info.point.y, info.point.y + currentVelocityY * 0.3, {
-          duration: 0.8,
-          ease: [0.2, 0, 0, 1],
+        animate(info.point.y, info.point.y + currentVelocityY * 0.5, {
+          duration: 1,
+          ease: "easeOut",
           bounce,
           type: "spring",
-          stiffness: 50,
-          damping: 15,
-          mass: 0.8,
+          stiffness: 80,
+          damping: 20,
+          mass: 1,
         });
       }}
       style={{
@@ -159,12 +154,12 @@ export const DraggableCardBody = ({
         willChange: "transform",
       }}
       animate={controls}
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
         "relative min-h-96 w-80 overflow-hidden rounded-md bg-neutral-100 p-6 shadow-2xl dark:bg-neutral-900",
-        className,
+        className
       )}
     >
       {children}
@@ -172,7 +167,7 @@ export const DraggableCardBody = ({
         style={{
           opacity: glareOpacity,
         }}
-        className="pointer-events-none absolute inset-0 bg-white select-none"
+        className="pointer-events-none absolute inset-0 bg-white select-none dark:bg-black/10"
       />
     </motion.div>
   );
