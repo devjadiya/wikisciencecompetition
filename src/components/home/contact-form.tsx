@@ -241,7 +241,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-card p-6 md:p-8 rounded-lg shadow-lg"
+            className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] rounded-xl shadow-lg p-6 md:p-8"
         >
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -252,7 +252,7 @@ export default function ContactForm() {
                     <FormItem>
                     <FormLabel>Full Name</FormLabel>
                     <FormControl>
-                        <Input placeholder="Your Name" {...field} />
+                        <Input placeholder="Your Name" {...field} className="bg-background/70 dark:bg-zinc-900/70 border-white/20"/>
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -265,7 +265,7 @@ export default function ContactForm() {
                     <FormItem>
                     <FormLabel>Email Address</FormLabel>
                     <FormControl>
-                        <Input placeholder="your.email@example.com" {...field} />
+                        <Input placeholder="your.email@example.com" {...field} className="bg-background/70 dark:bg-zinc-900/70 border-white/20"/>
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -280,7 +280,7 @@ export default function ContactForm() {
                         <FormLabel>Subject</FormLabel>
                         <Select onValueChange={handleSubjectChange} value={field.value}>
                             <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="bg-background/70 dark:bg-zinc-900/70 border-white/20">
                                 <SelectValue placeholder="Select a subject for your query" />
                             </SelectTrigger>
                             </FormControl>
@@ -306,7 +306,7 @@ export default function ContactForm() {
                                 <FormItem>
                                 <FormLabel>Please specify your subject</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your custom subject" {...field} />
+                                    <Input placeholder="Your custom subject" {...field} className="bg-background/70 dark:bg-zinc-900/70 border-white/20"/>
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -323,7 +323,7 @@ export default function ContactForm() {
                         <FormLabel>Message</FormLabel>
                         <Select onValueChange={handleMessageChange} value={field.value} disabled={!watchSubject}>
                             <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="bg-background/70 dark:bg-zinc-900/70 border-white/20">
                                 <SelectValue placeholder={watchSubject ? "Select a pre-written message or 'Other...'" : "Please select a subject first"} />
                             </SelectTrigger>
                             </FormControl>
@@ -353,7 +353,7 @@ export default function ContactForm() {
                                 <FormItem>
                                 <FormLabel>Please specify your message</FormLabel>
                                 <FormControl>
-                                    <Textarea placeholder="Your custom message" {...field} />
+                                    <Textarea placeholder="Your custom message" {...field} className="bg-background/70 dark:bg-zinc-900/70 border-white/20"/>
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
