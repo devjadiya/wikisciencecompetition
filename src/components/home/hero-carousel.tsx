@@ -45,15 +45,15 @@ const slides = [
   },
   {
     id: 7,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Indian_Gharial.jpg' },
-    alt: 'Indian Gharial',
-    caption: 'Indian Gharial by A J Ganaie, CC BY-SA 4.0',
+    image: { src: '' },
+    alt: '',
+    caption: 'by, CC BY-SA 4.0',
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg' },
-    alt: 'PSLV C47 Cartosat-3 lifting off from Second Launch Pad',
-    caption: 'PSLV C47 Cartosat-3 lift off by ISRO, CC BY-SA 4.0',
+    image: { src: '' },
+    alt: '',
+    caption: 'by, CC BY-SA 4.0',
   }
   // ,{
   //   id: 1,
