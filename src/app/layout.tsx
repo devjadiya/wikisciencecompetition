@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.wikisciencecompetition.in/',
   },
-    icons: {
+  icons: {
     icon: '/favicon.ico',
   },
 };
@@ -80,7 +80,10 @@ export default function RootLayout({
             gtag('config', 'G-VBJS2HS9WM');
           `}
         </Script>
-        <script async src="https://cdn.counter.dev/script.js" data-id="cc7a036d-a904-4d76-bcac-37ea4196c014" data-utcoffset="6"></script>
+        <script src="https://cdn.counter.dev/script.js"
+          data-id="cc7a036d-a904-4d76-bcac-37ea4196c014"
+          data-utcoffset="6">
+        </script>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
