@@ -13,10 +13,10 @@ import { ThemeProvider } from '@/components/layout/theme-provider';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Official Wiki Science Competition 2025 - India',
+    default: 'Wiki Science Competition 2025 - India',
     template: '%s | WSC India 2025',
   },
-  description: 'Official website for the Wiki Science Competition 2025 in India. Participate in India\'s biggest science photography competition, submit images in categories like microscopy and astronomy, and win prizes. Join the premier science and photography event for 2025.',
+  description: 'Wiki Science Competition 2025 in India. Participate in India\'s biggest science photography competition, submit images in categories like microscopy and astronomy, and win prizes. Join the premier science and photography event for 2025.',
   keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition',
   authors: [{ name: 'Wiki Science Competition India Team' }],
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: 'https://www.wikisciencecompetition.in/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Official Banner for Wiki Science Competition 2025 in India',
+        alt: 'Wiki Science Competition 2025 in India',
       },
     ],
     locale: 'en_IN',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Official Wiki Science Competition 2025 in India',
+    title: ' Wiki Science Competition 2025 in India',
     description: 'Calling all students, researchers, and science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
     images: ['https://www.wikisciencecompetition.in/twitter-image.png'],
   },
