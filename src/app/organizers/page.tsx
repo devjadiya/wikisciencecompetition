@@ -10,7 +10,7 @@ const organizerImages: { [key: string]: { image: string, hint: string } } = {
     hint: 'organizer portrait',
   },
   'gauri_gupta': {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gauri_Gupta.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Indic_Wikimedia_Hackathon_Kochi_2025_Portraits_34.jpg',
     hint: 'team member photo',
   },
   'suyash_dwivedi': {
