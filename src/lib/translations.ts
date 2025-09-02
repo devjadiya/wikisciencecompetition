@@ -295,7 +295,7 @@ export const translations = {
                 {
                     id: 'suyash_dwivedi',
                     name: 'Suyash Dwivedi',
-                    role: 'Finance & Sponserships Lead',
+                    role: 'Sponserships & Finance',
                     roleKey: 'advisor',
                     social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi' }
                 },
