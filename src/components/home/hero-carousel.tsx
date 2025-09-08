@@ -51,7 +51,7 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
     alt: 'Microscopic image of the outer layer of a surgical mask',
     caption: 'Microscopic outer layer of a surgical mask by Alexander Klepnev, CC BY-SA 4.0',
   }
