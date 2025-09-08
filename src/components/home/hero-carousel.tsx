@@ -51,7 +51,7 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Blood_vessels-en.svg' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Blood_vessels-en.svg/720px-Blood_vessels-en.svg.png' },
     alt: 'Blood vessels-en',
     caption: 'Blood vessels-en by Theklan, CC BY-SA 4.0',
   }
