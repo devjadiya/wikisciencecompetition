@@ -51,9 +51,9 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Blood_vessels-en.svg/720px-Blood_vessels-en.svg.png' },
-    alt: 'Blood vessels-en',
-    caption: 'Blood vessels-en by Theklan, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Gyri_of_lateral_cortex.png' },
+    alt: 'Gyri of lateral cortex',
+    caption: 'Gyri of lateral cortex by Iztwoz, CC BY-SA 4.0',
   }
   // ,{
   //   id: 1,
