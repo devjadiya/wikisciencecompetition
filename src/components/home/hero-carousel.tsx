@@ -45,15 +45,15 @@ const slides = [
   },
   {
     id: 7,
-    image: { src: '' },
-    alt: '',
-    caption: 'by, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Total_Solar_Eclipse_8-21-17.jpg' },
+    alt: 'Total Solar Eclipse 8-21-17',
+    caption: 'Total Solar Eclipse 8-21-17 by Msadler13, CC BY-SA 4.0',
   },
   {
     id: 8,
-    image: { src: '' },
-    alt: '',
-    caption: 'by, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Blood_vessels-en.svg' },
+    alt: 'Blood vessels-en',
+    caption: 'Blood vessels-en by Theklan, CC BY-SA 4.0',
   }
   // ,{
   //   id: 1,
