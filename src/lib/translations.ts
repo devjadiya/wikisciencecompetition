@@ -314,13 +314,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: 'Athul R T',
-                    role: 'Core Organizing Team',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'Uday Dongre',
                     role: 'Core Organizing Team',
@@ -771,13 +764,6 @@ export const translations = {
                     role: 'कोर आयोजन टीम',
                     roleKey: 'core_team',
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
-                },
-                {
-                    id: 'athul_rt',
-                    name: 'अतुल आर टी',
-                    role: 'कोर आयोजन टीम',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
                 },
                 {
                     id: 'uday_dongre',
@@ -1232,13 +1218,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: 'অতুল আর টি',
-                    role: 'কোর আয়োজক দল',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'উদয় ডংগ্রে',
                     role: 'কোর আয়োজক দল',
@@ -1689,13 +1668,6 @@ export const translations = {
                     role: 'ప్రధాన నిర్వాహక బృందం',
                     roleKey: 'core_team',
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
-                },
-                {
-                    id: 'athul_rt',
-                    name: 'అతుల్ R T',
-                    role: 'ప్రధాన నిర్వాహక బృందం',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
                 },
                 {
                     id: 'uday_dongre',
@@ -2150,13 +2122,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: 'अतुल आर टी',
-                    role: 'मुख्य आयोजन संघ',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'उदय डोंगरे',
                     role: 'मुख्य आयोजन संघ',
@@ -2607,13 +2572,6 @@ export const translations = {
                     "role": "کور آرگنائزنگ ٹیم",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "کور آرگنائزنگ ٹیم",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
@@ -3068,13 +3026,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: 'Athul R T',
-                    role: 'કોર ઓર્ગેનાઇઝિંગ ટીમ',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'Uday Dongre',
                     role: 'કોર ઓર્ગેનાઇઝિંગ ટીમ',
@@ -3525,13 +3476,6 @@ export const translations = {
                     "role": "ಕೋರ್ ಸಂಘಟನಾ ತಂಡ",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "ಕೋರ್ ಸಂಘಟನಾ ತಂಡ",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
@@ -3986,13 +3930,6 @@ export const translations = {
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
                 },
                 {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "ਕੋਰ ਆਰਗੇਨਾਈਜ਼ਿੰਗ ਟੀਮ",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
-                },
-                {
                     "id": "uday_dongre",
                     "name": "Uday Dongre",
                     "role": "ਕੋਰ ਆਰਗੇਨਾਈਜ਼ਿੰਗ ਟੀਮ",
@@ -4443,13 +4380,6 @@ export const translations = {
                     "role": "Equipo Organizador Principal",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "Equipo Organizador Principal",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
@@ -4904,13 +4834,6 @@ export const translations = {
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
                 },
                 {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "Kernorganisationsteam",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
-                },
-                {
                     "id": "uday_dongre",
                     "name": "Uday Dongre",
                     "role": "Kernorganisationsteam",
@@ -5361,13 +5284,6 @@ export const translations = {
                     "role": "Põhiline korraldusmeeskond",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "Põhiline korraldusmeeskond",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
@@ -5822,13 +5738,6 @@ export const translations = {
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
                 },
                 {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "Equipe Organizadora Principal",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
-                },
-                {
                     "id": "uday_dongre",
                     "name": "Uday Dongre",
                     "role": "Equipe Organizadora Principal",
@@ -6279,13 +6188,6 @@ export const translations = {
                     "role": "Équipe d'organisation principale",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "Athul R T",
-                    "role": "Équipe d'organisation principale",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
@@ -6740,13 +6642,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: 'അതുൽ ആർ ടി',
-                    role: 'മുഖ്യ സംഘാടക സമിതി',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'ഉദയ് ഡോംഗ്രെ',
                     role: 'മുഖ്യ സംഘാടക സമിതി',
@@ -7199,13 +7094,6 @@ export const translations = {
                     social: { meta: 'https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra' }
                 },
                 {
-                    id: 'athul_rt',
-                    name: ' അതുல் ஆர் டி',
-                    role: 'முக்கிய ஏற்பாட்டுக் குழு',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Athulvis' }
-                },
-                {
                     id: 'uday_dongre',
                     name: 'உதய் டோங்ரே',
                     role: 'முக்கிய ஏற்பாட்டுக் குழு',
@@ -7656,13 +7544,6 @@ export const translations = {
                     "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
                     "roleKey": "core_team",
                     "social": { "meta": "https://meta.wikimedia.org/wiki/User:Chinmayee_Mishra" }
-                },
-                {
-                    "id": "athul_rt",
-                    "name": "ଅଥୁଲ ଆର ଟି",
-                    "role": "ମୂଳ ଆୟୋଜନ ଦଳ",
-                    "roleKey": "core_team",
-                    "social": { "meta": "https://meta.wikimedia.org/wiki/User:Athulvis" }
                 },
                 {
                     "id": "uday_dongre",
