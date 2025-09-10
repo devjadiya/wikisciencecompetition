@@ -84,6 +84,7 @@ export default function Footer() {
                   ))}
                   <li className="pt-4">
                      <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
+                     <p className='italic'><strong> Mail: contact [at] wikisciencecompetition [dot] in </strong></p>
                      <a href={`mailto:${t.contact.emailAddress}`} className="text-sm font-bold text-accent hover:text-accent/80 transition-colors break-all" onClick={() => handleFooterLinkClick('Email')}>
                         {t.contact.emailAddress}
                     </a>
@@ -94,17 +95,36 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-primary/10 pt-8">
             <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline text-center">Supported By</h3>
-            <div className="mt-4 flex justify-center items-center">
-                 <a href="https://meta.wikimedia.org/wiki/Wiki_Club_SATI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors" onClick={() => handleFooterLinkClick('Wiki Club SATI')}>
-                    <Image 
-                        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
-                        alt="Wiki Club SATI Logo"
-                        width={32}
-                        height={32}
-                    />
-                    <span className="text-sm">Wiki Club SATI</span>
-                </a>
-            </div>
+           <div className="mt-4 flex justify-center items-center">
+  <a
+    href="https://meta.wikimedia.org/wiki/Wiki_Club_SATI"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+    onClick={() => handleFooterLinkClick('Wiki Club SATI')}
+  >
+    {/* Light mode logo (black SVG) */}
+    <Image
+      src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
+      alt="Wiki Club SATI Logo (Light Mode)"
+      width={32}
+      height={32}
+      className="block dark:hidden"
+    />
+
+    {/* Dark mode logo (white PNG) */}
+    <Image
+      src="https://upload.wikimedia.org/wikipedia/commons/d/df/WIKI_CLUB_SATI_Logo_in_white_text_2025.png"
+      alt="Wiki Club SATI Logo (Dark Mode)"
+      width={32}
+      height={32}
+      className="hidden dark:block"
+    />
+
+    <span className="text-sm">Wiki Club SATI</span>
+  </a>
+</div>
+
         </div>
         <div className="mt-8 border-t border-primary/10 pt-8 flex flex-col-reverse sm:flex-row justify-between items-center text-center gap-4">
           <p className="text-xs text-muted-foreground">

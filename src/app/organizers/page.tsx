@@ -25,10 +25,6 @@ const organizerImages: { [key: string]: { image: string, hint: string } } = {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Chinmayee_Mishra_at_Wikimania_2023.jpg/960px-Chinmayee_Mishra_at_Wikimania_2023.jpg',
     hint: 'team member photo',
   },
-  'athul_rt': {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Athul_at_TTT_2024.jpg/1024px-Athul_at_TTT_2024.jpg',
-    hint: 'professional headshot',
-  },
   'uday_dongre': {
     image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Uday_dongre_photo_01.jpg',
     hint: 'organizer portrait',

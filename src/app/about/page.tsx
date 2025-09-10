@@ -79,15 +79,26 @@ export default function AboutPage() {
                        <p>{t.about.supportingOrg.p2}</p>
                     </div>
                 </div>
-                <div className="relative h-36 w-36 md:h-48 md:w-48 mx-auto">
-                    <Image
-                        src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
-                        alt="Wiki Club SATI Logo"
-                        data-ai-hint="organization logo"
-                        fill
-                        className="object-contain"
-                    />
-                </div>
+<div className="relative h-36 w-36 md:h-48 md:w-48 mx-auto">
+  {/* Light mode image (black logo) */}
+  <Image
+    src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
+    alt="Wiki Club SATI Logo (Light Mode)"
+    data-ai-hint="organization logo"
+    fill
+    className="object-contain block dark:hidden"
+  />
+
+  {/* Dark mode image (white logo) */}
+  <Image
+    src="https://upload.wikimedia.org/wikipedia/commons/d/df/WIKI_CLUB_SATI_Logo_in_white_text_2025.png"
+    alt="Wiki Club SATI Logo (Dark Mode)"
+    data-ai-hint="organization logo"
+    fill
+    className="object-contain hidden dark:block"
+  />
+</div>
+
             </div>
         </div>
 

@@ -265,6 +265,7 @@ export default function ContactPage() {
                         <div className="flex items-center gap-4">
                             <Mail className="h-5 w-5 text-accent" />
                             <a href="mailto:wikisciencecompetition@gmail.com" className="text-muted-foreground hover:text-primary">{t.contact.emailAddress}</a>
+                                             <p><strong> Mail: contact [at] wikisciencecompetition [dot] in </strong></p>
                         </div>
                     </div>
                 </motion.div>
