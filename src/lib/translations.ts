@@ -233,9 +233,9 @@ export const translations = {
                 microscopy: { name: 'Microscopy Images', description: 'Optical, electron, and scanning probe microscopy images.' },
                 nonPhotographic: { name: 'Non-photographic Media', description: 'Audio and video files, computer-generated imagery, etc.' },
                 imageSets: { name: 'Image Sets', description: 'Thematically linked images (up to 10) that can be viewed as one set.' },
-                wildlife: { name: 'Wildlife & Nature', description: 'Organisms in their natural habitat, including macro photography.' },
+                wildlife: { name: 'Mobile Category', description: 'Organisms in their natural habitat, including macro photography.' },
                 astronomy: { name: 'Astronomy', description: 'Images of stars, celestial events, and the equipment used to capture them.' },
-                general: { name: 'General Category', description: 'Everything else, from archaeology to vulcanology.' },
+                general: { name: 'Special Category', description: 'Everything else, from archaeology to vulcanology.' },
             },
             readyToParticipate: {
                 title: 'Ready to Participate?',
