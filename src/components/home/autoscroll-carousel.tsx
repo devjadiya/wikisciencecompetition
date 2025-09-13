@@ -7,12 +7,7 @@ import {
  
 export function DraggableCardsSection() {
   const items = [
-     {
-      title: "Microscopy",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6e/HEK_293.jpg",
-      className: "absolute top-10 left-[20%] rotate-[-5deg]",
-    },
+
     {
       title: "People in Science",
       image:
@@ -26,7 +21,7 @@ export function DraggableCardsSection() {
       className: "absolute top-5 left-[40%] rotate-[8deg]",
     },
     {
-      title: "Wildlife & Nature",
+      title: "Mobile Category",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/c/c1/Emerging_cicada.jpg",
       className: "absolute top-32 left-[55%] rotate-[10deg]",
@@ -34,11 +29,11 @@ export function DraggableCardsSection() {
     {
       title: "Non-photographic Media",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/e/e2/VFTS_352.tif",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a0/Lunar_Mini-Magnetosphere.png",
       className: "absolute top-20 right-[35%] rotate-[2deg]",
     },
      {
-      title: "General",
+      title: "Special Category",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/d/d6/Water_under_11_Hz_vibration.jpg",
       className: "absolute top-24 left-[45%] rotate-[-7deg]",
