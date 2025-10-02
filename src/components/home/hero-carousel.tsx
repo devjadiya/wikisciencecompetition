@@ -9,7 +9,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/FMN_Lab_team_%282%29.jpg' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/FMN_Lab_team_%282%29.jpg/1024px-FMN_Lab_team_%282%29.jpg' },
     alt: 'FMN Lab team by FMNLab',
     caption: 'FMN Lab team by FMNLab, CC BY-SA 4.0',
   },

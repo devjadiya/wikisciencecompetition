@@ -73,13 +73,11 @@ const prompt = ai.definePrompt({
   **Campus Ambassadors Program:**
   - Role: Local outreach coordinators to promote the competition in their institutions.
   - Responsibilities: Promote the campaign, share guidelines, optionally organize workshops.
-  - Application Deadline: 31st August 2025
   - Application Form: https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform
 
   **Wikimedia Affiliates Partnership:**
   - Invitation for Wikimedia affiliates, user groups, and organizations in India to collaborate.
   - How they can help: Outreach, facilitating uploads, organizing local events, translation.
-  - Partnership Form Deadline: 31st August 2025
   - Partnership Form: https://docs.google.com/forms/d/e/1FAIpQLSeWfJxaAfUZUu3gyTLyemU-MN6whkQtHLV4rghsLFOaIvZ0TA/viewform
 
   **Support & Sponsorship:**
