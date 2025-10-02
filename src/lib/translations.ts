@@ -27,12 +27,11 @@ export const translations = {
             { name: 'About', href: '/about' },
             { name: 'Competition', href: '/competition' },
             { name: 'Resources', href: '/resources' },
-            { name: 'Sponsors', href: '/sponsors' },
+            // { name: 'Sponsors', href: '/sponsors' },
         ],
         organizerLinks: [
             { name: 'Meet the Team', href: '/organizers' },
             { name: 'Campus Ambassadors', href: '/campus-ambassadors' },
-            { name: 'Call for Team', href: '/organizers/call' },
         ],
         moreDropdownLinks: [
             { name: 'Jury', href: '/jury' },
