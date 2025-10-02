@@ -1,98 +1,99 @@
-
 'use client';
 
-import { Info, Target, Award, Users, History, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
-import { useLanguage } from '@/context/language-context';
-import { gtagEvent } from '@/lib/gtm';
-import { HeroHighlight } from '../ui/hero-highlight';
-import { FlipWords } from '../ui/flip-words';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { gtagEvent } from '@/lib/gtm'; // Assuming gtm is setup
 
-const sectionImages = [
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Winterswijk_%28NL%29%2C_Woold%2C_Boven_Slinge_--_2014_--_3170.jpg/1280px-Winterswijk_%28NL%29%2C_Woold%2C_Boven_Slinge_--_2014_--_3170.jpg', hint: 'science abstract' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/RNC_04_protest_45.jpg/1280px-RNC_04_protest_45.jpg', hint: 'camera photography' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg', hint: 'trophy award' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimania_2024_-_Commons_Photographers_Users_Group_circle_shot.jpg', hint: 'judges meeting' } },
-  { image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Expedition_73_and_Ax-4_astronauts_pose_for_a_portrait_%28iss073e0511059%29.jpg/2560px-Expedition_73_and_Ax-4_astronauts_pose_for_a_portrait_%28iss073e0511059%29.jpg', hint: 'photo gallery' } },
-];
-
-const icons = { Info, Target, Award, Users, History };
-
-export default function InfoSections() {
-  const { t } = useLanguage();
-  const sections = t.home.info.sections.map((section, index) => ({
-    ...section,
-    ...sectionImages[index]
-  }));
-  const words = ["Science", "Discovery", "Knowledge", "Innovation", "Future", "Research"];
+export default function UpcomingEvent() {
+  const eventDetails = {
+    title: "Commons Workshop 01",
+    subtitle: "Wiki Science Competition 2025",
+    tagline: "Master Wikimedia Commons and prepare for the competition.",
+    date: "Sunday, 5 October 2025",
+    time: "8:00 PM – 9:00 PM IST",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/WSC_Commons_Workshop_01.png/960px-WSC_Commons_Workshop_01.png",
+    registerLink: "https://meta.wikimedia.org/wiki/Event:WSC_India_2025_Commons_Workshop_01"
+  };
 
   return (
-    <div className="py-16 md:py-24 bg-background">
-      <HeroHighlight containerClassName="py-16 md:py-24">
+    <div className="bg-background text-foreground py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-            initial={{
-                opacity: 0,
-                y: 20,
-            }}
-            animate={{
-                opacity: 1,
-                y: [20, -5, 0],
-            }}
-            transition={{
-                duration: 0.5,
-                ease: [0.4, 0.0, 0.2, 1],
-            }}
-             className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
-            >
-               Clicking Today, Creating&nbsp;
-               <FlipWords words={words} /> <br />
-               for Tomorrow
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-headline">Join Our Upcoming Workshop</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            An essential session for all aspiring participants.
+          </p>
         </motion.div>
-      </HeroHighlight>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sections.map((section, index) => {
-            const Icon = icons[section.icon as keyof typeof icons];
-            return (
-             <div
-                key={index}
-                className="bg-card rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border dark:border-white/[0.1] hover:dark:border-white/[0.2]"
-              >
-              <div className="relative h-56 w-full">
-                <Image src={section.image.src} alt={section.title} data-ai-hint={section.image.hint} fill className="object-cover" />
-              </div>
-              <div className="p-6 flex-grow flex flex-col">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-primary/10 rounded-full mr-4">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-headline font-bold text-foreground">{section.title}</h3>
-                </div>
-                <p className="text-muted-foreground flex-grow mb-6 text-sm">{section.description}</p>
-                <Button asChild variant="ghost" className="self-start group -ml-4">
-                    <Link href={section.link} onClick={() => gtagEvent({ action: 'click_card', category: 'Homepage Info', label: section.title })}>
-                        {t.home.info.cta}
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                </Button>
-              </div>
-            </div>
-          )})}
-            <div
-                className="md:col-span-2 lg:col-span-1 bg-primary text-primary-foreground rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-8 justify-center items-center text-center"
-            >
-                <h3 className="text-2xl font-headline font-bold">{t.home.info.finalCard.title}</h3>
-                <p className="mt-4 mb-6">{t.home.info.finalCard.subtitle}</p>
 
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-lg px-8 py-6 shadow-xl transition-transform hover:scale-105">
-                    <a href="https://www.wikisciencecompetition.in/" target="_blank" rel="noopener noreferrer" onClick={() => gtagEvent({ action: 'click_cta', category: 'Homepage Info', label: 'Submit Your Work' })}>
-                        {t.home.info.finalCard.cta}
-                    </a>
-                </Button>
+        {/* The `overflow-hidden` class is essential for clipping the image to the rounded corners. */}
+        <div className="group relative bg-card rounded-xl shadow-lg overflow-hidden border dark:border-white/[0.1] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            
+            {/* Right Side: Clickable Image Poster (First in code for mobile-first layout) */}
+            {/* CRITICAL: This `<a>` tag has no padding, allowing the image to be flush with the card edges. */}
+            <a
+              href={eventDetails.registerLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block w-full aspect-video lg:aspect-auto cursor-pointer"
+              aria-label={`Register for ${eventDetails.title}`}
+              onClick={() => gtagEvent({ action: 'click_register_image', category: 'Workshop', label: eventDetails.title })}
+            >
+              <Image
+                src={eventDetails.imageUrl}
+                alt={`${eventDetails.title} Poster`}
+                fill
+                className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 lg:bg-gradient-to-l lg:from-black/20 lg:via-transparent" />
+            </a>
+
+            {/* Left Side: Information (Second in code, appears below image on mobile) */}
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
+                {eventDetails.subtitle}
+              </p>
+              <h3 className="text-3xl font-bold font-headline text-foreground mb-4">
+                {eventDetails.title}
+              </h3>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground mb-6">
+                <div className="flex items-center text-sm">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span>{eventDetails.date}</span>
+                </div>
+                <div className="flex items-center text-sm">
+                  <Clock className="h-4 w-4 mr-2" />
+                  <span>{eventDetails.time}</span>
+                </div>
+              </div>
+
+              <p className="text-lg text-foreground/90 mb-8 max-w-md">
+                {eventDetails.tagline}
+              </p>
+
+              <Button asChild size="lg" className="self-start">
+                <a 
+                  href={eventDetails.registerLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => gtagEvent({ action: 'click_register', category: 'Workshop', label: eventDetails.title })}
+                >
+                  Learn More & Register
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
             </div>
+            
+          </div>
         </div>
       </div>
     </div>

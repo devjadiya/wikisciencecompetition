@@ -53,7 +53,6 @@ export default function AffiliatesPage() {
                 <p className="text-muted-foreground mb-4 text-sm md:text-base">
                   Let's collaborate to showcase India's scientific landscape to the world.
                 </p>
-                <p className="font-bold text-destructive mb-6">Deadline: 31st August 2025</p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWfJxaAfUZUu3gyTLyemU-MN6whkQtHLV4rghsLFOaIvZ0TA/viewform" target="_blank" rel="noopener noreferrer">
                     Open Partnership Form <ExternalLink className="ml-2 h-4 w-4" />

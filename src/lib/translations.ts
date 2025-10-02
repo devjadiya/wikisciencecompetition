@@ -167,7 +167,6 @@ export const translations = {
             campusAmbassadorLink: 'Campus Ambassador form',
             sidebarTitle: 'Partner With Us',
             sidebarDescription: 'Let\'s collaborate to showcase India\'s scientific landscape to the world.',
-            deadline: 'Deadline: 31st August 2025',
             cta: 'Open Partnership Form'
         },
         campus: {
@@ -184,7 +183,6 @@ export const translations = {
             sidebar: {
                 title: 'Apply Now',
                 description: 'Ready to make an impact? Fill out the form to become a Campus Ambassador.',
-                deadline: 'Deadline: 31st August 2025',
                 cta: 'Open Application Form'
             },
             cta: {
@@ -431,13 +429,11 @@ export const translations = {
                 campus: {
                     title: 'Call for Campus Ambassadors',
                     description: 'Promote the campaign in your institution, share guidelines, and help organize awareness activities.',
-                    deadline: 'Deadline: 31st August 2025',
                     cta: 'Apply Now'
                 },
                 affiliates: {
                     title: 'Call for Wikimedia Affiliates',
                     description: 'Partner with us to promote the campaign, organize local outreach, and help bring impactful scientific contributions from your region.',
-                    deadline: 'Deadline: 31st August 2025',
                     cta: 'Partner With Us'
                 }
             },

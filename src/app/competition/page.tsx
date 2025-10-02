@@ -290,11 +290,6 @@ export default function CompetitionPage() {
                     </Button>
                 </div>
             </section>
-            
-            <section id="supported-by" className="mt-16 md:mt-24 text-center">
-                <h4 className="text-xl md:text-2xl font-headline text-muted-foreground">{t.competition.supportedBy}</h4>
-                {/* Add supporter logos here later */}
-            </section>
        </div>
        {selectedImage && (
         <ImageGalleryModal
