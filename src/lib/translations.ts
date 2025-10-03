@@ -363,19 +363,30 @@ export const translations = {
             deadline: 'Applications Closed: 15th July 2025',
             cta: 'Applications Closed'
         },
-        resources: {
-            title: 'Resources',
-            subtitle: 'Get inspired by past winners and access helpful materials to prepare your submission.',
-            pastWinners: {
-                title: 'Gallery of Past Winners',
-                winnerLabel: 'Winner',
-                winners: [
-                    { year: 2023, category: 'Astronomy', winner: 'Anjali Sharma' },
-                    { year: 2023, category: 'Biology', winner: 'Rohan Mehta' },
-                    { year: 2022, category: 'Chemistry', winner: 'Priya Desai' },
-                    { year: 2022, category: 'Astronomy', winner: 'Vikram Singh' },
-                ]
+    resources: {
+    title: 'Resources',
+    subtitle: 'Get inspired by past winners and access helpful materials to prepare your submission.',
+    pastWinners: {
+        title: 'Gallery of Past Winners',
+        links: [
+            {
+                year: 2023,
+                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2023/Winners'
             },
+            {
+                year: 2021,
+                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2021/Winners'
+            },
+            {
+                year: 2019,
+                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2019/Winners'
+            },
+            {
+                year: 2017,
+                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2017/Winners'
+            }
+        ]
+    },
             learningMaterials: {
                 title: 'Learning Materials',
                 cta: 'Learn More',
