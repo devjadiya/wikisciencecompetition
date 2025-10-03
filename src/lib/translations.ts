@@ -122,6 +122,16 @@ export const translations = {
                     wikipedia: 'https://en.wikipedia.org/wiki/St._Aloysius,_Mangaluru',
                 },
                 {
+                    name: 'Mohd Shadab',
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Mohd_Shadab_Profile.jpg',
+                    meta: 'https://meta.wikimedia.org/wiki/User:Shadabgdg',
+                    description: 'Wikipedian',
+                    boardLink: {
+                        name: 'Wiki_Club_UU',
+                        url: 'https://meta.wikimedia.org/wiki/Wiki_Club_UU',
+                    },
+                },
+                {
                     name: 'Samiya Ahmed',
                     image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                     meta: 'https://meta.wikimedia.org/wiki/User:Khanahmedsam',
@@ -147,16 +157,6 @@ export const translations = {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                     meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
                     description: 'Wikipedian',
-                },
-                   {
-                    name: 'Mohd Shadab',
-                    image: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Mohd_Shadab_Profile.jpg',
-                    meta: 'https://meta.wikimedia.org/wiki/User:Shadabgdg',
-                     description: 'Wikipedian',
-                    boardLink: {
-                        name: 'Wiki_Club_UU',
-                        url: 'https://meta.wikimedia.org/wiki/Wiki_Club_UU',
-                    },
                 },
             ]
         },
@@ -373,30 +373,30 @@ export const translations = {
             deadline: 'Applications Closed: 15th July 2025',
             cta: 'Applications Closed'
         },
-    resources: {
-    title: 'Resources',
-    subtitle: 'Get inspired by past winners and access helpful materials to prepare your submission.',
-    pastWinners: {
-        title: 'Gallery of Past Winners',
-        links: [
-            {
-                year: 2023,
-                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2023/Winners'
+        resources: {
+            title: 'Resources',
+            subtitle: 'Get inspired by past winners and access helpful materials to prepare your submission.',
+            pastWinners: {
+                title: 'Gallery of Past Winners',
+                links: [
+                    {
+                        year: 2023,
+                        url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2023/Winners'
+                    },
+                    {
+                        year: 2021,
+                        url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2021/Winners'
+                    },
+                    {
+                        year: 2019,
+                        url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2019/Winners'
+                    },
+                    {
+                        year: 2017,
+                        url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2017/Winners'
+                    }
+                ]
             },
-            {
-                year: 2021,
-                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2021/Winners'
-            },
-            {
-                year: 2019,
-                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2019/Winners'
-            },
-            {
-                year: 2017,
-                url: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2017/Winners'
-            }
-        ]
-    },
             learningMaterials: {
                 title: 'Learning Materials',
                 cta: 'Learn More',
@@ -7270,7 +7270,7 @@ export const translations = {
             }
         }
     },
-      or: {
+    or: {
         "mainNavLinks": [
             { "name": "ବିବରଣୀ", "href": "/about" },
             { "name": "ପ୍ରତିଯୋଗିତା", "href": "/competition" },
@@ -7293,7 +7293,7 @@ export const translations = {
             { "name": "CC ଲାଇସେନ୍ସ ବୁଝିବା", "href": "https://commons.wikimedia.org/wiki/Commons:Licensing" },
             { "name": "ବର୍ଗ (Categories) କିପରି ଯୋଡିବେ", "href": "https://commons.wikimedia.org/wiki/Help:Categories" }
         ],
-         "organizersDropdown": "ଆୟୋଜକମାନେ",
+        "organizersDropdown": "ଆୟୋଜକମାନେ",
         "moreDropdown": "ଅଧିକ",
         "learningDropdown": "ଶିକ୍ଷା",
         "participateButton": "ଅଂଶଗ୍ରହଣ କରନ୍ତୁ",
@@ -7319,7 +7319,7 @@ export const translations = {
         "footerCopyright": "Wiki Science Competition India. ସମସ୍ତ ସ୍ବତ୍ୱ ଅଧିକାର ସଂରକ୍ଷିତ।",
         "footerLicense": "ବିଷୟବସ୍ତୁ CC BY-SA 4.0 ଅନୁଯାୟୀ ଉପଲବ୍ଧ ଅଛି, ଯଦିଓ ଅନ୍ୟଥା ଉଲ୍ଲେଖିତ ନାହିଁ।",
         "footerDeveloperCredit": "ଡିଜାଇନ୍ ଏବଂ ଡିଭେଲପ କରାଯାଇଛି",
-          "about": {
+        "about": {
             "title": "WikiScience India 2025 ବିଷୟରେ",
             "badge": "ଭାରତୀୟ ପ୍ରସଙ୍ଗରେ ପରିଚୟ",
             "heading": "Wiki Science Competition 2025 – ଭାରତ",
@@ -7331,10 +7331,10 @@ export const translations = {
                 "title": "ଆମ ଲକ୍ଷ୍ୟଗୁଡ଼ିକ",
                 "subtitle": "ଏହି ଅଭିଯାନ ମାଧ୍ୟମରେ, ଆମେ ଏହାକୁ ଉଦ୍ଦେଶ୍ୟ କରୁଛୁ:",
                 "items": [
-                    { "icon": "PenSquare","title": "ଅବଦାନକୁ ଉତ୍ସାହିତ କରିବା", "description": "ଭାରତର ଛାତ୍ରଛାତ୍ରୀ, ଗବେଷକ ଓ ଉତ୍ସାହୀମାନେ ମୂଲ୍ୟବାନ ବୈଜ୍ଞାନିକ ମିଡିଆ ଅବଦାନ ଦେଇବା ପାଇଁ ଉତ୍ସାହିତ କରିବା।" },
+                    { "icon": "PenSquare", "title": "ଅବଦାନକୁ ଉତ୍ସାହିତ କରିବା", "description": "ଭାରତର ଛାତ୍ରଛାତ୍ରୀ, ଗବେଷକ ଓ ଉତ୍ସାହୀମାନେ ମୂଲ୍ୟବାନ ବୈଜ୍ଞାନିକ ମିଡିଆ ଅବଦାନ ଦେଇବା ପାଇଁ ଉତ୍ସାହିତ କରିବା।" },
                     { "icon": "Lightbulb", "title": "ଜ୍ଞାନ ପ୍ରଚାର କରିବା", "description": "ମୁକ୍ତ ବିଜ୍ଞାନ ଓ ମୁକ୍ତ ଜ୍ଞାନର ଗୁରୁତ୍ୱ ବିଷୟରେ ଜନସାଧାରଣଙ୍କ ମଧ୍ୟରେ ସଚେତନତା ବୃଦ୍ଧି କରିବା।" },
                     { "icon": "Globe", "title": "ବୈଜ୍ଞାନିକ ଐତିହ୍ୟକୁ ପାଳନ କରିବା", "description": "ଭାରତର ସମୃଦ୍ଧ ବୈଜ୍ଞାନିକ ଐତିହ୍ୟ ଓ ଚାଲୁଥିବା ନବୀନତାକୁ ଉଲ୍ଲେଖ କରି ପାଳନ କରିବା।" },
-                    {"icon": "Handshake", "title": "ସହଯୋଗ ଶକ୍ତିକୁ ବୃଦ୍ଧି କରିବା", "description": "Wikimedia ସମୁଦାୟ, ବିଶ୍ୱବିଦ୍ୟାଳୟ, ଗବେଷଣା ସଂସ୍ଥା ଓ ସଂଗଠନମାନେ ସହିତ ସହଯୋଗକୁ ଶକ୍ତିଶାଳୀ କରିବା।" }
+                    { "icon": "Handshake", "title": "ସହଯୋଗ ଶକ୍ତିକୁ ବୃଦ୍ଧି କରିବା", "description": "Wikimedia ସମୁଦାୟ, ବିଶ୍ୱବିଦ୍ୟାଳୟ, ଗବେଷଣା ସଂସ୍ଥା ଓ ସଂଗଠନମାନେ ସହିତ ସହଯୋଗକୁ ଶକ୍ତିଶାଳୀ କରିବା।" }
                 ]
             },
             "supportingOrg": {
@@ -7343,7 +7343,7 @@ export const translations = {
                 "p2": "ମୂଳ ଆୟୋଜନ ଟିମର ଅନେକ ସଦସ୍ୟ Wiki Club SATI ସହିତ ସଂପୃକ୍ତ ଅଛନ୍ତି, ଏବଂ ତାଙ୍କର ଲଗାତାର ସହଯୋଗ ଏହି କ୍ଲବର ମୁକ୍ତ ଜ୍ଞାନ ଓ ବୈଜ୍ଞାନିକ ଚର୍ଚ୍ଚା ପ୍ରତି ଦୃଢ଼ ପ୍ରତିବଦ୍ଧତାକୁ ପ୍ରତିବିମ୍ବିତ କରେ। ଯଦିଓ ଏହି ସହଯୋଗ ଆର୍ଥିକ ନୁହେଁ, କ୍ଲବର ସଂଗଠନାତ୍ମକ ଦକ୍ଷତା, ଅଭିଜ୍ଞତା ଓ ସମୁଦାୟ ନେଟୱାର୍କ ଏହି ଅଭିଯାନକୁ ଜାତୀୟ ମଞ୍ଚରେ ସଫଳ କରିବାରେ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଭୂମିକା ନିଅଉଛି।"
             }
         },
-          "campusAmbassadors": {
+        "campusAmbassadors": {
             "title": "କ୍ୟାମ୍ପସ ଅ୍ୟାମ୍ବାସାଡରମାନେ",
             "subtitle": "ନିଜ ନିଜ ସମୁଦାୟରେ Wiki Science Competition ର ପ୍ରଚାର ଓ ସଂଚାଳନ କରୁଥିବା ଉତ୍ସାହୀ ନେତାମାନଙ୍କ ସହିତ ପରିଚୟ ହେବା।",
             "ambassadors": [
@@ -7440,7 +7440,7 @@ export const translations = {
                 "href": "https://docs.google.com/forms/d/e/1FAIpQLScxxP7KU5OTBXayETXoKoFWZqDaJuOOABLEZXNseI9Br_Ws2Q/viewform"
             }
         },
-         "competition": {
+        "competition": {
             "title": "ପ୍ରତିଯୋଗିତା ବିବରଣୀ",
             "subtitle": "ଅଂଶଗ୍ରହଣ କରିବା ଓ ଜିତିବା ପାଇଁ ଆବଶ୍ୟକ ସମସ୍ତ ତଥ୍ୟ।",
             "howToParticipate": {
@@ -7598,7 +7598,7 @@ export const translations = {
                 }
             ]
         },
-         "organizersCall": {
+        "organizersCall": {
             "title": "ଆୟୋଜକ ପାଇଁ ଆହ୍ୱାନ",
             "subtitle": "ଆମକୁ ଖୁସି ହେଉଛି ଯେ ଭାରତ ଏହି ବିଶ୍ୱ ଅଭିଯାନର ଏକ ସ୍ଥାନୀୟ ସଂସ୍କରଣ ଆୟୋଜନ କରିବାକୁ ଯାଉଛି, ଯାହା Wikimedia Commons ରେ ମୁକ୍ତ ଲାଇସେନ୍ସ ଥିବା ଛବି, ଭିଡିଓ ଓ ଅନ୍ୟ ମାଧ୍ୟମ ଦ୍ୱାରା ବିଜ୍ଞାନକୁ ପ୍ରଚାର କରେ।",
             "joinHeading": "ଆୟୋଜନ ଦଳରେ ଯୋଗ ଦିଅନ୍ତୁ",
@@ -7663,7 +7663,7 @@ export const translations = {
                     }
                 ]
             },
-             "home": {
+            "home": {
                 "autoscroll": {
                     "slides": [
                         {
