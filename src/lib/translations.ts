@@ -40,9 +40,9 @@ export const translations = {
         ],
         learningLinks: [
             { name: 'How to create a Wiki account', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Account' },
-            { name: 'How to use the Upload Wizard', href: 'https://commons.wikimedia.org/wiki/Commons:First_steps/Upload_wizard' },
+            { name: 'How to use the Upload Wizard', href: 'https://information-services.ed.ac.uk/help-consultancy/is-skills/wikimedia/wikimedia-commons/how-to-upload-media-to-commons' },
             { name: 'Understanding CC Licenses', href: 'https://commons.wikimedia.org/wiki/Commons:Licensing' },
-            { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Help:Categories' },
+            { name: 'How to add categories', href: 'https://commons.wikimedia.org/wiki/Commons:Categories' },
         ],
         organizersDropdown: 'Organizers',
         moreDropdown: 'More',
@@ -102,7 +102,7 @@ export const translations = {
                     name: 'Anushka Patel',
                     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Anushka_patel_1.jpg/1024px-Anushka_patel_1.jpg',
                     meta: 'https://meta.wikimedia.org/wiki/User:Anushka10patel',
-                    description: 'Wiki Club SATI',
+                    description: 'Wikipedian',
                     boardLink: {
                         name: 'Wiki Club SATI',
                         url: 'https://meta.wikimedia.org/wiki/Wiki_Club_SATI/Events/Members',
@@ -147,6 +147,16 @@ export const translations = {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Wikipedian_Profile_Picture.png',
                     meta: 'https://meta.wikimedia.org/wiki/User:Osama_Abdullah',
                     description: 'Wikipedian',
+                },
+                   {
+                    name: 'Mohd Shadab',
+                    image: 'https://commons.wikimedia.org/wiki/File:Mohd_Shadab_Profile.jpg',
+                    meta: 'https://meta.wikimedia.org/wiki/User:Shadabgdg',
+                     description: 'Wikipedian',
+                    boardLink: {
+                        name: 'Wiki_Club_UU',
+                        url: 'https://meta.wikimedia.org/wiki/Wiki_Club_UU',
+                    },
                 },
             ]
         },
