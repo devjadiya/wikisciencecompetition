@@ -150,7 +150,7 @@ export const translations = {
                 },
                    {
                     name: 'Mohd Shadab',
-                    image: 'https://commons.wikimedia.org/wiki/File:Mohd_Shadab_Profile.jpg',
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Mohd_Shadab_Profile.jpg',
                     meta: 'https://meta.wikimedia.org/wiki/User:Shadabgdg',
                      description: 'Wikipedian',
                     boardLink: {
