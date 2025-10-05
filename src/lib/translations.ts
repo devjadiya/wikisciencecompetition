@@ -88,11 +88,6 @@ export const translations = {
                     { icon: 'Handshake', title: 'Strengthen Collaboration', description: 'Strengthen collaboration between Wikimedia communities, universities, research institutes, and organizations.' }
                 ]
             },
-            supportingOrg: {
-                title: 'Supporting Organisation',
-                p1: 'Wiki Club SATI (Vidisha, Madhya Pradesh) is acknowledged as the supporting organisation for the first national edition of the Wiki Science Competition 2025 in India. The club has been at the forefront of engaging students and young professionals in the Wikimedia movement, contributing to open knowledge, technical innovation, and community-led initiatives.',
-                p2: 'Several members of the Core Organizing Team are associated with Wiki Club SATI, and their continued involvement reflects the club’s commitment to advancing free knowledge and scientific engagement. While the support is non-financial, the organisational capacity, experience, and community networks of Wiki Club SATI play an essential role in enabling this campaign at the national level.'
-            }
         },
         campusAmbassadors: {
             title: 'Campus Ambassadors',
