@@ -70,38 +70,6 @@ export default function AboutPage() {
             </div>
         </div>
 
-        <div className="mt-16 md:mt-24 bg-primary/5 p-8 md:p-12 rounded-lg">
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
-                <div className="md:col-span-2">
-                    <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">{t.about.supportingOrg.title}</h2>
-                    <div className="text-muted-foreground space-y-4 text-sm md:text-base">
-                       <p>{t.about.supportingOrg.p1}</p>
-                       <p>{t.about.supportingOrg.p2}</p>
-                    </div>
-                </div>
-<div className="relative h-36 w-36 md:h-48 md:w-48 mx-auto">
-  {/* Light mode image (black logo) */}
-  <Image
-    src="https://upload.wikimedia.org/wikipedia/commons/b/bb/WIKI_CLUB_SATI_Logo.svg"
-    alt="Wiki Club SATI Logo (Light Mode)"
-    data-ai-hint="organization logo"
-    fill
-    className="object-contain block dark:hidden"
-  />
-
-  {/* Dark mode image (white logo) */}
-  <Image
-    src="https://upload.wikimedia.org/wikipedia/commons/d/df/WIKI_CLUB_SATI_Logo_in_white_text_2025.png"
-    alt="Wiki Club SATI Logo (Dark Mode)"
-    data-ai-hint="organization logo"
-    fill
-    className="object-contain hidden dark:block"
-  />
-</div>
-
-            </div>
-        </div>
-
       </div>
     </div>
   );
