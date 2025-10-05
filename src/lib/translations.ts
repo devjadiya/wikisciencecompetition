@@ -331,13 +331,6 @@ export const translations = {
                     social: { linkedin: 'https://www.linkedin.com/in/suyash-dwivedi-b47bab58/', meta: 'https://meta.wikimedia.org/wiki/User:Suyash.dwivedi' }
                 },
                 {
-                    id: 'sai_kiran',
-                    name: 'Sai Kiran',
-                    role: 'Core Organizing Team',
-                    roleKey: 'core_team',
-                    social: { meta: 'https://meta.wikimedia.org/wiki/User:Nskjnv' }
-                },
-                {
                     id: 'chinmayee_mishra',
                     name: 'Chinmayee Mishra',
                     role: 'Core Organizing Team',
