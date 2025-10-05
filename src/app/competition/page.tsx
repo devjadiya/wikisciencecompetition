@@ -1,3 +1,4 @@
+// Your main page file, e.g., app/competition/page.tsx
 'use client';
 
 import { useMemo, useState } from 'react';
@@ -10,73 +11,88 @@ import {
   CheckSquare,
   Microscope,
   Users,
-  Layers, // Using Layers for Special Category
+  Layers,
   Star,
   FlaskConical,
-  Atom, // Using Atom for Physics
-  Smartphone, // Using Smartphone for Mobile
+  Atom,
+  Smartphone,
 } from 'lucide-react';
 import Link from 'next/link';
 import CategoryShowcase from '@/components/competition/category-showcase';
-import ImageGalleryModal from '@/components/competition/image-gallery-modal';
+import ImageGalleryModal from '@/components/competition/image-gallery-modal'; // Corrected import
 import { useLanguage } from '@/context/language-context';
 import { Vortex } from '@/components/ui/vortex';
 
+// --- CORRECTED ---
+// Updated ImageType to include the commonsLink
 export type ImageType = {
   src: string;
   alt: string;
   hint: string;
+  commonsLink: string; // The correct link to the Wikimedia Commons page
   loading?: string;
   decoding?: string;
   width?: number;
   height?: number;
 };
 
-// Helper function to add lazy loading attributes to images
-const processImages = (images: Omit<ImageType, 'loading' | 'decoding'>[], width = 1200, height = 800) =>
-  images.map(img => ({
-    ...img,
-    loading: 'lazy',
-    decoding: 'async',
-    width,
-    height,
-  }));
+// --- CORRECTED ---
+// Helper function to process images and generate Wikimedia Commons links
+const processImages = (images: Omit<ImageType, 'loading' | 'decoding' | 'commonsLink'>[], width = 1200, height = 800) =>
+  images.map(img => {
+    // This logic extracts the core filename from the thumbnail URL
+    const url = new URL(img.src);
+    const pathSegments = url.pathname.split('/');
+    // The filename is the segment before the final thumbnail size segment
+    const filename = pathSegments[pathSegments.length - 2];
+    const commonsLink = `https://commons.wikimedia.org/wiki/File:${filename}`;
 
-// --- Image Arrays for Each Category ---
+    return {
+      ...img,
+      commonsLink, // Add the generated link
+      loading: 'lazy',
+      decoding: 'async',
+      width,
+      height,
+    };
+  });
+
+
+// --- Image Arrays for Each Category (No changes needed here) ---
 
 const peopleInScienceImages: ImageType[] = processImages([
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/The_Chairman%2C_Indian_Space_Research_Organisation_%28ISRO%29%2C_Dr._K._Sivan_addressing_a_press_conference_on_the_occasion_of_%E2%80%98Lunar_Orbit_Insertion_of_Chandrayaan-2_Mission%E2%80%99%2C_in_Bengaluru_on_August_20%2C_2019_%28cropped%29.jpg/960px-thumbnail.jpg', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/KPS_MEERUT_LAB.jpg/960px-KPS_MEERUT_LAB.jpg', alt: 'Exploring a cave.', hint: 'cave exploration' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg/1024px-IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg', alt: 'Archaeological excavation.', hint: 'archaeology dig' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Heart_valve_replacement_operations.jpg/1024px-Heart_valve_replacement_operations.jpg', alt: 'Archaeological excavation.', hint: 'polar researcher' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/The_Chairman%2C_Indian_Space_Research_Organisation_%28ISRO%29%2C_Dr._K._Sivan_addressing_a_press_conference_on_the_occasion_of_%E2%80%98Lunar_Orbit_Insertion_of_Chandrayaan-2_Mission%E2%80%99%2C_in_Bengaluru_on_August_20%2C_2019_%28cropped%29.jpg/960px-thumbnail.jpg', alt: 'A lecturer at the rostrum.', hint: 'lecturer science' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/KPS_MEERUT_LAB.jpg/960px-KPS_MEERUT_LAB.jpg', alt: 'Exploring a cave.', hint: 'cave exploration' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg/1024px-IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg', alt: 'Archaeological excavation.', hint: 'archaeology dig' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Heart_valve_replacement_operations.jpg/1024px-Heart_valve_replacement_operations.jpg', alt: 'Archaeological excavation.', hint: 'polar researcher' },
 ]);
 
 const microscopyImages: ImageType[] = processImages([
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/%D0%93%D0%BB%D0%B0%D0%B7_%D1%84%D0%BB%D0%B5%D1%80%D0%BD%D0%B8%D1%86%D1%8B.jpg/960px-%D0%93%D0%BB%D0%B0%D0%B7_%D1%84%D0%BB%D0%B5%D1%80%D0%BD%D0%B8%D1%86%D1%8B.jpg', alt: 'Stamen hairs and pollen of Tradescantia.', hint: 'pollen microscopy' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Birefringent_Water_Ice_5.jpg/960px-Birefringent_Water_Ice_5.jpg', alt: 'Decomposition of EMImBF4 ionic liquid.', hint: 'insect microscopy' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_army_of_titanium_dioxide_nanotubes.jpg/960px-The_army_of_titanium_dioxide_nanotubes.jpg', alt: 'Decomposition of EMImBF4 ionic liquid.', hint: 'ionic liquid' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Hover_Fly_%D0%BD%D0%B0_%D1%86%D0%B2%D0%B5%D1%82.jpg/1024px-Hover_Fly_%D0%BD%D0%B0_%D1%86%D0%B2%D0%B5%D1%82.jpg', alt: 'HEK 293 cells.', hint: 'HEK cells' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/%D0%93%D0%BB%D0%B0%D0%B7_%D1%84%D0%BB%D0%B5%D1%80%D0%BD%D0%B8%D1%86%D1%8B.jpg/960px-%D0%93%D0%BB%D0%B0%D0%B7_%D1%84%D0%BB%D0%B5%D1%80%D0%BD%D0%B8%D1%86%D1%8B.jpg', alt: 'Stamen hairs and pollen of Tradescantia.', hint: 'pollen microscopy' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Birefringent_Water_Ice_5.jpg/960px-Birefringent_Water_Ice_5.jpg', alt: 'Decomposition of EMImBF4 ionic liquid.', hint: 'insect microscopy' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_army_of_titanium_dioxide_nanotubes.jpg/960px-The_army_of_titanium_dioxide_nanotubes.jpg', alt: 'Decomposition of EMImBF4 ionic liquid.', hint: 'ionic liquid' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Hover_Fly_%D0%BD%D0%B0_%D1%86%D0%B2%D0%B5%D1%82.jpg/1024px-Hover_Fly_%D0%BD%D0%B0_%D1%86%D0%B2%D0%B5%D1%82.jpg', alt: 'HEK 293 cells.', hint: 'HEK cells' },
 ]);
 
 const astronomyImages: ImageType[] = processImages([
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_Lion_nebula.jpg/960px-The_Lion_nebula.jpg', alt: 'Total Solar Eclipse', hint: 'solar eclipse' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Joshua_Tree_Milky_Way.jpg/960px-Joshua_Tree_Milky_Way.jpg', alt: 'Kuffner Observatory Refractor', hint: 'observatory telescope' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ic443_nf_c_shorgb_2218m%2B823m%2B666m%2B729m_2218m_37h.jpg/1022px-Ic443_nf_c_shorgb_2218m%2B823m%2B666m%2B729m_2218m_37h.jpg', alt: 'The Carina Nebula', hint: 'carina nebula' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Puesta_de_Luna_Llena_Supertropical_sobre_la_parroqu%C3%ADa_San_Alberto_Hurtado_de_Monted%C3%B3nico_en_Valpara%C3%ADso._Supertropical_Full_Moonset_over_the_church_of_San_Alberto_Hurtado_in_Monted%C3%B3nico_of_Valpara%C3%ADso.jpg/1024px-thumbnail.jpg', alt: 'A Busy Universe', hint: 'galaxy cluster' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/The_Lion_nebula.jpg/960px-The_Lion_nebula.jpg', alt: 'Total Solar Eclipse', hint: 'solar eclipse' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Joshua_Tree_Milky_Way.jpg/960px-Joshua_Tree_Milky_Way.jpg', alt: 'Kuffner Observatory Refractor', hint: 'observatory telescope' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ic443_nf_c_shorgb_2218m%2B823m%2B666m%2B729m_2218m_37h.jpg/1022px-Ic443_nf_c_shorgb_2218m%2B823m%2B666m%2B729m_2218m_37h.jpg', alt: 'The Carina Nebula', hint: 'carina nebula' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Puesta_de_Luna_Llena_Supertropical_sobre_la_parroqu%C3%ADa_San_Alberto_Hurtado_de_Monted%C3%B3nico_en_Valpara%C3%ADso._Supertropical_Full_Moonset_over_the_church_of_San_Alberto_Hurtado_in_Monted%C3%B3nico_of_Valpara%C3%ADso.jpg/1024px-thumbnail.jpg', alt: 'A Busy Universe', hint: 'galaxy cluster' },
 ], 1600, 900);
 
 const specialCategoryImages: ImageType[] = processImages([
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Hektoen_enteric_agar_stool_culture.jpg/960px-Hektoen_enteric_agar_stool_culture.jpg', alt: 'Fluorescence in calcite', hint: 'mineral fluorescence' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Cala_dei_Santi_-_Palaeolithic_Cave.jpg/960px-Cala_dei_Santi_-_Palaeolithic_Cave.jpg', alt: 'Water under 11 Hz vibration', hint: 'cymatics water' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hot_Musicians.tif/lossy-page1-640px-Hot_Musicians.tif.jpg', alt: 'Pulsed Laser Deposition in Action', hint: 'laser deposition' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Collezione_Microbica.jpg/500px-Collezione_Microbica.jpg', alt: 'Ferrofluid influenced by a magnet', hint: 'ferrofluid magnet' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Hektoen_enteric_agar_stool_culture.jpg/960px-Hektoen_enteric_agar_stool_culture.jpg', alt: 'Fluorescence in calcite', hint: 'mineral fluorescence' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Cala_dei_Santi_-_Palaeolithic_Cave.jpg/960px-Cala_dei_Santi_-_Palaeolithic_Cave.jpg', alt: 'Water under 11 Hz vibration', hint: 'cymatics water' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hot_Musicians.tif/lossy-page1-640px-Hot_Musicians.tif.jpg', alt: 'Pulsed Laser Deposition in Action', hint: 'laser deposition' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Collezione_Microbica.jpg/500px-Collezione_Microbica.jpg', alt: 'Ferrofluid influenced by a magnet', hint: 'ferrofluid magnet' },
 ], 1400, 900);
 
 const everydayCategoryImages: ImageType[] = processImages([
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Calving_in_Laos_%287_of_9%29.jpg/1024px-Calving_in_Laos_%287_of_9%29.jpg', alt: 'Soap bubbles showing interference colors', hint: 'soap bubble physics' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Burning_match.jpg/960px-Burning_match.jpg', alt: 'Melting ice cubes in water', hint: 'heat transfer' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spider_web_with_dew_drops03.jpg/1024px-Spider_web_with_dew_drops03.jpg', alt: 'Toast showing the Maillard reaction', hint: 'maillard reaction' },
-  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Pressure_cooker_releasing_water_vapor.jpg/1024px-Pressure_cooker_releasing_water_vapor.jpg', alt: 'Water droplet showing the Leidenfrost effect', hint: 'leidenfrost effect' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Calving_in_Laos_%287_of_9%29.jpg/1024px-Calving_in_Laos_%287_of_9%29.jpg', alt: 'Soap bubbles showing interference colors', hint: 'soap bubble physics' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Burning_match.jpg/960px-Burning_match.jpg', alt: 'Melting ice cubes in water', hint: 'heat transfer' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spider_web_with_dew_drops03.jpg/1024px-Spider_web_with_dew_drops03.jpg', alt: 'Toast showing the Maillard reaction', hint: 'maillard reaction' },
+    { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Pressure_cooker_releasing_water_vapor.jpg/1024px-Pressure_cooker_releasing_water_vapor.jpg', alt: 'Water droplet showing the Leidenfrost effect', hint: 'leidenfrost effect' },
 ], 1400, 900);
 
 const equipmentImages: ImageType[] = processImages([
@@ -107,6 +123,7 @@ const mobileImages: ImageType[] = processImages([
     { src: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Chapathi.jpg', alt: 'A rainbow over a field', hint: 'rainbow nature' },
 ]);
 
+
 export default function CompetitionPage() {
   const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<{ images: ImageType[]; index: number } | null>(null);
@@ -136,44 +153,44 @@ export default function CompetitionPage() {
     {
       key: 'special',
       name: t.competition.categories.special.name,
-      icon: Layers, // Changed icon
+      icon: Layers,
       description: t.competition.categories.special.description,
-      images: specialCategoryImages, // <-- Corrected
+      images: specialCategoryImages,
     },
     {
       key: 'everyday',
       name: t.competition.categories.everyday.name,
       icon: Calendar,
       description: t.competition.categories.everyday.description,
-      images: everydayCategoryImages, // <-- Corrected
+      images: everydayCategoryImages,
     },
     {
       key: 'equipment',
       name: t.competition.categories.equipment.name,
       icon: CheckSquare,
       description: t.competition.categories.equipment.description,
-      images: equipmentImages, // <-- Corrected
+      images: equipmentImages,
     },
     {
       key: 'chemistry',
       name: t.competition.categories.chemistry.name,
       icon: FlaskConical,
       description: t.competition.categories.chemistry.description,
-      images: chemistryImages, // <-- Corrected
+      images: chemistryImages,
     },
     {
       key: 'physics',
       name: t.competition.categories.physics.name,
-      icon: Atom, // Changed icon
+      icon: Atom,
       description: t.competition.categories.physics.description,
-      images: physicsImages, // <-- Corrected
+      images: physicsImages,
     },
     {
       key: 'mobile',
       name: t.competition.categories.mobile.name,
-      icon: Smartphone, // Changed icon
+      icon: Smartphone,
       description: t.competition.categories.mobile.description,
-      images: mobileImages, // <-- Corrected
+      images: mobileImages,
     },
   ], [t]);
 
