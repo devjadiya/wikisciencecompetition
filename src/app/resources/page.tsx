@@ -56,7 +56,7 @@ const learningMaterials = [
     description:
       'A quick checklist of what’s allowed and what to avoid while participating in the competition.',
     type: 'pdf',
-    fileUrl: '/resources/dos-and-donts.pdf',
+    fileUrl: '/resources/dos-and-donts.png',
     preview: '/images/dos-and-donts.png',
   },
 ];
