@@ -25,14 +25,14 @@ const learningMaterials = [
     preview: '/images/wikimedia-account.png',
     duration: '2:05',
   },
-  {
-    title: 'Guide to Science Photography',
-    description:
-      'Tips and techniques to help you capture scientific images that are clear, creative, and educational.',
-    type: 'pdf',
-    fileUrl: '/resources/science-photography-guide.pdf',
-    preview: '/images/science-photo-guide.png',
-  },
+  // {
+  //   title: 'Guide to Science Photography',
+  //   description:
+  //     'Tips and techniques to help you capture scientific images that are clear, creative, and educational.',
+  //   type: 'pdf',
+  //   fileUrl: '/resources/science-photography-guide.pdf',
+  //   preview: '/images/science-photo-guide.png',
+  // },
   {
     title: 'Understanding Creative Commons Licenses',
     description:
@@ -47,9 +47,11 @@ const learningMaterials = [
     title: 'Image Upload Tutorial',
     description:
       'A beginner-friendly guide to uploading your images to Wikimedia Commons for the competition.',
-    type: 'pdf',
-    fileUrl: '/resources/image-upload-tutorial.pdf',
+    type: 'video',
+    videoUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/9/95/How_to_Upload_an_Image_to_Wikimedia_Commons_%28A_Beginner%27s_Guide_2025%29.webm',
     preview: '/images/image-upload-guide.png',
+    duration: '2:00',
   },
   {
     title: "Do's and Don'ts",
