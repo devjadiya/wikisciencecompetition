@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next';
+import { Analytics } from "@vercel/analytics/next"
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
