@@ -8,6 +8,7 @@ import { gtagEvent } from '@/lib/gtm';
 
 const socialLinks = [
   { name: 'Instagram', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg', href: 'https://www.instagram.com/wiki_science_competition/' },
+  { name: 'Linkedin', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png', href: 'https://www.linkedin.com/company/wiki-science-competition-2025-%E2%80%93-india/' },
   { name: 'Telegram', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Telegram_2019_simple_logo.svg', href: 'https://t.me/wikisciencecompetition' },
   { name: 'Meta Wiki', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg', href: 'https://meta.wikimedia.org/wiki/Wiki_Science_Competition_2025_in_India' },
   { name: 'Commons', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Wikimedia_Commons_logo_Spanish_vertical_in_colour.svg', href: 'https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India' },
