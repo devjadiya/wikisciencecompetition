@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, AlertTriangle, ExternalLink, Users, Smartphone } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import AnimatedCounter from '@/components/ui/animated-counter';
 
 interface WSCampaignGalleryProps {
   title?: string;
@@ -151,10 +151,13 @@ const WSCampaignGallery = ({
                     {subtitle}
                 </p>
                 {totalImages !== null && (
-                    <Badge variant="secondary" className="mt-4 text-base">
-                       {isMobileCampaign ? <Smartphone className="mr-2 h-4 w-4" /> : <Users className="mr-2 h-4 w-4" />}
-                        Total Submissions: {totalImages}
-                    </Badge>
+                    <div className="mt-6">
+                        <AnimatedCounter from={0} to={totalImages} />
+                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
+                            {isMobileCampaign ? <Smartphone className="h-4 w-4" /> : <Users className="h-4 w-4" />}
+                            <span>Total Submissions</span>
+                        </div>
+                    </div>
                 )}
             </div>
 
