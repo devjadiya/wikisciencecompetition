@@ -10,7 +10,7 @@ const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
 const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'));
 const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
-const ContactForm = dynamic(() => import('@/components/home/contact-form'));
+const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
 const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
 
