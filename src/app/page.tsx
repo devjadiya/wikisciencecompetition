@@ -20,6 +20,12 @@ export default function Home() {
         category="Category:Uploaded_via_Campaign:wsc-in-2025"
         redirectUrl="https://commons.wikimedia.org/wiki/Category:Uploaded_via_Campaign:wsc-in-2025"
       />
+      <WSCampaignGallery 
+        title="Live from Mobile"
+        subtitle="See the latest submissions from participants using their mobile devices."
+        category="Category:Uploaded_via_Campaign:wsc-in-m"
+        redirectUrl="https://commons.wikimedia.org/wiki/Category:Uploaded_via_Campaign:wsc-in-m"
+      />
       <VortexCta />
       <CallToAction />
       <ContactForm />

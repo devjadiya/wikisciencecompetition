@@ -5,11 +5,13 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Loader2, AlertTriangle, ExternalLink, Users } from 'lucide-react';
+import { Loader2, AlertTriangle, ExternalLink, Users, Smartphone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 interface WSCampaignGalleryProps {
+  title?: string;
+  subtitle?: string;
   category: string;
   apiUrl?: string;
   redirectUrl: string;
@@ -23,9 +25,11 @@ interface ImageInfo {
 }
 
 const WSCampaignGallery = ({
-  category = 'Category:Uploaded_via_Campaign:wsc-in-2025',
+  title = 'Live Campaign Gallery',
+  subtitle = 'See the latest submissions from participants across India.',
+  category,
   apiUrl = 'https://commons.wikimedia.org/w/api.php',
-  redirectUrl = 'https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025'
+  redirectUrl
 }: WSCampaignGalleryProps) => {
   const [images, setImages] = useState<ImageInfo[]>([]);
   const [totalImages, setTotalImages] = useState<number | null>(null);
@@ -120,17 +124,20 @@ const WSCampaignGallery = ({
     fetchImages();
   }, [category, apiUrl]);
 
+  const isMobileCampaign = category.includes('wsc-in-m');
+
   return (
     <div className="bg-primary/5 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">Live Campaign Gallery</h2>
+                <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{title}</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-                    See the latest submissions from participants across India.
+                    {subtitle}
                 </p>
                 {totalImages !== null && (
                     <Badge variant="secondary" className="mt-4 text-base">
-                        <Users className="mr-2 h-4 w-4" /> Total Submissions: {totalImages}
+                       {isMobileCampaign ? <Smartphone className="mr-2 h-4 w-4" /> : <Users className="mr-2 h-4 w-4" />}
+                        Total Submissions: {totalImages}
                     </Badge>
                 )}
             </div>
