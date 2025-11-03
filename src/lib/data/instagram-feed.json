@@ -2,26 +2,32 @@
 [
   {
     "id": "C9z_x2_y-2a",
-    "url": "https://www.instagram.com/p/C9z_x2_y-2a/"
+    "type": "image",
+    "filename": "post1.jpg"
   },
   {
     "id": "C-dE1f3S-Ab",
-    "url": "https://www.instagram.com/p/C-dE1f3S-Ab/"
+    "type": "reel",
+    "filename": "reel1.mp4"
   },
   {
     "id": "C-j5K8_y-2p",
-    "url": "https://www.instagram.com/p/C-j5K8_y-2p/"
+    "type": "image",
+    "filename": "post2.jpg"
   },
   {
     "id": "C-tqMx-S9C-",
-    "url": "https://www.instagram.com/p/C-tqMx-S9C-/"
+    "type": "video",
+    "filename": "video1.mp4"
   },
   {
     "id": "C_F0p-2y-3b",
-    "url": "https://www.instagram.com/p/C_F0p-2y-3b/"
+    "type": "image",
+    "filename": "post3.jpg"
   },
   {
     "id": "C_LpTr2S-9a",
-    "url": "https://www.instagram.com/p/C_LpTr2S-9a/"
+    "type": "reel",
+    "filename": "reel2.mp4"
   }
 ]
