@@ -11,6 +11,7 @@ import { LanguageProvider } from '@/context/language-context';
 import Script from 'next/script';
 import Analytics from '@/components/layout/analytics';
 import { ThemeProvider } from '@/components/layout/theme-provider';
+import LiveMarquee from '@/components/layout/live-marquee';
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s | WSC India 2025',
   },
   description: "Participate in India's biggest science photography competition for 2025. Submit images in categories like microscopy, astronomy, and more to win exciting prizes. Join the premier science and photography event, Wiki Science Competition 2025 in India, and contribute to free knowledge.",
-  keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition',
+  keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition, science images, scientific photography, research images, wikimedia commons',
   authors: [{ name: 'Wiki Science Competition India Team' }],
   openGraph: {
     title: 'Official Wiki Science Competition 2025 - India',
@@ -99,8 +100,9 @@ export default function RootLayout({
           <LanguageProvider>
             <Analytics />
             <VercelAnalytics />
+            <LiveMarquee />
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-10">{children}</main>
             <Footer />
             <FaqChatbot />
             <Toaster />
