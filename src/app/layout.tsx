@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: ' Wiki Science Competition 2025 in India',
+    title: 'Official Wiki Science Competition 2025 - India',
     description: 'Calling all students, researchers, and science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
     images: ['https://www.wikisciencecompetition.in/twitter-image.png'],
   },
@@ -81,10 +81,10 @@ export default function RootLayout({
             gtag('config', 'G-VBJS2HS9WM');
           `}
         </Script>
-        <script src="https://cdn.counter.dev/script.js"
-          data-id="cc7a036d-a904-4d76-bcac-37ea4196c014"
-          data-utcoffset="6">
-        </script>
+        <Script async src="https://cdn.counter.dev/script.js"
+            data-id="cc7a036d-a904-4d76-bcac-37ea4196c014"
+            data-utcoffset="6">
+        </Script>
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
