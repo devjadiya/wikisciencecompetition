@@ -33,6 +33,8 @@ export default function Home() {
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
       />
       
+      <OutreachDashboard />
+      
       <InstagramGallery 
         title="Featured Images"
         subtitle="A curated collection of stunning scientific photography from our community."
@@ -55,7 +57,6 @@ export default function Home() {
       />
 
       <VortexCta />
-      <OutreachDashboard />
       <ContactForm />
       <TestimonialsSection />
     </div>

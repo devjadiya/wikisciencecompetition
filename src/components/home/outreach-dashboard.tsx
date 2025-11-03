@@ -21,7 +21,6 @@ export default function OutreachDashboard() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [apiUnavailable, setApiUnavailable] = useState(false);
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -29,19 +28,22 @@ export default function OutreachDashboard() {
         const response = await fetch('https://outreachdashboard.wmflabs.org/courses/Online/Wiki_Science_Competition_India_2025_(November_2025).json');
         
         if (!response.ok) {
+            // Don't throw an error, just log it and set fallback stats
             console.error('Failed to fetch dashboard data, status:', response.status);
-            setApiUnavailable(true); 
+            setStats({ uploads: 0, editors: 0, edits: 0 });
             return;
         }
 
         const data = await response.json();
         
         if (data.message === "Not found") {
-            console.error('OutreachDashboard API returned "Not found". The campaign might not be active yet.');
-            setApiUnavailable(true);
+            // Handle the case where the API returns a 'Not found' message
+            console.warn('OutreachDashboard API returned "Not found". The campaign might not be active yet. Defaulting to 0 stats.');
+            setStats({ uploads: 0, editors: 0, edits: 0 });
             return;
         }
         
+        // This logic handles cases where `stats` is nested or at the root of `course`
         const raw = data.course || {};
         const s = raw.stats && Object.values(raw.stats).some(v => typeof v === 'number' && v > 0) ? raw.stats : raw;
 
@@ -53,7 +55,8 @@ export default function OutreachDashboard() {
 
       } catch (error) {
         console.error('Error fetching or parsing dashboard data:', error);
-        setApiUnavailable(true);
+        // Fallback to 0 if there's a network error or parsing error
+        setStats({ uploads: 0, editors: 0, edits: 0 });
       }
     };
 
@@ -86,9 +89,6 @@ export default function OutreachDashboard() {
     }
   ];
 
-  // This renders the section with "0" stats if the API is down or not found, as per user request.
-  const finalStats = apiUnavailable ? { uploads: 0, editors: 0, edits: 0 } : stats;
-
   return (
     <section ref={ref} className="bg-primary/5 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,7 +107,7 @@ export default function OutreachDashboard() {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-12">
-            {finalStats === null ? (
+            {stats === null ? (
                 // Skeleton Loader
                 Array.from({ length: 3 }).map((_, index) => (
                     <Card key={index} className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center animate-pulse">

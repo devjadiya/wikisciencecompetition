@@ -130,8 +130,8 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{title}</h2>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">{subtitle}</p>
           {totalCount !== null && (
-            <div className="mt-4">
-              <span className="text-sm font-medium text-muted-foreground">Total Submissions</span>
+            <div className="mt-8">
+              <span className="text-lg font-medium text-muted-foreground">Total Submissions in this Category</span>
               <AnimatedCounter from={0} to={totalCount} />
             </div>
           )}
@@ -186,6 +186,7 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          loading="lazy"
                         />
                       </div>
                     </CardContent>
