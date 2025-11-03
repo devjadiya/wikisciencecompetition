@@ -2,215 +2,228 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Camera, AlertCircle, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import AnimatedCounter from '../ui/animated-counter';
-import { useLanguage } from '@/context/language-context';
-
-interface ImageInfo {
-  pageid: number;
-  title: string;
-  thumbnailUrl: string;
-  user: string;
-  description: string;
-  pageUrl: string;
-}
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Loader2, AlertTriangle, ExternalLink, Users, Smartphone } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import AnimatedCounter from '@/components/ui/animated-counter';
 
 interface WSCampaignGalleryProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   campaignCategory: string;
+  apiUrl?: string;
   campaignUrl: string;
 }
 
-export default function WSCampaignGallery({ title, subtitle, campaignCategory, campaignUrl }: WSCampaignGalleryProps) {
+interface ImageInfo {
+  title: string;
+  thumbnailUrl: string;
+  user: string;
+  descriptionUrl: string;
+}
+
+const galleryVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const WSCampaignGallery = ({
+  title = 'Live Campaign Gallery',
+  subtitle = 'See the latest submissions from participants across India.',
+  campaignCategory,
+  apiUrl = 'https://commons.wikimedia.org/w/api.php',
+  campaignUrl
+}: WSCampaignGalleryProps) => {
   const [images, setImages] = useState<ImageInfo[]>([]);
-  const [totalCount, setTotalCount] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [totalImages, setTotalImages] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const fetchImages = async () => {
-      setIsLoading(true);
+      setLoading(true);
       setError(null);
-      const API_ENDPOINT = 'https://commons.wikimedia.org/w/api.php';
+      
+      const params = new URLSearchParams({
+        action: 'query',
+        format: 'json',
+        list: 'categorymembers',
+        cmtitle: campaignCategory,
+        cmtype: 'file',
+        cmsort: 'timestamp',
+        cmdir: 'desc',
+        cmlimit: '15',
+        prop: 'imageinfo',
+        iiprop: 'url|user|comment',
+        iiurlwidth: '400',
+        origin: '*'
+      });
+
+      const catParams = new URLSearchParams({
+        action: 'query',
+        format: 'json',
+        titles: campaignCategory,
+        prop: 'categoryinfo',
+        origin: '*'
+      });
 
       try {
-        // 1. Fetch category members (latest 15 images)
-        const categoryParams = new URLSearchParams({
-          action: 'query',
-          list: 'categorymembers',
-          cmtitle: campaignCategory,
-          cmlimit: '15',
-          cmsort: 'timestamp',
-          cmdir: 'desc',
-          format: 'json',
-          origin: '*',
-        });
-        const categoryRes = await fetch(`${API_ENDPOINT}?${categoryParams}`);
-        if (!categoryRes.ok) throw new Error('Failed to fetch category members.');
-        const categoryData = await categoryRes.json();
-        const pageids = categoryData.query.categorymembers.map((m: any) => m.pageid).join('|');
-
-        if (!pageids) {
-          setImages([]);
-          setIsLoading(false);
-          // Fetch category info for total count even if no images
-           const catInfoParams = new URLSearchParams({
-            action: 'query',
-            prop: 'categoryinfo',
-            titles: campaignCategory,
-            format: 'json',
-            origin: '*',
-          });
-          const catInfoRes = await fetch(`${API_ENDPOINT}?${catInfoParams}`);
-          const catInfoData = await catInfoRes.json();
-          const pages = catInfoData.query.pages;
-          const page = pages[Object.keys(pages)[0]];
-          setTotalCount(page.categoryinfo?.files || 0);
-          return;
+        // Fetch category info for total count
+        const catResponse = await fetch(`${apiUrl}?${catParams.toString()}`);
+        if (!catResponse.ok) throw new Error('Failed to fetch category data');
+        const catData = await catResponse.json();
+        const pages = catData.query.pages;
+        const pageId = Object.keys(pages)[0];
+        if (pages[pageId].categoryinfo) {
+          setTotalImages(pages[pageId].categoryinfo.files);
         }
 
-        // 2. Fetch image info for the page IDs
-        const imageInfoParams = new URLSearchParams({
-          action: 'query',
-          prop: 'imageinfo',
-          iiprop: 'url|user|comment|timestamp',
-          iiurlwidth: '400',
-          pageids: pageids,
-          format: 'json',
-          origin: '*',
-        });
-        const imageInfoRes = await fetch(`${API_ENDPOINT}?${imageInfoParams}`);
-        if (!imageInfoRes.ok) throw new Error('Failed to fetch image info.');
-        const imageInfoData = await imageInfoRes.json();
+        // Fetch latest images
+        const response = await fetch(`${apiUrl}?${params.toString()}`);
+        if (!response.ok) throw new Error('Failed to fetch image data');
+        const data = await response.json();
         
-        const imageData = Object.values(imageInfoData.query.pages).map((p: any) => ({
-          pageid: p.pageid,
-          title: p.title,
-          thumbnailUrl: p.imageinfo[0].thumburl,
-          user: p.imageinfo[0].user,
-          description: p.imageinfo[0].comment,
-          pageUrl: p.imageinfo[0].descriptionurl,
-        }));
-        setImages(imageData as ImageInfo[]);
-
-        // 3. Fetch total category size
-        const catInfoParams = new URLSearchParams({
-          action: 'query',
-          prop: 'categoryinfo',
-          titles: campaignCategory,
-          format: 'json',
-          origin: '*',
+        if (data.error) {
+            throw new Error(data.error.info);
+        }
+        
+        const memberPromises = (data.query.categorymembers || []).map(async (member: any) => {
+            const imageInfoParams = new URLSearchParams({
+                action: 'query',
+                format: 'json',
+                prop: 'imageinfo',
+                titles: member.title,
+                iiprop: 'url|user|comment',
+                iiurlwidth: '400',
+                origin: '*'
+            });
+            const infoRes = await fetch(`${apiUrl}?${imageInfoParams.toString()}`);
+            const infoData = await infoRes.json();
+            const imagePageId = Object.keys(infoData.query.pages)[0];
+            const imageInfo = infoData.query.pages[imagePageId].imageinfo[0];
+            
+            return {
+                title: member.title.replace('File:', '').replace(/\.[^/.]+$/, ""),
+                thumbnailUrl: imageInfo.thumburl,
+                user: imageInfo.user,
+                descriptionUrl: imageInfo.descriptionurl,
+            };
         });
-        const catInfoRes = await fetch(`${API_ENDPOINT}?${catInfoParams}`);
-        if (!catInfoRes.ok) throw new Error('Failed to fetch category info.');
-        const catInfoData = await catInfoRes.json();
-        const pages = catInfoData.query.pages;
-        const page = pages[Object.keys(pages)[0]];
-        setTotalCount(page.categoryinfo?.files || 0);
 
-      } catch (err: any) {
-        setError(err.message || 'An unknown error occurred.');
-        console.error(err);
+        const imageData = await Promise.all(memberPromises);
+        setImages(imageData);
+
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+            setError(`Failed to load images. ${err.message}`);
+        } else {
+            setError('An unknown error occurred.');
+        }
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     };
 
     fetchImages();
-  }, [campaignCategory]);
+  }, [campaignCategory, apiUrl]);
+
+  const isMobileCampaign = campaignCategory.includes('Mobile uploads');
 
   return (
-    <section className="bg-primary/5 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{title}</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">{subtitle}</p>
-          {totalCount !== null && (
-            <div className="mt-8">
-              <span className="text-lg font-medium text-muted-foreground">{t.home.campaign.totalSubmissions}</span>
-              <AnimatedCounter from={0} to={totalCount} />
-            </div>
-          )}
-        </div>
-
-        {isLoading && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
-            {Array.from({ length: 15 }).map((_, i) => (
-              <Card key={i} className="animate-pulse bg-muted/50">
-                <div className="aspect-square w-full rounded-t-lg bg-muted"></div>
-                <div className="p-3">
-                  <div className="h-4 w-3/4 rounded bg-muted"></div>
-                  <div className="h-3 w-1/2 rounded bg-muted mt-2"></div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        )}
-
-        {error && (
-            <div className="text-center p-8 bg-destructive/10 rounded-lg max-w-md mx-auto">
-                <AlertCircle className="mx-auto h-12 w-12 text-destructive" />
-                <h3 className="mt-4 text-lg font-semibold text-destructive">Failed to Load Gallery</h3>
-                <p className="mt-2 text-sm text-destructive-foreground">{error}</p>
-            </div>
-        )}
-
-        {!isLoading && !error && images.length === 0 && (
-            <div className="text-center p-8 bg-card rounded-lg max-w-md mx-auto">
-                <Camera className="mx-auto h-12 w-12 text-muted-foreground" />
-                <h3 className="mt-4 text-lg font-semibold text-foreground">{t.home.campaign.noSubmissions}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{t.home.campaign.noSubmissionsSub}</p>
-            </div>
-        )}
-
-        {!isLoading && !error && images.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
-            {images.map((image) => (
-              <motion.div
-                key={image.pageid}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <a href={image.pageUrl} target="_blank" rel="noopener noreferrer">
-                  <Card className="group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                    <CardContent className="p-0">
-                      <div className="relative aspect-square">
-                        <Image
-                          src={image.thumbnailUrl}
-                          alt={image.title}
-                          fill
-                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-110"
-                          loading="lazy"
-                        />
-                      </div>
-                    </CardContent>
-                    <div className="p-2 md:p-3 bg-card flex-grow">
-                      <h3 className="text-xs font-semibold truncate text-foreground" title={image.title}>{image.title}</h3>
-                      <p className="text-xs text-muted-foreground truncate">by {image.user}</p>
+    <div className="bg-primary/5 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{title}</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
+                    {subtitle}
+                </p>
+                {totalImages !== null && (
+                    <div className="mt-6">
+                        <AnimatedCounter from={0} to={totalImages} />
+                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
+                            {isMobileCampaign ? <Smartphone className="h-4 w-4" /> : <Users className="h-4 w-4" />}
+                            <span>Total Submissions</span>
+                        </div>
                     </div>
-                  </Card>
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        )}
+                )}
+            </div>
 
-        <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <a href={campaignUrl} target="_blank" rel="noopener noreferrer">
-                {t.home.campaign.viewFull} <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-            </Button>
+            {loading && (
+                <div className="flex justify-center items-center h-64">
+                    <Loader2 className="h-12 w-12 text-primary animate-spin" />
+                </div>
+            )}
+
+            {error && (
+                <div className="flex flex-col items-center justify-center h-64 text-destructive bg-destructive/10 rounded-lg">
+                    <AlertTriangle className="h-12 w-12 mb-4" />
+                    <p className="text-lg font-semibold">Error Loading Gallery</p>
+                    <p className="text-sm">{error}</p>
+                </div>
+            )}
+
+            {!loading && !error && (
+                <>
+                    <motion.div 
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+                        variants={galleryVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {images.map((image) => (
+                            <motion.div
+                                key={image.title}
+                                variants={cardVariants}
+                                whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0,0,0,0.1)' }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <Link href={image.descriptionUrl} target="_blank" rel="noopener noreferrer">
+                                    <Card className="overflow-hidden group cursor-pointer h-full flex flex-col bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] transition-all duration-300">
+                                        <CardContent className="p-0 flex-grow">
+                                            <div className="relative aspect-square">
+                                                <Image 
+                                                    src={image.thumbnailUrl} 
+                                                    alt={image.title}
+                                                    fill 
+                                                    className="object-cover"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                                />
+                                            </div>
+                                        </CardContent>
+                                        <div className="p-3 bg-card/80">
+                                            <p className="text-xs font-semibold text-primary truncate" title={image.title}>
+                                                {image.title}
+                                            </p>
+                                            <p className="text-xs text-muted-foreground truncate">by {image.user}</p>
+                                        </div>
+                                    </Card>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                    <div className="text-center mt-12">
+                        <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
+                            <a href={campaignUrl} target="_blank" rel="noopener noreferrer">
+                                Load More <ExternalLink className="ml-2 h-4 w-4" />
+                            </a>
+                        </Button>
+                    </div>
+                </>
+            )}
         </div>
-      </div>
-    </section>
+    </div>
   );
-}
+};
