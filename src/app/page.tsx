@@ -5,6 +5,7 @@ import instagramFeed from '@/lib/data/instagram-feed.json';
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
+const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'));
 const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
@@ -17,6 +18,20 @@ export default function Home() {
       <HeroCarousel />
       <InfoSections />
       <PrizesSection />
+
+      <WSCampaignGallery 
+        title="Live from the Campaign"
+        subtitle="Latest images submitted by participants across India."
+        campaignCategory="Category:Uploaded_via_Campaign:wsc-in-2025"
+        campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
+      />
+
+      <WSCampaignGallery 
+        title="Live from Mobile"
+        subtitle="Capturing science on the go with mobile uploads."
+        campaignCategory="Category:Uploaded_via_Campaign:wsc-in-m"
+        campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
+      />
       
       <InstagramGallery 
         title="Featured Images"
