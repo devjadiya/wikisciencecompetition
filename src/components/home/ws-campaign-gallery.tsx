@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Loader2, AlertTriangle, ExternalLink, Users, Smartphone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface WSCampaignGalleryProps {
   title?: string;
@@ -23,6 +24,21 @@ interface ImageInfo {
   user: string;
   descriptionUrl: string;
 }
+
+const galleryVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const WSCampaignGallery = ({
   title = 'Live Campaign Gallery',
@@ -158,31 +174,43 @@ const WSCampaignGallery = ({
 
             {!loading && !error && (
                 <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                    <motion.div 
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+                        variants={galleryVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
                         {images.map((image) => (
-                            <Link key={image.title} href={image.descriptionUrl} target="_blank" rel="noopener noreferrer">
-                                <Card className="overflow-hidden group transition-shadow hover:shadow-xl cursor-pointer h-full flex flex-col">
-                                    <CardContent className="p-0 flex-grow">
-                                        <div className="relative aspect-square">
-                                            <Image 
-                                                src={image.thumbnailUrl} 
-                                                alt={image.title}
-                                                fill 
-                                                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                                            />
+                            <motion.div
+                                key={image.title}
+                                variants={cardVariants}
+                                whileHover={{ scale: 1.05, y: -5, boxShadow: '0px 10px 20px rgba(0,0,0,0.1)' }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <Link href={image.descriptionUrl} target="_blank" rel="noopener noreferrer">
+                                    <Card className="overflow-hidden group cursor-pointer h-full flex flex-col bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] transition-all duration-300">
+                                        <CardContent className="p-0 flex-grow">
+                                            <div className="relative aspect-square">
+                                                <Image 
+                                                    src={image.thumbnailUrl} 
+                                                    alt={image.title}
+                                                    fill 
+                                                    className="object-cover"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                                />
+                                            </div>
+                                        </CardContent>
+                                        <div className="p-3 bg-card/80">
+                                            <p className="text-xs font-semibold text-primary truncate" title={image.title}>
+                                                {image.title}
+                                            </p>
+                                            <p className="text-xs text-muted-foreground truncate">by {image.user}</p>
                                         </div>
-                                    </CardContent>
-                                    <div className="p-3 bg-card">
-                                        <p className="text-xs font-semibold text-primary truncate" title={image.title}>
-                                            {image.title}
-                                        </p>
-                                        <p className="text-xs text-muted-foreground truncate">by {image.user}</p>
-                                    </div>
-                                </Card>
-                            </Link>
+                                    </Card>
+                                </Link>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                     <div className="text-center mt-12">
                         <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
                             <a href={redirectUrl} target="_blank" rel="noopener noreferrer">
