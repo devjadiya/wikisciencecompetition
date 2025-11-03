@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/language-context';
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
-const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery').then(mod => mod.default), { ssr: false });
+const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery').then(mod => mod.WSCampaignGallery), { ssr: false });
 const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });

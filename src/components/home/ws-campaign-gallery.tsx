@@ -10,19 +10,19 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import AnimatedCounter from '@/components/ui/animated-counter';
 
+interface ImageInfo {
+  title: string;
+  thumbnailUrl: string;
+  user: string;
+  descriptionUrl: string;
+}
+
 interface WSCampaignGalleryProps {
   title?: string;
   subtitle?: string;
   campaignCategory: string;
   apiUrl?: string;
   campaignUrl: string;
-}
-
-interface ImageInfo {
-  title: string;
-  thumbnailUrl: string;
-  user: string;
-  descriptionUrl: string;
 }
 
 const galleryVariants = {
@@ -40,7 +40,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const WSCampaignGallery = ({
+export const WSCampaignGallery = ({
   title = 'Live Campaign Gallery',
   subtitle = 'See the latest submissions from participants across India.',
   campaignCategory,
