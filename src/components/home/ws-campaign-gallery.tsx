@@ -131,14 +131,14 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">{subtitle}</p>
           {totalCount !== null && (
             <div className="mt-8">
-              <span className="text-lg font-medium text-muted-foreground">Total Submissions in this Category</span>
+              <span className="text-lg font-medium text-muted-foreground">Total Submissions</span>
               <AnimatedCounter from={0} to={totalCount} />
             </div>
           )}
         </div>
 
         {isLoading && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
             {Array.from({ length: 15 }).map((_, i) => (
               <Card key={i} className="animate-pulse bg-muted/50">
                 <div className="aspect-square w-full rounded-t-lg bg-muted"></div>
@@ -168,7 +168,7 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
         )}
 
         {!isLoading && !error && images.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
             {images.map((image) => (
               <motion.div
                 key={image.pageid}
@@ -184,15 +184,15 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
                           src={image.thumbnailUrl}
                           alt={image.title}
                           fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                          sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                           loading="lazy"
                         />
                       </div>
                     </CardContent>
-                    <div className="p-3 bg-card flex-grow">
+                    <div className="p-2 md:p-3 bg-card flex-grow">
                       <h3 className="text-xs font-semibold truncate text-foreground" title={image.title}>{image.title}</h3>
-                      <p className="text-xs text-muted-foreground">by {image.user}</p>
+                      <p className="text-xs text-muted-foreground truncate">by {image.user}</p>
                     </div>
                   </Card>
                 </a>
