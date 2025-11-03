@@ -16,10 +16,10 @@ export function VortexCta() {
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
       >
         <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
-          Capture the Unseen
+          {t.home.vortex.title}
         </h2>
         <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
-          Unveil the beauty of science through your lens. Join a global community celebrating discovery.
+          {t.home.vortex.subtitle}
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
@@ -29,7 +29,7 @@ export function VortexCta() {
           </Button>
           <Button asChild variant="ghost" className="text-white">
             <Link href="/resources">
-              View Past Winners
+              {t.home.vortex.cta}
             </Link>
           </Button>
         </div>

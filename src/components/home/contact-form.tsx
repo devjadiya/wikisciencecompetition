@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from '@/app/contact/actions';
 import { useState } from 'react';
 import { gtagEvent } from '@/lib/gtm';
+import { useLanguage } from '@/context/language-context';
 
 const subjects = [
     'General Inquiry about the Competition',
@@ -167,6 +168,7 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -230,9 +232,9 @@ export default function ContactForm() {
     <section className="bg-primary/5 py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">Get in Touch</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{t.home.contact.title}</h2>
             <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-                Have questions or feedback? We&apos;d love to hear from you. We promise a quick reply!
+                {t.home.contact.subtitle}
             </p>
         </div>
         <div

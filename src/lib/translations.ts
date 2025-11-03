@@ -542,112 +542,15 @@ export const translations = {
       ],
     },
     home: {
-      dashboard: {
-        title: "Live Campaign Dashboard",
-        subtitle: "Track the real-time impact of our community's contributions. The numbers below update live from the Outreach Dashboard.",
-        stats: {
-            uploads: "Commons Uploads",
-            editors: "Active Editors",
-            edits: "Total Edits"
-        },
-        ctaLine1: "Want to be a part of these numbers?",
-        ctaLinkText: "Create an account",
-        ctaLine2: "on the Outreach Dashboard and join the campaign!",
-        ctaButton: "Join the Campaign"
-      },
-      autoscroll: {
-        slides: [
-          {
-            id: 1,
-            title: "Explore Microscopic Worlds",
-            description:
-              "From cellular structures to crystal formations, showcase the unseen beauty.",
-          },
-          {
-            id: 2,
-            title: "Capture Celestial Wonders",
-            description:
-              "The cosmos is your canvas. Photograph galaxies, nebulae, and planetary events.",
-          },
-          {
-            id: 3,
-            title: "Visualize Complex Data",
-            description:
-              "Transform raw data into compelling scientific visualizations and infographics.",
-          },
-          {
-            id: 4,
-            title: "Document Human Ingenuity",
-            description:
-              "Capture scientists at work, innovative lab equipment, and moments of discovery.",
-          },
-        ],
-      },
-      cta: {
-        title: "Get Involved",
-        subtitle:
-          "Be a part of India's first national Wiki Science Competition. We're looking for passionate individuals and organizations to join us.",
-        campus: {
-          title: "Call for Campus Ambassadors",
-          description:
-            "Promote the campaign in your institution, share guidelines, and help organize awareness activities.",
-          cta: "Apply Now",
-        },
-        affiliates: {
-          title: "Call for Wikimedia Affiliates",
-          description:
-            "Partner with us to promote the campaign, organize local outreach, and help bring impactful scientific contributions from your region.",
-          cta: "Partner With Us",
-        },
+      hero: {
+        title: "The Competition is Live!",
+        upload: "Upload Your Photos Now!",
+        uploadMobile: "Upload Mobile Photos",
       },
       info: {
-        title: "Everything You Need to Know",
-        subtitle:
-          "From submission guidelines to jury details, get all the information you need to be a part of this exciting event.",
-        cta: "Find out more",
-        sections: [
-          {
-            icon: "Info",
-            title: "About The Competition",
-            description:
-              "An annual international science photography competition, bringing together science enthusiasts to share their vision of the world of research.",
-            link: "/about",
-          },
-          {
-            icon: "Target",
-            title: "How to Participate",
-            description:
-              "Participation is free and open to everyone. Submit your best science-related images across various categories during the submission period.",
-            link: "/competition",
-          },
-          {
-            icon: "Award",
-            title: "Prizes & Recognition",
-            description:
-              "Winners receive national recognition, certificates, and prizes. The best images also advance to the international final.",
-            link: "/competition",
-          },
-          {
-            icon: "Users",
-            title: "Jury & Criteria",
-            description:
-              "Our expert jury of scientists and photographers will judge entries based on scientific value, originality, and aesthetic quality.",
-            link: "/jury",
-          },
-          {
-            icon: "History",
-            title: "Past Winners",
-            description:
-              "Explore a gallery of previous years' winning photographs and get inspired by the incredible talent showcased.",
-            link: "/resources",
-          },
-        ],
-        finalCard: {
-          title: "Ready to Participate?",
-          subtitle:
-            "The stage is set. Your lens is the key. Show us the world through your scientific eyes.",
-          cta: "Submit Your Work",
-        },
+        title: "Clicking Today, Creating Tomorrow.",
+        subtitle: "Explore the World of",
+        words: ["Science.", "Discovery.", "Knowledge.", "Innovation."],
       },
       prizes: {
         title: "Prizes & Recognition",
@@ -674,12 +577,53 @@ export const translations = {
           },
         ],
       },
-      jury: {
-        title: "Meet the Esteemed Jury",
-        description:
-          "Our panel features a diverse group of renowned scientists, professional photographers, and science communicators from across India. They bring a wealth of experience to ensure a fair and insightful evaluation process.",
-        cta: "View Full Panel",
+      campaign: {
+        title: "Live from the Campaign",
+        subtitle: "Latest images submitted by participants across India.",
+        totalSubmissions: "Total Submissions",
+        noSubmissions: "No Submissions Yet",
+        noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
+        viewFull: "View Full Campaign"
       },
+      mobileCampaign: {
+        title: "Live from Mobile",
+        subtitle: "Capturing science on the go with mobile uploads.",
+      },
+      dashboard: {
+        title: "Live Campaign Dashboard",
+        subtitle: "Track the real-time impact of our community's contributions.",
+        ctaLine1: "Want to be a part of these numbers?",
+        ctaLinkText: "Create an account",
+        ctaLine2: "on the Outreach Dashboard and join the campaign!",
+        ctaButton: "Join the Campaign"
+      },
+      instagram: {
+          images: {
+              title: "Featured Images",
+              subtitle: "A curated collection of stunning scientific photography from our community.",
+          },
+          reels: {
+              title: "Latest Reels",
+              subtitle: "Watch short, engaging videos showcasing science in action.",
+          },
+          videos: {
+              title: "Community Videos",
+              subtitle: "Explore in-depth video content from our talented contributors.",
+          }
+      },
+      contact: {
+          title: "Get in Touch",
+          subtitle: "Have questions or feedback? We'd love to hear from you. We promise a quick reply!",
+      },
+      testimonials: {
+        title: "Voices of Our Community",
+        subtitle: "Hear what researchers, photographers, and enthusiasts are saying about the Wiki Science Competition."
+      },
+      vortex: {
+        title: "Capture the Unseen",
+        subtitle: "Unveil the beauty of science through your lens. Join a global community celebrating discovery.",
+        cta: "View Past Winners"
+      }
     },
   },
   hi: {
@@ -781,11 +725,6 @@ export const translations = {
               "विकिमीडिया समुदायों, विश्वविद्यालयों, अनुसंधान संस्थानों और संगठनों के बीच सहयोग को मजबूत करें।",
           },
         ],
-      },
-      supportingOrg: {
-        title: "सहायक संगठन",
-        p1: "विकी क्लब एसएटीआई (विदिशा, मध्य प्रदेश) को भारत में विकी विज्ञान प्रतियोगिता 2025 के पहले राष्ट्रीय संस्करण के लिए सहायक संगठन के रूप में स्वीकार किया गया है। क्लब छात्रों और युवा पेशेवरों को विकिमीडिया आंदोलन में शामिल करने, खुले ज्ञान, तकनीकी नवाचार और समुदाय-आधारित पहलों में योगदान करने में सबसे आगे रहा है।",
-        p2: "कोर आयोजन टीम के कई सदस्य विकी क्लब एसएटीआई से जुड़े हुए हैं, और उनकी निरंतर भागीदारी मुक्त ज्ञान और वैज्ञानिक जुड़ाव को आगे बढ़ाने के लिए क्लब की प्रतिबद्धता को दर्शाती है। जबकि समर्थन गैर-वित्तीय है, विकी क्लब एसएटीआई की संगठनात्मक क्षमता, अनुभव और सामुदायिक नेटवर्क राष्ट्रीय स्तर पर इस अभियान को सक्षम करने में एक आवश्यक भूमिका निभाते हैं।",
       },
     },
     campusAmbassadors: {
@@ -949,27 +888,40 @@ export const translations = {
           description:
             "ऑप्टिकल, इलेक्ट्रॉन, और स्कैनिंग जांच माइक्रोस्कोपी छवियां।",
         },
-        nonPhotographic: {
-          name: "गैर-फोटोग्राफिक मीडिया",
-          description: "ऑडियो और वीडियो फाइलें, कंप्यूटर-जनित इमेजरी, आदि।",
-        },
-        imageSets: {
-          name: "छवि सेट",
-          description:
-            "विषयगत रूप से जुड़ी छवियां (10 तक) जिन्हें एक सेट के रूप में देखा जा सकता है।",
-        },
-        wildlife: {
-          name: "वन्यजीव और प्रकृति",
-          description: "जीव अपने प्राकृतिक आवास में, मैक्रो फोटोग्राफी सहित।",
-        },
         astronomy: {
           name: "खगोल विज्ञान",
           description:
             "तारों, खगोलीय घटनाओं, और उन्हें पकड़ने के लिए उपयोग किए जाने वाले उपकरणों की छवियां।",
         },
-        general: {
-          name: "सामान्य श्रेणी",
-          description: "पुरातत्व से लेकर ज्वालामुखी विज्ञान तक बाकी सब कुछ।",
+        special: {
+          name: "विशेष श्रेणी",
+          description:
+            "अद्वितीय और असाधारण वैज्ञानिक सामग्री जो अन्य श्रेणियों में फिट नहीं होती है।",
+        },
+        everyday: {
+          name: "रोजमर्रा की जिंदगी में विज्ञान",
+          description:
+            "दैनिक जीवन, व्यावहारिक अनुप्रयोगों और प्रयोगों में विज्ञान का प्रदर्शन करने वाली छवियां।",
+        },
+        equipment: {
+          name: "विज्ञान में उपकरण",
+          description:
+            "वैज्ञानिक उपकरण, प्रयोगशाला सेटअप और प्रयोगात्मक उपकरण।",
+        },
+        chemistry: {
+          name: "रसायन विज्ञान में विज्ञान",
+          description:
+            "रासायनिक प्रतिक्रियाएं, प्रयोगशाला रसायन विज्ञान और आणविक विज्ञान।",
+        },
+        physics: {
+          name: "भौतिकी में विज्ञान",
+          description:
+            "भौतिकी में भौतिक प्रयोग, प्रदर्शन और अवधारणाएं।",
+        },
+        mobile: {
+          name: "मोबाइल श्रेणी",
+          description:
+            "मोबाइल उपकरणों का उपयोग करने वाले छात्रों और योगदानकर्ताओं के लिए; उच्च-स्तरीय उपकरणों के बिना सुलभ विज्ञान और प्रकृति के चित्र।",
         },
       },
       readyToParticipate: {
@@ -978,7 +930,6 @@ export const translations = {
           "मंच तैयार है। आपका लेंस कुंजी है। हमें अपनी वैज्ञानिक आंखों से दुनिया दिखाएं।",
         cta: "अपना काम जमा करें",
       },
-      supportedBy: "द्वारा समर्थित:",
     },
     contact: {
       title: "हमसे संपर्क करें",
@@ -1197,148 +1148,88 @@ export const translations = {
       ],
     },
     home: {
+      hero: {
+        title: "प्रतियोगिता लाइव है!",
+        upload: "अपनी तस्वीरें अभी अपलोड करें!",
+        uploadMobile: "मोबाइल तस्वीरें अपलोड करें",
+      },
+      info: {
+        title: "आज क्लिक करें, कल बनाएं।",
+        subtitle: "की दुनिया का अन्वेषण करें",
+        words: ["विज्ञान।", "खोज।", "ज्ञान।", "नवाचार।"],
+      },
+      prizes: {
+        title: "पुरस्कार और मान्यता",
+        subtitle: "आपके अभूतपूर्व दृश्यों का जश्न मनाया जाना चाहिए। जानें कि आप क्या जीत सकते हैं।",
+        prizes: [
+          {
+            icon: "Award",
+            title: "राष्ट्रीय मान्यता",
+            description: "विजेताओं को हमारे आधिकारिक प्लेटफार्मों पर मनाया जाएगा और राष्ट्रीय मीडिया कवरेज प्राप्त होगा।",
+          },
+          {
+            icon: "Camera",
+            title: "शीर्ष स्तरीय उपकरण",
+            description: "शीर्ष विजेताओं के लिए उनके जुनून में सहायता के लिए रोमांचक फोटोग्राफी गियर और सहायक उपकरण।",
+          },
+          {
+            icon: "BookOpen",
+            title: "प्रकाशन फ़ीचर",
+            description: "प्रतिष्ठित विज्ञान पत्रिकाओं और प्रकाशनों में अपने काम को चित्रित करवाएं।",
+          },
+        ],
+      },
+      campaign: {
+        title: "अभियान से लाइव",
+        subtitle: "पूरे भारत में प्रतिभागियों द्वारा प्रस्तुत नवीनतम छवियां।",
+        totalSubmissions: "कुल प्रस्तुतियाँ",
+        noSubmissions: "अभी तक कोई सबमिशन नहीं",
+        noSubmissionsSub: "योगदान करने वाले पहले व्यक्ति बनें! इस अभियान की छवियां यहां लाइव दिखाई देंगी।",
+        viewFull: "पूर्ण अभियान देखें"
+      },
+      mobileCampaign: {
+        title: "मोबाइल से लाइव",
+        subtitle: "मोबाइल अपलोड के साथ चलते-फिरते विज्ञान को कैप्चर करना।",
+      },
       dashboard: {
         title: "लाइव अभियान डैशबोर्ड",
-        subtitle: "हमारे समुदाय के योगदान के वास्तविक समय के प्रभाव को ट्रैक करें। नीचे दिए गए नंबर आउटरीच डैशबोर्ड से लाइव अपडेट होते हैं।",
-        stats: {
-            uploads: "कॉमन्स अपलोड",
-            editors: "सक्रिय संपादक",
-            edits: "कुल संपादन"
-        },
+        subtitle: "हमारे समुदाय के योगदान के वास्तविक समय के प्रभाव को ट्रैक करें।",
         ctaLine1: "इन नंबरों का हिस्सा बनना चाहते हैं?",
         ctaLinkText: "एक खाता बनाएँ",
         ctaLine2: "आउटरीच डैशबोर्ड पर और अभियान में शामिल हों!",
         ctaButton: "अभियान में शामिल हों"
       },
-      autoscroll: {
-        slides: [
-          {
-            id: 1,
-            title: "सूक्ष्म दुनिया का अन्वेषण करें",
-            description:
-              "कोशिकीय संरचनाओं से लेकर क्रिस्टल संरचनाओं तक, अनदेखी सुंदरता का प्रदर्शन करें।",
+      instagram: {
+          images: {
+              title: "विशेष रुप से प्रदर्शित छवियाँ",
+              subtitle: "हमारे समुदाय से आश्चर्यजनक वैज्ञानिक फोटोग्राफी का एक क्यूरेटेड संग्रह।",
           },
-          {
-            id: 2,
-            title: "खगोलीय चमत्कारों को कैद करें",
-            description:
-              "ब्रह्मांड आपका कैनवास है। आकाशगंगाओं, नीहारिकाओं और ग्रहों की घटनाओं की तस्वीर लें।",
+          reels: {
+              title: "नवीनतम रील्स",
+              subtitle: "विज्ञान को क्रिया में प्रदर्शित करने वाले छोटे, आकर्षक वीडियो देखें।",
           },
-          {
-            id: 3,
-            title: "जटिल डेटा की कल्पना करें",
-            description:
-              "कच्चे डेटा को सम्मोहक वैज्ञानिक विज़ुअलाइज़ेशन और इन्फOGRAPHICS में बदलें।",
-          },
-          {
-            id: 4,
-            title: "मानव सरलता का दस्तावेजीकरण करें",
-            description:
-              "काम पर वैज्ञानिकों, नवीन प्रयोगशाला उपकरणों और खोज के क्षणों को कैद करें।",
-          },
-        ],
+          videos: {
+              title: "सामुदायिक वीडियो",
+              subtitle: "हमारे प्रतिभाशाली योगदानकर्ताओं से गहन वीडियो सामग्री का अन्वेषण करें।",
+          }
       },
-      cta: {
-        title: "शामिल हों",
-        subtitle:
-          "भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता का हिस्सा बनें। हम भावुक व्यक्तियों और संगठनों की तलाश में हैं जो हमसे जुड़ें।",
-        campus: {
-          title: "कैंपस एंबेसडर के लिए कॉल",
-          description:
-            "अपने संस्थान में अभियान को बढ़ावा दें, दिशानिर्देश साझा करें, और जागरूकता गतिविधियों को आयोजित करने में मदद करें।",
-          deadline: "अंतिम तिथि: 31 अगस्त 2025",
-          cta: "अभी आवेदन करें",
-        },
-        affiliates: {
-          title: "विकिमीडिया सहयोगियों के लिए कॉल",
-          description:
-            "अभियान को बढ़ावा देने, स्थानीय आउटरीच आयोजित करने और अपने क्षेत्र से प्रभावशाली वैज्ञानिक योगदान लाने में मदद करने के लिए हमारे साथ भागीदार बनें।",
-          deadline: "अंतिम तिथि: 31 अगस्त 2025",
-          cta: "हमारे साथ भागीदार बनें",
-        },
+      contact: {
+          title: "संपर्क में रहें",
+          subtitle: "प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!",
       },
-      info: {
-        title: "आपको जो कुछ भी जानना चाहिए",
-        subtitle:
-          "प्रस्तुति दिशानिर्देशों से लेकर जूरी विवरण तक, इस रोमांचक कार्यक्रम का हिस्सा बनने के लिए आवश्यक सभी जानकारी प्राप्त करें।",
-        cta: "और अधिक जानकारी प्राप्त करें",
-        sections: [
-          {
-            icon: "Info",
-            title: "प्रतियोगिता के बारे में",
-            description:
-              "एक वार्षिक अंतर्राष्ट्रीय विज्ञान फोटोग्राफी प्रतियोगिता, जो विज्ञान के प्रति उत्साही लोगों को अनुसंधान की दुनिया की अपनी दृष्टि साझा करने के लिए एक साथ लाती है।",
-            link: "/about",
-          },
-          {
-            icon: "Target",
-            title: "कैसे भाग लें",
-            description:
-              "भागीदारी मुफ्त है और सभी के लिए खुली है। प्रस्तुति अवधि के दौरान विभिन्न श्रेणियों में अपनी सर्वश्रेष्ठ विज्ञान-संबंधी छवियां जमा करें।",
-            link: "/competition",
-          },
-          {
-            icon: "Award",
-            title: "पुरस्कार और मान्यता",
-            description:
-              "विजेताओं को राष्ट्रीय मान्यता, प्रमाण पत्र और पुरस्कार मिलते हैं। सर्वश्रेष्ठ छवियां अंतर्राष्ट्रीय फाइनल में भी आगे बढ़ती हैं।",
-            link: "/competition",
-          },
-          {
-            icon: "Users",
-            title: "जूरी और मानदंड",
-            description:
-              "वैज्ञानिकों और फोटोग्राफरों की हमारी विशेषज्ञ जूरी वैज्ञानिक मूल्य, मौलिकता और सौंदर्य गुणवत्ता के आधार पर प्रविष्टियों का न्याय करेगी।",
-            link: "/jury",
-          },
-          {
-            icon: "History",
-            title: "पिछले विजेता",
-            description:
-              "पिछले वर्षों की विजेता तस्वीरों की एक गैलरी देखें और प्रदर्शित अविश्वसनीय प्रतिभा से प्रेरित हों।",
-            link: "/resources",
-          },
-        ],
-        finalCard: {
-          title: "भाग लेने के लिए तैयार हैं?",
-          subtitle:
-            "मंच तैयार है। आपका लेंस कुंजी है। हमें अपनी वैज्ञानिक आंखों से दुनिया दिखाएं।",
-          cta: "अपना काम जमा करें",
-        },
+      testimonials: {
+        title: "हमारे समुदाय की आवाज़ें",
+        subtitle: "सुनें कि शोधकर्ता, फोटोग्राफर और उत्साही विकी विज्ञान प्रतियोगिता के बारे में क्या कह रहे हैं।"
       },
-      prizes: {
-        title: "पुरस्कार और मान्यता",
-        subtitle:
-          "आपके अभूतपूर्व दृश्यों का जश्न मनाया जाना चाहिए। जानें कि आप क्या जीत सकते हैं।",
-        prizes: [
-          {
-            icon: "Award",
-            title: "राष्ट्रीय मान्यता",
-            description:
-              "विजेताओं को हमारे आधिकारिक प्लेटफार्मों पर मनाया जाएगा और राष्ट्रीय मीडिया कवरेज प्राप्त होगा।",
-          },
-          {
-            icon: "Camera",
-            title: "शीर्ष स्तरीय उपकरण",
-            description:
-              "शीर्ष विजेताओं के लिए उनके जुनून में सहायता के लिए रोमांचक फोटोग्राफी गियर और सहायक उपकरण।",
-          },
-          {
-            icon: "BookOpen",
-            title: "प्रकाशन फ़ीचर",
-            description:
-              "प्रतिष्ठित विज्ञान पत्रिकाओं और प्रकाशनों में अपने काम को चित्रित करवाएं।",
-          },
-        ],
-      },
-      jury: {
-        title: "प्रतिष्ठित जूरी से मिलें",
-        description:
-          "हमारे पैनल में पूरे भारत से प्रसिद्ध वैज्ञानिकों, पेशेवर फोटोग्राफरों और विज्ञान संचारकों का एक विविध समूह है। वे एक निष्पक्ष और व्यावहारिक मूल्यांकन प्रक्रिया सुनिश्चित करने के लिए अनुभव का खजाना लाते हैं।",
-        cta: "पूर्ण पैनल देखें",
-      },
+      vortex: {
+        title: "अनदेखे को कैद करें",
+        subtitle: "अपने लेंस के माध्यम से विज्ञान की सुंदरता को उजागर करें। खोज का जश्न मनाने वाले एक वैश्विक समुदाय में शामिल हों।",
+        cta: "पिछले विजेता देखें"
+      }
     },
   },
 };
 
 export type Translations = typeof translations;
+
+export type TranslationType = (typeof translations)['en'];

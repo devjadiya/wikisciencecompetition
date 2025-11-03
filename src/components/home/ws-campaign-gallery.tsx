@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Camera, AlertCircle, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import AnimatedCounter from '../ui/animated-counter';
+import { useLanguage } from '@/context/language-context';
 
 interface ImageInfo {
   pageid: number;
@@ -30,6 +31,7 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
   const [totalCount, setTotalCount] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -131,14 +133,14 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">{subtitle}</p>
           {totalCount !== null && (
             <div className="mt-8">
-              <span className="text-lg font-medium text-muted-foreground">Total Submissions</span>
+              <span className="text-lg font-medium text-muted-foreground">{t.home.campaign.totalSubmissions}</span>
               <AnimatedCounter from={0} to={totalCount} />
             </div>
           )}
         </div>
 
         {isLoading && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
             {Array.from({ length: 15 }).map((_, i) => (
               <Card key={i} className="animate-pulse bg-muted/50">
                 <div className="aspect-square w-full rounded-t-lg bg-muted"></div>
@@ -162,8 +164,8 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
         {!isLoading && !error && images.length === 0 && (
             <div className="text-center p-8 bg-card rounded-lg max-w-md mx-auto">
                 <Camera className="mx-auto h-12 w-12 text-muted-foreground" />
-                <h3 className="mt-4 text-lg font-semibold text-foreground">No Submissions Yet</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Be the first to contribute! Images from this campaign will appear here live.</p>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t.home.campaign.noSubmissions}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t.home.campaign.noSubmissionsSub}</p>
             </div>
         )}
 
@@ -204,7 +206,7 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
         <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
                 <a href={campaignUrl} target="_blank" rel="noopener noreferrer">
-                View Full Campaign <ExternalLink className="ml-2 h-4 w-4" />
+                {t.home.campaign.viewFull} <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
             </Button>
         </div>

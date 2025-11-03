@@ -3,6 +3,7 @@
 
 import React from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { useLanguage } from "@/context/language-context";
 
 const testimonials = [
   {
@@ -39,12 +40,13 @@ const testimonials = [
 
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage();
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-primary/5 items-center justify-center relative overflow-hidden">
         <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">Voices of Our Community</h2>
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{t.home.testimonials.title}</h2>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
-            Hear what researchers, photographers, and enthusiasts are saying about the Wiki Science Competition.
+            {t.home.testimonials.subtitle}
           </p>
         </div>
       <InfiniteMovingCards

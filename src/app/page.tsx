@@ -1,6 +1,8 @@
 
+'use client';
 import dynamic from 'next/dynamic';
 import instagramFeed from '@/lib/data/instagram-feed.json';
+import { useLanguage } from '@/context/language-context';
 
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
@@ -13,6 +15,7 @@ const TestimonialsSection = dynamic(() => import('@/components/home/testimonials
 const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
 
 export default function Home() {
+  const { t } = useLanguage();
   return (
     <div className="flex flex-col">
       <HeroCarousel />
@@ -20,15 +23,15 @@ export default function Home() {
       <PrizesSection />
 
       <WSCampaignGallery 
-        title="Live from the Campaign"
-        subtitle="Latest images submitted by participants across India."
+        title={t.home.campaign.title}
+        subtitle={t.home.campaign.subtitle}
         campaignCategory="Category:Uploaded_via_Campaign:wsc-in-2025"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
       />
 
       <WSCampaignGallery 
-        title="Live from Mobile"
-        subtitle="Capturing science on the go with mobile uploads."
+        title={t.home.mobileCampaign.title}
+        subtitle={t.home.mobileCampaign.subtitle}
         campaignCategory="Category:Uploaded_via_Campaign:wsc-in-m"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
       />
@@ -36,22 +39,22 @@ export default function Home() {
       <OutreachDashboard />
       
       <InstagramGallery 
-        title="Featured Images"
-        subtitle="A curated collection of stunning scientific photography from our community."
+        title={t.home.instagram.images.title}
+        subtitle={t.home.instagram.images.subtitle}
         media={instagramFeed.images}
         mediaType="images"
       />
       
       <InstagramGallery 
-        title="Latest Reels"
-        subtitle="Watch short, engaging videos showcasing science in action."
+        title={t.home.instagram.reels.title}
+        subtitle={t.home.instagram.reels.subtitle}
         media={instagramFeed.reels}
         mediaType="reels"
       />
 
       <InstagramGallery 
-        title="Community Videos"
-        subtitle="Explore in-depth video content from our talented contributors."
+        title={t.home.instagram.videos.title}
+        subtitle={t.home.instagram.videos.subtitle}
         media={instagramFeed.videos}
         mediaType="videos"
       />

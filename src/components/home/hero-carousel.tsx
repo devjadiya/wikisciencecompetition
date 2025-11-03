@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, UploadCloud, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/language-context';
 
 const slides = [
   {
@@ -77,6 +78,7 @@ const variants = {
 
 export default function HeroCarousel() {
   const [[page, direction], setPage] = useState([0, 0]);
+  const { t } = useLanguage();
 
   const paginate = (newDirection: number) => {
     setPage([(page + newDirection + slides.length) % slides.length, newDirection]);
@@ -129,7 +131,7 @@ export default function HeroCarousel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
         >
-            The Competition is Live!
+            {t.home.hero.title}
         </motion.h1>
         <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -139,12 +141,12 @@ export default function HeroCarousel() {
         >
             <Button asChild size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
                 <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025" target="_blank" rel="noopener noreferrer">
-                    <UploadCloud className="mr-3 h-6 w-6" /> Upload Your Photos Now!
+                    <UploadCloud className="mr-3 h-6 w-6" /> {t.home.hero.upload}
                 </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
                 <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m" target="_blank" rel="noopener noreferrer">
-                    <Smartphone className="mr-3 h-6 w-6" /> Upload Mobile Photos
+                    <Smartphone className="mr-3 h-6 w-6" /> {t.home.hero.uploadMobile}
                 </a>
             </Button>
         </motion.div>
