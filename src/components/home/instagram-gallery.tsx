@@ -2,12 +2,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Instagram } from 'lucide-react';
 import feedData from '@/lib/data/instagram-feed.json';
+import { InstagramPost } from './instagram-post';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,15 +14,6 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.1,
     },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring', stiffness: 100 },
   },
 };
 
@@ -58,28 +47,7 @@ export default function InstagramGallery() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {feedData.map((post) => (
-            <motion.div key={post.id} variants={itemVariants}>
-              <Link href={post.link} target="_blank" rel="noopener noreferrer">
-                <Card className="group overflow-hidden rounded-xl border-2 border-transparent hover:border-accent transition-all duration-300 shadow-md hover:shadow-2xl h-full flex flex-col">
-                  <CardContent className="p-0 relative aspect-square">
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.caption}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                      <p className="text-sm line-clamp-2">{post.caption}</p>
-                    </div>
-                     <div className="absolute top-2 right-2 p-2 bg-background/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 scale-50 group-hover:scale-100">
-                        <Instagram className="h-5 w-5 text-primary" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            </motion.div>
+            <InstagramPost key={post.id} url={post.url} />
           ))}
         </motion.div>
       </div>
