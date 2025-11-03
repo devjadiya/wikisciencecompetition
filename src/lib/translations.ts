@@ -1,3 +1,4 @@
+
 export const languages = [
   { code: "en", name: "English" },
   { code: "hi", name: "हिन्दी" },
@@ -30,6 +31,7 @@ export const translations = {
     organizerLinks: [
       { name: "Meet the Team", href: "/organizers" },
       { name: "Campus Ambassadors", href: "/campus-ambassadors" },
+      { name: "Wikimedia Affiliates", href: "/affiliates" },
     ],
     moreDropdownLinks: [
       { name: "Jury", href: "/jury" },
@@ -686,12 +688,12 @@ export const translations = {
       { name: "परिचय", href: "/about" },
       { name: "प्रतियोगिता", href: "/competition" },
       { name: "संसाधन", href: "/resources" },
-      { name: "प्रायोजक", href: "/sponsors" },
+      // { name: 'प्रायोजक', href: '/sponsors' },
     ],
     organizerLinks: [
       { name: "टीम से मिलें", href: "/organizers" },
       { name: "कैंपस एंबेसडर", href: "/campus-ambassadors" },
-      { name: "टीम के लिए कॉल", href: "/organizers/call" },
+      { name: "विकिमीडिया एफिलिएट्स", href: "/affiliates" },
     ],
     moreDropdownLinks: [
       { name: "जूरी", href: "/jury" },
