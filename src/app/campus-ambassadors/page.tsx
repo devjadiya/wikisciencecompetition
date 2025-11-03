@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/language-context';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, ExternalLink } from 'lucide-react';
+import { Check, XCircle } from 'lucide-react';
 import { useMemo } from 'react';
 
 export default function CampusAmbassadorsPage() {
@@ -54,21 +54,20 @@ export default function CampusAmbassadorsPage() {
                 </ul>
             </div>
             <aside>
-                <Card className="sticky top-24 bg-primary/5 shadow-lg border dark:border-white/[0.1]">
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl md:text-2xl text-primary">{sidebar.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground mb-4 text-sm md:text-base">
-                     {sidebar.description}
-                    </p>
-                    <p className="font-bold text-destructive mb-6">{sidebar.deadline}</p>
-                    <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                    <a href={cta.href} target="_blank" rel="noopener noreferrer">
-                        {sidebar.cta} <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                    </Button>
-                </CardContent>
+                <Card className="sticky top-24 bg-destructive/5 shadow-lg border-destructive/20 dark:border-destructive/30">
+                    <CardHeader>
+                        <CardTitle className="font-headline text-xl md:text-2xl text-destructive flex items-center gap-2">
+                            <XCircle /> Applications Closed
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground mb-4 text-sm md:text-base">
+                         Thank you for your interest. The application period for the Campus Ambassador program has ended.
+                        </p>
+                        <Button disabled className="w-full">
+                         Applications Closed
+                        </Button>
+                    </CardContent>
                 </Card>
             </aside>
         </div>
