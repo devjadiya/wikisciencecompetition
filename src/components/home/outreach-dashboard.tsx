@@ -35,7 +35,10 @@ export default function OutreachDashboard() {
       try {
         const response = await fetch('https://outreachdashboard.wmflabs.org/courses/Online/Wiki_Science_Competition_India_2025_(November_2025).json');
         if (!response.ok) {
-          throw new Error('Failed to fetch dashboard data');
+          // Don't throw an error, just log it and set fallback stats
+          console.error('Failed to fetch dashboard data, status:', response.status);
+          setStats({ uploads: 0, editors: 0, edits: 0 });
+          return;
         }
         const data = await response.json();
         
@@ -51,7 +54,7 @@ export default function OutreachDashboard() {
 
       } catch (error) {
         console.error('Error fetching Outreach Dashboard stats:', error);
-        // On error, we can show fallback values.
+        // On any fetch error, we show fallback values.
         setStats({ uploads: 0, editors: 0, edits: 0 });
       }
     }
