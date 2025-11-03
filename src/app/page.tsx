@@ -5,7 +5,6 @@ import instagramFeed from '@/lib/data/instagram-feed.json';
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
-const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
@@ -40,7 +39,6 @@ export default function Home() {
       />
 
       <VortexCta />
-      <CallToAction />
       <ContactForm />
       <TestimonialsSection />
     </div>
