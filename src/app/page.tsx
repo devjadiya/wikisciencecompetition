@@ -1,3 +1,4 @@
+
 'use client';
 import dynamic from 'next/dynamic';
 import instagramFeed from '@/lib/data/instagram-feed.json';
