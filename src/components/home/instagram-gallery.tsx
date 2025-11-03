@@ -63,7 +63,7 @@ export default function InstagramGallery({ title, subtitle, media, mediaType }: 
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="text-center mb-12 md:mb-16" variants={itemVariants}>
-            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
               {title}
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">
