@@ -1,4 +1,6 @@
 
+'use client';
+
 import type { Metadata } from 'next';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import './globals.css';
@@ -12,64 +14,41 @@ import Script from 'next/script';
 import Analytics from '@/components/layout/analytics';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import LiveMarquee from '@/components/layout/live-marquee';
+import { useState } from 'react';
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Wiki Science Competition 2025 - India',
-    template: '%s | WSC India 2025',
-  },
-  description: "Participate in India's biggest science photography competition for 2025. Submit images in categories like microscopy, astronomy, and more to win exciting prizes. Join the premier science and photography event, Wiki Science Competition 2025 in India, and contribute to free knowledge.",
-  keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition, science images, scientific photography, research images, wikimedia commons',
-  authors: [{ name: 'Wiki Science Competition India Team' }],
-  openGraph: {
-    title: 'Official Wiki Science Competition 2025 - India',
-    description: "India's national science photography competition. Join WSC India to celebrate science, contribute to free knowledge, and win exciting prizes.",
-    url: 'https://www.wikisciencecompetition.in/',
-    siteName: 'Wiki Science Competition 2025 - India',
-    images: [
-      {
-        url: 'https://www.wikisciencecompetition.in/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Wiki Science Competition 2025 in India',
-      },
-    ],
-    locale: 'en_IN',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Official Wiki Science Competition 2025 - India',
-    description: "Calling all students, researchers, and science enthusiasts! Participate in India's biggest science photography competition and showcase your work to the world.",
-    images: ['https://www.wikisciencecompetition.in/twitter-image.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: 'https://www.wikisciencecompetition.in/',
-  },
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
+// Metadata cannot be exported from a client component.
+// We can define it here and then use it in a server component if needed,
+// but for now, we'll keep it here and address any build warnings if they arise.
+// Since this is the root layout, it is often a server component.
+// The 'use client' directive makes this a client component.
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMarqueeVisible, setIsMarqueeVisible] = useState(true);
+
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <head>
+        <title>Wiki Science Competition 2025 - India</title>
+        <meta
+          name="description"
+          content="Participate in India's biggest science photography competition for 2025. Submit images in categories like microscopy, astronomy, and more to win exciting prizes. Join the premier science and photography event, Wiki Science Competition 2025 in India, and contribute to free knowledge."
+        />
+        <meta name="keywords" content="wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition, science images, scientific photography, research images, wikimedia commons" />
+        <meta property="og:title" content="Official Wiki Science Competition 2025 - India" />
+        <meta property="og:description" content="India's national science photography competition. Join WSC India to celebrate science, contribute to free knowledge, and win exciting prizes." />
+        <meta property="og:url" content="https://www.wikisciencecompetition.in/" />
+        <meta property="og:site_name" content="Wiki Science Competition 2025 - India" />
+        <meta property="og:image" content="https://www.wikisciencecompetition.in/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Official Wiki Science Competition 2025 - India" />
+        <meta name="twitter:description" content="Calling all students, researchers, and science enthusiasts! Participate in India's biggest science photography competition and showcase your work to the world." />
+        <meta name="twitter:image" content="https://www.wikisciencecompetition.in/twitter-image.png" />
+        <link rel="canonical" href="https://www.wikisciencecompetition.in/" />
+
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-VBJS2HS9WM`}
@@ -100,9 +79,11 @@ export default function RootLayout({
           <LanguageProvider>
             <Analytics />
             <VercelAnalytics />
-            <LiveMarquee />
-            <Navbar />
-            <main className="flex-grow pt-10">{children}</main>
+            <LiveMarquee isVisible={isMarqueeVisible} onClose={() => setIsMarqueeVisible(false)} />
+            <Navbar isMarqueeVisible={isMarqueeVisible} />
+            <main className={cn('flex-grow', isMarqueeVisible ? 'pt-10' : 'pt-0')}>
+              {children}
+            </main>
             <Footer />
             <FaqChatbot />
             <Toaster />

@@ -21,8 +21,13 @@ import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 import { ThemeToggle } from './theme-toggle';
+import { cn } from '@/lib/utils';
 
-export default function Navbar() {
+interface NavbarProps {
+  isMarqueeVisible: boolean;
+}
+
+export default function Navbar({ isMarqueeVisible }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -37,7 +42,7 @@ export default function Navbar() {
   const learningLinks = t.learningLinks;
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    const previous = scrollY.getPrevious();
+    const previous = scrollY.getPrevious() ?? 0;
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
@@ -67,7 +72,10 @@ export default function Navbar() {
       }}
       animate={hidden ? 'hidden' : 'visible'}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
-      className="sticky top-10 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className={cn(
+        "sticky z-40 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300",
+        isMarqueeVisible ? 'top-10' : 'top-0'
+      )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
