@@ -1,4 +1,3 @@
-
 'use client';
 import dynamic from 'next/dynamic';
 import instagramFeed from '@/lib/data/instagram-feed.json';
@@ -11,8 +10,8 @@ const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-ga
 const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });
-const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
-const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
+const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'), { ssr: false });
+const VortexCta = dynamic(() => import('@/components/home/vortex-cta'), { ssr: false });
 
 export default function Home() {
   const { t } = useLanguage();
