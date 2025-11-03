@@ -1,23 +1,8 @@
 
+
 export const languages = [
   { code: "en", name: "English" },
   { code: "hi", name: "हिन्दी" },
-  // { code: 'bn', name: 'বাংলা' }, // Bengali
-  // { code: 'te', name: 'తెలుగు' }, // Telugu
-  // { code: 'mr', name: 'मराठी' }, // Marathi
-  // { code: 'ta', name: 'தமிழ்' }, // Tamil
-  // { code: 'ur', name: 'اردو' }, // Urdu
-  // { code: 'gu', name: 'ગુજરાતી' }, // Gujarati
-  // { code: 'kn', name: 'ಕನ್ನಡ' }, // Kannada
-  // { code: 'or', name: 'ଓଡ଼ିଆ' }, // Odia
-  // { code: 'pa', name: 'ਪੰਜਾਬੀ' }, // Punjabi
-  // { code: 'ml', name: 'മലയാളം' }, // Malayalam
-  // { code: 'as', name: 'অসমীয়া' }, // Assamese
-  // { code: 'es', name: 'Español' }, // Spanish
-  // { code: 'fr', name: 'Français' }, // French
-  // { code: 'et', 'name': 'Eesti' }, // Estonian
-  // { code: 'de', name: 'Deutsch' }, // German
-  // { code: 'pt', name: 'Português' }, // Portuguese
 ] as const;
 
 export const translations = {
@@ -343,6 +328,7 @@ export const translations = {
         "Have questions or feedback? We'd love to hear from you. We promise a quick reply!",
       getInTouch: "Get in Touch",
       p1: "Fill out the form and our team will get back to you within a few hours. We're here to help!",
+      emailAddress: "wikisciencecompetition@gmail.com",
       form: {
         name: "Full Name",
         namePlaceholder: "Your Name",
@@ -1000,6 +986,7 @@ export const translations = {
         "प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!",
       getInTouch: "संपर्क में रहें",
       p1: "फॉर्म भरें और हमारी टीम कुछ घंटों के भीतर आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!",
+      emailAddress: "wikisciencecompetition@gmail.com",
       form: {
         name: "पूरा नाम",
         namePlaceholder: "आपका नाम",
