@@ -47,7 +47,7 @@ export const translations = {
     te,
     mr,
     ta,
-    ur,
+ur,
     gu,
     kn,
     or,
@@ -62,5 +62,3 @@ export const translations = {
 };
 
 export type { TranslationType };
-
-    

@@ -556,6 +556,19 @@ export const translations = {
       ],
     },
     home: {
+      dashboard: {
+        title: "Live Campaign Dashboard",
+        subtitle: "Track the real-time impact of our community's contributions. The numbers below update live from the Outreach Dashboard.",
+        stats: {
+            uploads: "Commons Uploads",
+            editors: "Active Editors",
+            edits: "Total Edits"
+        },
+        ctaLine1: "Want to be a part of these numbers?",
+        ctaLinkText: "Create an account",
+        ctaLine2: "on the Outreach Dashboard and join the campaign!",
+        ctaButton: "Join the Campaign"
+      },
       autoscroll: {
         slides: [
           {
@@ -1197,6 +1210,19 @@ export const translations = {
       ],
     },
     home: {
+      dashboard: {
+        title: "लाइव अभियान डैशबोर्ड",
+        subtitle: "हमारे समुदाय के योगदान के वास्तविक समय के प्रभाव को ट्रैक करें। नीचे दिए गए नंबर आउटरीच डैशबोर्ड से लाइव अपडेट होते हैं।",
+        stats: {
+            uploads: "कॉमन्स अपलोड",
+            editors: "सक्रिय संपादक",
+            edits: "कुल संपादन"
+        },
+        ctaLine1: "इन नंबरों का हिस्सा बनना चाहते हैं?",
+        ctaLinkText: "एक खाता बनाएँ",
+        ctaLine2: "आउटरीच डैशबोर्ड पर और अभियान में शामिल हों!",
+        ctaButton: "अभियान में शामिल हों"
+      },
       autoscroll: {
         slides: [
           {
