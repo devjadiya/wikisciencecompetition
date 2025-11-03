@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/language-context';
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
-const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery').then(mod => mod.WSCampaignGallery), { ssr: false });
+const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'), { ssr: false });
 const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });
@@ -26,14 +26,14 @@ export default function Home() {
       <WSCampaignGallery 
         title={t.home.campaign.title}
         subtitle={t.home.campaign.subtitle}
-        campaignCategory="Category:Images_from_Wiki_Science_Competition_2025_in_India"
+        campaignCategory="Uploaded_via_Campaign:wsc-in-2025"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
       />
 
       <WSCampaignGallery 
         title={t.home.mobileCampaign.title}
         subtitle={t.home.mobileCampaign.subtitle}
-        campaignCategory="Category:Mobile_uploads_from_Wiki_Science_Competition_2025_in_India"
+        campaignCategory="Uploaded_via_Campaign:wsc-in-m"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
       />
       
