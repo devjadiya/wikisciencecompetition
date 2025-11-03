@@ -86,9 +86,6 @@ export default function Footer() {
                   <li className="pt-4">
                      <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase font-headline">{t.footerContactHeader}</h3>
                      <p className='italic'><strong> Mail: contact [at] wikisciencecompetition [dot] in </strong></p>
-                     <a href={`mailto:${t.contact.emailAddress}`} className="text-sm font-bold text-accent hover:text-accent/80 transition-colors break-all" onClick={() => handleFooterLinkClick('Email')}>
-                        {t.contact.emailAddress}
-                    </a>
                   </li>
                 </ul>
             </div>

@@ -328,7 +328,7 @@ export const translations = {
         "Have questions or feedback? We'd love to hear from you. We promise a quick reply!",
       getInTouch: "Get in Touch",
       p1: "Fill out the form and our team will get back to you within a few hours. We're here to help!",
-      emailAddress: "wikisciencecompetition@gmail.com",
+      emailAddress: "contact@wikisciencecompetition.in",
       form: {
         name: "Full Name",
         namePlaceholder: "Your Name",
@@ -545,7 +545,7 @@ export const translations = {
       hero: {
         title: "The Competition is Live!",
         upload: "Upload Your Photos Now!",
-        uploadMobile: "Upload Mobile Photos",
+        uploadMobile: "Upload Mobile Clicked Photos",
       },
       info: {
         title: "Clicking Today, Creating Tomorrow.",
@@ -937,7 +937,7 @@ export const translations = {
         "प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!",
       getInTouch: "संपर्क में रहें",
       p1: "फॉर्म भरें और हमारी टीम कुछ घंटों के भीतर आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!",
-      emailAddress: "wikisciencecompetition@gmail.com",
+      emailAddress: "contact@wikisciencecompetition.in",
       form: {
         name: "पूरा नाम",
         namePlaceholder: "आपका नाम",

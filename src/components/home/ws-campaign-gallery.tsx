@@ -232,7 +232,7 @@ export default function WSCampaignGallery({
         <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
                 <a href={campaignUrl} target="_blank" rel="noopener noreferrer">
-                Load More <ExternalLink className="ml-2 h-4 w-4" />
+                Upload <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
             </Button>
         </div>
