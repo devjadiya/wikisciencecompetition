@@ -35,8 +35,10 @@ export default function AnimatedCounter({ from, to }: AnimatedCounterProps) {
         node.textContent = Math.round(value).toLocaleString();
       },
       onComplete() {
-        setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 5000);
+        if (to > 0) {
+          setShowConfetti(true);
+          setTimeout(() => setShowConfetti(false), 5000);
+        }
       },
     });
 

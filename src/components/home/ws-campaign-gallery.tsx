@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Camera, AlertCircle, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import AnimatedCounter from '../ui/animated-counter';
 
 interface ImageInfo {
   pageid: number;
@@ -129,8 +130,9 @@ export default function WSCampaignGallery({ title, subtitle, campaignCategory, c
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">{title}</h2>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground">{subtitle}</p>
           {totalCount !== null && (
-            <div className="mt-4 text-lg font-bold text-primary">
-              Total Submissions: <span className="text-accent">{totalCount}</span>
+            <div className="mt-4">
+              <span className="text-sm font-medium text-muted-foreground">Total Submissions</span>
+              <AnimatedCounter from={0} to={totalCount} />
             </div>
           )}
         </div>
