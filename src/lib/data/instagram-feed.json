@@ -1,33 +1,19 @@
-
-[
-  {
-    "id": "C9z_x2_y-2a",
-    "type": "image",
-    "filename": "post1.jpg"
-  },
-  {
-    "id": "C-dE1f3S-Ab",
-    "type": "reel",
-    "filename": "reel1.mp4"
-  },
-  {
-    "id": "C-j5K8_y-2p",
-    "type": "image",
-    "filename": "post2.jpg"
-  },
-  {
-    "id": "C-tqMx-S9C-",
-    "type": "video",
-    "filename": "video1.mp4"
-  },
-  {
-    "id": "C_F0p-2y-3b",
-    "type": "image",
-    "filename": "post3.jpg"
-  },
-  {
-    "id": "C_LpTr2S-9a",
-    "type": "reel",
-    "filename": "reel2.mp4"
-  }
-]
+{
+  "images": [
+    { "id": "1", "filename": "10.jpg" },
+    { "id": "2", "filename": "2.jpeg" },
+    { "id": "3", "filename": "3.jpeg" },
+    { "id": "4", "filename": "6.jpg" },
+    { "id": "5", "filename": "7.jpg" },
+    { "id": "6", "filename": "8.jpg" },
+    { "id": "7" ,"filename": "9.jpg" }
+  ],
+  "reels": [
+    { "id": "1", "filename": "1.mp4" },
+    { "id": "2", "filename": "2.mp4" },
+    { "id": "3", "filename": "3.mp4" }
+  ],
+  "videos": [
+    { "id": "1", "filename": "1.mp4" }
+  ]
+}

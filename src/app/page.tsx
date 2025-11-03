@@ -1,10 +1,10 @@
 
 import dynamic from 'next/dynamic';
+import instagramFeed from '@/lib/data/instagram-feed.json';
 
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
-const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'));
 const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
 const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
@@ -17,19 +17,30 @@ export default function Home() {
       <HeroCarousel />
       <InfoSections />
       <PrizesSection />
-      <WSCampaignGallery 
-        category="Category:Uploaded_via_Campaign:wsc-in-2025"
-        redirectUrl="https://commons.wikimedia.org/wiki/Category:Uploaded_via_Campaign:wsc-in-2025"
+      
+      <InstagramGallery 
+        title="Featured Images"
+        subtitle="A curated collection of stunning scientific photography from our community."
+        media={instagramFeed.images}
+        mediaType="images"
       />
-      <WSCampaignGallery 
-        title="Live from Mobile"
-        subtitle="See the latest submissions from participants using their mobile devices."
-        category="Category:Uploaded_via_Campaign:wsc-in-m"
-        redirectUrl="https://commons.wikimedia.org/wiki/Category:Uploaded_via_Campaign:wsc-in-m"
+      
+      <InstagramGallery 
+        title="Latest Reels"
+        subtitle="Watch short, engaging videos showcasing science in action."
+        media={instagramFeed.reels}
+        mediaType="reels"
       />
+
+      <InstagramGallery 
+        title="Community Videos"
+        subtitle="Explore in-depth video content from our talented contributors."
+        media={instagramFeed.videos}
+        mediaType="videos"
+      />
+
       <VortexCta />
       <CallToAction />
-      <InstagramGallery />
       <ContactForm />
       <TestimonialsSection />
     </div>
