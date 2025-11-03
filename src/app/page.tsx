@@ -6,6 +6,7 @@ const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
 const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'));
 const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
+const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
 const VortexCta = dynamic(() => import('@/components/home/vortex-cta'));
@@ -28,6 +29,7 @@ export default function Home() {
       />
       <VortexCta />
       <CallToAction />
+      <InstagramGallery />
       <ContactForm />
       <TestimonialsSection />
     </div>
