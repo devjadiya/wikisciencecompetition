@@ -39,13 +39,13 @@ export default function OutreachDashboard() {
         }
         const data = await response.json();
         
-        // Robustly get stats, falling back to root course object if stats object is empty/missing
         const rawCourse = data.course || {};
+        // Use the robust logic: check stats object, but fall back to root object.
         const source = rawCourse.stats && Object.values(rawCourse.stats).some(v => v && Number(v) > 0) ? rawCourse.stats : rawCourse;
 
         setStats({
           uploads: source.uploads_count || 0,
-          editors: source.editors_count || source.user_count || 0,
+          editors: source.user_count || source.editors_count || 0,
           edits: source.edit_count || 0,
         });
 
