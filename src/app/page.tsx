@@ -26,14 +26,14 @@ export default function Home() {
       <WSCampaignGallery 
         title={t.home.campaign.title}
         subtitle={t.home.campaign.subtitle}
-        campaignCategory="Images_from_Wiki_Science_Competition_2025_in_India"
+        campaignCategory="Category:Images from Wiki Science Competition 2025 in India"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
       />
 
       <WSCampaignGallery 
         title={t.home.mobileCampaign.title}
         subtitle={t.home.mobileCampaign.subtitle}
-        campaignCategory="Mobile_uploads_from_Wiki_Science_Competition_2025_in_India"
+        campaignCategory="Category:Mobile uploads from Wiki Science Competition 2025 in India"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
       />
       
