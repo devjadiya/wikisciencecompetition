@@ -7,12 +7,12 @@ import { Button } from '@/components/ui/button';
 
 const marqueeVariants = {
   animate: {
-    x: [0, -1035],
+    x: [0, -2500], // Increased width to accommodate more text
     transition: {
       x: {
         repeat: Infinity,
         repeatType: "loop",
-        duration: 20,
+        duration: 50, // Increased duration for a smoother, slower scroll
         ease: "linear",
       },
     },
@@ -25,6 +25,8 @@ interface LiveMarqueeProps {
 }
 
 export default function LiveMarquee({ isVisible, onClose }: LiveMarqueeProps) {
+    const announcement = "The Wiki Science Competition is live! Upload now! • विकी विज्ञान प्रतियोगिता लाइव है! अभी अपलोड करें! • উইকি বিজ্ঞান প্রতিযোগিতা লাইভ! এখন আপলোড করুন! • விக்கி அறிவியல் போட்டி நேரலையில் உள்ளது! இப்போது பதிவேற்றவும்! • ";
+
     return (
         <AnimatePresence>
             {isVisible && (
@@ -41,15 +43,8 @@ export default function LiveMarquee({ isVisible, onClose }: LiveMarqueeProps) {
                             variants={marqueeVariants}
                             animate="animate"
                         >
-                            <p className="font-bold text-sm uppercase tracking-wider mx-8">
-                            The Wiki Science Competition is officially live! Upload your photos and videos now!
-                            </p>
-                            <p className="font-bold text-sm uppercase tracking-wider mx-8">
-                            The Wiki Science Competition is officially live! Upload your photos and videos now!
-                            </p>
-                            <p className="font-bold text-sm uppercase tracking-wider mx-8">
-                            The Wiki Science Competition is officially live! Upload your photos and videos now!
-                            </p>
+                            <p className="font-bold text-sm uppercase tracking-wider mx-8">{announcement}</p>
+                            <p className="font-bold text-sm uppercase tracking-wider mx-8">{announcement}</p>
                         </motion.div>
                         <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full flex-shrink-0" onClick={onClose}>
                             <X className="h-5 w-5" />
