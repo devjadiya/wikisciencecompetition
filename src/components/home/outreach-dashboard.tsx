@@ -36,14 +36,12 @@ export default function OutreachDashboard() {
 
         const data = await response.json();
         
-        // The API returns { "message": "Not found" } if the course doesn't exist.
         if (data.message === "Not found") {
-            console.error('OutreachDashboard API returned "Not found".');
+            console.error('OutreachDashboard API returned "Not found". The campaign might not be active yet.');
             setApiUnavailable(true);
             return;
         }
-
-        // Use stats object if it has meaningful data, otherwise use root object
+        
         const raw = data.course || {};
         const s = raw.stats && Object.values(raw.stats).some(v => typeof v === 'number' && v > 0) ? raw.stats : raw;
 
@@ -61,7 +59,6 @@ export default function OutreachDashboard() {
 
     fetchStats();
   }, []);
-
 
   const handleCTAClick = () => {
     gtagEvent({
@@ -89,6 +86,9 @@ export default function OutreachDashboard() {
     }
   ];
 
+  // This renders the section with "0" stats if the API is down or not found, as per user request.
+  const finalStats = apiUnavailable ? { uploads: 0, editors: 0, edits: 0 } : stats;
+
   return (
     <section ref={ref} className="bg-primary/5 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,47 +105,42 @@ export default function OutreachDashboard() {
             {t.home.dashboard.subtitle}
           </p>
         </motion.div>
-
-        {/* TODO: Re-enable stats cards when the OutreachDashboard API is available and returns data.
-            The current endpoint returns a "Not found" message. Once fixed, remove the `apiUnavailable`
-            state and the conditional rendering logic below to show the live stats again. */}
-        {!apiUnavailable && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-12">
-                {stats === null ? (
-                    // Skeleton Loader
-                    Array.from({ length: 3 }).map((_, index) => (
-                        <Card key={index} className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center animate-pulse">
-                            <div className="h-10 w-10 bg-muted rounded-full mx-auto mb-4"></div>
-                            <div className="h-8 w-20 bg-muted rounded-md mx-auto mb-2"></div>
-                            <div className="h-6 w-32 bg-muted rounded-md mx-auto"></div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-12">
+            {finalStats === null ? (
+                // Skeleton Loader
+                Array.from({ length: 3 }).map((_, index) => (
+                    <Card key={index} className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center animate-pulse">
+                        <div className="h-10 w-10 bg-muted rounded-full mx-auto mb-4"></div>
+                        <div className="h-8 w-20 bg-muted rounded-md mx-auto mb-2"></div>
+                        <div className="h-6 w-32 bg-muted rounded-md mx-auto"></div>
+                    </Card>
+                ))
+            ) : (
+                // Stat Cards
+                statCards.map((card, index) => (
+                    <motion.div
+                        key={card.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <Card className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                            <CardHeader className="p-0 items-center mb-4">
+                                <div className="p-3 bg-accent/10 rounded-full">
+                                    <card.icon className="h-6 w-6 text-accent" />
+                                </div>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <AnimatedCounter from={0} to={card.value ?? 0} />
+                                <CardTitle className="text-sm font-medium text-muted-foreground mt-2">{card.title}</CardTitle>
+                            </CardContent>
                         </Card>
-                    ))
-                ) : (
-                    // Stat Cards
-                    statCards.map((card, index) => (
-                        <motion.div
-                            key={card.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <Card className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-                                <CardHeader className="p-0 items-center mb-4">
-                                    <div className="p-3 bg-accent/10 rounded-full">
-                                        <card.icon className="h-6 w-6 text-accent" />
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="p-0">
-                                    <AnimatedCounter from={0} to={card.value ?? 0} />
-                                    <CardTitle className="text-sm font-medium text-muted-foreground mt-2">{card.title}</CardTitle>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))
-                )}
-            </div>
-        )}
-
+                    </motion.div>
+                ))
+            )}
+        </div>
+        
         <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
