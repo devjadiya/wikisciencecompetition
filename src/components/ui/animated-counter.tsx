@@ -52,6 +52,7 @@ export default function AnimatedCounter({ from, to }: AnimatedCounterProps) {
           recycle={false}
           numberOfPieces={300}
           gravity={0.1}
+          style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
         />
       )}
       <motion.p
