@@ -38,11 +38,17 @@ export default function OutreachDashboard() {
           throw new Error('Failed to fetch dashboard data');
         }
         const data = await response.json();
+        
+        // Robustly get stats, falling back to root course object if stats object is empty/missing
+        const rawCourse = data.course || {};
+        const source = rawCourse.stats && Object.values(rawCourse.stats).some(v => v && Number(v) > 0) ? rawCourse.stats : rawCourse;
+
         setStats({
-          uploads: data.course.uploads_count || 0,
-          editors: data.course.editors_count || 0,
-          edits: data.course.edit_count || 0,
+          uploads: source.uploads_count || 0,
+          editors: source.editors_count || source.user_count || 0,
+          edits: source.edit_count || 0,
         });
+
       } catch (error) {
         console.error('Error fetching Outreach Dashboard stats:', error);
         // On error, we can show fallback values.
