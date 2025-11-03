@@ -4,7 +4,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, UploadCloud, Smartphone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const slides = [
   {
@@ -51,59 +52,10 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
     alt: 'Microscopic image of the outer layer of a surgical mask',
     caption: 'Microscopic outer layer of a surgical mask by Alexander Klepnev, CC BY-SA 4.0',
   }
-  // ,{
-  //   id: 1,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/IA_ARPAN_BASU_CHOWDHURY_Foldscope_-_A_revolutionary_Microscope.jpg' },
-  //   alt: 'Foldscope - A revolutionary Microscope by Arpan Basu Chowdhury',
-  //   caption: 'Foldscope - A revolutionary Microscope by Arpan Basu Chowdhury, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 2,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Yellow_orange-tip_male_Ixias_pyrene.jpg' },
-  //   alt: 'Yellow orange-tip male Ixias pyrene',
-  //   caption: 'Yellow orange-tip male by Jeevan Jose, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 3,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Yellow_orange-tip_female_Ixias_pyrene.jpg' },
-  //   alt: 'Yellow orange-tip female Ixias pyrene',
-  //   caption: 'Yellow orange-tip female by Jeevan Jose, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 4,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/A_Coot%27s_Scoot.jpg' },
-  //   alt: 'A Coot\'s Scoot',
-  //   caption: 'A Coot\'s Scoot by Ayonija Ghosh, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 5,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Sarus_Crane_Duet.jpg' },
-  //   alt: 'Sarus Crane Duet',
-  //   caption: 'Sarus Crane Duet by A J Ganaie, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 6,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Greater_Crimson_Glider_%28Urothemis_signata%29.jpg' },
-  //   alt: 'Greater Crimson Glider (Urothemis signata)',
-  //   caption: 'Greater Crimson Glider by Sayan Hazra, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 7,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Indian_Gharial.jpg' },
-  //   alt: 'Indian Gharial',
-  //   caption: 'Indian Gharial by A J Ganaie, CC BY-SA 4.0',
-  // },
-  // {
-  //   id: 8,
-  //   image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/30/PSLV_C47_Cartosat-3_lifting_off_from_Second_Launch_Pad_003.jpg' },
-  //   alt: 'PSLV C47 Cartosat-3 lifting off from Second Launch Pad',
-  //   caption: 'PSLV C47 Cartosat-3 lift off by ISRO, CC BY-SA 4.0',
-  // }
-  
 ];
 
 const variants = {
@@ -140,7 +92,7 @@ export default function HeroCarousel() {
   const slideIndex = page;
 
   return (
-    <section className="relative h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
+    <section className="relative h-[60vh] md:h-[90vh] min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -163,12 +115,40 @@ export default function HeroCarousel() {
             priority={slideIndex === 0}
             sizes="100vw"
           />
-           <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/10 to-transparent" />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
            <div className="absolute bottom-4 right-4 p-2 bg-black/50 text-white rounded-md text-xs text-right">
              {slides[slideIndex].caption}
            </div>
         </motion.div>
       </AnimatePresence>
+
+      <div className="absolute z-20 text-center p-4">
+        <motion.h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold text-white drop-shadow-2xl mb-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+        >
+            The Competition is Live!
+        </motion.h1>
+        <motion.div 
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+        >
+            <Button asChild size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
+                <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025" target="_blank" rel="noopener noreferrer">
+                    <UploadCloud className="mr-3 h-6 w-6" /> Upload Your Photos Now!
+                </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
+                <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m" target="_blank" rel="noopener noreferrer">
+                    <Smartphone className="mr-3 h-6 w-6" /> Upload Mobile Photos
+                </a>
+            </Button>
+        </motion.div>
+      </div>
 
       <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-10 z-20">
         <button
@@ -192,7 +172,7 @@ export default function HeroCarousel() {
             key={i}
             onClick={() => setPage([i, i > slideIndex ? 1 : -1])}
             className={`w-2 h-2 md:w-3 md:h-3 rounded-full cursor-pointer transition-colors ${
-              i === slideIndex ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'
+              i === slideIndex ? 'bg-accent' : 'bg-white/50 hover:bg-white/80'
             }`}
           />
         ))}
@@ -200,3 +180,5 @@ export default function HeroCarousel() {
     </section>
   );
 }
+
+    

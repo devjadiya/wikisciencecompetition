@@ -1,3 +1,4 @@
+
 import dynamic from 'next/dynamic';
 
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
@@ -21,3 +22,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
