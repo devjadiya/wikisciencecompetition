@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
 const InfoSections = dynamic(() => import('@/components/home/info-sections'));
 const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
+const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'));
 const CallToAction = dynamic(() => import('@/components/home/call-to-action'));
 const ContactForm = dynamic(() => import('@/components/home/contact-form'));
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'));
@@ -15,6 +16,10 @@ export default function Home() {
       <HeroCarousel />
       <InfoSections />
       <PrizesSection />
+      <WSCampaignGallery 
+        category="Category:Uploaded_via_Campaign:wsc-in-2025"
+        redirectUrl="https://commons.wikimedia.org/wiki/Category:Uploaded_via_Campaign:wsc-in-2025"
+      />
       <VortexCta />
       <CallToAction />
       <ContactForm />
@@ -22,5 +27,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
