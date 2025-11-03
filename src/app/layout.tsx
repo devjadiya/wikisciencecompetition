@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     default: 'Wiki Science Competition 2025 - India',
     template: '%s | WSC India 2025',
   },
-  description: 'Wiki Science Competition 2025 in India. Participate in India\'s biggest science photography competition, submit images in categories like microscopy and astronomy, and win prizes. Join the premier science and photography event for 2025.',
+  description: "Participate in India's biggest science photography competition for 2025. Submit images in categories like microscopy, astronomy, and more to win exciting prizes. Join the premier science and photography event, Wiki Science Competition 2025 in India, and contribute to free knowledge.",
   keywords: 'wiki science competition 2025, science competition india 2025, photography competition 2025, wsc india 2025, science photo contest india, official wiki science competition india, indian photography competition, national science competition, wikimedia india competition, astronomy photography competition, microscopy photo contest, submit science photos, win science prizes india, open science india, free knowledge competition',
   authors: [{ name: 'Wiki Science Competition India Team' }],
   openGraph: {
     title: 'Official Wiki Science Competition 2025 - India',
-    description: 'India\'s national science photography competition. Join WSC India to celebrate science, contribute to free knowledge, and win exciting prizes.',
+    description: "India's national science photography competition. Join WSC India to celebrate science, contribute to free knowledge, and win exciting prizes.",
     url: 'https://www.wikisciencecompetition.in/',
     siteName: 'Wiki Science Competition 2025 - India',
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Official Wiki Science Competition 2025 - India',
-    description: 'Calling all students, researchers, and science enthusiasts! Participate in India\'s biggest science photography competition and showcase your work to the world.',
+    description: "Calling all students, researchers, and science enthusiasts! Participate in India's biggest science photography competition and showcase your work to the world.",
     images: ['https://www.wikisciencecompetition.in/twitter-image.png'],
   },
   robots: {
@@ -93,8 +93,7 @@ export default function RootLayout({
       <body className={cn('font-body antialiased bg-background text-foreground min-h-screen flex flex-col')}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <LanguageProvider>
