@@ -21,21 +21,30 @@ export default function OutreachDashboard() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [apiUnavailable, setApiUnavailable] = useState(false);
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
         const response = await fetch('https://outreachdashboard.wmflabs.org/courses/Online/Wiki_Science_Competition_India_2025_(November_2025).json');
+        
         if (!response.ok) {
-          // Don't throw an error, just log it and set fallback stats
-          console.error('Failed to fetch dashboard data, status:', response.status);
-          setStats({ uploads: 0, editors: 0, edits: 0 });
-          return;
+            console.error('Failed to fetch dashboard data, status:', response.status);
+            setApiUnavailable(true); 
+            return;
         }
+
         const data = await response.json();
         
-        const raw = data.course || {};
+        // The API returns { "message": "Not found" } if the course doesn't exist.
+        if (data.message === "Not found") {
+            console.error('OutreachDashboard API returned "Not found".');
+            setApiUnavailable(true);
+            return;
+        }
+
         // Use stats object if it has meaningful data, otherwise use root object
+        const raw = data.course || {};
         const s = raw.stats && Object.values(raw.stats).some(v => typeof v === 'number' && v > 0) ? raw.stats : raw;
 
         setStats({
@@ -46,7 +55,7 @@ export default function OutreachDashboard() {
 
       } catch (error) {
         console.error('Error fetching or parsing dashboard data:', error);
-        setStats({ uploads: 0, editors: 0, edits: 0 });
+        setApiUnavailable(true);
       }
     };
 
@@ -97,40 +106,45 @@ export default function OutreachDashboard() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-12">
-            {stats === null ? (
-                // Skeleton Loader
-                Array.from({ length: 3 }).map((_, index) => (
-                    <Card key={index} className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center animate-pulse">
-                        <div className="h-10 w-10 bg-muted rounded-full mx-auto mb-4"></div>
-                        <div className="h-8 w-20 bg-muted rounded-md mx-auto mb-2"></div>
-                        <div className="h-6 w-32 bg-muted rounded-md mx-auto"></div>
-                    </Card>
-                ))
-            ) : (
-                // Stat Cards
-                statCards.map((card, index) => (
-                    <motion.div
-                        key={card.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                        <Card className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-                            <CardHeader className="p-0 items-center mb-4">
-                                <div className="p-3 bg-accent/10 rounded-full">
-                                    <card.icon className="h-6 w-6 text-accent" />
-                                </div>
-                            </CardHeader>
-                            <CardContent className="p-0">
-                                <AnimatedCounter from={0} to={card.value ?? 0} />
-                                <CardTitle className="text-sm font-medium text-muted-foreground mt-2">{card.title}</CardTitle>
-                            </CardContent>
+        {/* TODO: Re-enable stats cards when the OutreachDashboard API is available and returns data.
+            The current endpoint returns a "Not found" message. Once fixed, remove the `apiUnavailable`
+            state and the conditional rendering logic below to show the live stats again. */}
+        {!apiUnavailable && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-12">
+                {stats === null ? (
+                    // Skeleton Loader
+                    Array.from({ length: 3 }).map((_, index) => (
+                        <Card key={index} className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center animate-pulse">
+                            <div className="h-10 w-10 bg-muted rounded-full mx-auto mb-4"></div>
+                            <div className="h-8 w-20 bg-muted rounded-md mx-auto mb-2"></div>
+                            <div className="h-6 w-32 bg-muted rounded-md mx-auto"></div>
                         </Card>
-                    </motion.div>
-                ))
-            )}
-        </div>
+                    ))
+                ) : (
+                    // Stat Cards
+                    statCards.map((card, index) => (
+                        <motion.div
+                            key={card.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <Card className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                                <CardHeader className="p-0 items-center mb-4">
+                                    <div className="p-3 bg-accent/10 rounded-full">
+                                        <card.icon className="h-6 w-6 text-accent" />
+                                    </div>
+                                </CardHeader>
+                                <CardContent className="p-0">
+                                    <AnimatedCounter from={0} to={card.value ?? 0} />
+                                    <CardTitle className="text-sm font-medium text-muted-foreground mt-2">{card.title}</CardTitle>
+                                </CardContent>
+                            </Card>
+                        </motion.div>
+                    ))
+                )}
+            </div>
+        )}
 
         <motion.div
           className="mt-12 text-center"
