@@ -62,7 +62,10 @@ export default function InstagramGallery({ title, subtitle, media, mediaType }: 
         variants={containerVariants}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-12 md:mb-16" variants={itemVariants}>
+          <motion.div 
+            className="text-center mb-12 md:mb-16" 
+            variants={itemVariants}
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary">
               {title}
             </h2>
@@ -105,10 +108,10 @@ export default function InstagramGallery({ title, subtitle, media, mediaType }: 
                     ) : (
                       <>
                         <video
-                          src={`/instagram/${mediaType}/${post.filename}`}
-                          loop
+                          src={`/instagram/${mediaType}/${post.filename}#t=0.1`}
                           muted
                           playsInline
+                          preload="metadata"
                           className="object-cover w-full h-full"
                         />
                         <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -146,10 +149,10 @@ export default function InstagramGallery({ title, subtitle, media, mediaType }: 
                           ) : (
                               <>
                                 <video
-                                    src={`/instagram/${mediaType}/${post.filename}`}
-                                    loop
+                                    src={`/instagram/${mediaType}/${post.filename}#t=0.1`}
                                     muted
                                     playsInline
+                                    preload="metadata"
                                     className="object-cover w-full h-full"
                                 />
                                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
