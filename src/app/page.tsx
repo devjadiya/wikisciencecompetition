@@ -13,6 +13,7 @@ const InstagramGallery = dynamic(() => import('@/components/home/instagram-galle
 const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });
 const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'), { ssr: false });
 const VortexCta = dynamic(() => import('@/components/home/vortex-cta'), { ssr: false });
+const Leaderboard = dynamic(() => import('@/components/home/leaderboard'), { ssr: false });
 
 export default function Home() {
   const { t } = useLanguage();
@@ -25,14 +26,14 @@ export default function Home() {
       <WSCampaignGallery 
         title={t.home.campaign.title}
         subtitle={t.home.campaign.subtitle}
-        campaignCategory="Category:Uploaded_via_Campaign:wsc-in-2025"
+        campaignCategory="Category:Images_from_Wiki_Science_Competition_2025_in_India"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
       />
 
       <WSCampaignGallery 
         title={t.home.mobileCampaign.title}
         subtitle={t.home.mobileCampaign.subtitle}
-        campaignCategory="Category:Uploaded_via_Campaign:wsc-in-m"
+        campaignCategory="Category:Mobile_uploads_from_Wiki_Science_Competition_2025_in_India"
         campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
       />
       
@@ -61,6 +62,7 @@ export default function Home() {
 
       <VortexCta />
       <ContactForm />
+      <Leaderboard />
       <TestimonialsSection />
     </div>
   );
