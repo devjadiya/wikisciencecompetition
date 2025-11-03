@@ -8,7 +8,6 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
-import FaqChatbot from '@/components/faq-chatbot';
 import { LanguageProvider } from '@/context/language-context';
 import Script from 'next/script';
 import Analytics from '@/components/layout/analytics';
@@ -85,7 +84,6 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <FaqChatbot />
             <Toaster />
           </LanguageProvider>
         </ThemeProvider>
