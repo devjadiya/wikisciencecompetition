@@ -45,7 +45,8 @@ export default function OutreachDashboard() {
         });
       } catch (error) {
         console.error('Error fetching Outreach Dashboard stats:', error);
-        setStats({ uploads: 0, editors: 0, edits: 0 }); // Set to 0 on error
+        // On error, we can show fallback values.
+        setStats({ uploads: 0, editors: 0, edits: 0 });
       }
     }
 
@@ -100,7 +101,7 @@ export default function OutreachDashboard() {
                     </div>
                     <div className="text-center">
                       <p className="text-sm md:text-base font-semibold text-muted-foreground mb-1">{item.label}</p>
-                      {stats ? (
+                      {stats !== null ? (
                         <AnimatedCounter from={0} to={stats[item.key as keyof CampaignStats]} />
                       ) : (
                         <p className="text-4xl md:text-6xl font-bold font-headline text-primary">...</p>
