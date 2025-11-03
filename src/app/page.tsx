@@ -17,7 +17,6 @@ export default function Home() {
       <HeroCarousel />
       <InfoSections />
       <PrizesSection />
-      <OutreachDashboard />
       
       <InstagramGallery 
         title="Featured Images"
@@ -41,6 +40,7 @@ export default function Home() {
       />
 
       <VortexCta />
+      <OutreachDashboard />
       <ContactForm />
       <TestimonialsSection />
     </div>
