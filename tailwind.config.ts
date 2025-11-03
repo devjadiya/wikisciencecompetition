@@ -11,8 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['"Source Sans Pro"', 'sans-serif'],
-        headline: ['"Poppins"', 'sans-serif'],
+        body: ['var(--font-source-sans-pro)', 'sans-serif'],
+        headline: ['var(--font-poppins)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
