@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
  
 interface VortexProps {
   children?: any;
@@ -22,8 +22,9 @@ interface VortexProps {
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.5 });
   const animationFrameId = useRef<number>();
-  const particleCount = props.particleCount || 100;
+  const particleCount = props.particleCount || 100; // Lowered from 700
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
   const rangeY = props.rangeY || 100;
@@ -45,9 +46,7 @@ export const Vortex = (props: VortexProps) => {
   let particleProps = new Float32Array(particlePropsLength);
   let center: [number, number] = [0, 0];
  
-  const HALF_PI: number = 0.5 * Math.PI;
   const TAU: number = 2 * Math.PI;
-  const TO_RAD: number = Math.PI / 180;
   const rand = (n: number): number => n * Math.random();
   const randRange = (n: number): number => n - rand(2 * n);
   const fadeInOut = (t: number, m: number): number => {
@@ -66,14 +65,15 @@ export const Vortex = (props: VortexProps) => {
       if (ctx) {
         resize(canvas, ctx);
         initParticles();
-        draw(canvas, ctx);
+        if (isInView) {
+            draw(canvas, ctx);
+        }
       }
     }
   };
  
   const initParticles = () => {
     tick = 0;
-    // simplex = new SimplexNoise();
     particleProps = new Float32Array(particlePropsLength);
  
     for (let i = 0; i < particlePropsLength; i += particlePropCount) {
@@ -101,6 +101,13 @@ export const Vortex = (props: VortexProps) => {
   };
  
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+    if (!isInView) {
+        if (animationFrameId.current) {
+            cancelAnimationFrame(animationFrameId.current);
+        }
+        return;
+    }
+    
     tick++;
  
     if (canvas.width === 0 || canvas.height === 0) {
@@ -256,7 +263,7 @@ export const Vortex = (props: VortexProps) => {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, []);
+  }, [isInView]); // Rerun setup when isInView changes
  
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>

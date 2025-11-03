@@ -41,6 +41,8 @@ export const FlipWords = ({
           y: -10,
         }}
         transition={{
+          duration: 0.4,
+          ease: "easeInOut",
           type: "spring",
           stiffness: 100,
           damping: 10,
@@ -53,8 +55,8 @@ export const FlipWords = ({
         {currentWord.split("").map((letter, index) => (
           <motion.span
             key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               delay: index * 0.08,
               duration: 0.4,
@@ -68,5 +70,3 @@ export const FlipWords = ({
     </AnimatePresence>
   );
 };
-
-    
