@@ -1,6 +1,8 @@
 
 import { NextResponse } from 'next/server';
 
+export const maxDuration = 120; // Set max duration to 2 minutes
+
 const API_URL = 'https://commons.wikimedia.org/w/api.php';
 const CATEGORY = 'Category:Images_from_Wiki_Science_Competition_2025_in_India';
 
