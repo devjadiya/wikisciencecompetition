@@ -11,7 +11,7 @@ export const translations = {
       { name: "About", href: "/about" },
       { name: "Competition", href: "/competition" },
       { name: "Resources", href: "/resources" },
-      // { name: 'Sponsors', href: '/sponsors' },
+      { name: "Certificate", href: "/certificate" },
     ],
     organizerLinks: [
       { name: "Meet the Team", href: "/organizers" },
@@ -53,6 +53,7 @@ export const translations = {
       { name: "Sponsors", href: "/sponsors" },
       { name: "Resources", href: "/resources" },
       { name: "Campus Ambassadors", href: "/campus-ambassadors" },
+      { name: "Certificate", href: "/certificate" },
       { name: "Contact", href: "/contact" },
     ],
     footerSupportLinks: [
@@ -631,7 +632,7 @@ export const translations = {
       { name: "परिचय", href: "/about" },
       { name: "प्रतियोगिता", href: "/competition" },
       { name: "संसाधन", href: "/resources" },
-      // { name: 'प्रायोजक', href: '/sponsors' },
+      { name: "प्रमाणपत्र", href: "/certificate" },
     ],
     organizerLinks: [
       { name: "टीम से मिलें", href: "/organizers" },
@@ -673,6 +674,7 @@ export const translations = {
       { name: "प्रायोजक", href: "/sponsors" },
       { name: "संसाधन", href: "/resources" },
       { name: "कैंपस एंबेसडर", href: "/campus-ambassadors" },
+      { name: "प्रमाणपत्र", href: "/certificate" },
       { name: "संपर्क", href: "/contact" },
     ],
     footerSupportLinks: [
@@ -1233,3 +1235,5 @@ export const translations = {
 export type Translations = typeof translations;
 
 export type TranslationType = (typeof translations)['en'];
+
+    
