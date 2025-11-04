@@ -173,7 +173,7 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
       </div>
 
       {isOpen && (
-        <div className="md:hidden" id="mobile-menu">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {[...mainNavLinks].map((link) => (
               <Link
