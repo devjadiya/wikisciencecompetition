@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -42,6 +41,18 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
   const organizerLinks = t.organizerLinks;
   const moreDropdownLinks = t.moreDropdownLinks;
   const learningLinks = t.learningLinks;
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (isMobile) {
@@ -173,8 +184,8 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto" id="mobile-menu">
-          <div className="px-2 pt-2 pb-8 space-y-1 sm:px-3">
+        <div className="md:hidden fixed top-20 left-0 w-full bg-background/95 backdrop-blur-sm shadow-lg h-[calc(100vh-5rem)] overflow-y-auto" id="mobile-menu">
+          <div className="px-2 pt-2 pb-16 space-y-1 sm:px-3">
             {[...mainNavLinks].map((link) => (
               <Link
                 key={link.name}
