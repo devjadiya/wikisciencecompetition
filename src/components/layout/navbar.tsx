@@ -22,6 +22,7 @@ import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 import { ThemeToggle } from './theme-toggle';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface NavbarProps {
   isMarqueeVisible: boolean;
@@ -32,6 +33,7 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   const [organizersOpen, setOrganizersOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -42,6 +44,10 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
   const learningLinks = t.learningLinks;
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (isMobile) {
+        setHidden(false);
+        return;
+    }
     const previous = scrollY.getPrevious() ?? 0;
     if (latest > previous && latest > 150) {
       setHidden(true);
