@@ -562,19 +562,19 @@ export const translations = {
             icon: "Award",
             title: "National Recognition",
             description:
-              "Winners will be celebrated on our official platforms and gain national media coverage.",
+              "Best uploads will get a chance to win International Prizes.",
           },
           {
             icon: "Camera",
-            title: "Top-tier Equipment",
+            title: "Participating Certificates",
             description:
-              "Exciting photography gear and accessories for the top winners to aid their passion.",
+              "Participating certificates will be given to all on 20 uploads.",
           },
           {
             icon: "BookOpen",
             title: "Publication Feature",
             description:
-              "Get your work featured in prestigious science magazines and publications.",
+              "Get a chance of your work featured in science articles in wikipedia.",
           },
         ],
       },
