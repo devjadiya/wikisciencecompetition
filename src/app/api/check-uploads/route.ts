@@ -11,27 +11,47 @@ function userMatch(apiUser: string, inputUser: string) {
 async function fetchUserCategoryUploads(username: string, category: string) {
   const encodedCategory = encodeURIComponent(category);
   let fileTitles: string[] = [];
-  let apiUrl =
-    `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:${encodedCategory}` +
-    `&cmnamespace=6&cmlimit=500&format=json&origin=*`;
 
-  // Step 1: List all files in the category
-  const catResp = await fetch(apiUrl);
-  const catData = await catResp.json();
-  if (catData?.query?.categorymembers) {
-    fileTitles = catData.query.categorymembers.map((file: { title: string }) => file.title);
-  }
+  // ----------------------------
+  // 🔥 FIX: PAGINATION ADDED HERE
+  // ----------------------------
+  let cmcontinue: string | null = null;
+
+  do {
+    let apiUrl =
+      `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers` +
+      `&cmtitle=Category:${encodedCategory}` +
+      `&cmnamespace=6&cmlimit=500&format=json&origin=*` +
+      (cmcontinue ? `&cmcontinue=${encodeURIComponent(cmcontinue)}` : '');
+
+    const catResp = await fetch(apiUrl);
+    const catData = await catResp.json();
+
+    if (catData?.query?.categorymembers) {
+      fileTitles.push(...catData.query.categorymembers.map((file: { title: string }) => file.title));
+    }
+
+    cmcontinue = catData?.continue?.cmcontinue || null;
+
+  } while (cmcontinue);
+  // ----------------------------
+  // END PAGINATION FIX
+  // ----------------------------
+
   if (fileTitles.length === 0) return 0;
 
   // Step 2: Check each file's uploader via imageinfo (batch in groups for API efficiency)
   let userUploadCount = 0;
+
   for (let i = 0; i < fileTitles.length; i += 50) {
     const batch = fileTitles.slice(i, i + 50).map(f => encodeURIComponent(f)).join('|');
     const infoUrl =
       `https://commons.wikimedia.org/w/api.php?action=query&titles=${batch}` +
       `&prop=imageinfo&iiprop=user&format=json&origin=*`;
+
     const infoResp = await fetch(infoUrl);
     const infoData = await infoResp.json();
+
     if (infoData.query?.pages) {
       Object.values(infoData.query.pages).forEach((page: any) => {
         if (
@@ -44,6 +64,7 @@ async function fetchUserCategoryUploads(username: string, category: string) {
       });
     }
   }
+
   return userUploadCount;
 }
 
@@ -56,6 +77,11 @@ export async function GET(req: NextRequest) {
   if (!username) {
     return new Response(JSON.stringify({ eligible: false, count: 0 }), { status: 400 });
   }
+
   const count = await fetchUserCategoryUploads(username, category);
-  return new Response(JSON.stringify({ eligible: count >= 20, count }), { status: 200 });
+
+  return new Response(
+    JSON.stringify({ eligible: count >= 20, count }),
+    { status: 200 }
+  );
 }
