@@ -20,7 +20,7 @@ export default function UpcomingEvent() {
 
   return (
     <section className="py-16 md:py-24 bg-primary/5 border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,8 +28,8 @@ export default function UpcomingEvent() {
           transition={{ duration: 0.6 }}
         >
           <Card className="overflow-hidden shadow-lg border-accent/20 dark:border-accent/30 bg-card">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0">
-              <div className="lg:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+              <div className="md:col-span-2 p-6 md:p-8 flex flex-col justify-center">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-2">
                     Upcoming Event: Commons Workshop (Session 02)
@@ -65,14 +65,14 @@ export default function UpcomingEvent() {
                     </Button>
                 </div>
               </div>
-              <div className="lg:col-span-2 relative min-h-[300px] md:min-h-full bg-black/5">
+              <div className="relative min-h-[300px] md:min-h-full bg-black/5">
                  <Image
                     src="https://upload.wikimedia.org/wikipedia/commons/3/32/WSC_Commons_Workshop_02.png"
                     alt="WSC Commons Workshop 02 Banner"
                     data-ai-hint="event banner"
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 40vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                  />
               </div>
             </div>
