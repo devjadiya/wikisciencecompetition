@@ -1,25 +1,25 @@
 
 'use client';
-import dynamic from 'next/dynamic';
+import HeroCarousel from '@/components/home/hero-carousel';
+import InfoSections from '@/components/home/info-sections';
+import PrizesSection from '@/components/home/prizes-section';
+import WSCampaignGallery from '@/components/home/ws-campaign-gallery';
+import OutreachDashboard from '@/components/home/outreach-dashboard';
+import InstagramGallery from '@/components/home/instagram-gallery';
+import ContactForm from '@/components/home/contact-form';
+import TestimonialsSection from '@/components/home/testimonials-section';
+import VortexCta from '@/components/home/vortex-cta';
+import Leaderboard from '@/components/home/leaderboard';
 import instagramFeed from '@/lib/data/instagram-feed.json';
 import { useLanguage } from '@/context/language-context';
-
-const HeroCarousel = dynamic(() => import('@/components/home/hero-carousel'));
-const InfoSections = dynamic(() => import('@/components/home/info-sections'));
-const PrizesSection = dynamic(() => import('@/components/home/prizes-section'));
-const WSCampaignGallery = dynamic(() => import('@/components/home/ws-campaign-gallery'), { ssr: false });
-const OutreachDashboard = dynamic(() => import('@/components/home/outreach-dashboard'));
-const InstagramGallery = dynamic(() => import('@/components/home/instagram-gallery'));
-const ContactForm = dynamic(() => import('@/components/home/contact-form'), { ssr: false });
-const TestimonialsSection = dynamic(() => import('@/components/home/testimonials-section'), { ssr: false });
-const VortexCta = dynamic(() => import('@/components/home/vortex-cta'), { ssr: false });
-const Leaderboard = dynamic(() => import('@/components/home/leaderboard'), { ssr: false });
+import UpcomingEvent from '@/components/home/upcoming-event';
 
 export default function Home() {
   const { t } = useLanguage();
   return (
     <div className="flex flex-col">
       <HeroCarousel />
+      <UpcomingEvent />
       <InfoSections />
       <PrizesSection />
 
