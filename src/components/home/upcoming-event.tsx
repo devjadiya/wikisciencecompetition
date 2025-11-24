@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -64,7 +65,7 @@ export default function UpcomingEvent() {
               </div>
               <div className="relative min-h-[200px] md:min-h-0">
                  <Image
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/c5/WSC_Commons_Workshop_02.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/32/WSC_Commons_Workshop_02.png"
                     alt="WSC Commons Workshop 02 Banner"
                     data-ai-hint="event banner"
                     fill
