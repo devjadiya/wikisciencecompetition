@@ -67,7 +67,7 @@ export default function UpcomingEvent() {
               </div>
               <div className="relative md:col-span-2 min-h-[300px] md:min-h-full bg-black/5">
                  <Image
-                    src="/image/event_02.png"
+                    src="/images/event_02.png"
                     alt="WSC Commons Workshop 02 Banner"
                     data-ai-hint="event banner"
                     fill
