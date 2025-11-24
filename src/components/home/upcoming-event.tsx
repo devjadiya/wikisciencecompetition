@@ -28,8 +28,8 @@ export default function UpcomingEvent() {
           transition={{ duration: 0.6 }}
         >
           <Card className="overflow-hidden shadow-lg border-accent/20 dark:border-accent/30 bg-card">
-            <div className="grid grid-cols-1 md:grid-cols-5">
-              <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0">
+              <div className="lg:col-span-3 p-6 md:p-8 flex flex-col justify-center">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-2">
                     Upcoming Event: Commons Workshop (Session 02)
@@ -65,13 +65,13 @@ export default function UpcomingEvent() {
                     </Button>
                 </div>
               </div>
-              <div className="md:col-span-2 relative min-h-[250px] md:min-h-0">
+              <div className="lg:col-span-2 relative min-h-[300px] md:min-h-full bg-black/5">
                  <Image
                     src="https://upload.wikimedia.org/wikipedia/commons/3/32/WSC_Commons_Workshop_02.png"
                     alt="WSC Commons Workshop 02 Banner"
                     data-ai-hint="event banner"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     sizes="(max-width: 768px) 100vw, 40vw"
                  />
               </div>
