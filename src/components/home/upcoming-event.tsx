@@ -1,10 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Calendar, Clock, User, Video, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { gtagEvent } from '@/lib/gtm';
+import Image from 'next/image';
 
 export default function UpcomingEvent() {
 
@@ -61,14 +62,14 @@ export default function UpcomingEvent() {
                   </a>
                 </Button>
               </div>
-              <div className="bg-primary/10 p-6 md:p-8 flex flex-col justify-center">
-                 <h3 className="font-headline font-bold text-lg text-primary mb-3">Agenda</h3>
-                 <ul className="space-y-2 text-xs text-muted-foreground">
-                    <li className="flex items-start"><span className="text-accent mr-2 mt-1">&#9679;</span> Live demo of Commons upload</li>
-                    <li className="flex items-start"><span className="text-accent mr-2 mt-1">&#9679;</span> Mastering categories & metadata</li>
-                    <li className="flex items-start"><span className="text-accent mr-2 mt-1">&#9679;</span> Copyright & licensing essentials</li>
-                    <li className="flex items-start"><span className="text-accent mr-2 mt-1">&#9679;</span> Contributor rewards & Q&A</li>
-                 </ul>
+              <div className="relative min-h-[200px] md:min-h-0">
+                 <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c5/WSC_Commons_Workshop_02.png"
+                    alt="WSC Commons Workshop 02 Banner"
+                    data-ai-hint="event banner"
+                    fill
+                    className="object-cover"
+                 />
               </div>
             </div>
           </Card>
