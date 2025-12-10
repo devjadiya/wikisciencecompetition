@@ -60,10 +60,10 @@ const pastEvents = [
     {
     title: "Commons Workshop (Session 02)",
     subtitle: "Wiki Science Competition 2025",
-    tagline: "Learned how to upload high-quality scientific images, choose categories, and prepare entries.",
+    tagline: "Learned how to upload high-quality scientific images, choose accurate categories, and prepare entries.",
     date: "Wednesday, 26 November 2025",
     time: "8:30 – 9:30 PM IST",
-    imageUrl: "/image/event_02.png",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/32/WSC_Commons_Workshop_02.png",
     registerLink: "https://meta.wikimedia.org/wiki/Event:WSC_India_2025_Commons_Workshop_02"
   },
   {
