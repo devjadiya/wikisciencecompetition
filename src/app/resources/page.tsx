@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Download, Video, CheckCircle } from 'lucide-react';
+import { Download, Video, CheckCircle, Calendar, Clock, User } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -56,6 +56,20 @@ const learningMaterials = [
   },
 ];
 
+const upcomingEvents = [
+  {
+      title: "Commons Workshop (Session 02)",
+      subtitle: "Wiki Science Competition 2025",
+      tagline: "Understand how to upload high-quality scientific images on Wikimedia Commons, choose accurate categories, and prepare entries for WSC 2025.",
+      date: "Wednesday, 26 November 2025",
+      time: "8:30 – 9:30 PM IST",
+      speaker: "Suyash Dwivedi",
+      platform: "Zoom",
+      imageUrl: "/images/event_02.png",
+      registerLink: "https://meta.wikimedia.org/wiki/Event:WSC_India_2025_Commons_Workshop_02"
+  }
+]
+
 const pastEvents = [
   {
     title: "Commons Workshop 01",
@@ -85,6 +99,59 @@ export default function ResourcesPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 py-12 space-y-10">
+        <div className="pt-12">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Upcoming Events</h2>
+                <p className="mt-2 text-base md:text-lg text-muted-foreground">Join our workshops to learn and prepare for the competition.</p>
+            </div>
+            {upcomingEvents.map((event, index) => (
+                <Card key={index} className="overflow-hidden shadow-lg border-accent/20 dark:border-accent/30 bg-card">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                    <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                      <div>
+                          <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-2">
+                          {event.title}
+                          </h2>
+                          <p className="text-muted-foreground mb-6 text-sm md:text-base">
+                          {event.tagline}
+                          </p>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-foreground mb-8">
+                          <div className="flex items-center gap-3">
+                              <Calendar className="h-5 w-5 text-accent" />
+                              <span>{event.date}</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                              <Clock className="h-5 w-5 text-accent" />
+                              <span>{event.time}</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                              <User className="h-5 w-5 text-accent" />
+                              <span>Speaker: {event.speaker}</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                              <Video className="h-5 w-5 text-accent" />
+                              <span>Platform: {event.platform}</span>
+                          </div>
+                          </div>
+
+                          <Button asChild>
+                            <a href={event.registerLink} target="_blank" rel="noopener noreferrer">View Event & Register</a>
+                          </Button>
+                      </div>
+                    </div>
+                    <div className="relative md:col-span-2 min-h-[300px] md:min-h-full bg-black/5">
+                        <img
+                          src={event.imageUrl}
+                          alt={event.title}
+                          className="object-contain w-full h-full p-4"
+                        />
+                    </div>
+                  </div>
+                </Card>
+            ))}
+        </div>
+
         {learningMaterials.map((material, index) => (
           <Card
             key={index}
@@ -189,5 +256,3 @@ export default function ResourcesPage() {
     </div>
   );
 }
-
-    

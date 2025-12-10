@@ -12,14 +12,12 @@ import VortexCta from '@/components/home/vortex-cta';
 import Leaderboard from '@/components/home/leaderboard';
 import instagramFeed from '@/lib/data/instagram-feed.json';
 import { useLanguage } from '@/context/language-context';
-import UpcomingEvent from '@/components/home/upcoming-event';
 
 export default function Home() {
   const { t } = useLanguage();
   return (
     <div className="flex flex-col">
       <HeroCarousel />
-      <UpcomingEvent />
       <InfoSections />
       <PrizesSection />
 
