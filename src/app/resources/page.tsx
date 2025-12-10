@@ -98,7 +98,7 @@ export default function ResourcesPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-12 space-y-10">
+      <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
         <div className="pt-12">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Upcoming Events</h2>
@@ -106,12 +106,19 @@ export default function ResourcesPage() {
             </div>
             {upcomingEvents.map((event, index) => (
                 <Card key={index} className="overflow-hidden shadow-lg border-accent/20 dark:border-accent/30 bg-card">
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                    <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="relative aspect-video md:aspect-auto">
+                        <img
+                          src={event.imageUrl}
+                          alt={event.title}
+                          className="object-cover w-full h-full p-4"
+                        />
+                    </div>
+                    <div className="p-6 flex flex-col justify-center">
                       <div>
-                          <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-2">
+                          <h3 className="text-2xl font-headline font-bold text-primary mb-2">
                           {event.title}
-                          </h2>
+                          </h3>
                           <p className="text-muted-foreground mb-6 text-sm md:text-base">
                           {event.tagline}
                           </p>
@@ -140,77 +147,10 @@ export default function ResourcesPage() {
                           </Button>
                       </div>
                     </div>
-                    <div className="relative md:col-span-2 min-h-[300px] md:min-h-full bg-black/5">
-                        <img
-                          src={event.imageUrl}
-                          alt={event.title}
-                          className="object-contain w-full h-full p-4"
-                        />
-                    </div>
                   </div>
                 </Card>
             ))}
         </div>
-
-        {learningMaterials.map((material, index) => (
-          <Card
-            key={index}
-            className="flex flex-col md:flex-row items-start overflow-hidden border dark:border-white/[0.1] shadow-md"
-          >
-            <div className="w-full md:w-1/2 h-52 md:h-auto relative">
-              {material.type === 'video' && playingIndex === index ? (
-                <video
-                  src={material.videoUrl}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <img
-                  src={material.preview}
-                  alt={material.title}
-                  className="w-full h-full object-cover cursor-pointer"
-                  onClick={() =>
-                    material.type === 'video' && setPlayingIndex(index)
-                  }
-                />
-              )}
-            </div>
-
-            <CardContent className="p-6 w-full md:w-1/2 flex flex-col justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-primary mb-2">
-                  {material.title}
-                </h2>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {material.description}
-                </p>
-              </div>
-
-              {material.type === 'pdf' ? (
-                <Button asChild variant="outline">
-                  <Link
-                    href={material.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Download PDF <Download className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              ) : (
-                <Button
-                  onClick={() =>
-                    setPlayingIndex((prev) => (prev === index ? null : index))
-                  }
-                  variant="outline"
-                >
-                  {playingIndex === index ? 'Hide Video' : 'Play Video'}{' '}
-                  <Video className="ml-2 h-4 w-4" />
-                </Button>
-              )}
-            </CardContent>
-          </Card>
-        ))}
 
         <div className="pt-12">
             <div className="text-center mb-12">
@@ -241,6 +181,68 @@ export default function ResourcesPage() {
                         </div>
                     </div>
                 </Card>
+            ))}
+        </div>
+
+        <div className="space-y-10">
+            {learningMaterials.map((material, index) => (
+            <Card
+                key={index}
+                className="flex flex-col md:flex-row items-start overflow-hidden border dark:border-white/[0.1] shadow-md"
+            >
+                <div className="w-full md:w-1/2 h-52 md:h-auto relative">
+                {material.type === 'video' && playingIndex === index ? (
+                    <video
+                    src={material.videoUrl}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <img
+                    src={material.preview}
+                    alt={material.title}
+                    className="w-full h-full object-cover cursor-pointer"
+                    onClick={() =>
+                        material.type === 'video' && setPlayingIndex(index)
+                    }
+                    />
+                )}
+                </div>
+
+                <CardContent className="p-6 w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                    <h2 className="text-xl font-bold text-primary mb-2">
+                    {material.title}
+                    </h2>
+                    <p className="text-muted-foreground text-sm mb-4">
+                    {material.description}
+                    </p>
+                </div>
+
+                {material.type === 'pdf' ? (
+                    <Button asChild variant="outline">
+                    <Link
+                        href={material.fileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Download PDF <Download className="ml-2 h-4 w-4" />
+                    </Link>
+                    </Button>
+                ) : (
+                    <Button
+                    onClick={() =>
+                        setPlayingIndex((prev) => (prev === index ? null : index))
+                    }
+                    variant="outline"
+                    >
+                    {playingIndex === index ? 'Hide Video' : 'Play Video'}{' '}
+                    <Video className="ml-2 h-4 w-4" />
+                    </Button>
+                )}
+                </CardContent>
+            </Card>
             ))}
         </div>
 
