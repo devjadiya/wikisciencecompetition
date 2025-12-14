@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/language-context';
 
 const organizerImages: { [key: string]: { image: string, hint: string } } = {
   'dev_jadiya': {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Dev_Jadiya_WTS_2024.png/1060px-Dev_Jadiya_WTS_2024.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Dev_Jadiya_at_Asian_month_workshop_2025.jpg/960px-Dev_Jadiya_at_Asian_month_workshop_2025.jpg',
     hint: 'organizer portrait',
   },
   'gauri_gupta': {
@@ -164,7 +164,7 @@ export default function OrganizersPage() {
             {coreTeam.map((organizer) => (
                <div
                 key={organizer.id}
-                className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
+                className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:darkborder-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
                     <img
@@ -199,3 +199,5 @@ export default function OrganizersPage() {
     </div>
   );
 }
+
+    
