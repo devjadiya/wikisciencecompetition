@@ -1,7 +1,6 @@
 
 'use client';
 
-import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 
 const organizerImages: { [key: string]: { image: string, hint: string } } = {
@@ -92,12 +91,12 @@ export default function OrganizersPage() {
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
-                    <Image
+                    <img
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
                       data-ai-hint={organizer.hint}
-                      fill
-                      className="object-cover"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
@@ -106,12 +105,12 @@ export default function OrganizersPage() {
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>
@@ -130,12 +129,12 @@ export default function OrganizersPage() {
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
-                    <Image
+                    <img
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
                       data-ai-hint={organizer.hint}
-                      fill
-                      className="object-cover"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
@@ -144,12 +143,12 @@ export default function OrganizersPage() {
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>
@@ -168,12 +167,12 @@ export default function OrganizersPage() {
                 className="bg-card/60 backdrop-blur-lg border dark:border-white/[0.1] hover:dark:border-white/[0.2] rounded-xl shadow-lg overflow-hidden flex flex-col group transition-all duration-300"
               >
                   <div className="relative h-64 sm:h-80 w-full">
-                    <Image
+                    <img
                       src={organizer.image}
                       alt={`Portrait of ${organizer.name}`}
                       data-ai-hint={organizer.hint}
-                      fill
-                      className="object-cover"
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-4 md:p-6 flex-grow flex flex-col text-center items-center">
@@ -182,12 +181,12 @@ export default function OrganizersPage() {
                     <div className="flex space-x-4 mt-auto">
                       {organizer.social.linkedin && (
                         <a href={organizer.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Linkedin-logo-blue-In-square-40px.png" alt="LinkedIn" width={28} height={28} />
                         </a>
                       )}
                       {organizer.social.meta && (
                         <a href={organizer.social.meta} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:opacity-80 transition-opacity">
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Meta-Wiki_Proposed_logo.svg" alt="Meta-Wiki" width={28} height={28} />
                         </a>
                       )}
                     </div>
@@ -196,7 +195,6 @@ export default function OrganizersPage() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

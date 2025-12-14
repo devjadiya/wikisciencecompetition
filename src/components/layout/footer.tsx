@@ -2,7 +2,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 
@@ -35,7 +34,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="space-y-8">
             <Link href="/" className="flex items-center gap-2">
-              <Image 
+              <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Logo_for_Wiki_Science_Competition_India_-_2025_Edition.svg"
                     alt="Wiki Science Competition India 2025 Logo"
                     width={200}
@@ -49,7 +48,7 @@ export default function Footer() {
               {socialLinks.map((item) => (
                 <a key={item.name} href={item.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-opacity hover:opacity-80" onClick={() => handleSocialLinkClick(item.name)}>
                   <span className="sr-only">{item.name}</span>
-                   <Image 
+                   <img 
                         src={item.icon}
                         alt={`${item.name} Logo`}
                         width={item.name === 'Meta Wiki' || item.name === 'Commons' ? 28 : 24}
@@ -106,5 +105,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

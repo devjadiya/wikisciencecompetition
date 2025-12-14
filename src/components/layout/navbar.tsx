@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -16,7 +17,6 @@ import {
   DropdownMenuPortal
 } from '@/components/ui/dropdown-menu';
 import LanguageSwitcher from './language-switcher';
-import Image from 'next/image';
 import { useLanguage } from '@/context/language-context';
 import { gtagEvent } from '@/lib/gtm';
 import { ThemeToggle } from './theme-toggle';
@@ -98,7 +98,7 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center gap-2 group" onClick={() => handleNavClick('Logo')}>
-                <Image 
+                <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_for_Wiki_Science_Competition_India.svg"
                     alt="Wiki Science Competition India Logo"
                     width={160}
