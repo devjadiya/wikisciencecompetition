@@ -84,9 +84,6 @@ export default function CertificatePage() {
       if (response.ok) {
         setIsEligible(data.eligible);
         setUploadCount(data.count);
-        if(data.eligible) {
-            setDisplayName(username); // Pre-fill display name
-        }
       } else {
         throw new Error(data.error || 'Failed to check eligibility.');
       }
