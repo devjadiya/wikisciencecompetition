@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useLanguage } from "@/context/language-context";
+import { ExternalLink } from "lucide-react";
 
 export function VortexCta() {
   const { t } = useLanguage();
@@ -21,7 +22,7 @@ export function VortexCta() {
                 <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg shadow-lg px-8 py-6 text-base">
                     <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
-                        {t.competition.readyToParticipate.cta}
+                        <ExternalLink className="mr-2"/> {t.competition.readyToParticipate.cta}
                     </a>
                 </Button>
                 <Button asChild variant="outline" className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/50 hover:border-primary-foreground/80 rounded-lg px-8 py-6 text-base">

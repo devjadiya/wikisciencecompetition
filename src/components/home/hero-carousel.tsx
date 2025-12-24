@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, CheckCircle, Award } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, Award, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/language-context';
 import Link from 'next/link';
@@ -145,8 +145,10 @@ export default function HeroCarousel() {
                     <Award className="mr-3 h-6 w-6" /> {t.home.hero.certificate}
                 </Link>
             </Button>
-            <Button disabled variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
-                <CheckCircle className="mr-3 h-6 w-6" /> {t.home.hero.closed}
+            <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-3 h-6 w-6" /> {t.home.hero.closed}
+                </a>
             </Button>
         </motion.div>
       </div>

@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X, ChevronDown, CheckCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -164,9 +164,9 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
             </DropdownMenu>
           </div>
           <div className="flex items-center gap-1">
-            <Button disabled asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
-              <a href="#" onClick={(e) => e.preventDefault()}>
-                <CheckCircle className="h-5 w-5 mr-2" />
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold hidden sm:flex">
+              <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-5 w-5 mr-2" />
                 {t.participateButton}
               </a>
             </Button>
@@ -241,9 +241,9 @@ export default function Navbar({ isMarqueeVisible }: NavbarProps) {
                  ))}
             </div>
             <div className="p-2 border-t border-border mt-2 pt-3">
-              <Button disabled asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <a href="#">
-                  <CheckCircle className="h-5 w-5 mr-2" />
+              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-5 w-5 mr-2" />
                   {t.participateButton}
                 </a>
               </Button>

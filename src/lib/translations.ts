@@ -43,7 +43,7 @@ export const translations = {
     organizersDropdown: "Organizers",
     moreDropdown: "More",
     learningDropdown: "Learning",
-    participateButton: "Competition Closed",
+    participateButton: "View Event Page",
     footerNavLinks: [
       { name: "About", href: "/about" },
       { name: "Competition", href: "/competition" },
@@ -261,7 +261,7 @@ export const translations = {
           { date: "February 2026", event: "National Winners Announced" },
         ],
       },
-      submitNow: "Competition Closed",
+      submitNow: "View Event Page",
       imageCategories: {
         title: "Image Categories",
         subtitle:
@@ -319,7 +319,7 @@ export const translations = {
         title: "Ready to Participate?",
         subtitle:
           "The stage is set. Your lens is the key. Show us the world through your scientific eyes.",
-        cta: "Submit Your Work",
+        cta: "View Event Page",
       },
     },
     contact: {
@@ -545,7 +545,7 @@ export const translations = {
       hero: {
         title: "The Competition is now Closed",
         certificate: "Get Your Certificate",
-        closed: "Submissions Closed",
+        closed: "View Event Page",
       },
       thankyou: {
         title: "Thank You, Contributors!",
@@ -589,7 +589,7 @@ export const translations = {
       },
       campaign: {
         title: "Live from the Campaign",
-        description: "Number of files uploaded via DSLR and general uploads.",
+        description: "Anatomy of total files. We have received this much images on dslr and common general uploads",
         totalSubmissions: "Total Submissions",
         noSubmissions: "No Submissions Yet",
         noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
@@ -597,7 +597,7 @@ export const translations = {
       },
       mobileCampaign: {
         title: "Live from Mobile",
-        description: "Number of files uploaded via Mobile devices.",
+        description: "We have recieved this much mobile submissions that taken from smartphones",
         totalSubmissions: "Total Submissions",
       },
       dashboard: {
@@ -675,7 +675,7 @@ export const translations = {
     organizersDropdown: "आयोजक",
     moreDropdown: "अधिक",
     learningDropdown: "सीखना",
-    participateButton: "प्रतियोगिता समाप्त",
+    participateButton: "इवेंट पेज देखें",
     footerNavLinks: [
       { name: "परिचय", href: "/about" },
       { name: "प्रतियोगिता", href: "/competition" },
@@ -882,7 +882,7 @@ export const translations = {
           { date: "फरवरी 2026", event: "राष्ट्रीय विजेताओं की घोषणा" },
         ],
       },
-      submitNow: "प्रतियोगिता समाप्त",
+      submitNow: "इवेंट पेज देखें",
       imageCategories: {
         title: "छवि श्रेणियाँ",
         subtitle:
@@ -938,7 +938,7 @@ export const translations = {
         title: "भाग लेने के लिए तैयार हैं?",
         subtitle:
           "मंच तैयार है। आपका लेंस कुंजी है। हमें अपनी वैज्ञानिक आंखों से दुनिया दिखाएं।",
-        cta: "अपना काम जमा करें",
+        cta: "इवेंट पेज देखें",
       },
     },
     contact: {
@@ -1172,7 +1172,7 @@ export const translations = {
       hero: {
         title: "प्रतियोगिता अब समाप्त हो गई है",
         certificate: "अपना प्रमाणपत्र प्राप्त करें",
-        closed: "प्रस्तुतियाँ बंद",
+        closed: "इवेंट पेज देखें",
       },
       thankyou: {
         title: "धन्यवाद, योगदानकर्ताओं!",

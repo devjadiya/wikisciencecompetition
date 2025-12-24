@@ -18,6 +18,7 @@ import {
   Atom,
   Smartphone,
   CheckCircle,
+  ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import CategoryShowcase from '@/components/competition/category-showcase';
@@ -239,7 +240,7 @@ export default function CompetitionPage() {
                   <p className="lead">
                     {t.competition.howToParticipate.p1}
                   </p>
-                  <Button disabled asChild className="my-4">
+                  <Button asChild className="my-4">
                     <a href="https://commons.wikimedia.org/w/index.php?title=Special:CreateAccount" target="_blank" rel="noopener noreferrer">
                       {t.competition.howToParticipate.createAccountLink}
                     </a>
@@ -288,8 +289,10 @@ export default function CompetitionPage() {
                     </li>
                   ))}
                 </ul>
-                <Button disabled asChild className="w-full mt-8 bg-accent hover:bg-accent/90">
-                  <a href="#">{t.competition.submitNow}</a>
+                <Button asChild className="w-full mt-8 bg-accent hover:bg-accent/90">
+                  <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                    {t.competition.submitNow}
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -332,8 +335,8 @@ export default function CompetitionPage() {
               Unveil the beauty of science through your lens. Join a global community celebrating discovery.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-              <Button disabled asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-                <a href="#">
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
                   {t.competition.readyToParticipate.cta}
                 </a>
               </Button>
@@ -350,8 +353,8 @@ export default function CompetitionPage() {
           <div className="bg-primary text-primary-foreground rounded-lg shadow-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-headline font-bold">{t.competition.readyToParticipate.title}</h3>
             <p className="mt-4 mb-8 max-w-xl mx-auto text-sm md:text-base">{t.competition.readyToParticipate.subtitle}</p>
-            <Button disabled asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 shadow-xl transition-transform hover:scale-105">
-              <a href="#">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 shadow-xl transition-transform hover:scale-105">
+              <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
                 {t.competition.readyToParticipate.cta}
               </a>
             </Button>
