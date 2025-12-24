@@ -7,6 +7,7 @@ import { Upload, Users, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ThankYouSection() {
     const { t } = useLanguage();
@@ -44,15 +45,24 @@ export default function ThankYouSection() {
                 </div>
 
                 <motion.div
-                    className="mt-16 text-center max-w-3xl mx-auto"
+                    className="mt-16 text-center max-w-4xl mx-auto"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <div className="bg-card p-6 md:p-8 rounded-lg shadow-lg border">
+                         <div className="mb-8">
+                            <Image 
+                                src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
+                                alt="Certificate Preview"
+                                width={842}
+                                height={595}
+                                className="object-contain rounded-md shadow-md mx-auto"
+                            />
+                        </div>
                         <h3 className="text-xl md:text-2xl font-headline font-bold text-primary mb-4">{t.home.thankyou.certificateTitle}</h3>
-                        <p className="text-muted-foreground mb-6">
+                        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                            {t.home.thankyou.certificateMessage}
                         </p>
                         <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
@@ -70,3 +80,5 @@ export default function ThankYouSection() {
         </section>
     );
 }
+
+    
