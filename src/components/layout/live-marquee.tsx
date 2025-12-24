@@ -25,7 +25,7 @@ interface LiveMarqueeProps {
 }
 
 export default function LiveMarquee({ isVisible, onClose }: LiveMarqueeProps) {
-    const announcement = "Thank you to all contributors! We received over 3,600 uploads from 474 individuals. • सभी योगदानकर्ताओं को धन्यवाद! हमें 474 व्यक्तियों से 3,600 से अधिक अपलोड प्राप्त हुए। • ";
+    const announcement = "Thank you to all contributors! We received over 3,664 uploads from 474 individuals. • सभी योगदानकर्ताओं को धन्यवाद! हमें 474 व्यक्तियों से 3,664 से अधिक अपलोड प्राप्त हुए। • ";
 
     return (
         <AnimatePresence>
