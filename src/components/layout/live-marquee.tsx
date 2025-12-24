@@ -7,12 +7,12 @@ import { Button } from '@/components/ui/button';
 
 const marqueeVariants = {
   animate: {
-    x: [0, -2500], // Increased width to accommodate more text
+    x: [0, -3500],
     transition: {
       x: {
         repeat: Infinity,
         repeatType: "loop",
-        duration: 50, // Increased duration for a smoother, slower scroll
+        duration: 60,
         ease: "linear",
       },
     },
@@ -25,7 +25,7 @@ interface LiveMarqueeProps {
 }
 
 export default function LiveMarquee({ isVisible, onClose }: LiveMarqueeProps) {
-    const announcement = "The Wiki Science Competition is live! Upload now! • विकी विज्ञान प्रतियोगिता लाइव है! अभी अपलोड करें! • উইকি বিজ্ঞান প্রতিযোগিতা লাইভ! এখন আপলোড করুন! • விக்கி அறிவியல் போட்டி நேரலையில் உள்ளது! இப்போது பதிவேற்றவும்! • ";
+    const announcement = "Thank you to all contributors! We received over 3,600 uploads from 474 individuals. • सभी योगदानकर्ताओं को धन्यवाद! हमें 474 व्यक्तियों से 3,600 से अधिक अपलोड प्राप्त हुए। • ";
 
     return (
         <AnimatePresence>

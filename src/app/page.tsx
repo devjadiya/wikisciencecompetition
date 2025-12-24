@@ -1,6 +1,7 @@
 
 'use client';
 import HeroCarousel from '@/components/home/hero-carousel';
+import ThankYouSection from '@/components/home/thank-you-section';
 import InfoSections from '@/components/home/info-sections';
 import PrizesSection from '@/components/home/prizes-section';
 import WSCampaignGallery from '@/components/home/ws-campaign-gallery';
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroCarousel />
+      <ThankYouSection />
       <InfoSections />
       <PrizesSection />
 

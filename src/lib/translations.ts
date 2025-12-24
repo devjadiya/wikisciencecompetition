@@ -44,7 +44,7 @@ export const translations = {
     organizersDropdown: "Organizers",
     moreDropdown: "More",
     learningDropdown: "Learning",
-    participateButton: "Participate",
+    participateButton: "Competition Closed",
     footerNavLinks: [
       { name: "About", href: "/about" },
       { name: "Competition", href: "/competition" },
@@ -256,13 +256,13 @@ export const translations = {
       keyDates: {
         title: "Key Dates",
         timeline: [
-          { date: "November 1, 2025", event: "Submissions Open" },
-          { date: "December 15, 2025", event: "Submissions Close" },
+          { date: "November 1, 2025", event: "Submissions Opened" },
+          { date: "December 15, 2025", event: "Submissions Closed" },
           { date: "January 2026", event: "Jury Deliberation" },
           { date: "February 2026", event: "National Winners Announced" },
         ],
       },
-      submitNow: "Submit Now",
+      submitNow: "Competition Closed",
       imageCategories: {
         title: "Image Categories",
         subtitle:
@@ -544,9 +544,15 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "The Competition is Live!",
-        upload: "Upload Your Photos Now!",
-        uploadMobile: "Upload Mobile Clicked Photos",
+        title: "The Competition is now Closed",
+        certificate: "Get Your Certificate",
+        closed: "Submissions Closed",
+      },
+      thankyou: {
+        title: "Thank You, Contributors!",
+        subtitle: "The response to the first-ever Wiki Science Competition in India has been phenomenal. We're thrilled to announce that our talented community has contributed over 3600+ entries! We extend our heartfelt gratitude to every participant for sharing their vision of science. Stay tuned for the results!",
+        uploads: "Uploads",
+        contributors: "Contributors",
       },
       info: {
         title: "Clicking Today, Creating Tomorrow.",
@@ -665,7 +671,7 @@ export const translations = {
     organizersDropdown: "आयोजक",
     moreDropdown: "अधिक",
     learningDropdown: "सीखना",
-    participateButton: "भाग लें",
+    participateButton: "प्रतियोगिता समाप्त",
     footerNavLinks: [
       { name: "परिचय", href: "/about" },
       { name: "प्रतियोगिता", href: "/competition" },
@@ -874,7 +880,7 @@ export const translations = {
           { date: "फरवरी 2026", event: "राष्ट्रीय विजेताओं की घोषणा" },
         ],
       },
-      submitNow: "अभी सबमिट करें",
+      submitNow: "प्रतियोगिता समाप्त",
       imageCategories: {
         title: "छवि श्रेणियाँ",
         subtitle:
@@ -1151,9 +1157,15 @@ export const translations = {
     },
     home: {
       hero: {
-        title: "प्रतियोगिता लाइव है!",
-        upload: "अपनी तस्वीरें अभी अपलोड करें!",
-        uploadMobile: "मोबाइल तस्वीरें अपलोड करें",
+        title: "प्रतियोगिता अब समाप्त हो गई है",
+        certificate: "अपना प्रमाणपत्र प्राप्त करें",
+        closed: "प्रस्तुतियाँ बंद",
+      },
+      thankyou: {
+        title: "धन्यवाद, योगदानकर्ताओं!",
+        subtitle: "भारत में पहली बार विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली है। हमें यह घोषणा करते हुए खुशी हो रही है कि हमारे प्रतिभाशाली समुदाय ने 3600+ से अधिक प्रविष्टियों का योगदान दिया है! हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का हृदय से आभार व्यक्त करते हैं। परिणामों के लिए बने रहें!",
+        uploads: "अपलोड",
+        contributors: "योगदानकर्ता",
       },
       info: {
         title: "आज क्लिक करें, कल बनाएं।",
@@ -1235,5 +1247,3 @@ export const translations = {
 export type Translations = typeof translations;
 
 export type TranslationType = (typeof translations)['en'];
-
-    

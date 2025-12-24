@@ -4,9 +4,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, UploadCloud, Smartphone } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/language-context';
+import Link from 'next/link';
 
 const slides = [
   {
@@ -53,7 +54,7 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0_BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
     alt: 'Microscopic image of the outer layer of a surgical mask',
     caption: 'Microscopic outer layer of a surgical mask by Alexander Klepnev, CC BY-SA 4.0',
   }
@@ -140,14 +141,12 @@ export default function HeroCarousel() {
             transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
         >
             <Button asChild size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
-                <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025" target="_blank" rel="noopener noreferrer">
-                    <UploadCloud className="mr-3 h-6 w-6" /> {t.home.hero.upload}
-                </a>
+                <Link href="/certificate">
+                    <Award className="mr-3 h-6 w-6" /> {t.home.hero.certificate}
+                </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
-                <a href="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m" target="_blank" rel="noopener noreferrer">
-                    <Smartphone className="mr-3 h-6 w-6" /> {t.home.hero.uploadMobile}
-                </a>
+            <Button disabled variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
+                <CheckCircle className="mr-3 h-6 w-6" /> {t.home.hero.closed}
             </Button>
         </motion.div>
       </div>
