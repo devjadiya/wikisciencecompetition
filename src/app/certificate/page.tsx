@@ -190,9 +190,20 @@ export default function CertificatePage() {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
-              <div className="space-y-8 lg:order-1">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div className="mb-12">
+                <div className="bg-card p-4 rounded-lg shadow-xl border aspect-[1.414/1] flex items-center justify-center">
+                    <Image 
+                        src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
+                        alt="Certificate Preview"
+                        width={842}
+                        height={595}
+                        className="object-contain rounded-md"
+                    /> 
+                </div>
+            </div>
+
+            <div className="space-y-8">
                 <div className="bg-card p-6 rounded-lg shadow-md border">
                     <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">1</span> Check Your Eligibility</h2>
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -302,24 +313,7 @@ export default function CertificatePage() {
                     </div>
                 )}
             </div>
-            
-            <div className="lg:order-2">
-                <div className="sticky top-24 bg-card p-4 rounded-lg shadow-xl border aspect-[1.414/1] flex items-center justify-center">
-                    <Image 
-                        src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
-                        alt="Certificate Preview"
-                        width={842}
-                        height={595}
-                        className="object-contain rounded-md"
-                    /> 
-                </div>
-            </div>
-        </div>
       </main>
     </div>
   );
 }
-
-    
-
-    
