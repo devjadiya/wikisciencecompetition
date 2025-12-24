@@ -5,26 +5,14 @@ import Image from 'next/image';
 
 const juryMembers = [
   {
+    name: 'Akshat Shrivastava',
+    username: 'Bhaiyaji Smile 123',
+    image: 'https://placehold.co/400x400.png',
+    hint: 'jury member photo'
+  },
+  {
     name: 'Dappa Solomon',
     username: 'Dappasolomon001',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'jury member photo'
-  },
-  {
-    name: 'Sarthak Khare',
-    username: 'Status 401',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'jury member photo'
-  },
-  {
-    name: 'Fuseini Mugisu Suhuyini',
-    username: 'Sir Amugi',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'jury member photo'
-  },
-  {
-    name: 'Sudhanwa Jogalekar',
-    username: 'sudhanwa',
     image: 'https://placehold.co/400x400.png',
     hint: 'jury member photo'
   },
@@ -35,8 +23,20 @@ const juryMembers = [
     hint: 'jury member photo'
   },
   {
-    name: 'Akshat Shrivastava',
-    username: 'Bhaiyaji Smile 123',
+    name: 'Fuseini Mugisu Suhuyini',
+    username: 'Sir Amugi',
+    image: 'https://placehold.co/400x400.png',
+    hint: 'jury member photo'
+  },
+  {
+    name: 'Sarthak Khare',
+    username: 'Status 401',
+    image: 'https://placehold.co/400x400.png',
+    hint: 'jury member photo'
+  },
+  {
+    name: 'Sudhanwa Jogalekar',
+    username: 'sudhanwa',
     image: 'https://placehold.co/400x400.png',
     hint: 'jury member photo'
   },
