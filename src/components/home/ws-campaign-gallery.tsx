@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/language-context';
 
 interface WSCampaignGalleryProps {
   title: string;
-  subtitle: string;
+  description: string;
   campaignCategory: string;
   campaignUrl: string;
   apiUrl?: string;
@@ -18,7 +18,7 @@ interface WSCampaignGalleryProps {
 
 export default function WSCampaignGallery({
   title,
-  subtitle,
+  description,
   campaignCategory,
   campaignUrl,
   apiUrl = 'https://commons.wikimedia.org/w/api.php',
@@ -64,7 +64,7 @@ export default function WSCampaignGallery({
     <Card className="flex flex-col text-center shadow-lg border dark:border-white/[0.1]">
       <CardHeader className="pb-4">
         <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary">{title}</h2>
-        <p className="text-sm text-muted-foreground">{subtitle}</p>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </CardHeader>
       <CardContent className="flex flex-col flex-grow items-center justify-center">
         {isLoading && (
@@ -84,7 +84,7 @@ export default function WSCampaignGallery({
               <AnimatedCounter from={0} to={totalCount} />
               <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
                   {isMobileCampaign ? <Smartphone className="h-4 w-4" /> : <Camera className="h-4 w-4" />}
-                  <span>Total Submissions</span>
+                  <span>{t.home.campaign.totalSubmissions}</span>
               </div>
           </div>
         )}

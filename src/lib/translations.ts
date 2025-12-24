@@ -589,7 +589,7 @@ export const translations = {
       },
       campaign: {
         title: "Live from the Campaign",
-        subtitle: "Latest images submitted by participants across India.",
+        description: "Anatomy of total files. These are images from DSLR and other general uploads.",
         totalSubmissions: "Total Submissions",
         noSubmissions: "No Submissions Yet",
         noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
@@ -597,7 +597,7 @@ export const translations = {
       },
       mobileCampaign: {
         title: "Live from Mobile",
-        subtitle: "Capturing science on the go with mobile uploads.",
+        description: "These are mobile submissions taken from smartphones.",
       },
       dashboard: {
         title: "Live Campaign Dashboard",
@@ -1211,7 +1211,7 @@ export const translations = {
       },
       campaign: {
         title: "अभियान से लाइव",
-        subtitle: "पूरे भारत में प्रतिभागियों द्वारा प्रस्तुत नवीनतम छवियां।",
+        description: "कुल फाइलों का विश्लेषण। ये डीएसएलआर और अन्य सामान्य अपलोड से छवियां हैं।",
         totalSubmissions: "कुल प्रस्तुतियाँ",
         noSubmissions: "अभी तक कोई सबमिशन नहीं",
         noSubmissionsSub: "योगदान करने वाले पहले व्यक्ति बनें! इस अभियान की छवियां यहां लाइव दिखाई देंगी।",
@@ -1219,7 +1219,7 @@ export const translations = {
       },
       mobileCampaign: {
         title: "मोबाइल से लाइव",
-        subtitle: "मोबाइल अपलोड के साथ चलते-फिरते विज्ञान को कैप्चर करना।",
+        description: "ये स्मार्टफोन से ली गई मोबाइल प्रस्तुतियाँ हैं।",
       },
       dashboard: {
         title: "लाइव अभियान डैशबोर्ड",
