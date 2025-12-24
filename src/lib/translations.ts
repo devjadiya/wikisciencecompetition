@@ -593,7 +593,7 @@ export const translations = {
         totalSubmissions: "Total Submissions",
         noSubmissions: "No Submissions Yet",
         noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
-        viewFull: "View Full Campaign"
+        viewFull: "See Images"
       },
       mobileCampaign: {
         title: "Live from Mobile",
@@ -1215,7 +1215,7 @@ export const translations = {
         totalSubmissions: "कुल प्रस्तुतियाँ",
         noSubmissions: "अभी तक कोई सबमिशन नहीं",
         noSubmissionsSub: "योगदान करने वाले पहले व्यक्ति बनें! इस अभियान की छवियां यहां लाइव दिखाई देंगी।",
-        viewFull: "पूर्ण अभियान देखें"
+        viewFull: "छवियां देखें"
       },
       mobileCampaign: {
         title: "मोबाइल से लाइव",

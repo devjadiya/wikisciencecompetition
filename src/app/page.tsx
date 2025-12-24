@@ -23,19 +23,23 @@ export default function Home() {
       <InfoSections />
       <PrizesSection />
 
-      <WSCampaignGallery 
-        title={t.home.campaign.title}
-        subtitle={t.home.campaign.subtitle}
-        campaignCategory="Uploaded_via_Campaign:wsc-in-2025"
-        campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
-      />
+      <div className="bg-primary/5 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <WSCampaignGallery 
+                title={t.home.campaign.title}
+                subtitle={t.home.campaign.subtitle}
+                campaignCategory="Uploaded_via_Campaign:wsc-in-2025"
+                campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-2025"
+            />
 
-      <WSCampaignGallery 
-        title={t.home.mobileCampaign.title}
-        subtitle={t.home.mobileCampaign.subtitle}
-        campaignCategory="Uploaded_via_Campaign:wsc-in-m"
-        campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
-      />
+            <WSCampaignGallery 
+                title={t.home.mobileCampaign.title}
+                subtitle={t.home.mobileCampaign.subtitle}
+                campaignCategory="Uploaded_via_Campaign:wsc-in-m"
+                campaignUrl="https://commons.wikimedia.org/wiki/Campaign:wsc-in-m"
+            />
+        </div>
+      </div>
       
       <OutreachDashboard />
       
