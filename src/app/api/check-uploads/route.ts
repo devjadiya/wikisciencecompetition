@@ -7,16 +7,13 @@ function userMatch(apiUser: string, inputUser: string) {
   return norm(apiUser) === norm(inputUser);
 }
 
-// Fetch count of uploads by user in competition category
-async function fetchUserCategoryUploads(username: string, category: string) {
+// Fetch count of uploads by user in a specific competition category
+async function fetchUserCategoryUploads(username: string, category: string): Promise<number> {
   const encodedCategory = encodeURIComponent(category);
   let fileTitles: string[] = [];
 
-  // ----------------------------
-  // 🔥 FIX: PAGINATION ADDED HERE
-  // ----------------------------
+  // Paginate through all members of the category
   let cmcontinue: string | null = null;
-
   do {
     let apiUrl =
       `https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers` +
@@ -24,44 +21,47 @@ async function fetchUserCategoryUploads(username: string, category: string) {
       `&cmnamespace=6&cmlimit=500&format=json&origin=*` +
       (cmcontinue ? `&cmcontinue=${encodeURIComponent(cmcontinue)}` : '');
 
-    const catResp = await fetch(apiUrl);
-    const catData = await catResp.json();
+    try {
+        const catResp = await fetch(apiUrl, { next: { revalidate: 3600 } }); // Cache for 1 hour
+        const catData = await catResp.json();
 
-    if (catData?.query?.categorymembers) {
-      fileTitles.push(...catData.query.categorymembers.map((file: { title: string }) => file.title));
+        if (catData?.query?.categorymembers) {
+            fileTitles.push(...catData.query.categorymembers.map((file: { title: string }) => file.title));
+        }
+        cmcontinue = catData?.continue?.cmcontinue || null;
+    } catch (e) {
+        console.error(`Error fetching category members for ${category}:`, e);
+        cmcontinue = null; // Stop pagination on error
     }
-
-    cmcontinue = catData?.continue?.cmcontinue || null;
-
   } while (cmcontinue);
-  // ----------------------------
-  // END PAGINATION FIX
-  // ----------------------------
 
   if (fileTitles.length === 0) return 0;
 
-  // Step 2: Check each file's uploader via imageinfo (batch in groups for API efficiency)
+  // Check each file's uploader via imageinfo (batch in groups for API efficiency)
   let userUploadCount = 0;
-
   for (let i = 0; i < fileTitles.length; i += 50) {
     const batch = fileTitles.slice(i, i + 50).map(f => encodeURIComponent(f)).join('|');
     const infoUrl =
       `https://commons.wikimedia.org/w/api.php?action=query&titles=${batch}` +
       `&prop=imageinfo&iiprop=user&format=json&origin=*`;
 
-    const infoResp = await fetch(infoUrl);
-    const infoData = await infoResp.json();
+    try {
+        const infoResp = await fetch(infoUrl, { next: { revalidate: 3600 } }); // Cache for 1 hour
+        const infoData = await infoResp.json();
 
-    if (infoData.query?.pages) {
-      Object.values(infoData.query.pages).forEach((page: any) => {
-        if (
-          page.imageinfo &&
-          page.imageinfo[0].user &&
-          userMatch(page.imageinfo[0].user, username)
-        ) {
-          userUploadCount += 1;
+        if (infoData.query?.pages) {
+            Object.values(infoData.query.pages).forEach((page: any) => {
+                if (
+                page.imageinfo &&
+                page.imageinfo[0].user &&
+                userMatch(page.imageinfo[0].user, username)
+                ) {
+                userUploadCount += 1;
+                }
+            });
         }
-      });
+    } catch (e) {
+        console.error(`Error fetching image info for batch starting at ${i}:`, e);
     }
   }
 
@@ -72,16 +72,32 @@ async function fetchUserCategoryUploads(username: string, category: string) {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const username = searchParams.get('username');
-  const category = 'Images_from_Wiki_Science_Competition_2025_in_India';
+  
+  const mobileCategory = 'Eligible_mobile_images_for_WSC_2025_India';
+  const cameraCategory = 'Eligible_camera_images_for_WSC_2025_India';
 
   if (!username) {
-    return new Response(JSON.stringify({ eligible: false, count: 0 }), { status: 400 });
+    return new Response(JSON.stringify({ eligible: false, count: 0, error: 'Username is required.' }), { status: 400 });
   }
 
-  const count = await fetchUserCategoryUploads(username, category);
+  try {
+    // Fetch counts from both categories in parallel
+    const [mobileCount, cameraCount] = await Promise.all([
+      fetchUserCategoryUploads(username, mobileCategory),
+      fetchUserCategoryUploads(username, cameraCategory)
+    ]);
+    
+    const totalCount = mobileCount + cameraCount;
 
-  return new Response(
-    JSON.stringify({ eligible: count >= 20, count }),
-    { status: 200 }
-  );
+    return new Response(
+      JSON.stringify({ eligible: totalCount >= 20, count: totalCount }),
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('API Error checking uploads:', error);
+    return new Response(
+      JSON.stringify({ eligible: false, count: 0, error: 'Failed to fetch data from Wikimedia Commons.' }), 
+      { status: 500 }
+    );
+  }
 }
