@@ -1,11 +1,15 @@
 
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Loader2, User, Award, Download, Mail, Send, X, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Loader2, CheckCircle, AlertTriangle, X, Download, Mail, Send, ChevronsUpDown } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { gtagEvent } from '@/lib/gtm';
+import { useDebounce } from 'react-use';
+
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 
 export default function CertificatePage() {
   const [username, setUsername] = useState('');
@@ -17,7 +21,41 @@ export default function CertificatePage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isEmailing, setIsEmailing] = useState(false);
 
+  // --- Autocomplete State ---
+  const [searchQuery, setSearchQuery] = useState("");
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [isAutocompleteLoading, setIsAutocompleteLoading] = useState(false);
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
   const { toast } = useToast();
+
+  useDebounce(
+    () => {
+      const fetchSuggestions = async () => {
+        if (searchQuery.length < 2) {
+          setSuggestions([]);
+          return;
+        }
+        setIsAutocompleteLoading(true);
+        try {
+          const response = await fetch(`/api/username-autocomplete?prefix=${encodeURIComponent(searchQuery)}`);
+          const data = await response.json();
+          if (response.ok) {
+            setSuggestions(data);
+          } else {
+            setSuggestions([]);
+          }
+        } catch (error) {
+          setSuggestions([]);
+        } finally {
+          setIsAutocompleteLoading(false);
+        }
+      };
+      fetchSuggestions();
+    },
+    300,
+    [searchQuery]
+  );
 
   const handleUsernameCheck = async () => {
     if (!username.trim()) {
@@ -49,16 +87,16 @@ export default function CertificatePage() {
             setDisplayName(username); // Pre-fill display name
         }
       } else {
-        throw new Error(data.message || 'Failed to check eligibility.');
+        throw new Error(data.error || 'Failed to check eligibility.');
       }
 
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       setIsEligible(false);
       setUploadCount(0);
       toast({
         title: 'Error',
-        description: 'Could not connect to the Wikimedia API. Please try again later.',
+        description: error.message || 'Could not connect to the Wikimedia API. Please try again later.',
         variant: 'destructive',
       });
     } finally {
@@ -153,30 +191,59 @@ export default function CertificatePage() {
 
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="space-y-8">
-            {/* Step 1: Username Input */}
             <div className="bg-card p-6 rounded-lg shadow-md border">
-                <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><User className="h-5 w-5"/> Step 1: Check Your Eligibility</h2>
+                <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">1</span> Check Your Eligibility</h2>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Input 
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Enter your Wikimedia username"
-                        className="flex-grow"
-                        onKeyDown={(e) => e.key === 'Enter' && handleUsernameCheck()}
-                    />
+                    <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" role="combobox" aria-expanded={popoverOpen} className="w-full flex-grow justify-between font-normal">
+                                {username || "Enter your Wikimedia username"}
+                                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
+                            <Command>
+                                <CommandInput 
+                                    placeholder="Search username..." 
+                                    value={searchQuery}
+                                    onValueChange={setSearchQuery}
+                                />
+                                <CommandList>
+                                    {isAutocompleteLoading && <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>}
+                                    <CommandEmpty>{searchQuery.length > 1 ? "No users found." : "Type to search..."}</CommandEmpty>
+                                    <CommandGroup>
+                                        {suggestions.map((name) => (
+                                            <CommandItem
+                                                key={name}
+                                                value={name}
+                                                onSelect={(currentValue) => {
+                                                    setUsername(currentValue);
+                                                    setSearchQuery(currentValue);
+                                                    setPopoverOpen(false);
+                                                }}
+                                            >
+                                                {name}
+                                            </CommandItem>
+                                        ))}
+                                    </CommandGroup>
+                                </CommandList>
+                            </Command>
+                        </PopoverContent>
+                    </Popover>
+
                     <Button onClick={handleUsernameCheck} disabled={isLoading} className="w-full sm:w-auto">
                         {isLoading ? <Loader2 className="animate-spin mr-2"/> : <CheckCircle className="mr-2"/>}
                         Check
                     </Button>
                 </div>
+                 <p className="text-xs text-muted-foreground mt-2 pl-1">Start typing your username to see suggestions.</p>
             </div>
 
-            {/* Step 2: Result & Certificate Generation */}
             {isEligible !== null && (
                 <div className="bg-card p-6 rounded-lg shadow-md border animate-in fade-in">
                     {isEligible ? (
                         <div>
+                             <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">2</span> Generate Certificate</h2>
                             <div className="flex items-center gap-3 mb-6 pb-4 border-b">
                                 <CheckCircle className="h-8 w-8 text-green-500"/>
                                 <div>
@@ -227,7 +294,7 @@ export default function CertificatePage() {
                             </div>
                         </div>
                     )}
-                     <Button variant="ghost" size="sm" onClick={() => setIsEligible(null)} className="mt-4 text-xs">
+                     <Button variant="ghost" size="sm" onClick={() => { setIsEligible(null); setUsername(''); setSearchQuery(''); }} className="mt-4 text-xs text-muted-foreground">
                         <X className="mr-1 h-3 w-3" /> Check for another username
                     </Button>
                 </div>
