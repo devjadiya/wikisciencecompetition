@@ -23,15 +23,11 @@ const subjects = [
     'Image Category Clarification',
     'Technical Issue with Uploading',
     'Sponsorship Opportunities',
-    'Becoming a Partner/Affiliate',
-    'Campus Ambassador Program Inquiry',
     'Jury & Judging Process',
     'Prizes and Awards Information',
     'Media or Press Inquiry',
     'Licensing and Copyright Question',
     'Website Feedback or Bug Report',
-    'Request for a Workshop/Session',
-    'Volunteering or Joining the Team',
     'Question about Past Competitions',
     'Data Privacy Concern',
     'How to use Wikimedia Commons',
@@ -77,16 +73,6 @@ const messageTemplates: Record<string, string[]> = {
         'What benefits do sponsors receive?',
         'Other...',
     ],
-    'Becoming a Partner/Affiliate': [
-        'Our organization would like to partner with you. What are the next steps?',
-        'What is expected of a partner organization?',
-        'Other...',
-    ],
-    'Campus Ambassador Program Inquiry': [
-        'What are the responsibilities of a Campus Ambassador?',
-        'I have applied for the Campus Ambassador program. When can I expect a response?',
-        'Other...',
-    ],
     'Jury & Judging Process': [
         'How will the images be judged?',
         'When will the jury members be announced?',
@@ -110,16 +96,6 @@ const messageTemplates: Record<string, string[]> = {
     'Website Feedback or Bug Report': [
         'I found a bug on the website I would like to report.',
         'I have some feedback to improve the website user experience.',
-        'Other...',
-    ],
-    'Request for a Workshop/Session': [
-        'Our institution would like to request a workshop on science photography.',
-        'Are you available to conduct an online session about the competition?',
-        'Other...',
-    ],
-    'Volunteering or Joining the Team': [
-        'I am interested in volunteering for the organizing team.',
-        'Are there any open positions in the core team?',
         'Other...',
     ],
     'Question about Past Competitions': [

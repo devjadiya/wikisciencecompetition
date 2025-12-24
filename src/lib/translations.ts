@@ -1,5 +1,4 @@
 
-
 export const languages = [
   { code: "en", name: "English" },
   { code: "hi", name: "हिन्दी" },
@@ -202,10 +201,10 @@ export const translations = {
       formNote:
         "This form is intended for recognized Wikimedia affiliates or community groups. Individuals and students should use the",
       campusAmbassadorLink: "Campus Ambassador form",
-      sidebarTitle: "Partner With Us",
+      sidebarTitle: "Applications Closed",
       sidebarDescription:
-        "Let's collaborate to showcase India's scientific landscape to the world.",
-      cta: "Open Partnership Form",
+        "Thank you for your interest. The application period for the Affiliate program has ended.",
+      cta: "Applications Closed",
     },
     campus: {
       title: "Call for Campus Ambassadors",
@@ -221,10 +220,10 @@ export const translations = {
         "Optionally, organize awareness activities like workshops or photowalks (we can provide support!).",
       ],
       sidebar: {
-        title: "Apply Now",
+        title: "Applications Closed",
         description:
-          "Ready to make an impact? Fill out the form to become a Campus Ambassador.",
-        cta: "Open Application Form",
+          "Thank you for your interest. The application period for the Campus Ambassador program has ended.",
+        cta: "Applications Closed",
       },
       cta: {
         text: "Become a Campus Ambassador",
@@ -822,11 +821,10 @@ export const translations = {
       formNote:
         "यह फॉर्म मान्यता प्राप्त विकिमीडिया सहयोगियों या सामुदायिक समूहों के लिए है। व्यक्तियों और छात्रों को",
       campusAmbassadorLink: "कैंपस एंबेसडर फॉर्म",
-      sidebarTitle: "हमारे साथ भागीदार बनें",
+      sidebarTitle: "आवेदन बंद",
       sidebarDescription:
-        "आइए भारत के वैज्ञानिक परिदृश्य को दुनिया के सामने प्रदर्शित करने के लिए सहयोग करें।",
-      deadline: "अंतिम तिथि: 31 अगस्त 2025",
-      cta: "साझेदारी फॉर्म खोलें",
+        "आपकी रुचि के लिए धन्यवाद। संबद्ध कार्यक्रम के लिए आवेदन अवधि समाप्त हो गई है।",
+      cta: "आवेदन बंद",
     },
     campus: {
       title: "कैंपस एंबेसडर के लिए कॉल",
@@ -842,11 +840,10 @@ export const translations = {
         "वैकल्पिक रूप से, कार्यशालाओं या फोटोवॉक जैसी जागरूकता गतिविधियाँ आयोजित करें (हम सहायता प्रदान कर सकते हैं!)।",
       ],
       sidebar: {
-        title: "अभी आवेदन करें",
+        title: "आवेदन बंद",
         description:
-          "प्रभाव डालने के लिए तैयार हैं? कैंपस एंबेसडर बनने के लिए फॉर्म भरें।",
-        deadline: "अंतिम तिथि: 31 अगस्त 2025",
-        cta: "आवेदन पत्र खोलें",
+          "आपकी रुचि के लिए धन्यवाद। कैंपस एंबेसडर कार्यक्रम के लिए आवेदन अवधि समाप्त हो गई है।",
+        cta: "आवेदन बंद",
       },
       cta: {
         text: "कैंपस एंबेसडर बनें",
