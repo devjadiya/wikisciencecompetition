@@ -189,116 +189,134 @@ export default function CertificatePage() {
         </div>
       </div>
 
-      <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="space-y-8">
-            <div className="bg-card p-6 rounded-lg shadow-md border">
-                <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">1</span> Check Your Eligibility</h2>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
-                        <PopoverTrigger asChild>
-                            <Button variant="outline" role="combobox" aria-expanded={popoverOpen} className="w-full flex-grow justify-between font-normal">
-                                {username || "Enter your Wikimedia username"}
-                                <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
-                            <Command>
-                                <CommandInput 
-                                    placeholder="Search username..." 
-                                    value={searchQuery}
-                                    onValueChange={setSearchQuery}
-                                />
-                                <CommandList>
-                                    {isAutocompleteLoading && <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>}
-                                    <CommandEmpty>{searchQuery.length > 1 ? "No users found." : "Type to search..."}</CommandEmpty>
-                                    <CommandGroup>
-                                        {suggestions.map((name) => (
-                                            <CommandItem
-                                                key={name}
-                                                value={name}
-                                                onSelect={(currentValue) => {
-                                                    setUsername(currentValue);
-                                                    setSearchQuery(currentValue);
-                                                    setPopoverOpen(false);
-                                                }}
-                                            >
-                                                {name}
-                                            </CommandItem>
-                                        ))}
-                                    </CommandGroup>
-                                </CommandList>
-                            </Command>
-                        </PopoverContent>
-                    </Popover>
-
-                    <Button onClick={handleUsernameCheck} disabled={isLoading} className="w-full sm:w-auto">
-                        {isLoading ? <Loader2 className="animate-spin mr-2"/> : <CheckCircle className="mr-2"/>}
-                        Check
-                    </Button>
-                </div>
-                 <p className="text-xs text-muted-foreground mt-2 pl-1">Start typing your username to see suggestions.</p>
-            </div>
-
-            {isEligible !== null && (
-                <div className="bg-card p-6 rounded-lg shadow-md border animate-in fade-in">
-                    {isEligible ? (
-                        <div>
-                             <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">2</span> Generate Certificate</h2>
-                            <div className="flex items-center gap-3 mb-6 pb-4 border-b">
-                                <CheckCircle className="h-8 w-8 text-green-500"/>
-                                <div>
-                                    <h3 className="font-bold text-green-600">Congratulations! You are eligible.</h3>
-                                    <p className="text-sm text-muted-foreground">You have made {uploadCount} eligible uploads.</p>
-                                </div>
-                            </div>
-                            
-                            <div className="space-y-4">
-                                <div>
-                                    <label htmlFor="displayName" className="block text-sm font-medium text-foreground mb-1">Name on Certificate</label>
-                                    <Input 
-                                        id="displayName"
-                                        value={displayName}
-                                        onChange={(e) => setDisplayName(e.target.value)}
-                                        placeholder="Enter the name to be printed"
-                                    />
-                                </div>
-                                <Button onClick={() => handleGenerateCertificate(false)} disabled={isGenerating || isEmailing} size="lg" className="w-full bg-accent hover:bg-accent/90">
-                                    {isGenerating ? <Loader2 className="animate-spin mr-2"/> : <Download className="mr-2"/>}
-                                    Download Certificate
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="space-y-8">
+                <div className="bg-card p-6 rounded-lg shadow-md border">
+                    <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">1</span> Check Your Eligibility</h2>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+                            <PopoverTrigger asChild>
+                                <Button variant="outline" role="combobox" aria-expanded={popoverOpen} className="w-full flex-grow justify-between font-normal">
+                                    {username || "Enter your Wikimedia username"}
+                                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
-                            </div>
-
-                            <div className="mt-8 pt-6 border-t">
-                                <h4 className="text-base font-semibold text-primary mb-2 flex items-center gap-2"><Mail className="h-4 w-4"/> Or receive it by email</h4>
-                                <div className="flex flex-col sm:flex-row gap-4">
-                                    <Input 
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Enter your email address"
-                                        className="flex-grow"
+                            </PopoverTrigger>
+                            <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
+                                <Command>
+                                    <CommandInput 
+                                        placeholder="Search username..." 
+                                        value={searchQuery}
+                                        onValueChange={setSearchQuery}
                                     />
-                                    <Button onClick={() => handleGenerateCertificate(true)} disabled={isGenerating || isEmailing} variant="secondary">
-                                        {isEmailing ? <Loader2 className="animate-spin mr-2"/> : <Send className="mr-2"/>}
-                                        Email Certificate
+                                    <CommandList>
+                                        {isAutocompleteLoading && <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>}
+                                        <CommandEmpty>{searchQuery.length > 1 ? "No users found." : "Type to search..."}</CommandEmpty>
+                                        <CommandGroup>
+                                            {suggestions.map((name) => (
+                                                <CommandItem
+                                                    key={name}
+                                                    value={name}
+                                                    onSelect={(currentValue) => {
+                                                        setUsername(currentValue);
+                                                        setSearchQuery(currentValue);
+                                                        setPopoverOpen(false);
+                                                    }}
+                                                >
+                                                    {name}
+                                                </CommandItem>
+                                            ))}
+                                        </CommandGroup>
+                                    </CommandList>
+                                </Command>
+                            </PopoverContent>
+                        </Popover>
+
+                        <Button onClick={handleUsernameCheck} disabled={isLoading} className="w-full sm:w-auto">
+                            {isLoading ? <Loader2 className="animate-spin mr-2"/> : <CheckCircle className="mr-2"/>}
+                            Check
+                        </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-2 pl-1">Start typing your username to see suggestions.</p>
+                </div>
+
+                {isEligible !== null && (
+                    <div className="bg-card p-6 rounded-lg shadow-md border animate-in fade-in">
+                        {isEligible ? (
+                            <div>
+                                <h2 className="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-primary-foreground text-sm font-bold">2</span> Generate Certificate</h2>
+                                <div className="flex items-center gap-3 mb-6 pb-4 border-b">
+                                    <CheckCircle className="h-8 w-8 text-green-500"/>
+                                    <div>
+                                        <h3 className="font-bold text-green-600">Congratulations! You are eligible.</h3>
+                                        <p className="text-sm text-muted-foreground">You have made {uploadCount} eligible uploads.</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="space-y-4">
+                                    <div>
+                                        <label htmlFor="displayName" className="block text-sm font-medium text-foreground mb-1">Name on Certificate</label>
+                                        <Input 
+                                            id="displayName"
+                                            value={displayName}
+                                            onChange={(e) => setDisplayName(e.target.value)}
+                                            placeholder="Enter the name to be printed"
+                                        />
+                                    </div>
+                                    <Button onClick={() => handleGenerateCertificate(false)} disabled={isGenerating || isEmailing} size="lg" className="w-full bg-accent hover:bg-accent/90">
+                                        {isGenerating ? <Loader2 className="animate-spin mr-2"/> : <Download className="mr-2"/>}
+                                        Download Certificate
                                     </Button>
                                 </div>
+
+                                <div className="mt-8 pt-6 border-t">
+                                    <h4 className="text-base font-semibold text-primary mb-2 flex items-center gap-2"><Mail className="h-4 w-4"/> Or receive it by email</h4>
+                                    <div className="flex flex-col sm:flex-row gap-4">
+                                        <Input 
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder="Enter your email address"
+                                            className="flex-grow"
+                                        />
+                                        <Button onClick={() => handleGenerateCertificate(true)} disabled={isGenerating || isEmailing} variant="secondary">
+                                            {isEmailing ? <Loader2 className="animate-spin mr-2"/> : <Send className="mr-2"/>}
+                                            Email Certificate
+                                        </Button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ) : (
-                         <div className="flex items-center gap-3">
-                            <AlertTriangle className="h-8 w-8 text-destructive"/>
-                            <div>
-                                <h3 className="font-bold text-destructive">Not Eligible Yet</h3>
-                                <p className="text-sm text-muted-foreground">You have made {uploadCount} eligible uploads. You need at least 20 to get a certificate.</p>
+                        ) : (
+                            <div className="flex items-center gap-3">
+                                <AlertTriangle className="h-8 w-8 text-destructive"/>
+                                <div>
+                                    <h3 className="font-bold text-destructive">Not Eligible Yet</h3>
+                                    <p className="text-sm text-muted-foreground">You have made {uploadCount} eligible uploads. You need at least 20 to get a certificate.</p>
+                                </div>
                             </div>
-                        </div>
-                    )}
-                     <Button variant="ghost" size="sm" onClick={() => { setIsEligible(null); setUsername(''); setSearchQuery(''); }} className="mt-4 text-xs text-muted-foreground">
-                        <X className="mr-1 h-3 w-3" /> Check for another username
-                    </Button>
+                        )}
+                        <Button variant="ghost" size="sm" onClick={() => { setIsEligible(null); setUsername(''); setSearchQuery(''); }} className="mt-4 text-xs text-muted-foreground">
+                            <X className="mr-1 h-3 w-3" /> Check for another username
+                        </Button>
+                    </div>
+                )}
+            </div>
+            
+            <div className="row-start-1 md:row-auto">
+                <div className="sticky top-24 bg-card p-4 rounded-lg shadow-md border aspect-[1/1.414] flex items-center justify-center">
+                    <span className="text-muted-foreground italic">Preview</span>
+                    {/* You can replace the span above with an <Image /> component once you have the preview image */}
+                    {/* 
+                    <Image 
+                        src="/path/to/your/certificate-preview.jpg" 
+                        alt="Certificate Preview"
+                        width={500}
+                        height={707}
+                        className="rounded-md"
+                    /> 
+                    */}
                 </div>
-            )}
+            </div>
         </div>
       </main>
     </div>
