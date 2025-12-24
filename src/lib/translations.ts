@@ -553,7 +553,7 @@ export const translations = {
         subtitle: "The response to the first-ever Wiki Science Competition in India has been phenomenal. We're thrilled to announce that our talented community has contributed over 3600+ entries! We extend our heartfelt gratitude to every participant for sharing their vision of science. Stay tuned for the results!",
         uploads: "Uploads",
         contributors: "Contributors",
-        certificateTitle: "Certificates Are Available!",
+        certificateTitle: "Certificates Are Available Now!",
         certificateMessage: "Dear contributors, your certificates are now ready for download. This is a kind gesture from us for your hard work, dedication, and support for Indian science.",
         certificateCta: "Download Your Certificate",
         signature: "Wiki Science Organizing Team"
@@ -1181,7 +1181,7 @@ export const translations = {
         subtitle: "भारत में पहली बार विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली है। हमें यह घोषणा करते हुए खुशी हो रही है कि हमारे प्रतिभाशाली समुदाय ने 3600+ से अधिक प्रविष्टियों का योगदान दिया है! हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का हृदय से आभार व्यक्त करते हैं। परिणामों के लिए बने रहें!",
         uploads: "अपलोड",
         contributors: "योगदानकर्ता",
-        certificateTitle: "प्रमाणपत्र उपलब्ध हैं!",
+        certificateTitle: "प्रमाणपत्र अब उपलब्ध हैं!",
         certificateMessage: "प्रिय योगदानकर्ताओं, आपके प्रमाणपत्र अब डाउनलोड के लिए तैयार हैं। यह भारतीय विज्ञान के लिए आपकी कड़ी मेहनत, समर्पण और समर्थन के लिए हमारी ओर से एक विनम्र इशारा है।",
         certificateCta: "अपना प्रमाणपत्र डाउनलोड करें",
         signature: "विकी विज्ञान आयोजन टीम"
