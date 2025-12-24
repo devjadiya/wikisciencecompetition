@@ -192,7 +192,7 @@ export default function CertificatePage() {
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
             <div className="mb-12">
-                <div className="bg-card p-4 rounded-lg shadow-xl border aspect-[1.414/1] flex items-center justify-center">
+                <div className="bg-card p-4 rounded-lg shadow-xl border aspect-[1.414/1] flex items-center justify-center max-w-xl mx-auto">
                     <Image 
                         src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
                         alt="Certificate Preview"
