@@ -47,9 +47,9 @@ export default function JuryPage() {
     <div className="bg-background">
       <div className="bg-primary/5 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">Meet the Jury</h1>
+            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">Meet the National Jury</h1>
             <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground">
-                Our esteemed panel of scientists, photographers, and Wikimedians who will be judging the submissions for the competition.
+                Our esteemed panel of scientists, photographers, and Wikimedians who will be judging the submissions for the competition. Experienced and passionate about both science and Wikimedia projects, they bring a wealth of knowledge and expertise to the table.
             </p>
         </div>
        </div>

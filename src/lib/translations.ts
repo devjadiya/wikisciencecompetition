@@ -589,7 +589,7 @@ export const translations = {
       },
       campaign: {
         title: "Live from the Campaign",
-        description: "Anatomy of total files. These are images from DSLR and other general uploads.",
+        description: "Number of files uploaded via DSLR and general uploads.",
         totalSubmissions: "Total Submissions",
         noSubmissions: "No Submissions Yet",
         noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
@@ -597,15 +597,16 @@ export const translations = {
       },
       mobileCampaign: {
         title: "Live from Mobile",
-        description: "These are mobile submissions taken from smartphones.",
+        description: "Number of files uploaded via Mobile devices.",
+        totalSubmissions: "Total Submissions",
       },
       dashboard: {
-        title: "Live Campaign Dashboard",
+        title: "Competition Statistics Metrics Dashboard",
         subtitle: "Track the real-time impact of our community's contributions.",
         ctaLine1: "Want to be a part of these numbers?",
         ctaLinkText: "Create an account",
         ctaLine2: "on the Outreach Dashboard and join the campaign!",
-        ctaButton: "Join the Campaign"
+        ctaButton: "Competition Statistics Metrics"
       },
       instagram: {
           images: {
