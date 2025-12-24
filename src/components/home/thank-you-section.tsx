@@ -3,8 +3,10 @@
 
 import { useLanguage } from '@/context/language-context';
 import AnimatedCounter from '@/components/ui/animated-counter';
-import { Upload, Users } from 'lucide-react';
+import { Upload, Users, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export default function ThankYouSection() {
     const { t } = useLanguage();
@@ -40,6 +42,30 @@ export default function ThankYouSection() {
                         </div>
                     </div>
                 </div>
+
+                <motion.div
+                    className="mt-16 text-center max-w-3xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                    <div className="bg-card p-6 md:p-8 rounded-lg shadow-lg border">
+                        <h3 className="text-xl md:text-2xl font-headline font-bold text-primary mb-4">{t.home.thankyou.certificateTitle}</h3>
+                        <p className="text-muted-foreground mb-6">
+                           {t.home.thankyou.certificateMessage}
+                        </p>
+                        <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
+                            <Link href="/certificate">
+                                <Award className="mr-2 h-5 w-5" />
+                                {t.home.thankyou.certificateCta}
+                            </Link>
+                        </Button>
+                        <p className="text-xs text-muted-foreground mt-6 italic">
+                            - {t.home.thankyou.signature}
+                        </p>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
