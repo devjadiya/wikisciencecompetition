@@ -52,7 +52,7 @@ export default function ThankYouSection() {
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <div className="bg-card p-6 md:p-8 rounded-lg shadow-lg border">
-                         <div className="mb-8">
+                         <div className="mb-8 max-w-md mx-auto">
                             <Image 
                                 src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
                                 alt="Certificate Preview"
