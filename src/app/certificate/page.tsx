@@ -10,6 +10,7 @@ import { useDebounce } from 'react-use';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
+import Image from 'next/image';
 
 export default function CertificatePage() {
   const [username, setUsername] = useState('');
@@ -304,17 +305,12 @@ export default function CertificatePage() {
             
             <div className="row-start-1 md:row-auto">
                 <div className="sticky top-24 bg-card p-4 rounded-lg shadow-md border aspect-[1/1.414] flex items-center justify-center">
-                    <span className="text-muted-foreground italic">Preview</span>
-                    {/* You can replace the span above with an <Image /> component once you have the preview image */}
-                    {/* 
                     <Image 
-                        src="/path/to/your/certificate-preview.jpg" 
+                        src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
                         alt="Certificate Preview"
-                        width={500}
-                        height={707}
-                        className="rounded-md"
+                        fill
+                        className="object-contain rounded-md"
                     /> 
-                    */}
                 </div>
             </div>
         </div>
