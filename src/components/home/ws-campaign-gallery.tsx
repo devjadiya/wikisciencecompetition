@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { ExternalLink, Users, Smartphone, Loader2, AlertTriangle } from 'lucide-react';
+import { ExternalLink, Camera, Smartphone, Loader2, AlertTriangle } from 'lucide-react';
 import AnimatedCounter from '@/components/ui/animated-counter';
 import { useLanguage } from '@/context/language-context';
 
@@ -83,7 +83,7 @@ export default function WSCampaignGallery({
           <div className="my-4">
               <AnimatedCounter from={0} to={totalCount} />
               <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
-                  {isMobileCampaign ? <Smartphone className="h-4 w-4" /> : <Users className="h-4 w-4" />}
+                  {isMobileCampaign ? <Smartphone className="h-4 w-4" /> : <Camera className="h-4 w-4" />}
                   <span>Total Submissions</span>
               </div>
           </div>
