@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         hostname: 'blush-fashionable-swift-557.mypinata.cloud',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

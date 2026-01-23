@@ -42,7 +42,7 @@ const juryMembers: JuryMember[] = [
   {
     name: 'Sarthak Khare',
     username: 'Status 401',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Sarthak_khare.jpg',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQFUHnGdTJC5hw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1716127531824?e=1770854400&v=beta&t=Prx1ClUMGV1RyRVzDUdH0UVPc2_UFEszQ0IFi3RGwvk',
     hint: 'jury member photo'
   },
   {
