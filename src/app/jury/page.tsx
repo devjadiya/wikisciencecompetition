@@ -7,37 +7,37 @@ const juryMembers = [
   {
     name: 'Akshat Shrivastava',
     username: 'Bhaiyaji Smile 123',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Akshat_Shrivastava_%28Wiki_Club_SATI_Board_Member%29.jpg/960px-Akshat_Shrivastava_%28Wiki_Club_SATI_Board_Member%29.jpg',
     hint: 'jury member photo'
   },
   {
     name: 'Dappa Solomon',
     username: 'Dappasolomon001',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/WCN_2024_30.jpg/1280px-WCN_2024_30.jpg',
     hint: 'jury member photo'
   },
   {
     name: 'Dhaval Vyas',
     username: 'dsvyas',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Dhaval_S._Vyas_09.JPG/1280px-Dhaval_S._Vyas_09.JPG',
     hint: 'jury member photo'
   },
   {
     name: 'Fuseini Mugisu Suhuyini',
     username: 'Sir Amugi',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/af/Ghanaian_Wikimedia_Languages_Meetup_2023_12.jpg',
     hint: 'jury member photo'
   },
   {
     name: 'Sarthak Khare',
     username: 'Status 401',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQFUHnGdTJC5hw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1716127531824?e=1770854400&v=beta&t=Prx1ClUMGV1RyRVzDUdH0UVPc2_UFEszQ0IFi3RGwvk',
     hint: 'jury member photo'
   },
   {
     name: 'Sudhanwa Jogalekar',
     username: 'sudhanwa',
-    image: 'https://placehold.co/400x400.png',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Sudhanva_Joglekar_%2815182072114%29.jpg/1280px-Sudhanva_Joglekar_%2815182072114%29.jpg',
     hint: 'jury member photo'
   },
 ];
