@@ -2,19 +2,30 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
-const juryMembers = [
+interface JuryMember {
+  name: string;
+  username: string;
+  image: string;
+  hint: string;
+  position?: 'top' | 'center';
+}
+
+const juryMembers: JuryMember[] = [
   {
     name: 'Akshat Shrivastava',
     username: 'Bhaiyaji Smile 123',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Akshat_Shrivastava_%28Wiki_Club_SATI_Board_Member%29.jpg/960px-Akshat_Shrivastava_%28Wiki_Club_SATI_Board_Member%29.jpg',
-    hint: 'jury member photo'
+    hint: 'jury member photo',
+    position: 'top',
   },
   {
     name: 'Dappa Solomon',
     username: 'Dappasolomon001',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Dappa_Solomon_Portrait.jpg',
-    hint: 'jury member photo'
+    hint: 'jury member photo',
+    position: 'top',
   },
   {
     name: 'Dhaval Vyas',
@@ -67,7 +78,7 @@ export default function JuryPage() {
                     alt={`Portrait of ${juror.name}`}
                     data-ai-hint={juror.hint}
                     fill
-                    className="object-cover"
+                    className={cn('object-cover', juror.position === 'top' && 'object-top')}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
