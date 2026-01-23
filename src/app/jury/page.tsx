@@ -13,7 +13,7 @@ const juryMembers = [
   {
     name: 'Dappa Solomon',
     username: 'Dappasolomon001',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/WCN_2024_30.jpg/1280px-WCN_2024_30.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Dappa_Solomon_Portrait.jpg',
     hint: 'jury member photo'
   },
   {
