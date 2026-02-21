@@ -28,16 +28,16 @@ export default function ThankYouSection() {
                     </p>
                 </motion.div>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                    <div className="text-center p-6 bg-card rounded-lg shadow-md">
+                    <div className="text-center p-6 bg-card rounded-lg shadow-md border dark:border-white/10">
                         <AnimatedCounter from={0} to={3706} />
-                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground font-bold uppercase tracking-wider">
                             <Upload className="h-4 w-4" />
                             <span>{t.home.thankyou.uploads}</span>
                         </div>
                     </div>
-                    <div className="text-center p-6 bg-card rounded-lg shadow-md">
+                    <div className="text-center p-6 bg-card rounded-lg shadow-md border dark:border-white/10">
                         <AnimatedCounter from={0} to={474} />
-                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground font-bold uppercase tracking-wider">
                             <Users className="h-4 w-4" />
                             <span>{t.home.thankyou.contributors}</span>
                         </div>
@@ -51,27 +51,29 @@ export default function ThankYouSection() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
-                    <div className="bg-card p-6 md:p-8 rounded-lg shadow-lg border">
+                    <div className="bg-card p-6 md:p-10 rounded-2xl shadow-2xl border border-primary/10">
                          <div className="mb-8 max-w-md mx-auto">
                             <Image 
                                 src="https://blush-fashionable-swift-557.mypinata.cloud/ipfs/bafybeihht2ujcnvtm5ye5zk2o6p5ql4mz3vrx5i4apniav66b2hm662niy" 
                                 alt="Certificate Preview"
                                 width={842}
                                 height={595}
-                                className="object-contain rounded-md shadow-md mx-auto"
+                                className="object-contain rounded-md shadow-lg mx-auto transform -rotate-2 hover:rotate-0 transition-transform duration-500"
                             />
                         </div>
-                        <h3 className="text-xl md:text-2xl font-headline font-bold text-primary mb-4">{t.home.thankyou.certificateTitle}</h3>
-                        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                        <h3 className="text-2xl md:text-3xl font-headline font-bold text-primary mb-4">{t.home.thankyou.certificateTitle}</h3>
+                        <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
                            {t.home.thankyou.certificateMessage}
                         </p>
-                        <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                            <Link href="/certificate">
-                                <Award className="mr-2 h-5 w-5" />
-                                {t.home.thankyou.certificateCta}
-                            </Link>
-                        </Button>
-                        <p className="text-xs text-muted-foreground mt-6 italic">
+                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-8 px-10 rounded-full shadow-lg">
+                                <Link href="/certificate">
+                                    <Award className="mr-2 h-6 w-6" />
+                                    {t.home.thankyou.certificateCta}
+                                </Link>
+                            </Button>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-8 italic font-medium">
                             - {t.home.thankyou.signature}
                         </p>
                     </div>

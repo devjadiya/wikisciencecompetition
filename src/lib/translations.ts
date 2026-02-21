@@ -231,8 +231,8 @@ export const translations = {
       },
     },
     competition: {
-      title: "Competition Results",
-      subtitle: "Celebrating the winners of India's first national Wiki Science Competition.",
+      title: "National Winners Announced",
+      subtitle: "Celebrating the stunning winners of India's first national Wiki Science Competition.",
       howToParticipate: {
         title: "Submission Details",
         p1: "The submission phase is now complete. We thank all participants who created accounts and shared their scientific vision on Wikimedia Commons.",
@@ -257,9 +257,9 @@ export const translations = {
       },
       submitNow: "View Results on Commons",
       imageCategories: {
-        title: "Winning Categories",
+        title: "National Winners Gallery",
         subtitle:
-          "Winners were selected across various scientific fields. Explore the diversity of talent below.",
+          "Explore the top submissions that captured the beauty of science in India.",
       },
       categories: {
         people: {
@@ -510,7 +510,7 @@ export const translations = {
           icon: "Handshake",
           title: "Sponsorship",
           description:
-            "Special thanks to our sponsors who helped cover operational costs and prize money.",
+            "Special thanks to our sponsors who helped cover operational costs and prize coupons.",
           cta: "Contact Team",
         },
         {
@@ -535,7 +535,7 @@ export const translations = {
       hero: {
         title: "National Winners Announced!",
         certificate: "Get Your Certificate",
-        closed: "View Results Page",
+        closed: "View Winning Gallery",
       },
       thankyou: {
         title: "Thank You, Contributors!",
@@ -543,7 +543,7 @@ export const translations = {
         uploads: "Final Upload Stats",
         contributors: "Participants",
         certificateTitle: "Certificates & Prizes!",
-        certificateMessage: "Dear contributors, certificates are ready for download. We are also awarding ₹4,000, ₹3,000, and ₹2,000 Gift Coupons to winners in both Camera and Mobile categories!",
+        certificateMessage: "Dear contributors, certificates are ready for download. We are also awarding Gift Coupons worth ₹4,000, ₹3,000, and ₹2,000 to winners in both Camera and Mobile categories!",
         certificateCta: "Download Your Certificate",
         signature: "Wiki Science Organizing Team"
       },
@@ -555,25 +555,25 @@ export const translations = {
       prizes: {
         title: "National Prizes Announced",
         subtitle:
-          "In recognition of your incredible dedication, we are thrilled to announce prizes for both DSLR/Camera and Mobile photography categories.",
+          "In recognition of your incredible dedication, we are thrilled to announce Gift Coupons for winners in both DSLR/Camera and Mobile photography categories.",
         prizes: [
           {
             icon: "Award",
-            title: "1st Place - ₹4,000",
+            title: "1st Place - worth ₹4,000",
             description:
-              "Awarded to the top submission in both DSLR/Camera and Mobile categories.",
+              "Awarded to the top submission in both DSLR/Camera and Mobile categories as a Gift Coupon.",
           },
           {
             icon: "Camera",
             title: "2nd & 3rd Place",
             description:
-              "₹3,000 for 2nd place and ₹2,000 for 3rd place in both categories.",
+              "Gift Coupons worth ₹3,000 for 2nd place and ₹2,000 for 3rd place in both categories.",
           },
           {
             icon: "BookOpen",
             title: "Highest Uploads - ₹2,000",
             description:
-              "A special recognition for the participant with the highest number of eligible scientific uploads.",
+              "A special recognition Gift Coupon for the participant with the highest number of eligible scientific uploads.",
           },
         ],
       },
@@ -842,7 +842,7 @@ export const translations = {
       },
     },
     competition: {
-      title: "प्रतियोगिता के परिणाम",
+      title: "राष्ट्रीय विजेताओं की घोषणा",
       subtitle: "भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता के विजेताओं का जश्न।",
       howToParticipate: {
         title: "सबमिशन विवरण",
@@ -868,9 +868,9 @@ export const translations = {
       },
       submitNow: "कॉमन्स पर परिणाम देखें",
       imageCategories: {
-        title: "विजेता श्रेणियां",
+        title: "राष्ट्रीय विजेता गैलरी",
         subtitle:
-          "विभिन्न वैज्ञानिक क्षेत्रों में विजेताओं का चयन किया गया। नीचे प्रतिभा की विविधता देखें।",
+          "भारत में विज्ञान की सुंदरता को दर्शाने वाले शीर्ष सबमिशन देखें।",
       },
       categories: {
         people: {
@@ -1126,7 +1126,7 @@ export const translations = {
           icon: "Handshake",
           title: "प्रायोजन",
           description:
-            "हमारे प्रायोजकों को विशेष धन्यवाद जिन्होंने परिचालन लागत और पुरस्कार राशि में मदद की।",
+            "हमारे प्रायोजकों को विशेष धन्यवाद जिन्होंने परिचालन लागत और पुरस्कार कूपन में मदद की।",
           cta: "टीम से संपर्क करें",
         },
         {
@@ -1151,11 +1151,11 @@ export const translations = {
       hero: {
         title: "राष्ट्रीय विजेताओं की घोषणा!",
         certificate: "अपना प्रमाणपत्र प्राप्त करें",
-        closed: "परिणाम पेज देखें",
+        closed: "विजेता गैलरी देखें",
       },
       thankyou: {
         title: "धन्यवाद, योगदानकर्ताओं!",
-        subtitle: "भारत में पहली विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली! 474 व्यक्तियों से 3,700+ प्रविष्टियाँ। हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का आभार व्यक्त करते हैं। हमें विजेताओं के लिए नकद पुरस्कार (गिफ्ट कूपन) घोषित करते हुए खुशी हो रही है!",
+        subtitle: "भारत में पहली विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली! 474 व्यक्तियों से 3,700+ प्रविष्टियाँ। हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का आभार व्यक्त करते हैं। हमें विजेताओं के लिए गिफ्ट कूपन घोषित करते हुए खुशी हो रही है!",
         uploads: "अंतिम अपलोड आँकड़े",
         contributors: "प्रतिभागी",
         certificateTitle: "प्रमाणपत्र और पुरस्कार!",
@@ -1170,22 +1170,22 @@ export const translations = {
       },
       prizes: {
         title: "राष्ट्रीय पुरस्कारों की घोषणा",
-        subtitle: "आपके अविश्वसनीय समर्पण को देखते हुए, हमें कैमरा और मोबाइल दोनों श्रेणियों के लिए पुरस्कार घोषित करते हुए खुशी हो रही है।",
+        subtitle: "आपके अविश्वसनीय समर्पण को देखते हुए, हमें कैमरा और मोबाइल दोनों श्रेणियों के लिए गिफ्ट कूपन पुरस्कार घोषित करते हुए खुशी हो रही है।",
         prizes: [
           {
             icon: "Award",
-            title: "प्रथम पुरस्कार - ₹4,000",
-            description: "कैमरा और मोबाइल दोनों श्रेणियों में शीर्ष सबमिशन के लिए प्रदान किया गया।",
+            title: "प्रथम पुरस्कार - ₹4,000 मूल्य",
+            description: "कैमरा और मोबाइल दोनों श्रेणियों में शीर्ष सबमिशन के लिए गिफ्ट कूपन के रूप में प्रदान किया गया।",
           },
           {
             icon: "Camera",
             title: "द्वितीय और तृतीय पुरस्कार",
-            description: "दोनों श्रेणियों में द्वितीय स्थान के लिए ₹3,000 और तृतीय स्थान के लिए ₹2,000।",
+            description: "दोनों श्रेणियों में द्वितीय स्थान के लिए ₹3,000 और तृतीय स्थान के लिए ₹2,000 के गिफ्ट कूपन।",
           },
           {
             icon: "BookOpen",
             title: "सर्वाधिक अपलोड - ₹2,000",
-            description: "सबसे अधिक योग्य वैज्ञानिक अपलोड करने वाले प्रतिभागी के लिए विशेष मान्यता।",
+            description: "सबसे अधिक योग्य वैज्ञानिक अपलोड करने वाले प्रतिभागी के लिए विशेष मान्यता गिफ्ट कूपन।",
           },
         ],
       },

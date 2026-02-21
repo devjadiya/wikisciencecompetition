@@ -11,6 +11,7 @@ import ContactForm from '@/components/home/contact-form';
 import TestimonialsSection from '@/components/home/testimonials-section';
 import VortexCta from '@/components/home/vortex-cta';
 import Leaderboard from '@/components/home/leaderboard';
+import WinnersGallery from '@/components/home/winners-gallery';
 import instagramFeed from '@/lib/data/instagram-feed.json';
 import { useLanguage } from '@/context/language-context';
 
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroCarousel />
+      <WinnersGallery />
       <ThankYouSection />
       <InfoSections />
       <PrizesSection />
