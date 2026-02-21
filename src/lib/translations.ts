@@ -72,13 +72,13 @@ export const translations = {
       title: "About WikiScience India 2025",
       badge: "Introduction for Indian Context",
       heading: "Wiki Science Competition 2025 – India",
-      p1: "For the very first time, India is organizing a national edition of the Wiki Science Competition (WSC) — one of the world’s largest initiatives that brings together science, photography, and free knowledge.",
+      p1: "For the very first time, India organized a national edition of the Wiki Science Competition (WSC) — one of the world’s largest initiatives that brings together science, photography, and free knowledge.",
       p2: "Launched in Estonia in 2011 and later expanded across Europe and worldwide, the competition has inspired thousands of scientists, researchers, and enthusiasts to share images that capture the wonder of science. From microscopic cells to cosmic galaxies, these freely licensed contributions enrich Wikimedia Commons and support open education globally.",
-      p3: "India has proudly contributed to past international editions — with Indian photographers and scientists receiving recognition and awards. However, this is the first time India is hosting its own local competition, dedicated to showcasing the scientific spirit and creativity of our country.",
-      p4: "The Wiki Science Competition 2025 – India is more than a contest. It’s a collective effort to represent Indian science to the world — through powerful images, stories, and creativity.",
+      p3: "India has proudly contributed to past international editions — with Indian photographers and scientists receiving recognition and awards. However, this was the first time India hosted its own local competition, dedicated to showcasing the scientific spirit and creativity of our country.",
+      p4: "The Wiki Science Competition 2025 – India was a massive success. It was a collective effort to represent Indian science to the world — through powerful images, stories, and creativity.",
       aims: {
         title: "Our Aims",
-        subtitle: "Through this campaign, we aim to:",
+        subtitle: "Through this campaign, we aimed to:",
         items: [
           {
             icon: "PenSquare",
@@ -110,7 +110,7 @@ export const translations = {
     campusAmbassadors: {
       title: "Campus Ambassadors",
       subtitle:
-        "Meet the passionate leaders driving the Wiki Science Competition in their communities.",
+        "Meet the passionate leaders who drove the Wiki Science Competition in their communities.",
       ambassadors: [
         {
           name: "Anushka Patel",
@@ -185,44 +185,44 @@ export const translations = {
       ],
     },
     affiliates: {
-      title: "Call for Wikimedia Affiliates",
+      title: "Wikimedia Affiliates",
       subtitle:
-        "We are inviting Wikimedia affiliates, user groups, and organizations across India to collaborate with us in promoting and supporting Wiki Science Competition 2025.",
-      partnerHeading: "Why Partner with Us?",
+        "We invited Wikimedia affiliates, user groups, and organizations across India to collaborate with us in promoting and supporting Wiki Science Competition 2025.",
+      partnerHeading: "Why Partners Joined Us",
       partnerDescription:
-        "This is a unique opportunity to celebrate science and enrich Wikimedia Commons with freely licensed media. As a partner, your group can play a pivotal role in making India's first national Wiki Science Competition a success by helping with outreach, awareness, and community engagement.",
-      collaborationHeading: "How You Can Collaborate",
+        "This was a unique opportunity to celebrate science and enrich Wikimedia Commons with freely licensed media. As partners, groups played a pivotal role in making India's first national Wiki Science Competition a success.",
+      collaborationHeading: "How We Collaborated",
       collaborationPoints: [
-        "Engage in online and offline outreach to your networks.",
-        "Facilitate uploads from institutions and research bodies.",
-        "Organize local workshops, edit-a-thons, or photowalks.",
-        "Assist with translation and localization of campaign materials.",
+        "Engaged in online and offline outreach to networks.",
+        "Facilitated uploads from institutions and research bodies.",
+        "Organized local workshops, edit-a-thons, or photowalks.",
+        "Assisted with translation and localization of campaign materials.",
       ],
       formNote:
-        "This form is intended for recognized Wikimedia affiliates or community groups. Individuals and students should use the",
-      campusAmbassadorLink: "Campus Ambassador form",
+        "This program was intended for recognized Wikimedia affiliates or community groups.",
+      campusAmbassadorLink: "Campus Ambassador program",
       sidebarTitle: "Applications Closed",
       sidebarDescription:
-        "Thank you for your interest. The application period for the Affiliate program has ended.",
+        "The application period for the Affiliate program has ended.",
       cta: "Applications Closed",
     },
     campus: {
-      title: "Call for Campus Ambassadors",
+      title: "Campus Ambassadors",
       subtitle:
-        "Join us as a local outreach coordinator to help promote the Wiki Science Competition 2025 in your institution, community, or network.",
-      whoHeading: "Who are we looking for?",
+        "Local outreach coordinators helped promote the Wiki Science Competition 2025 in their institutions and networks.",
+      whoHeading: "Who were our Ambassadors?",
       whoDescription:
-        "Campus Ambassadors play a key role in spreading awareness, guiding participants, and optionally organizing awareness sessions or workshops. Whether you’re a Wikimedian, science student, designer, teacher, or simply enthusiastic about open science—we’d love to have you on board!",
-      responsibilitiesHeading: "Responsibilities",
+        "Campus Ambassadors played a key role in spreading awareness and guiding participants. Our team included Wikimedians, science students, designers, and teachers enthusiastic about open science.",
+      responsibilitiesHeading: "Key Roles",
       responsibilities: [
-        "Promote the campaign in your institution or community.",
-        "Share participation guidelines with potential contributors.",
-        "Optionally, organize awareness activities like workshops or photowalks (we can provide support!).",
+        "Promoted the campaign in their institution or community.",
+        "Shared participation guidelines with potential contributors.",
+        "Organized awareness activities like workshops or photowalks.",
       ],
       sidebar: {
         title: "Applications Closed",
         description:
-          "Thank you for your interest. The application period for the Campus Ambassador program has ended.",
+          "The application period for the Campus Ambassador program has ended.",
         cta: "Applications Closed",
       },
       cta: {
@@ -231,41 +231,35 @@ export const translations = {
       },
     },
     competition: {
-      title: "Competition Details",
-      subtitle: "Everything you need to know to participate and win.",
+      title: "Competition Results",
+      subtitle: "Celebrating the winners of India's first national Wiki Science Competition.",
       howToParticipate: {
-        title: "How to Participate",
-        p1: "If you don't have one, you can create a global account that will give you a specific username on all Wikimedia platforms (including Wikimedia Commons) when you log in. As a newly registered user you need to wait at least four days before uploading a video file, while images can be uploaded right after the registration.",
-        createAccountLink: "Create your account here!",
-        rulesTitle: "Participation Rules",
+        title: "Submission Details",
+        p1: "The submission phase is now complete. We thank all participants who created accounts and shared their scientific vision on Wikimedia Commons.",
+        createAccountLink: "Visit Results Page",
+        rulesTitle: "Final Stats",
         rules: [
-          "Submissions must be your own work, uploaded from your own registered Wikimedia account. For multiple authors, all names must be provided.",
-          "Images must be under a free license (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).",
-          "All submissions require a clear and accurate scientific description in English. Other languages are welcome too.",
-          {
-            text: "Upload the highest resolution possible (at least 2 megapixels). You can check the megapixel count ",
-            link: {
-              url: "https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594",
-              label: "here",
-            },
-          },
-          "Images must not contain watermarks, logos, or added text/graphics (except for scales).",
+          "Total Submissions: 3,706 files",
+          "Total Contributors: 474 individuals",
+          "Submissions covered DSLR/Camera and Mobile categories.",
+          "Images are available under free licenses (CC BY-SA 4.0, CC BY 4.0, CC0 1.0).",
+          "Contributions have significantly enriched scientific documentation on Commons.",
         ],
       },
       keyDates: {
-        title: "Key Dates",
+        title: "Competition Timeline",
         timeline: [
           { date: "November 1, 2025", event: "Submissions Opened" },
           { date: "December 15, 2025", event: "Submissions Closed" },
           { date: "January 2026", event: "Jury Deliberation" },
-          { date: "February 2026", event: "National Winners Announced" },
+          { date: "February 18, 2026", event: "National Winners Announced" },
         ],
       },
-      submitNow: "View Event Page",
+      submitNow: "View Results on Commons",
       imageCategories: {
-        title: "Image Categories",
+        title: "Winning Categories",
         subtitle:
-          "You can participate in the following seven categories. Choose the one that best fits your work. See examples below to get inspired.",
+          "Winners were selected across various scientific fields. Explore the diversity of talent below.",
       },
       categories: {
         people: {
@@ -316,18 +310,18 @@ export const translations = {
       },
 
       readyToParticipate: {
-        title: "Ready to Participate?",
+        title: "National Winners Announced!",
         subtitle:
-          "The stage is set. Your lens is the key. Show us the world through your scientific eyes.",
-        cta: "View Event Page",
+          "The first-ever national Wiki Science Competition in India has concluded. Check out the stunning winning entries.",
+        cta: "View Winning Gallery",
       },
     },
     contact: {
       title: "Contact Us",
       subtitle:
-        "Have questions or feedback? We'd love to hear from you. We promise a quick reply!",
+        "Have questions about the results or certificates? We promise a quick reply!",
       getInTouch: "Get in Touch",
-      p1: "Fill out the form and our team will get back to you within a few hours. We're here to help!",
+      p1: "Fill out the form and our team will get back to you. We're here to help!",
       emailAddress: "contact@wikisciencecompetition.in",
       form: {
         name: "Full Name",
@@ -355,7 +349,7 @@ export const translations = {
     organizers: {
       title: "Meet the Organizers",
       subtitle:
-        "The dedicated team working behind the scenes to make the first Wiki Science Competition India a grand success.",
+        "The dedicated team who worked behind the scenes to make the first Wiki Science Competition India a grand success.",
       lead_organizers: "Lead Organizers",
       advisors: "Advisors",
       core_organizing_team: "Core Organizing Team",
@@ -383,7 +377,7 @@ export const translations = {
         {
           id: "suyash_dwivedi",
           name: "Suyash Dwivedi",
-          role: "Sponserships & Finance",
+          role: "Sponsorships & Finance",
           roleKey: "advisor",
           social: {
             linkedin: "https://www.linkedin.com/in/suyash-dwivedi-b47bab58/",
@@ -445,29 +439,33 @@ export const translations = {
     organizersCall: {
       title: "Call for Organizers",
       subtitle:
-        "We’re excited to share that India will be organizing its own local edition of this global campaign that promotes science through freely licensed images, videos, and other media on Wikimedia Commons.",
+        "We’re excited to share that India organized its own local edition of this global campaign that promotes science through freely licensed media on Wikimedia Commons.",
       joinHeading: "Join the Organizing Team",
       joinDescription:
-        "To support smooth coordination, outreach, and planning, we’re expanding our organizing team. If you’re interested in contributing to this important initiative, we would love to hear from you.",
-      lookingForHeading: "What We're Looking For",
+        "Our team was expanded to support coordination, outreach, and planning. We thank everyone who contributed to this initiative.",
+      lookingForHeading: "Our Values",
       lookingFor: [
         "Passionate individuals with an interest in science, photography, or open knowledge.",
         "Skills in event planning, outreach, social media management, or content creation.",
         "A collaborative spirit and a desire to make a significant impact.",
       ],
-      sidebarTitle: "Apply Now",
+      sidebarTitle: "Completed",
       sidebarDescription:
-        "Help us shape the first Wiki Science Competition in India.",
-      deadline: "Applications Closed: 15th July 2025",
+        "Thank you for helping us shape the first Wiki Science Competition in India.",
+      deadline: "Applications Closed",
       cta: "Applications Closed",
     },
     resources: {
       title: "Resources",
       subtitle:
-        "Get inspired by past winners and access helpful materials to prepare your submission.",
+        "Get inspired by the 2025 winners and access materials to prepare for the next edition.",
       pastWinners: {
-        title: "Gallery of Past Winners",
+        title: "Gallery of Winners",
         links: [
+          {
+            year: 2025,
+            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India/Results",
+          },
           {
             year: 2023,
             url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2023/Winners",
@@ -475,14 +473,6 @@ export const translations = {
           {
             year: 2021,
             url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2021/Winners",
-          },
-          {
-            year: 2019,
-            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2019/Winners",
-          },
-          {
-            year: 2017,
-            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2017/Winners",
           },
         ],
       },
@@ -513,47 +503,47 @@ export const translations = {
     support: {
       title: "Support Us",
       subtitle:
-        "Help us make the Wiki Science Competition India 2025 a massive success.",
+        "We thank our supporters who made the Wiki Science Competition India 2025 a massive success.",
       options: [
         {
           id: "sponsorship",
           icon: "Handshake",
-          title: "Become a Sponsor",
+          title: "Sponsorship",
           description:
-            "Support us with monetary contributions to help cover operational costs, prize money, and event management. We offer various sponsorship tiers with prominent branding opportunities.",
-          cta: "Contact for Sponsorship",
+            "Special thanks to our sponsors who helped cover operational costs and prize money.",
+          cta: "Contact Team",
         },
         {
           id: "gifts",
           icon: "Gift",
-          title: "Provide Gifts & Swag",
+          title: "Gifts & Swag",
           description:
-            "Contribute to our prize pool with exciting gifts, vouchers, or branded merchandise (swag) for our winners and participants. Get your brand in the hands of science enthusiasts.",
-          cta: "Offer Gifts",
+            "Contributors received exciting coupons and certificates for their dedication to Indian science.",
+          cta: "Contact Team",
         },
         {
           id: "outreach",
           icon: "Megaphone",
           title: "Outreach & Marketing",
           description:
-            "Collaborate with us to spread the word. Help us reach a wider audience through your institutional channels, social media, or marketing expertise.",
-          cta: "Collaborate on Outreach",
+            "Collaborate with us for future editions to spread the word about open science.",
+          cta: "Join Future Outreach",
         },
       ],
     },
     home: {
       hero: {
-        title: "The Competition is now Closed",
+        title: "National Winners Announced!",
         certificate: "Get Your Certificate",
-        closed: "View Event Page",
+        closed: "View Results Page",
       },
       thankyou: {
         title: "Thank You, Contributors!",
-        subtitle: "The response to the first-ever Wiki Science Competition in India has been phenomenal. We're thrilled to announce that our talented community has contributed over 3600+ entries! We extend our heartfelt gratitude to every participant for sharing their vision of science. Stay tuned for the results!",
-        uploads: "Images Stats",
-        contributors: "Contributors",
-        certificateTitle: "Certificates Are Available Now!",
-        certificateMessage: "Dear contributors, your certificates are now ready for download. This is a kind gesture from us for your hard work, dedication, and support for Indian science.",
+        subtitle: "The response to India's first Wiki Science Competition was phenomenal! Over 3,700+ entries from 474 individuals. We are deeply moved by your passion for contributing freely licensed scientific media to Wikimedia Commons. We are thrilled to announce cash prizes for winners in recognition of their dedication.",
+        uploads: "Final Upload Stats",
+        contributors: "Participants",
+        certificateTitle: "Certificates & Prizes!",
+        certificateMessage: "Dear contributors, certificates are ready for download. We are also awarding ₹4,000, ₹3,000, and ₹2,000 Gift Coupons to winners in both Camera and Mobile categories!",
         certificateCta: "Download Your Certificate",
         signature: "Wiki Science Organizing Team"
       },
@@ -563,77 +553,77 @@ export const translations = {
         words: ["Science.", "Discovery.", "Knowledge.", "Innovation."],
       },
       prizes: {
-        title: "Prizes & Recognition",
+        title: "National Prizes Announced",
         subtitle:
-          "Your groundbreaking visuals deserve to be celebrated. Discover what you can win.",
+          "In recognition of your incredible dedication, we are thrilled to announce prizes for both DSLR/Camera and Mobile photography categories.",
         prizes: [
           {
             icon: "Award",
-            title: "National Recognition",
+            title: "1st Place - ₹4,000",
             description:
-              "Best uploads will get a chance to win International Prizes.",
+              "Awarded to the top submission in both DSLR/Camera and Mobile categories.",
           },
           {
             icon: "Camera",
-            title: "Participating Certificates",
+            title: "2nd & 3rd Place",
             description:
-              "Participating certificates will be given to all on 20 uploads.",
+              "₹3,000 for 2nd place and ₹2,000 for 3rd place in both categories.",
           },
           {
             icon: "BookOpen",
-            title: "Publication Feature",
+            title: "Highest Uploads - ₹2,000",
             description:
-              "Get a chance of your work featured in science articles in wikipedia.",
+              "A special recognition for the participant with the highest number of eligible scientific uploads.",
           },
         ],
       },
       campaign: {
         title: "Live from the Campaign",
-        description: "Anatomy of total files. We have received this much images on dslr and common general uploads",
+        description: "Anatomy of total files. We received these images via DSLR and common general uploads.",
         totalSubmissions: "Total Submissions",
         noSubmissions: "No Submissions Yet",
-        noSubmissionsSub: "Be the first to contribute! Images from this campaign will appear here live.",
+        noSubmissionsSub: "Check out the winning gallery on Wikimedia Commons.",
         viewFull: "See Images"
       },
       mobileCampaign: {
         title: "Live from Mobile",
-        description: "We have recieved this much mobile submissions that taken from smartphones",
+        description: "These are the mobile submissions taken from smartphones.",
         totalSubmissions: "Total Submissions",
       },
       dashboard: {
-        title: "Competition Statistics Metrics Dashboard",
-        subtitle: "Track the real-time impact of our community's contributions.",
-        ctaLine1: "Want to be a part of these numbers?",
-        ctaLinkText: "Create an account",
-        ctaLine2: "on the Outreach Dashboard and join the campaign!",
-        ctaButton: "Competition Statistics Metrics"
+        title: "Competition Statistics Dashboard",
+        subtitle: "Final impact of our community's contributions.",
+        ctaLine1: "Want to see the full breakdown?",
+        ctaLinkText: "View the Dashboard",
+        ctaLine2: "to explore the campaign's success metrics!",
+        ctaButton: "Competition Metrics"
       },
       instagram: {
           images: {
-              title: "Featured Images",
-              subtitle: "A curated collection of stunning scientific photography from our community.",
+              title: "Winning Images",
+              subtitle: "A curated collection of stunning scientific photography from our 2025 winners.",
           },
           reels: {
-              title: "Latest Reels",
-              subtitle: "Watch short, engaging videos showcasing science in action.",
+              title: "Science Reels",
+              subtitle: "Short, engaging videos showcasing science in action.",
           },
           videos: {
-              title: "Community Videos",
+              title: "Community Content",
               subtitle: "Explore in-depth video content from our talented contributors.",
           }
       },
       contact: {
           title: "Get in Touch",
-          subtitle: "Have questions or feedback? We'd love to hear from you. We promise a quick reply!",
+          subtitle: "Have questions about prizes or certificates? We'd love to hear from you.",
       },
       testimonials: {
         title: "Voices of Our Community",
-        subtitle: "Hear what researchers, photographers, and enthusiasts are saying about the Wiki Science Competition."
+        subtitle: "Hear what researchers and photographers are saying about this inaugural national edition."
       },
       vortex: {
         title: "Capture the Unseen",
-        subtitle: "Unveil the beauty of science through your lens. Join a global community celebrating discovery.",
-        cta: "View Past Winners"
+        subtitle: "The 2025 edition has concluded. Thank you for revealing the beauty of science through your lens.",
+        cta: "View 2025 Winners"
       }
     },
   },
@@ -675,7 +665,7 @@ export const translations = {
     organizersDropdown: "आयोजक",
     moreDropdown: "अधिक",
     learningDropdown: "सीखना",
-    participateButton: "इवेंट पेज देखें",
+    participateButton: "विजेताओं को देखें",
     footerNavLinks: [
       { name: "परिचय", href: "/about" },
       { name: "प्रतियोगिता", href: "/competition" },
@@ -704,37 +694,37 @@ export const translations = {
       title: "विकीसाइंस इंडिया 2025 के बारे में",
       badge: "भारतीय संदर्भ का परिचय",
       heading: "विकी विज्ञान प्रतियोगिता 2025 – भारत",
-      p1: "पहली बार, भारत विकी विज्ञान प्रतियोगिता (WSC) का राष्ट्रीय संस्करण आयोजित कर रहा है — यह दुनिया की सबसे बड़ी पहलों में से एक है जो विज्ञान, फोटोग्राफी और मुफ्त ज्ञान को एक साथ लाती है।",
-      p2: "2011 में एस्टोनिया में शुरू हुई और बाद में पूरे यूरोप और दुनिया भर में विस्तारित हुई, इस प्रतियोगिता ने हजारों वैज्ञानिकों, शोधकर्ताओं और उत्साही लोगों को विज्ञान के आश्चर्य को दर्शाने वाली छवियां साझा करने के लिए प्रेरित किया है। सूक्ष्म कोशिकाओं से लेकर ब्रह्मांडीय आकाशगंगाओं तक, ये स्वतंत्र रूप से लाइसेंस प्राप्त योगदान विकिमीडिया कॉमन्स को समृद्ध करते हैं और विश्व स्तर पर खुली शिक्षा का समर्थन करते हैं।",
-      p3: "भारत ने पिछले अंतर्राष्ट्रीय संस्करणों में गर्व से योगदान दिया है — भारतीय फोटोग्राफरों और वैज्ञानिकों को मान्यता और पुरस्कार प्राप्त हुए हैं। हालाँकि, यह पहली बार है जब भारत अपनी स्थानीय प्रतियोगिता की मेजबानी कर रहा है, जो हमारे देश की वैज्ञानिक भावना और रचनात्मकता को प्रदर्शित करने के लिए समर्पित है।",
-      p4: "विकी विज्ञान प्रतियोगिता 2025 – भारत एक प्रतियोगिता से बढ़कर है। यह शक्तिशाली छवियों, कहानियों और रचनात्मकता के माध्यम से भारतीय विज्ञान को दुनिया के सामने प्रस्तुत करने का एक सामूहिक प्रयास है।",
+      p1: "पहली बार, भारत ने विकी विज्ञान प्रतियोगिता (WSC) का राष्ट्रीय संस्करण आयोजित किया — यह दुनिया की सबसे बड़ी पहलों में से एक है जो विज्ञान और मुफ्त ज्ञान को एक साथ लाती है।",
+      p2: "2011 में एस्टोनिया में शुरू हुई इस प्रतियोगिता ने हजारों वैज्ञानिकों और उत्साही लोगों को विज्ञान के आश्चर्य को दर्शाने वाली छवियां साझा करने के लिए प्रेरित किया है। ये स्वतंत्र रूप से लाइसेंस प्राप्त योगदान विकिमीडिया कॉमन्स को समृद्ध करते हैं।",
+      p3: "भारत ने पहली बार अपनी स्थानीय प्रतियोगिता की मेजबानी की, जो हमारे देश की वैज्ञानिक भावना और रचनात्मकता को प्रदर्शित करने के लिए समर्पित थी।",
+      p4: "विकी विज्ञान प्रतियोगिता 2025 – भारत एक बड़ी सफलता रही। यह शक्तिशाली छवियों के माध्यम से भारतीय विज्ञान को दुनिया के सामने प्रस्तुत करने का एक सामूहिक प्रयास था।",
       aims: {
         title: "हमारे उद्देश्य",
-        subtitle: "इस अभियान के माध्यम से, हमारा उद्देश्य है:",
+        subtitle: "इस अभियान के माध्यम से, हमारा उद्देश्य था:",
         items: [
           {
             icon: "PenSquare",
             title: "योगदान को प्रोत्साहित करें",
             description:
-              "पूरे भारत में छात्रों, शोधकर्ताओं और उत्साही लोगों को बहुमूल्य वैज्ञानिक मीडिया का योगदान करने के लिए प्रोत्साहित करें।",
+              "पूरे भारत में छात्रों और शोधकर्ताओं को वैज्ञानिक मीडिया का योगदान करने के लिए प्रोत्साहित करना।",
           },
           {
             icon: "Lightbulb",
             title: "जागरूकता बढ़ाएँ",
             description:
-              "खुले विज्ञान और मुफ्त ज्ञान के महत्व के बारे में जागरूकता बढ़ाएँ।",
+              "खुले विज्ञान और मुफ्त ज्ञान के महत्व के बारे में जागरूकता बढ़ाना।",
           },
           {
             icon: "Globe",
             title: "विरासत का जश्न मनाएँ",
             description:
-              "भारत की समृद्ध वैज्ञानिक विरासत और चल रहे नवाचारों का जश्न मनाएँ।",
+              "भारत की समृद्ध वैज्ञानिक विरासत का जश्न मनाना।",
           },
           {
             icon: "Handshake",
             title: "सहयोग को मजबूत करें",
             description:
-              "विकिमीडिया समुदायों, विश्वविद्यालयों, अनुसंधान संस्थानों और संगठनों के बीच सहयोग को मजबूत करें।",
+              "विकिमीडिया समुदायों और विश्वविद्यालयों के बीच सहयोग को मजबूत करना।",
           },
         ],
       },
@@ -742,7 +732,7 @@ export const translations = {
     campusAmbassadors: {
       title: "कैंपस एंबेसडर",
       subtitle:
-        "अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाने वाले उत्साही नेताओं से मिलें।",
+        "उन उत्साही नेताओं से मिलें जिन्होंने अपने समुदायों में विकी विज्ञान प्रतियोगिता को चलाया।",
       ambassadors: [
         {
           name: "अनुष्का पटेल",
@@ -806,44 +796,44 @@ export const translations = {
       ],
     },
     affiliates: {
-      title: "विकिमीडिया सहयोगियों के लिए कॉल",
+      title: "विकिमीडिया सहयोगी",
       subtitle:
-        "हम भारत भर में विकिमीडिया सहयोगियों, उपयोगकर्ता समूहों और संगठनों को विकी विज्ञान प्रतियोगिता 2025 को बढ़ावा देने और समर्थन करने में हमारे साथ सहयोग करने के लिए आमंत्रित कर रहे हैं।",
-      partnerHeading: "हमारे साथ साझेदारी क्यों करें?",
+        "भारत भर में विकिमीडिया सहयोगियों और संगठनों ने विकी विज्ञान प्रतियोगिता 2025 को बढ़ावा देने में हमारा साथ दिया।",
+      partnerHeading: "साझेदारी क्यों महत्वपूर्ण थी?",
       partnerDescription:
-        "यह विज्ञान का जश्न मनाने और विकिमीडिया कॉमन्स को स्वतंत्र रूप से लाइसेंस प्राप्त मीडिया से समृद्ध करने का एक अनूठा अवसर है। एक भागीदार के रूप में, आपका समूह भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता को सफल बनाने में आउटरीच, जागरूकता और सामुदायिक जुड़ाव में मदद करके एक महत्वपूर्ण भूमिका निभा सकता है।",
-      collaborationHeading: "आप कैसे सहयोग कर सकते हैं",
+        "यह विज्ञान का जश्न मनाने और विकिमीडिया कॉमन्स को स्वतंत्र मीडिया से समृद्ध करने का एक अनूठा अवसर था। सहयोगियों ने आउटरीच और सामुदायिक जुड़ाव में मदद करके महत्वपूर्ण भूमिका निभाई।",
+      collaborationHeading: "हमने कैसे सहयोग किया",
       collaborationPoints: [
-        "अपने नेटवर्क पर ऑनलाइन और ऑफलाइन आउटरीच में संलग्न हों।",
-        "संस्थानों और अनुसंधान निकायों से अपलोड की सुविधा प्रदान करें।",
-        "स्थानीय कार्यशालाएं, एडिट-ए-थॉन, या फोटोवॉक आयोजित करें।",
-        "अभियान सामग्री के अनुवाद और स्थानीयकरण में सहायता करें।",
+        "नेटवर्क पर ऑनलाइन और ऑफलाइन आउटरीच की।",
+        "संस्थानों से अपलोड की सुविधा प्रदान की।",
+        "स्थानीय कार्यशालाएं और फोटोवॉक आयोजित कीं।",
+        "अभियान सामग्री के अनुवाद में सहायता की।",
       ],
       formNote:
-        "यह फॉर्म मान्यता प्राप्त विकिमीडिया सहयोगियों या सामुदायिक समूहों के लिए है। व्यक्तियों और छात्रों को",
-      campusAmbassadorLink: "कैंपस एंबेसडर फॉर्म",
+        "यह कार्यक्रम मान्यता प्राप्त विकिमीडिया सहयोगियों के लिए था।",
+      campusAmbassadorLink: "कैंपस एंबेसडर कार्यक्रम",
       sidebarTitle: "आवेदन बंद",
       sidebarDescription:
-        "आपकी रुचि के लिए धन्यवाद। संबद्ध कार्यक्रम के लिए आवेदन अवधि समाप्त हो गई है।",
+        "संबद्ध कार्यक्रम के लिए आवेदन अवधि अब समाप्त हो गई है।",
       cta: "आवेदन बंद",
     },
     campus: {
-      title: "कैंपस एंबेसडर के लिए कॉल",
+      title: "कैंपस एंबेसडर",
       subtitle:
-        "अपने संस्थान, समुदाय या नेटवर्क में विकी विज्ञान प्रतियोगिता 2025 को बढ़ावा देने में मदद करने के लिए एक स्थानीय आउटरीच समन्वयक के रूप में हमसे जुड़ें।",
-      whoHeading: "हम किसे ढूंढ रहे हैं?",
+        "स्थानीय आउटरीच समन्वयकों ने अपने संस्थानों में विकी विज्ञान प्रतियोगिता 2025 को बढ़ावा देने में मदद की।",
+      whoHeading: "हमारे एंबेसडर कौन थे?",
       whoDescription:
-        "कैंपस एंबेसडर जागरूकता फैलाने, प्रतिभागियों का मार्गदर्शन करने और वैकल्पिक रूप से जागरूकता सत्र या कार्यशालाएं आयोजित करने में महत्वपूर्ण भूमिका निभाते हैं। चाहे आप विकिमीडियन हों, विज्ञान के छात्र हों, डिजाइनर हों, शिक्षक हों, या बस खुले विज्ञान के प्रति उत्साही हों - हमें आपको अपने साथ पाकर खुशी होगी!",
-      responsibilitiesHeading: "जिम्मेदारियाँ",
+        "कैंपस एंबेसडर ने जागरूकता फैलाने और प्रतिभागियों का मार्गदर्शन करने में महत्वपूर्ण भूमिका निभाई। हमारी टीम में विज्ञान के छात्र, शिक्षक और उत्साही लोग शामिल थे।",
+      responsibilitiesHeading: "मुख्य भूमिकाएँ",
       responsibilities: [
-        "अपने संस्थान या समुदाय में अभियान को बढ़ावा दें।",
-        "संभावित योगदानकर्ताओं के साथ भागीदारी दिशानिर्देश साझा करें।",
-        "वैकल्पिक रूप से, कार्यशालाओं या फोटोवॉक जैसी जागरूकता गतिविधियाँ आयोजित करें (हम सहायता प्रदान कर सकते हैं!)।",
+        "अपने संस्थान या समुदाय में अभियान को बढ़ावा दिया।",
+        "संभावित योगदानकर्ताओं के साथ भागीदारी दिशानिर्देश साझा किए।",
+        "कार्यशालाओं या फोटोवॉक जैसी जागरूकता गतिविधियाँ आयोजित कीं।",
       ],
       sidebar: {
         title: "आवेदन बंद",
         description:
-          "आपकी रुचि के लिए धन्यवाद। कैंपस एंबेसडर कार्यक्रम के लिए आवेदन अवधि समाप्त हो गई है।",
+          "कैंपस एंबेसडर कार्यक्रम के लिए आवेदन अवधि समाप्त हो गई है।",
         cta: "आवेदन बंद",
       },
       cta: {
@@ -852,25 +842,19 @@ export const translations = {
       },
     },
     competition: {
-      title: "प्रतियोगिता विवरण",
-      subtitle: "भाग लेने और जीतने के लिए आपको जो कुछ भी जानना चाहिए।",
+      title: "प्रतियोगिता के परिणाम",
+      subtitle: "भारत की पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता के विजेताओं का जश्न।",
       howToParticipate: {
-        title: "कैसे भाग लें",
-        p1: "यदि आपके पास कोई खाता नहीं है, तो आप एक वैश्विक खाता बना सकते हैं जो आपको लॉग इन करने पर सभी विकिमीडिया प्लेटफार्मों (विकिमीडिया कॉमन्स सहित) पर एक विशिष्ट उपयोगकर्ता नाम देगा। एक नए पंजीकृत उपयोगकर्ता के रूप में आपको वीडियो फ़ाइल अपलोड करने से पहले कम से कम चार दिन इंतजार करना होगा, जबकि छवियां पंजीकरण के तुरंत बाद अपलोड की जा सकती हैं।",
-        createAccountLink: "अपना खाता यहाँ बनाएँ!",
-        rulesTitle: "भागीदारी के नियम",
+        title: "सबमिशन विवरण",
+        p1: "सबमिशन चरण अब पूरा हो चुका है। हम उन सभी प्रतिभागियों को धन्यवाद देते हैं जिन्होंने विकिमीडिया कॉमन्स पर अपनी वैज्ञानिक दृष्टि साझा की।",
+        createAccountLink: "परिणाम पेज देखें",
+        rulesTitle: "अंतिम आँकड़े",
         rules: [
-          "प्रस्तुतियाँ आपका अपना काम होनी चाहिए, जो आपके अपने पंजीकृत विकिमीडिया खाते से अपलोड की गई हों। एक से अधिक लेखकों के मामले में, सभी नाम प्रदान किए जाने चाहिए।",
-          "छवियां एक मुफ्त लाइसेंस (CC BY-SA 4.0, CC BY 4.0, CC0 1.0) के तहत होनी चाहिए।",
-          "सभी प्रस्तुतियों के लिए अंग्रेजी में एक स्पष्ट और सटीक वैज्ञानिक विवरण की आवश्यकता होती है। अन्य भाषाओं में विवरण का भी स्वागत है।",
-          {
-            text: "संभव उच्चतम रिज़ॉल्यूशन (कम से कम 2 मेगापिक्सेल) अपलोड करें। आप मेगापिक्सेल गणना की जाँच ",
-            link: {
-              url: "https://medium.com/@SuyashWiki/how-to-easily-calculate-image-megapixels-and-why-it-matters-b53777e44594",
-              label: "यहाँ",
-            },
-          },
-          "छवियों में वॉटरमार्क, लोगो, या अतिरिक्त पाठ/ग्राफिक्स (पैमानों को छोड़कर) नहीं होने चाहिए।",
+          "कुल सबमिशन: 3,706 फाइलें",
+          "कुल योगदानकर्ता: 474 व्यक्ति",
+          "सबमिशन में डीएसएलआर/कैमरा और मोबाइल श्रेणियां शामिल थीं।",
+          "छवियां मुफ्त लाइसेंस (CC BY-SA 4.0, CC BY 4.0, CC0 1.0) के तहत उपलब्ध हैं।",
+          "योगदानों ने कॉमन्स पर वैज्ञानिक दस्तावेज़ीकरण को समृद्ध किया है।",
         ],
       },
       keyDates: {
@@ -879,14 +863,14 @@ export const translations = {
           { date: "1 नवंबर, 2025", event: "प्रस्तुतियाँ खुलीं" },
           { date: "15 दिसंबर, 2025", event: "प्रस्तुतियाँ बंद" },
           { date: "जनवरी 2026", event: "जूरी विचार-विमर्श" },
-          { date: "फरवरी 2026", event: "राष्ट्रीय विजेताओं की घोषणा" },
+          { date: "18 फरवरी, 2026", event: "राष्ट्रीय विजेताओं की घोषणा" },
         ],
       },
-      submitNow: "इवेंट पेज देखें",
+      submitNow: "कॉमन्स पर परिणाम देखें",
       imageCategories: {
-        title: "छवि श्रेणियाँ",
+        title: "विजेता श्रेणियां",
         subtitle:
-          "आप निम्नलिखित सात श्रेणियों में भाग ले सकते हैं। वह चुनें जो आपके काम के लिए सबसे उपयुक्त हो। प्रेरित होने के लिए नीचे दिए गए उदाहरण देखें।",
+          "विभिन्न वैज्ञानिक क्षेत्रों में विजेताओं का चयन किया गया। नीचे प्रतिभा की विविधता देखें।",
       },
       categories: {
         people: {
@@ -901,17 +885,17 @@ export const translations = {
         astronomy: {
           name: "खगोल विज्ञान",
           description:
-            "तारों, खगोलीय घटनाओं, और उन्हें पकड़ने के लिए उपयोग किए जाने वाले उपकरणों की छवियां।",
+            "तारों, खगोलीय घटनाओं, और उपकरणों की छवियां।",
         },
         special: {
           name: "विशेष श्रेणी",
           description:
-            "अद्वितीय और असाधारण वैज्ञानिक सामग्री जो अन्य श्रेणियों में फिट नहीं होती है।",
+            "अद्वितीय वैज्ञानिक सामग्री जो अन्य श्रेणियों में फिट नहीं होती है।",
         },
         everyday: {
           name: "रोजमर्रा की जिंदगी में विज्ञान",
           description:
-            "दैनिक जीवन, व्यावहारिक अनुप्रयोगों और प्रयोगों में विज्ञान का प्रदर्शन करने वाली छवियां।",
+            "दैनिक जीवन और प्रयोगों में विज्ञान का प्रदर्शन करने वाली छवियां।",
         },
         equipment: {
           name: "विज्ञान में उपकरण",
@@ -921,32 +905,32 @@ export const translations = {
         chemistry: {
           name: "रसायन विज्ञान में विज्ञान",
           description:
-            "रासायनिक प्रतिक्रियाएं, प्रयोगशाला रसायन विज्ञान और आणविक विज्ञान।",
+            "रासायनिक प्रतिक्रियाएं और आणविक विज्ञान।",
         },
         physics: {
           name: "भौतिकी में विज्ञान",
           description:
-            "भौतिकी में भौतिक प्रयोग, प्रदर्शन और अवधारणाएं।",
+            "भौतिकी में भौतिक प्रयोग और अवधारणाएं।",
         },
         mobile: {
           name: "मोबाइल श्रेणी",
           description:
-            "मोबाइल उपकरणों का उपयोग करने वाले छात्रों और योगदानकर्ताओं के लिए; उच्च-स्तरीय उपकरणों के बिना सुलभ विज्ञान और प्रकृति के चित्र।",
+            "मोबाइल उपकरणों का उपयोग करने वाले छात्रों के लिए; विज्ञान और प्रकृति के चित्र।",
         },
       },
       readyToParticipate: {
-        title: "भाग लेने के लिए तैयार हैं?",
+        title: "राष्ट्रीय विजेताओं की घोषणा!",
         subtitle:
-          "मंच तैयार है। आपका लेंस कुंजी है। हमें अपनी वैज्ञानिक आंखों से दुनिया दिखाएं।",
-        cta: "इवेंट पेज देखें",
+          "भारत में पहली राष्ट्रीय विकी विज्ञान प्रतियोगिता संपन्न हो गई है। शानदार विजेता प्रविष्टियाँ देखें।",
+        cta: "विजेता गैलरी देखें",
       },
     },
     contact: {
       title: "हमसे संपर्क करें",
       subtitle:
-        "प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!",
+        "परिणामों या प्रमाणपत्रों के बारे में प्रश्न हैं? हम त्वरित उत्तर का वादा करते हैं!",
       getInTouch: "संपर्क में रहें",
-      p1: "फॉर्म भरें और हमारी टीम कुछ घंटों के भीतर आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!",
+      p1: "फॉर्म भरें और हमारी टीम आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!",
       emailAddress: "contact@wikisciencecompetition.in",
       form: {
         name: "पूरा नाम",
@@ -974,7 +958,7 @@ export const translations = {
     organizers: {
       title: "आयोजकों से मिलें",
       subtitle:
-        "पहली विकी विज्ञान प्रतियोगिता भारत को एक बड़ी सफलता बनाने के लिए पर्दे के पीछे काम करने वाली समर्पित टीम।",
+        "समर्पित टीम जिसने पहली विकी विज्ञान प्रतियोगिता भारत को एक बड़ी सफलता बनाने के लिए पर्दे के पीछे काम किया।",
       lead_organizers: "प्रमुख आयोजक",
       advisors: "सलाहकार",
       core_organizing_team: "कोर आयोजन टीम",
@@ -1071,29 +1055,33 @@ export const translations = {
     organizersCall: {
       title: "आयोजकों के लिए कॉल",
       subtitle:
-        "हम यह साझा करने के लिए उत्साहित हैं कि भारत इस वैश्विक अभियान का अपना स्थानीय संस्करण आयोजित करेगा जो विकिमीडिया कॉमन्स पर स्वतंत्र रूप से लाइसेंस प्राप्त छवियों, वीडियो और अन्य मीडिया के माध्यम से विज्ञान को बढ़ावा देता है।",
-      joinHeading: "आयोजन टीम में शामिल हों",
+        "हमें यह साझा करते हुए खुशी हो रही है कि भारत ने इस वैश्विक अभियान का अपना स्थानीय संस्करण आयोजित किया जो विकिमीडिया कॉमन्स पर विज्ञान को बढ़ावा देता है।",
+      joinHeading: "आयोजन टीम",
       joinDescription:
-        "सुचारू समन्वय, आउटरीच और योजना का समर्थन करने के लिए, हम अपनी आयोजन टीम का विस्तार कर रहे हैं। यदि आप इस महत्वपूर्ण पहल में योगदान करने में रुचि रखते हैं, तो हमें आपसे सुनना अच्छा लगेगा।",
-      lookingForHeading: "हम क्या खोज रहे हैं",
+        "समन्वय और योजना का समर्थन करने के लिए हमारी टीम का विस्तार किया गया था। हम इस पहल में योगदान देने वाले सभी लोगों को धन्यवाद देते हैं।",
+      lookingForHeading: "हमारे मूल्य",
       lookingFor: [
-        "विज्ञान, फोटोग्राफी, या खुले ज्ञान में रुचि रखने वाले भावुक व्यक्ति।",
-        "इवेंट प्लानिंग, आउटरीच, सोशल मीडिया प्रबंधन, या सामग्री निर्माण में कौशल।",
-        "एक सहयोगी भावना और एक महत्वपूर्ण प्रभाव डालने की इच्छा।",
+        "विज्ञान और फोटोग्राफी में रुचि रखने वाले भावुक व्यक्ति।",
+        "इवेंट प्लानिंग और आउटरीच में कौशल।",
+        "एक सहयोगी भावना और प्रभाव डालने की इच्छा।",
       ],
-      sidebarTitle: "अभी आवेदन करें",
+      sidebarTitle: "संपन्न",
       sidebarDescription:
-        "भारत में पहली विकी विज्ञान प्रतियोगिता को आकार देने में हमारी मदद करें।",
-      deadline: "आवेदन बंद: 15 जुलाई 2025",
+        "भारत में पहली विकी विज्ञान प्रतियोगिता को आकार देने में हमारी मदद करने के लिए धन्यवाद।",
+      deadline: "आवेदन बंद",
       cta: "आवेदन बंद",
     },
     resources: {
       title: "संसाधन",
       subtitle:
-        "पिछले विजेताओं से प्रेरित हों और अपनी प्रस्तुति तैयार करने के लिए सहायक सामग्री तक पहुँचें।",
+        "2025 के विजेताओं से प्रेरित हों और अगले संस्करण के लिए तैयार हों।",
       pastWinners: {
-        title: "पिछले विजेताओं की गैलरी",
+        title: "विजेताओं की गैलरी",
         links: [
+          {
+            year: 2025,
+            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India/Results",
+          },
           {
             year: 2023,
             url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2023/Winners",
@@ -1101,14 +1089,6 @@ export const translations = {
           {
             year: 2021,
             url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2021/Winners",
-          },
-          {
-            year: 2019,
-            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2019/Winners",
-          },
-          {
-            year: 2017,
-            url: "https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2017/Winners",
           },
         ],
       },
@@ -1119,19 +1099,18 @@ export const translations = {
           {
             title: "विज्ञान फोटोग्राफी के लिए गाइड",
             description:
-              "आश्चर्यजनक वैज्ञानिक छवियों को कैप्चर करने की मूल बातें जानें।",
+              "शानदार वैज्ञानिक छवियों को कैप्चर करने की मूल बातें जानें।",
             link: "#",
           },
           {
             title: "क्रिएटिव कॉमन्स को समझना",
             description:
-              "प्रतियोगिता के लिए अपने काम को लाइसेंस देने के लिए एक त्वरित गाइड।",
+              "प्रतियोगिता के लिए अपने काम को लाइसेंस देने के लिए एक गाइड।",
             link: "#",
           },
           {
             title: "छवि अपलोड ट्यूटोरियल",
-            description:
-              "अपनी तस्वीरों को कैसे सबमिट करें, इस पर चरण-दर-चरण वीडियो।",
+            description: "तस्वीरों को सबमिट करने पर चरण-दर-चरण वीडियो।",
             link: "#",
           },
         ],
@@ -1140,47 +1119,47 @@ export const translations = {
     support: {
       title: "हमारा समर्थन करें",
       subtitle:
-        "विकी विज्ञान प्रतियोगिता भारत 2025 को एक बड़ी सफलता बनाने में हमारी मदद करें।",
+        "हम उन सभी का धन्यवाद करते हैं जिन्होंने विकी विज्ञान प्रतियोगिता भारत 2025 को सफल बनाया।",
       options: [
         {
           id: "sponsorship",
           icon: "Handshake",
-          title: "प्रायोजक बनें",
+          title: "प्रायोजन",
           description:
-            "परिचालन लागत, पुरस्कार राशि और इवेंट प्रबंधन को कवर करने में मदद के लिए मौद्रिक योगदान के साथ हमारा समर्थन करें। हम प्रमुख ब्रांडिंग अवसरों के साथ विभिन्न प्रायोजन स्तर प्रदान करते हैं।",
-          cta: "प्रायोजन के लिए संपर्क करें",
+            "हमारे प्रायोजकों को विशेष धन्यवाद जिन्होंने परिचालन लागत और पुरस्कार राशि में मदद की।",
+          cta: "टीम से संपर्क करें",
         },
         {
           id: "gifts",
           icon: "Gift",
-          title: "उपहार और स्वैग प्रदान करें",
+          title: "उपहार और कूपन",
           description:
-            "हमारे विजेताओं और प्रतिभागियों के लिए रोमांचक उपहार, वाउचर, या ब्रांडेड मर्चेंडाइज (स्वैग) के साथ हमारे पुरस्कार पूल में योगदान करें। अपने ब्रांड को विज्ञान के प्रति उत्साही लोगों के हाथों में पहुंचाएं।",
-          cta: "उपहार प्रदान करें",
+            "योगदानकर्ताओं को उनकी कड़ी मेहनत के लिए उपहार कूपन और प्रमाणपत्र प्रदान किए गए।",
+          cta: "टीम से संपर्क करें",
         },
         {
           id: "outreach",
           icon: "Megaphone",
-          title: "आउटरीच और मार्केटिंग",
+          title: "आउटरीच",
           description:
-            "शब्द फैलाने के लिए हमारे साथ सहयोग करें। अपने संस्थागत चैनलों, सोशल मीडिया या मार्केटिंग विशेषज्ञता के माध्यम से व्यापक दर्शकों तक पहुंचने में हमारी सहायता करें।",
-          cta: "आउटरीच पर सहयोग करें",
+            "खुले विज्ञान के बारे में शब्द फैलाने के लिए भविष्य के संस्करणों में हमारे साथ सहयोग करें।",
+          cta: "भविष्य के आउटरीच में शामिल हों",
         },
       ],
     },
     home: {
       hero: {
-        title: "प्रतियोगिता अब समाप्त हो गई है",
+        title: "राष्ट्रीय विजेताओं की घोषणा!",
         certificate: "अपना प्रमाणपत्र प्राप्त करें",
-        closed: "इवेंट पेज देखें",
+        closed: "परिणाम पेज देखें",
       },
       thankyou: {
         title: "धन्यवाद, योगदानकर्ताओं!",
-        subtitle: "भारत में पहली बार विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली है। हमें यह घोषणा करते हुए खुशी हो रही है कि हमारे प्रतिभाशाली समुदाय ने 3600+ से अधिक प्रविष्टियों का योगदान दिया है! हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का हृदय से आभार व्यक्त करते हैं। परिणामों के लिए बने रहें!",
-        uploads: "छवि आँकड़े",
-        contributors: "योगदानकर्ता",
-        certificateTitle: "प्रमाणपत्र अब उपलब्ध हैं!",
-        certificateMessage: "प्रिय योगदानकर्ताओं, आपके प्रमाणपत्र अब डाउनलोड के लिए तैयार हैं। यह भारतीय विज्ञान के लिए आपकी कड़ी मेहनत, समर्पण और समर्थन के लिए हमारी ओर से एक विनम्र इशारा है।",
+        subtitle: "भारत में पहली विकी विज्ञान प्रतियोगिता को अभूतपूर्व प्रतिक्रिया मिली! 474 व्यक्तियों से 3,700+ प्रविष्टियाँ। हम विज्ञान की अपनी दृष्टि साझा करने के लिए प्रत्येक प्रतिभागी का आभार व्यक्त करते हैं। हमें विजेताओं के लिए नकद पुरस्कार (गिफ्ट कूपन) घोषित करते हुए खुशी हो रही है!",
+        uploads: "अंतिम अपलोड आँकड़े",
+        contributors: "प्रतिभागी",
+        certificateTitle: "प्रमाणपत्र और पुरस्कार!",
+        certificateMessage: "प्रिय योगदानकर्ताओं, आपके प्रमाणपत्र तैयार हैं। हम कैमरा और मोबाइल दोनों श्रेणियों में विजेताओं को ₹4,000, ₹3,000 और ₹2,000 के गिफ्ट कूपन प्रदान कर रहे हैं!",
         certificateCta: "अपना प्रमाणपत्र डाउनलोड करें",
         signature: "विकी विज्ञान आयोजन टीम"
       },
@@ -1190,32 +1169,32 @@ export const translations = {
         words: ["विज्ञान।", "खोज।", "ज्ञान।", "नवाचार।"],
       },
       prizes: {
-        title: "पुरस्कार और मान्यता",
-        subtitle: "आपके अभूतपूर्व दृश्यों का जश्न मनाया जाना चाहिए। जानें कि आप क्या जीत सकते हैं।",
+        title: "राष्ट्रीय पुरस्कारों की घोषणा",
+        subtitle: "आपके अविश्वसनीय समर्पण को देखते हुए, हमें कैमरा और मोबाइल दोनों श्रेणियों के लिए पुरस्कार घोषित करते हुए खुशी हो रही है।",
         prizes: [
           {
             icon: "Award",
-            title: "राष्ट्रीय मान्यता",
-            description: "विजेताओं को हमारे आधिकारिक प्लेटफार्मों पर मनाया जाएगा और राष्ट्रीय मीडिया कवरेज प्राप्त होगा।",
+            title: "प्रथम पुरस्कार - ₹4,000",
+            description: "कैमरा और मोबाइल दोनों श्रेणियों में शीर्ष सबमिशन के लिए प्रदान किया गया।",
           },
           {
             icon: "Camera",
-            title: "शीर्ष स्तरीय उपकरण",
-            description: "शीर्ष विजेताओं के लिए उनके जुनून में सहायता के लिए रोमांचक फोटोग्राफी गियर और सहायक उपकरण।",
+            title: "द्वितीय और तृतीय पुरस्कार",
+            description: "दोनों श्रेणियों में द्वितीय स्थान के लिए ₹3,000 और तृतीय स्थान के लिए ₹2,000।",
           },
           {
             icon: "BookOpen",
-            title: "प्रकाशन फ़ीचर",
-            description: "प्रतिष्ठित विज्ञान पत्रिकाओं और प्रकाशनों में अपने काम को चित्रित करवाएं।",
+            title: "सर्वाधिक अपलोड - ₹2,000",
+            description: "सबसे अधिक योग्य वैज्ञानिक अपलोड करने वाले प्रतिभागी के लिए विशेष मान्यता।",
           },
         ],
       },
       campaign: {
         title: "अभियान से लाइव",
-        description: "कुल फाइलों का विश्लेषण। ये डीएसएलआर और अन्य सामान्य अपलोड से छवियां हैं।",
+        description: "कुल फाइलों का विश्लेषण। ये डीएसएलआर और सामान्य अपलोड से प्राप्त छवियां हैं।",
         totalSubmissions: "कुल प्रस्तुतियाँ",
         noSubmissions: "अभी तक कोई सबमिशन नहीं",
-        noSubmissionsSub: "योगदान करने वाले पहले व्यक्ति बनें! इस अभियान की छवियां यहां लाइव दिखाई देंगी।",
+        noSubmissionsSub: "विकिमीडिया कॉमन्स पर विजेता गैलरी देखें।",
         viewFull: "छवियां देखें"
       },
       mobileCampaign: {
@@ -1223,39 +1202,39 @@ export const translations = {
         description: "ये स्मार्टफोन से ली गई मोबाइल प्रस्तुतियाँ हैं।",
       },
       dashboard: {
-        title: "लाइव अभियान डैशबोर्ड",
-        subtitle: "हमारे समुदाय के योगदान के वास्तविक समय के प्रभाव को ट्रैक करें।",
-        ctaLine1: "इन नंबरों का हिस्सा बनना चाहते हैं?",
-        ctaLinkText: "एक खाता बनाएँ",
-        ctaLine2: "आउटरीच डैशबोर्ड पर और अभियान में शामिल हों!",
-        ctaButton: "अभियान में शामिल हों"
+        title: "अभियान डैशबोर्ड",
+        subtitle: "हमारे समुदाय के योगदान के अंतिम प्रभाव को ट्रैक करें।",
+        ctaLine1: "क्या आप पूरा विवरण देखना चाहते हैं?",
+        ctaLinkText: "डैशबोर्ड देखें",
+        ctaLine2: "अभियान की सफलता के मेट्रिक्स देखने के लिए!",
+        ctaButton: "अभियान मेट्रिक्स"
       },
       instagram: {
           images: {
-              title: "विशेष रुप से प्रदर्शित छवियाँ",
-              subtitle: "हमारे समुदाय से आश्चर्यजनक वैज्ञानिक फोटोग्राफी का एक क्यूरेटेड संग्रह।",
+              title: "विजेता छवियाँ",
+              subtitle: "हमारे 2025 के विजेताओं की आश्चर्यजनक वैज्ञानिक फोटोग्राफी का संग्रह।",
           },
           reels: {
-              title: "नवीनतम रील्स",
-              subtitle: "विज्ञान को क्रिया में प्रदर्शित करने वाले छोटे, आकर्षक वीडियो देखें।",
+              title: "साइंस रील्स",
+              subtitle: "विज्ञान को क्रिया में प्रदर्शित करने वाले छोटे वीडियो देखें।",
           },
           videos: {
               title: "सामुदायिक वीडियो",
-              subtitle: "हमारे प्रतिभाशाली योगदानकर्ताओं से गहन वीडियो सामग्री का अन्वेषण करें।",
+              subtitle: "हमारे प्रतिभाशाली योगदानकर्ताओं की गहन वीडियो सामग्री देखें।",
           }
       },
       contact: {
           title: "संपर्क में रहें",
-          subtitle: "प्रश्न या प्रतिक्रिया है? हमें आपसे सुनना अच्छा लगेगा। हम त्वरित उत्तर का वादा करते हैं!",
+          subtitle: "पुरस्कारों या प्रमाणपत्रों के बारे में प्रश्न हैं? हमें आपसे सुनना अच्छा लगेगा।",
       },
       testimonials: {
         title: "हमारे समुदाय की आवाज़ें",
-        subtitle: "सुनें कि शोधकर्ता, फोटोग्राफर और उत्साही विकी विज्ञान प्रतियोगिता के बारे में क्या कह रहे हैं।"
+        subtitle: "सुनें कि शोधकर्ता और फोटोग्राफर इस पहले राष्ट्रीय संस्करण के बारे में क्या कह रहे हैं।"
       },
       vortex: {
         title: "अनदेखे को कैद करें",
-        subtitle: "अपने लेंस के माध्यम से विज्ञान की सुंदरता को उजागर करें। खोज का जश्न मनाने वाले एक वैश्विक समुदाय में शामिल हों।",
-        cta: "पिछले विजेता देखें"
+        subtitle: "2025 संस्करण समाप्त हो गया है। विज्ञान की सुंदरता को उजागर करने के लिए धन्यवाद।",
+        cta: "2025 के विजेता देखें"
       }
     },
   },

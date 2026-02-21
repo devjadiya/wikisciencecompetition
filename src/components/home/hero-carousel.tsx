@@ -4,59 +4,93 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, CheckCircle, Award, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Award, ExternalLink, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/language-context';
 import Link from 'next/link';
 
 const slides = [
+  // Winning Camera Images
   {
     id: 1,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/FMN_Lab_team_%282%29.jpg/1024px-FMN_Lab_team_%282%29.jpg' },
-    alt: 'FMN Lab team by FMNLab',
-    caption: 'FMN Lab team by FMNLab, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/3D-Printed_Biodegradable_Human_Bone_Scaffold_3.jpg' },
+    alt: '3D-Printed Human Bone by Donvikro',
+    caption: '1st Place (Camera) - 3D-Printed Human Bone by Donvikro',
+    rank: 1,
+    category: 'Camera'
   },
   {
     id: 2,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Ascaris_female_200x_section.jpg' },
-    alt: 'Ascaris female 200x section',
-    caption: 'Ascaris female 200x section by Massimo brizzi, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Haemometer.jpg' },
+    alt: 'Haemometer by Kiran Vati K',
+    caption: '2nd Place (Camera) - Haemometer by Kiran Vati K',
+    rank: 2,
+    category: 'Camera'
   },
   {
     id: 3,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Wismut_Kristall_und_1cm3_Wuerfel.jpg' },
-    alt: 'Wismut Kristall und 1cm3 Wuerfel',
-    caption: 'Wismut Kristall und 1cm3 Wuerfel by Alchemist-hp, CC BY-SA 3.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Close_up_shot_of_an_appendix_surgery%2C_or_appendectomy_at_a_Hospital_in_Assam%2C_India_01.jpg' },
+    alt: 'Shot of an appendix surgery by Amitabha Gupta',
+    caption: '3rd Place (Camera) - Shot of an appendix surgery by Amitabha Gupta',
+    rank: 3,
+    category: 'Camera'
   },
   {
     id: 4,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Macrocranion_tupaiodon_01.jpg' },
-    alt: 'Macrocranion tupaiodon',
-    caption: 'Macrocranion tupaiodon by Llez, CC BY-SA 3.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Milky_way_as_seen_from_Satsar_camsite%2CGanderbal_district%2C_Kashmir_02.jpg' },
+    alt: 'Milky way from Kashmir by Rohit14400',
+    caption: '4th Place (Camera) - Milky way from Kashmir by Rohit14400',
+    rank: 4,
+    category: 'Camera'
   },
   {
     id: 5,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Instrumente_in_der_Maschinenhalle_der_Zeche_Zollern.jpg' },
-    alt: 'Instrumente in der Maschinenhalle der Zeche Zollern',
-    caption: 'Instrumente in der Maschinenhalle der Zeche Zollern by GZagatta, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Multi-parallel_light_ray_producer.jpg' },
+    alt: 'Multi-parallel light ray by Grajani1975',
+    caption: '5th Place (Camera) - Multi-parallel light ray by Grajani1975',
+    rank: 5,
+    category: 'Camera'
   },
+  // Winning Mobile Images
   {
     id: 6,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/Soldering_a_0805.jpg' },
-    alt: 'Soldering a 0805',
-    caption: 'Soldering a 0805 by Aisart~commonswiki, CC BY-SA 3.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Sun_Dial_1.jpg' },
+    alt: 'Sun Dial by Aliva Sahoo',
+    caption: '1st Place (Mobile) - Sun Dial by Aliva Sahoo',
+    rank: 1,
+    category: 'Mobile'
   },
   {
     id: 7,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Total_Solar_Eclipse_8-21-17.jpg' },
-    alt: 'Total Solar Eclipse 8-21-17',
-    caption: 'Total Solar Eclipse 8-21-17 by Msadler13, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Fungi_Rhizopus.jpg' },
+    alt: 'Fungi Rhizopus by Aaronantonypaul',
+    caption: '2nd Place (Mobile) - Fungi Rhizopus by Aaronantonypaul',
+    rank: 2,
+    category: 'Mobile'
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif/lossy-page1-800px-%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B9_%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0_BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BC%D0%B0%D1%81%D0%BA%D0%B8_%28%D0%BF%D0%BE%D0%BB%D1%8F%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%29.tif.jpg' },
-    alt: 'Microscopic image of the outer layer of a surgical mask',
-    caption: 'Microscopic outer layer of a surgical mask by Alexander Klepnev, CC BY-SA 4.0',
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/HC_SR04_Ultrasonic_Module.jpg' },
+    alt: 'Ultrasonic Module by Suyash Dwivedi',
+    caption: '3rd Place (Mobile) - Ultrasonic Module by Suyash Dwivedi',
+    rank: 3,
+    category: 'Mobile'
+  },
+  {
+    id: 9,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Preserved_Reptile_and_Amphibian_Specimens.jpg' },
+    alt: 'Amphibian Specimens by Aliva Sahoo',
+    caption: '4th Place (Mobile) - Amphibian Specimens by Aliva Sahoo',
+    rank: 4,
+    category: 'Mobile'
+  },
+  {
+    id: 10,
+    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Vintage_steam_engine.jpg' },
+    alt: 'Vintage steam engine by Bhaiyaji Smile 123',
+    caption: '5th Place (Mobile) - Vintage steam engine by Bhaiyaji Smile 123',
+    rank: 5,
+    category: 'Mobile'
   }
 ];
 
@@ -93,6 +127,7 @@ export default function HeroCarousel() {
   }, [page]);
 
   const slideIndex = page;
+  const currentSlide = slides[slideIndex];
 
   return (
     <section className="relative h-[60vh] md:h-[90vh] min-h-[500px] w-full flex items-center justify-center text-white overflow-hidden">
@@ -111,16 +146,33 @@ export default function HeroCarousel() {
           className="absolute w-full h-full"
         >
           <Image
-            src={slides[slideIndex].image.src}
-            alt={slides[slideIndex].alt}
+            src={currentSlide.image.src}
+            alt={currentSlide.alt}
             fill
             className="object-cover"
             priority={slideIndex === 0}
             sizes="100vw"
           />
-           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-           <div className="absolute bottom-4 right-4 p-2 bg-black/50 text-white rounded-md text-xs text-right">
-             {slides[slideIndex].caption}
+           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+           
+           {/* Rank Badge for top 3 */}
+           {currentSlide.rank <= 3 && (
+             <div className="absolute top-24 left-4 md:left-10 z-30">
+                <motion.div 
+                  initial={{ scale: 0, rotate: -20 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  className="bg-accent text-accent-foreground p-3 md:p-4 rounded-full shadow-2xl flex flex-col items-center justify-center border-4 border-white/20 backdrop-blur-md"
+                >
+                  <Trophy className="h-6 w-6 md:h-8 md:w-8 mb-1" />
+                  <span className="text-xl md:text-2xl font-bold">{currentSlide.rank}</span>
+                  <span className="text-[10px] md:text-xs uppercase font-bold tracking-widest">Rank</span>
+                </motion.div>
+             </div>
+           )}
+
+           <div className="absolute bottom-4 right-4 p-3 bg-black/60 text-white rounded-lg border border-white/10 backdrop-blur-sm text-xs md:text-sm text-right max-w-[80%] shadow-lg">
+             <p className="font-bold text-accent mb-1">{currentSlide.category} Category Winner</p>
+             {currentSlide.caption}
            </div>
         </motion.div>
       </AnimatePresence>
@@ -146,7 +198,7 @@ export default function HeroCarousel() {
                 </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
-                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India" target="_blank" rel="noopener noreferrer">
+                <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India/Results" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-3 h-6 w-6" /> {t.home.hero.closed}
                 </a>
             </Button>

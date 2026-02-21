@@ -29,7 +29,7 @@ export default function ThankYouSection() {
                 </motion.div>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     <div className="text-center p-6 bg-card rounded-lg shadow-md">
-                        <AnimatedCounter from={0} to={3664} />
+                        <AnimatedCounter from={0} to={3706} />
                         <div className="flex items-center justify-center gap-2 mt-2 text-sm text-muted-foreground">
                             <Upload className="h-4 w-4" />
                             <span>{t.home.thankyou.uploads}</span>
@@ -80,5 +80,3 @@ export default function ThankYouSection() {
         </section>
     );
 }
-
-    
