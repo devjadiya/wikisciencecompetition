@@ -13,7 +13,7 @@ const slides = [
   // Winning Camera Images
   {
     id: 1,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/3D-Printed_Biodegradable_Human_Bone_Scaffold_3.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/3D-Printed_Biodegradable_Human_Bone_Scaffold_3.jpg' },
     alt: '3D-Printed Human Bone by Donvikro',
     caption: '1st Place (Camera) - 3D-Printed Human Bone by Donvikro',
     rank: 1,
@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 2,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Haemometer.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Haemometer.jpg' },
     alt: 'Haemometer by Kiran Vati K',
     caption: '2nd Place (Camera) - Haemometer by Kiran Vati K',
     rank: 2,
@@ -29,7 +29,7 @@ const slides = [
   },
   {
     id: 3,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Close_up_shot_of_an_appendix_surgery%2C_or_appendectomy_at_a_Hospital_in_Assam%2C_India_01.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_shot_of_an_appendix_surgery%2C_or_appendectomy_at_a_Hospital_in_Assam%2C_India_01.jpg' },
     alt: 'Shot of an appendix surgery by Amitabha Gupta',
     caption: '3rd Place (Camera) - Shot of an appendix surgery by Amitabha Gupta',
     rank: 3,
@@ -37,7 +37,7 @@ const slides = [
   },
   {
     id: 4,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Milky_way_as_seen_from_Satsar_camsite%2CGanderbal_district%2C_Kashmir_02.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Milky_way_as_seen_from_Satsar_camsite%2CGanderbal_district%2C_Kashmir_02.jpg' },
     alt: 'Milky way from Kashmir by Rohit14400',
     caption: '4th Place (Camera) - Milky way from Kashmir by Rohit14400',
     rank: 4,
@@ -45,7 +45,7 @@ const slides = [
   },
   {
     id: 5,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Multi-parallel_light_ray_producer.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Multi-parallel_light_ray_producer.jpg' },
     alt: 'Multi-parallel light ray by Grajani1975',
     caption: '5th Place (Camera) - Multi-parallel light ray by Grajani1975',
     rank: 5,
@@ -54,7 +54,7 @@ const slides = [
   // Winning Mobile Images
   {
     id: 6,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Sun_Dial_1.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Sun_Dial_1.jpg' },
     alt: 'Sun Dial by Aliva Sahoo',
     caption: '1st Place (Mobile) - Sun Dial by Aliva Sahoo',
     rank: 1,
@@ -62,7 +62,7 @@ const slides = [
   },
   {
     id: 7,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Fungi_Rhizopus.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Fungi_Rhizopus.jpg' },
     alt: 'Fungi Rhizopus by Aaronantonypaul',
     caption: '2nd Place (Mobile) - Fungi Rhizopus by Aaronantonypaul',
     rank: 2,
@@ -70,7 +70,7 @@ const slides = [
   },
   {
     id: 8,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/HC_SR04_Ultrasonic_Module.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/HC_SR04_Ultrasonic_Module.jpg' },
     alt: 'Ultrasonic Module by Suyash Dwivedi',
     caption: '3rd Place (Mobile) - Ultrasonic Module by Suyash Dwivedi',
     rank: 3,
@@ -78,7 +78,7 @@ const slides = [
   },
   {
     id: 9,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Preserved_Reptile_and_Amphibian_Specimens.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Preserved_Reptile_and_Amphibian_Specimens.jpg' },
     alt: 'Amphibian Specimens by Aliva Sahoo',
     caption: '4th Place (Mobile) - Amphibian Specimens by Aliva Sahoo',
     rank: 4,
@@ -86,7 +86,7 @@ const slides = [
   },
   {
     id: 10,
-    image: { src: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Vintage_steam_engine.jpg' },
+    image: { src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vintage_steam_engine.jpg' },
     alt: 'Vintage steam engine by Bhaiyaji Smile 123',
     caption: '5th Place (Mobile) - Vintage steam engine by Bhaiyaji Smile 123',
     rank: 5,

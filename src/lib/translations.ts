@@ -43,7 +43,7 @@ export const translations = {
     organizersDropdown: "Organizers",
     moreDropdown: "More",
     learningDropdown: "Learning",
-    participateButton: "View Event Page",
+    participateButton: "View Results",
     footerNavLinks: [
       { name: "About", href: "/about" },
       { name: "Competition", href: "/competition" },
@@ -928,7 +928,7 @@ export const translations = {
     contact: {
       title: "हमसे संपर्क करें",
       subtitle:
-        "परिणामों या प्रमाणपत्रों के बारे में प्रश्न हैं? हम त्वरित उत्तर का वादा करते हैं!",
+        "पुरस्कारों या प्रमाणपत्रों के बारे में प्रश्न हैं? हम त्वरित उत्तर का वादा करते हैं!",
       getInTouch: "संपर्क में रहें",
       p1: "फॉर्म भरें और हमारी टीम आपसे संपर्क करेगी। हम यहाँ मदद के लिए हैं!",
       emailAddress: "contact@wikisciencecompetition.in",
