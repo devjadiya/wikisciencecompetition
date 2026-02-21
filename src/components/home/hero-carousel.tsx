@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -149,23 +148,24 @@ export default function HeroCarousel() {
             alt={currentSlide.alt}
             fill
             className="object-cover"
-            priority={slideIndex === 0}
+            priority={slideIndex === 0} // Priority only for the first slide to speed up LCP
+            loading={slideIndex === 0 ? "eager" : "lazy"} // Lazy load remaining 9 images
             unoptimized
             sizes="100vw"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
            
-           {/* Rank Badge for top 3 */}
+           {/* Rank Badge for top 3 - Positioned to avoid collision on mobile */}
            {currentSlide.rank <= 3 && (
-             <div className="absolute top-24 left-4 md:left-10 z-30">
+             <div className="absolute top-20 md:top-24 left-4 md:left-10 z-30">
                 <motion.div 
                   initial={{ scale: 0, rotate: -20 }}
                   animate={{ scale: 1, rotate: 0 }}
-                  className="bg-accent text-accent-foreground p-3 md:p-4 rounded-full shadow-2xl flex flex-col items-center justify-center border-4 border-white/20 backdrop-blur-md"
+                  className="bg-accent text-accent-foreground p-2.5 md:p-4 rounded-full shadow-2xl flex flex-col items-center justify-center border-2 md:border-4 border-white/20 backdrop-blur-md"
                 >
-                  <Trophy className="h-6 w-6 md:h-8 md:w-8 mb-1" />
-                  <span className="text-xl md:text-2xl font-bold">{currentSlide.rank}</span>
-                  <span className="text-[10px] md:text-xs uppercase font-bold tracking-widest">Rank</span>
+                  <Trophy className="h-5 w-5 md:h-8 md:w-8 mb-0.5 md:mb-1" />
+                  <span className="text-lg md:text-2xl font-bold leading-none">{currentSlide.rank}</span>
+                  <span className="text-[8px] md:text-xs uppercase font-bold tracking-widest">Rank</span>
                 </motion.div>
              </div>
            )}
@@ -177,7 +177,7 @@ export default function HeroCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute z-20 text-center p-4">
+      <div className="absolute z-20 text-center p-4 pt-16 md:pt-0">
         <motion.h1 
             className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold text-white drop-shadow-2xl mb-8"
             initial={{ opacity: 0, y: -20 }}
