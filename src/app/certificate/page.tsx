@@ -33,10 +33,12 @@ export default function CertificatePage() {
   useDebounce(
     () => {
       const fetchSuggestions = async () => {
-        if (searchQuery.length < 2) {
+        // Don't search if query is too short or if it exactly matches the already selected username
+        if (searchQuery.length < 2 || searchQuery === username) {
           setSuggestions([]);
           return;
         }
+        
         setIsAutocompleteLoading(true);
         try {
           const response = await fetch(`/api/username-autocomplete?prefix=${encodeURIComponent(searchQuery)}`);
@@ -54,7 +56,7 @@ export default function CertificatePage() {
       };
       fetchSuggestions();
     },
-    300,
+    250, // Slightly faster debounce
     [searchQuery]
   );
 
@@ -84,6 +86,7 @@ export default function CertificatePage() {
       if (response.ok) {
         setIsEligible(data.eligible);
         setUploadCount(data.count);
+        // Do NOT auto-fill displayName, keep it blank as per user request
       } else {
         throw new Error(data.error || 'Failed to check eligibility.');
       }
@@ -207,20 +210,25 @@ export default function CertificatePage() {
                         <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
                             <PopoverTrigger asChild>
                                 <Button variant="outline" role="combobox" aria-expanded={popoverOpen} className="w-full flex-grow justify-between font-normal">
-                                    {username || "Enter your Wikimedia username"}
+                                    <span className="truncate">{username || "Enter your Wikimedia username"}</span>
                                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                 </Button>
                             </PopoverTrigger>
-                            <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
-                                <Command>
+                            <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
+                                <Command shouldFilter={false}>
                                     <CommandInput 
                                         placeholder="Search username..." 
                                         value={searchQuery}
                                         onValueChange={setSearchQuery}
                                     />
                                     <CommandList>
-                                        {isAutocompleteLoading && <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>}
-                                        <CommandEmpty>{searchQuery.length > 1 ? "No users found." : "Type to search..."}</CommandEmpty>
+                                        {isAutocompleteLoading && <div className="p-2 text-center text-sm text-muted-foreground">Searching...</div>}
+                                        {!isAutocompleteLoading && suggestions.length === 0 && searchQuery.length >= 2 && (
+                                            <CommandEmpty>No users found.</CommandEmpty>
+                                        )}
+                                        {!isAutocompleteLoading && searchQuery.length < 2 && (
+                                            <CommandEmpty>Type at least 2 characters...</CommandEmpty>
+                                        )}
                                         <CommandGroup>
                                             {suggestions.map((name) => (
                                                 <CommandItem
