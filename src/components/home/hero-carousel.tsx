@@ -151,6 +151,7 @@ export default function HeroCarousel() {
             fill
             className="object-cover"
             priority={slideIndex === 0}
+            unoptimized
             sizes="100vw"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -192,12 +193,7 @@ export default function HeroCarousel() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
         >
-            <Button asChild size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
-                <Link href="/certificate">
-                    <Award className="mr-3 h-6 w-6" /> {t.home.hero.certificate}
-                </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-base md:text-lg px-8 py-7 rounded-full shadow-lg font-bold bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-transform hover:scale-105">
+            <Button asChild size="lg" className="text-base md:text-lg px-10 py-8 rounded-full shadow-2xl font-bold bg-accent hover:bg-accent/90 transition-transform hover:scale-105 border-2 border-white/20">
                 <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Science_Competition_2025_in_India/Results" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-3 h-6 w-6" /> {t.home.hero.closed}
                 </a>

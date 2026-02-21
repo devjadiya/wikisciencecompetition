@@ -54,6 +54,7 @@ function WinnerCard({ winner }: { winner: Winner }) {
           alt={winner.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
+          unoptimized
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute top-2 left-2 flex flex-col gap-2">
